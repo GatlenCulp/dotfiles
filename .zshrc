@@ -102,25 +102,11 @@ source $ZSH/oh-my-zsh.sh
 
 # SHRC is a shared configuration file for both bash and zsh if syntax is the same.
 ZSHRC_DIR=$HOME/.config/zshrc
-SHRC_DIR=$HOME/.config/shrc
-SECRETS_DIR=$HOME/.config/secrets
 
 # Set ENV variables
-source $SHRC_DIR/env_vars/xdg.sh
-source $SHRC_DIR/env_vars/homebrew.sh
-source $SHRC_DIR/env_vars/vscode.sh
-source $SHRC_DIR/env_vars/cli_program_defaults.sh
-source $SHRC_DIR/env_vars/docker.sh
-source $SHRC_DIR/env_vars/misc.sh
-source $SHRC_DIR/thefuck.sh
-source $SHRC_DIR/tre.sh
-source $SHRC_DIR/ruby.sh
-
-# Secrets
-source $SECRETS_DIR/api_keys.sh
+source $HOME/.config/.shrc
 
 # Setting up command-line prompt
-source $ZSHRC_DIR/oh-my-posh.zsh
-source $ZSHRC_DIR/fastfetch.zsh
-source $ZSHRC_DIR/eza.zsh
 source $ZSHRC_DIR/fzf.zsh
+source $ZSHRC_DIR/oh-my-posh.zsh
+source $ZSHRC_DIR/zoxide.zsh
