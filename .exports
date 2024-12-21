@@ -36,3 +36,23 @@ export BASH_SILENCE_DEPRECATION_WARNING=1;
 export OH_MY_ZSH=$HOME/.oh-my-zsh
 
 export DRACULA_THEME=$HOME/.config/dracula-theme
+
+# Default Apps
+export EDITOR="nvim"
+export VISUAL="code"
+export PAGER="ov"
+export GIT_EDITOR="nvim"
+
+# Add Docker
+export PATH="$HOME/.docker/bin:$PATH"
+
+# Homebrew
+export HOMEBREW_NO_INSTALL_CLEANUP=
+export HOMEBREW_NO_ENV_HINTS=
+
+# Python Better Exceptions
+export BETTER_EXCEPTIONS=1
+
+export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/gatlen.yaml
+
+source "$HOME/.config/shrc/env_vars/xdg.sh"

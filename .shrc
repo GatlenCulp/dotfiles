@@ -4,10 +4,6 @@ SHRC_DIR=$HOME/.config/shrc
 
 # Set ENV variables
 source $SHRC_DIR/env_vars/xdg.sh
-source $SHRC_DIR/env_vars/cli_program_defaults.sh
-source $SHRC_DIR/env_vars/docker.sh
-source $SHRC_DIR/env_vars/homebrew.sh
-source $SHRC_DIR/env_vars/misc.sh
 source $SHRC_DIR/env_vars/vscode.sh
 
 # Load config
