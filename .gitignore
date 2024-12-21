@@ -7,6 +7,7 @@ secrets/
 !bin/**
 !btop/**
 !crossnote/**
+!cookiecutter/**
 !dracula-theme/**
 !eza/**
 !fastfetch/**
@@ -18,8 +19,10 @@ secrets/
 !thefuck/**
 !vscode/**
 !zshrc/**
+!zellij/**
 !.config.icns
 !.zshrc
+!.bashrc
 !.zprofile
 !.tmux.conf
 !.shrc

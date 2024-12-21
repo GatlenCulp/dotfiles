@@ -60,3 +60,6 @@ source "$HOME/.config/shrc/env_vars/xdg.sh"
 # Oh-my-posh config
 export OH_MY_POSH_DIR="$XDG_CONFIG_HOME/oh-my-posh"
 export OH_MY_POSH_THEME="nordcustom_v.3"
+
+# Zellij
+export ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
