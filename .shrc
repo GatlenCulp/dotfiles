@@ -1,0 +1,23 @@
+# General config for posix shell
+
+SHRC_DIR=$HOME/.config/shrc
+
+# Set ENV variables
+source $SHRC_DIR/env_vars/xdg.sh
+source $SHRC_DIR/env_vars/cli_program_defaults.sh
+source $SHRC_DIR/env_vars/docker.sh
+source $SHRC_DIR/env_vars/homebrew.sh
+source $SHRC_DIR/env_vars/misc.sh
+source $SHRC_DIR/env_vars/vscode.sh
+
+# Load config
+source $SHRC_DIR/eza.sh
+source $SHRC_DIR/fastfetch.sh
+source $SHRC_DIR/ruby.sh
+
+# Final things
+source $HOME/.config/.aliases
+# source $HOME/.config/.bash_profile
+source $HOME/.config/.exports
+source $HOME/.config/.functions
+# source $HOME/.config/.inputrc
