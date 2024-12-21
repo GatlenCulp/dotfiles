@@ -110,3 +110,5 @@ source $HOME/.config/.shrc
 source $ZSHRC_DIR/fzf.zsh
 source $ZSHRC_DIR/oh-my-posh.zsh
 source $ZSHRC_DIR/zoxide.zsh
+
+source $HOME/.config/.aliases
