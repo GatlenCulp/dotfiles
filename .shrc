@@ -13,7 +13,6 @@ source $SHRC_DIR/ruby.sh
 
 # Final things
 source $HOME/.config/.aliases
-# source $HOME/.config/.bash_profile
 source $HOME/.config/.exports
 source $HOME/.config/.functions
 # source $HOME/.config/.inputrc

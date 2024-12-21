@@ -19,7 +19,8 @@
         },
         {
           "leading_diamond": "\ue0b6",
-          "template": "{{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} ",
+          "template": "{{ if .SSHSession }}\ueba9 {{ end }}",
+          // {{ .UserName }}@{{ .HostName }} ",
           "foreground": "#4C566A",
           "background": "#E5E9F0",
           "type": "session",
