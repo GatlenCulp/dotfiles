@@ -31,6 +31,7 @@ secrets/
 !.inputrc
 !.bash_profile
 !.aliases
+!.pre-commit-config.yaml
 !Icon
 !LICENSE
 !README.md
