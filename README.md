@@ -6,7 +6,6 @@ _Last updated: 2024 December 22_
 
 ![GitHub stars](https://img.shields.io/github/stars/gatlenculp/dotfiles?style=social)
 
-
 <div align="center">
   <a href="https://dotfiles.github.io/">
     <img src="./docs/dotfiles-logo.png" alt="dotfiles logo" style="max-width: 250px;"/>
@@ -46,6 +45,7 @@ If a configuration is agnostic to BASH/ZSH, I just label it as `sh` instead of `
 **Linking real and fake rcs**
 
 BASH/ZSH don't use `~/.config/.{ba, z}shrc` for their rc files and instead use `~/.{ba, z}shrc`, so the real rc files just source my rc files in `~/.config`:
+
 ```bash
 source $HOME/.config/.zshrc
 ```
@@ -80,7 +80,6 @@ Configuration can be found in [oh-my-posh](./oh-my-posh/). I'm currently using [
 
 [Fira Code Nerd Font](https://github.com/Trzcin/Fira-Code-Nerd) is my go-to font for literally everything. The monospace, ligatures, universal availability, and options just make it \*mwah\*. (Like it is literally on Google Fonts and you can use it as the default font in Google Collab. There's an extension for it in VSCode. It's just everywhere and I low-key love it so no complaints here.)
 
-
 ## Security 🔒
 
 ```
@@ -95,7 +94,6 @@ Since this is on my actual `~/.config` folder and god know what tool wants to sa
 
 This repo is protected with [gitleaks](https://github.com/gitleaks/gitleaks) and [pre-commit](https://pre-commit.com/) hooks. I use an additive rather than subtractive strategy for my [.gitignore](./.gitignore) file, adding folders as needed.
 
-
 ## Copyright ©️
 
 No private code is being posted here but this is a low-key project and I don't have time to make contributions to every tool I use or open-source repo I clone into it (ex: [Dracula themes](https://draculatheme.com/)). Feel free to take whatever you want from this repo and make it your own but I make no guarentees about its functionality or quality.
@@ -103,9 +101,11 @@ No private code is being posted here but this is a low-key project and I don't h
 A decent chunk of these dotfiles were taken from another common dotfiles repo: https://github.com/mathiasbynens/dotfiles
 
 I agree with the author here:
+
 > Warning: If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 ## Random Notes 📝
+
 <details>
 
 <summary>
@@ -113,6 +113,7 @@ I agree with the author here:
 </summary>
 
 ### 00 To do/try ✅
+
 - [ ] [rcm (rc file management)](https://github.com/thoughtbot/rcm) looks like an interesting tool but I just learned about it and not ready to go down another rabbit hole
 - [ ] As mentioned above, I want to understand [Starship](https://starship.rs/)'s differences from [Oh My Posh](https://ohmyposh.dev/)
 - [ ] Not a huge fan of the right-side second prompt since it breaks after resizing the terminal window. Might remove.
@@ -121,7 +122,6 @@ I agree with the author here:
 </details>
 
 <details>
-
 
 <summary>
 01 Why Not Vim 🤡
@@ -135,14 +135,14 @@ There's a ton of "post-modern" Vim-like terminal-based tools like [Helix](https:
 
 </details>
 
-
-
-02 What's up with Rust? 🦀
+<details>
+<summary>
+02 What's up with Rust? 🦀 (Warning this should have been a blogpost)
+</summary>
 
 ### 02 What's up with Rust? 🦀
 
 [Rust](https://www.rust-lang.org/) has been getting really popular as of late and I see a lot of people annoyed at how much hype online it's been getting, calling it convoluted, a fad, or \<insert some other derogatory statement\>. There's a large chunk of people who will simply use or convert to any tool written in Rust because it's "fast" and "safe".
-
 
 **Rust Background**
 
@@ -156,12 +156,12 @@ It seems like an exciting langauge and I've been hesitant about the hype since i
 
 I was never really a Rust simp but now, as soon as I learn that was some library was written in Rust it is almost always the case that (1) It is fast (2) It has great syntax, design patterns, and clear errors (3) It has great documentation (4) It has great support and a great community (5) It is simply a better version of some other package built from the ground up. I'm becoming increasingly optimistic about Rust's place in the modern software ecosystem and its continued integration in Python, whose design pattern is mainly "import package that already does it and run a function". Python has kind of become a go-to abstraction language for powerful functionality written in other languages. Whenever I start a Python Project, I'm probably running more Rust than Python.
 
-
 **Thoughts on the Field of SWE -- Abstraction, Maturity, and Dependency**
 
 It's also a bit refreshing to see a new-found focus on efficiency since a lot of modern apps and websites ([Electron](https://preview.redd.it/4ws3aotwfgr41.png?auto=webp&s=1a874789d6113451a390e84b5fd479709d67a71e), [Chrome](https://blogs.uww.edu/iknowhatyoumeme/files/2019/02/meme-for-first-review.jpg) -- I see u 👀) are so ridiculously bloated and [slow](https://programmerhumor.io/wp-content/uploads/2022/11/programmerhumor-io-linux-memes-backend-memes-e036df440b87307.jpg). Granted, they are ridiculously cross platform and easier to work with than something like C++ due to their abstraction. I feel like in the past few years there's been this weird transition from "we are tired of the hard low-level languages, we wrote this abstract expensive langauge that is easy to code in" (think JavaScript and Python) to "oh but now we need to make big projects and some of the language's strictness was nice" (Think TypeScript which LITERALLY FUCKING COMPILES TO THE TYPELESS DEMON KNOWN AS JAVASCRIPT and Python Type annotations/checkers) in addition to the languages being slow as balls. Now it feels like we are wrapping around to combine the two since a lot of modern devs want to make projects other than web apps and scripts but literally only know Python and Javascript and the transition to C++ is kinda of hellish and filled with unclear documentation, packages, and standards sometimes modern sometimes from the 1970s. There's no reason why it has to be this hard.
 
 Correct me if I'm wrong but we have gone from
+
 1. Assembly abstracted to C
 2. C extended/abstracted to C++
 3. C++ abstracted to Javascript V8 Engine
@@ -172,8 +172,19 @@ Correct me if I'm wrong but we have gone from
 
 ![TypeScript](https://i.redd.it/t48vn3nn0ed91.png)
 
-Let me be clear, I recognize abstraction/extension is the natural progression of software and healthy. It lowers the bar for others to come in and generally makes it possible for more powerful and scalable projects to come in.
+Let me be clear, I recognize abstraction/extension is the natural progression of software and healthy. I'm not being a boomer saying "these spoiled kiddos don't know how to code in proper Assembly Code." I've written maybe a hundred lines of C++ in my life and I'm not one to talk. Abstraction/extension lowers the bar for others to come in and generally makes it possible for more powerful and scalable projects to come in. I mean hell, I'm typing this up in Cursor/VSCode, an app written in TypeScript. The first programming language I actually became fluent in was Python and I love a lot about it.
 
-It feels like software engineering has become a mature field that has seen a lot and learned a lot from generations of developers and philosophies. Whereas problems have historically been fixed by adding another layer of abstraction or another library, it seems like a separate direction of "lets tear it all down and start fresh with the decades of knowledge we have acquired."
+Part of the downside to this though is that these levels of abstraction/extension/history/popularity comes with a lot of baggage, legacy, and needed context. Kind of like how evolution could not have developed a car since it can only make genetic changes in small, incremental changes, I believe some things in software are hard to do if you continue building it in a legacy ecosystem and sometimes the way to move forwared is to tear it all down and start from scratch. While C/C++ are skillfully crafted languages, the creators could not have envisioned the world of software, hardware, and technology today nor the design patterns, philosophies, issues, and funding that have come from years of SWE. And had they been able to take advantage of these things, a different language would have been constructed. Additionally, there is certainly a computation cost from having to go through multiple layers of abstraction.
 
-**Reasons to continue being Rust-skeptical**
+It feels like software engineering has become a mature field that has seen a lot and learned a lot from generations of developers and philosophies. Whereas problems have historically been fixed by adding another layer of abstraction or another library, it seems like a separate direction of "lets tear it all down and start fresh with the decades of knowledge we have acquired, free of legacy practices, packages, syntax, and more."
+
+In a way I see these GO and Rust as a kind of "flattening" of the large dependency stack SWE made for itself, starting from scratch and writing something that's not really abstracted or pre-compiled, but clean and starting off on the right foot. Idk if a lot of that made sense.
+
+**Reasons to continue being Rust-skeptical + Benefits of "Burn it down" mentality**
+
+While Rust might still be awesome, there are some other possible contributions to by observations.
+
+1. There is a self-selection bias -- Ambitious programmers tend to learn and program in new languages, so the distribution of Rust tooling leans towards being higher quality even if the language itself might not be better.
+2. Breaking free from suboptimal standards -- It's often the case that communities hold onto the legacy established packages and standards in order to maintain compatability with old software and senior engineers that are stuck in their ways. Python is developed so fast that for most standard libraries and practices there exist better alternatives that often go unused (pandas vs polars, os vs pathlib, matplotlib vs seaborn, typing, setuptools vs pyproject.toml, "%s" format vs fstrings, tqdm vs rich.progress, json vs orjson, typed dict vs pydantic, etc.). If a Python clone called SnakeBoy was created, only it outlawed old standards and somehow became popular -- I think generally better projects would come out of it than Python but not for any reason surrounding compatabilities of the language. In terms of formatting itself there exist tons of QA tools and plugins and libraries that one has to be aware of instead of these just being a normal part of the language making it such that part of being a "mature developer" means knowing what the best tools out there are at the time.
+
+</details>
