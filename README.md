@@ -156,6 +156,7 @@ Since the most popular [Neofetch](https://github.com/dylanaraps/neofetch) tool w
 - [thefuck](https://github.com/nvbn/thefuck) - Magnificent app which corrects your previous console command. (Config in [`thefuck/`](./thefuck/), granted I don't use this much but maybe should)
 - [eza](https://github.com/nvbn/thefuck) - A modern alternative to ls (Config in [`eza/`](./eza/)) (This is really what ls should be. Prints an amazing tree with icons, syntax highlighting, and more. MWAH)
 - [gh](https://cli.github.com/) - GitHub command line interface.
+- [btop](https://github.com/aristocratos/btop) -- Gorgeous and extensive resource monitor and process manager. (Config [`btop`](./btop/))
 
 There are a few other command line tools I have that are not listed here. These are just some ones in these dotfiles.
 
