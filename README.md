@@ -105,8 +105,12 @@ A decent chunk of these dotfiles were taken from another common dotfiles repo: h
 I agree with the author here:
 > Warning: If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-
 ## Random Notes 📝
+<details>
+
+<summary>
+00 To do/try ✅
+</summary>
 
 ### 00 To do/try ✅
 - [ ] [rcm (rc file management)](https://github.com/thoughtbot/rcm) looks like an interesting tool but I just learned about it and not ready to go down another rabbit hole
@@ -114,13 +118,62 @@ I agree with the author here:
 - [ ] Not a huge fan of the right-side second prompt since it breaks after resizing the terminal window. Might remove.
 - [ ] Try out the terminal multiplexer [Zellij](https://zellij.dev/) more. I never really got into terminal multiplexing and since I use VSCode/Cursor for my programming, I have always had windows to drag around so I don't know if I actually need it.
 
+</details>
+
+<details>
+
+
+<summary>
+01 Why Not Vim 🤡
+</summary>
+
 ### 01 Why Not Vim 🤡
 
 I tried getting into [[Neo]Vim](https://neovim.io/) back in high school and installing extension after extension to make it usable and learning all the commands but it was such a rabbit hole and I don't know if I want to get into it again. Especially since VSCode/Cursor is so compatible with everything out of the box and has a lot of nice features and gui and is easy to make extensions for and work remotely and work with jupyter notebooks and yada yada.
 
 There's a ton of "post-modern" Vim-like terminal-based tools like [Helix](https://helix-editor.com/) as well as preconfigured Neovim IDE distributions (ex: [LunarVim](https://www.lunarvim.org/), [NvChad](https://nvchad.com/), [AstroVim](https://astronvim.com/), and [LazyVim](https://www.lazyvim.org/)) and I don't think this is the worst time to get into this but god damn is it a time sink. I don't know what the ecosystem looks like now but I remember if you wanted to download plugins you had to choose between 8 different Vim package managers and if you wanted to write a plugin you had to use [VimScript](https://learnvimscriptthehardway.stevelosh.com/): a whole ass ugly language JUST for writing plugins. Considering the inevitability of having to do some amount of editing via the command line I might install LunarVim just for that.
 
+</details>
+
+
+
+02 What's up with Rust? 🦀
 
 ### 02 What's up with Rust? 🦀
 
-There's a whole joke about
+[Rust](https://www.rust-lang.org/) has been getting really popular as of late and I see a lot of people annoyed at how much hype online it's been getting, calling it convoluted, a fad, or \<insert some other derogatory statement\>. There's a large chunk of people who will simply use or convert to any tool written in Rust because it's "fast" and "safe".
+
+
+**Rust Background**
+
+I think it's worth looking into Rust if you aren't already familiar with the language. I don't know much about it other than the community is extremely active, the language is super fast, memory-safe, easy-to-debug (by turning runtime-errors into compile-time errors), and has both high-level python-like syntax as well as low-level C++-like syntax and capabilities, making it pretty easy to work on multiple levels of abstraction. The tooling ecosystem has been exploding and it has phenomenal bindings to other languages (I'm specifically thinking about [Python](https://pyo3.rs/v0.23.3/)) making it a common choice for efficient libraries. It seems like there is some dissatisfaction around parts of the langauge (infamously: strings) but I get the vibe this has more to do with newbies being confused with the options and norms not yet being established with this language being so new.
+
+**It's becoming a modern standard**
+
+It seems like an exciting langauge and I've been hesitant about the hype since it could just be a fad. My hesitancy has almost all but disappeared as it has grown even more and as I search for tools, packages, for python, or whatever else -- I've found that almost every modern, well-documented, fast, and gorgeous tool is [Rust-based](https://github.com/rust-unofficial/awesome-rust) or Go-Based. For Python: Pydantic, FastAPI, ruff, uv, and polars. General tools: Helix, Warp, Zellij, LanceDB, Neon, and more. These are generally becoming standard and these are just ones that come off the top of my head. I've also heard about parts of Operating Systems being written in rust.
+
+![Trojan Python](https://pbs.twimg.com/media/FskvQyPWIAAiL_P?format=jpg&name=small)
+
+I was never really a Rust simp but now, as soon as I learn that was some library was written in Rust it is almost always the case that (1) It is fast (2) It has great syntax, design patterns, and clear errors (3) It has great documentation (4) It has great support and a great community (5) It is simply a better version of some other package built from the ground up. I'm becoming increasingly optimistic about Rust's place in the modern software ecosystem and its continued integration in Python, whose design pattern is mainly "import package that already does it and run a function". Python has kind of become a go-to abstraction language for powerful functionality written in other languages. Whenever I start a Python Project, I'm probably running more Rust than Python.
+
+
+**Thoughts on the Field of SWE -- Abstraction, Maturity, and Dependency**
+
+It's also a bit refreshing to see a new-found focus on efficiency since a lot of modern apps and websites ([Electron](https://preview.redd.it/4ws3aotwfgr41.png?auto=webp&s=1a874789d6113451a390e84b5fd479709d67a71e), [Chrome](https://blogs.uww.edu/iknowhatyoumeme/files/2019/02/meme-for-first-review.jpg) -- I see u 👀) are so ridiculously bloated and [slow](https://programmerhumor.io/wp-content/uploads/2022/11/programmerhumor-io-linux-memes-backend-memes-e036df440b87307.jpg). Granted, they are ridiculously cross platform and easier to work with than something like C++ due to their abstraction. I feel like in the past few years there's been this weird transition from "we are tired of the hard low-level languages, we wrote this abstract expensive langauge that is easy to code in" (think JavaScript and Python) to "oh but now we need to make big projects and some of the language's strictness was nice" (Think TypeScript which LITERALLY FUCKING COMPILES TO THE TYPELESS DEMON KNOWN AS JAVASCRIPT and Python Type annotations/checkers) in addition to the languages being slow as balls. Now it feels like we are wrapping around to combine the two since a lot of modern devs want to make projects other than web apps and scripts but literally only know Python and Javascript and the transition to C++ is kinda of hellish and filled with unclear documentation, packages, and standards sometimes modern sometimes from the 1970s. There's no reason why it has to be this hard.
+
+Correct me if I'm wrong but we have gone from
+1. Assembly abstracted to C
+2. C extended/abstracted to C++
+3. C++ abstracted to Javascript V8 Engine
+4. Javascript V8 Engine extended to Node.js for local development
+5. Node.js JavaScript structured into TypeScript pre-compiler
+6. Entire TypeScript package ecosystem developed in NPM
+7. Using TypeScript + NPM packages with insane dependency stacks and Frameworks like React. This is one of the most common ways to make projects today.
+
+![TypeScript](https://i.redd.it/t48vn3nn0ed91.png)
+
+Let me be clear, I recognize abstraction/extension is the natural progression of software and healthy. It lowers the bar for others to come in and generally makes it possible for more powerful and scalable projects to come in.
+
+It feels like software engineering has become a mature field that has seen a lot and learned a lot from generations of developers and philosophies. Whereas problems have historically been fixed by adding another layer of abstraction or another library, it seems like a separate direction of "lets tear it all down and start fresh with the decades of knowledge we have acquired."
+
+**Reasons to continue being Rust-skeptical**
