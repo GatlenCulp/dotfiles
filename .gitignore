@@ -9,6 +9,7 @@ secrets/
 !crossnote/**
 !cookiecutter/**
 cookiecutter/replays
+!docs/**
 !dracula-theme/**
 !eza/**
 !fastfetch/**
