@@ -204,6 +204,9 @@ I don't really use the Jupyter Notebook or Lab GUI nor Google Colab primarily be
 - [`.tmux.conf`](./.tmux.conf) -- The popular [Tmux](https://github.com/tmux/tmux) Terminal multiplexer, never actually set anything up, will probably use [zellij](https://zellij.dev/) instead.
 - [`cookiecutter`](./cookiecutter/) -- My [CookieCutter](https://www.cookiecutter.io/) saved config to speed up templating.
 
+
+---
+
 ## Security 🔒
 
 ```
