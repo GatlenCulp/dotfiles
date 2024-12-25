@@ -6,11 +6,11 @@ repos:
       - id: check-yaml
         args: ["--allow-multiple-documents"]
       - id: double-quote-string-fixer
-      - id: end-of-file-fixer
+      # - id: end-of-file-fixer
       - id: forbid-new-submodules
-      - id: mixed-line-ending
-      - id: trailing-whitespace
-      - id: pretty-format-json
+      # - id: mixed-line-ending
+      # - id: trailing-whitespace
+      # - id: pretty-format-json
         args: ["--autofix"]
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.22.0

@@ -28,6 +28,8 @@ This might not be the most useful way to spend my time but I find it kind of rel
 </div>
 <br>
 
+To install, run [`install.sh`](./install.sh). BE CAREFUL! This is destructive. (And also doesn't work rn)
+
 ---
 
 ## Features 📦

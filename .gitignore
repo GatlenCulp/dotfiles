@@ -2,6 +2,7 @@
 secrets/
 
 !.gitignore
+!.devcontainer/**
 !.vscode/**
 !bashrc/**
 !bin/**
@@ -34,6 +35,7 @@ cookiecutter/replays
 !.bash_profile
 !.aliases
 !.pre-commit-config.yaml
+!install.sh
 !Icon
 !LICENSE
 !README.md
