@@ -1,4 +1,4 @@
-SECRETS_DIR=$HOME/.config/secrets
+
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -8,4 +8,5 @@ source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
 
 # Secrets
+SECRETS_DIR="$HOME/.config/secrets"
 source $SECRETS_DIR/api_keys.sh

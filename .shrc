@@ -2,14 +2,9 @@
 
 SHRC_DIR=$HOME/.config/shrc
 
-# Set ENV variables
-source $SHRC_DIR/env_vars/xdg.sh
-source $SHRC_DIR/env_vars/vscode.sh
-
 # Load config
-source $SHRC_DIR/eza.sh
 source $SHRC_DIR/fastfetch.sh
-source $SHRC_DIR/ruby.sh
+source $SHRC_DIR/thefuck.sh
 
 # Final things
 source $HOME/.config/.aliases
