@@ -63,7 +63,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
+# Clean up LaunchServices to remove duplicates in the "Open With" menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # Canonical hex dump; some systems have this symlinked
@@ -146,7 +146,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Modern command line tool replacements
 # See https://github.com/eza-community/eza
-alias la="eza --icons -l --hyperlink -a -T --level=1 --git-repos --time-style '+%Y-%m-%d %H:%M' --no-user"  # <--- [NEW] Modern replacement for ls with enhanced features
+alias la="eza --icons -l --hyperlink -a -T --level=1 --git-repos --time-style '+%Y-%m-%d %H:%M' --no-user"
 
 # Tree view with depth limit
 alias tre="tre --limit 3"
@@ -157,3 +157,5 @@ alias man="tldr"  # Simplified man pages
 
 # Act macos alias
 alias act="act --container-architecture linux/amd64"
+
+alias vhsr="source $HOME/.config/vhs/vhsrc.sh && vhs"
