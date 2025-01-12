@@ -1,0 +1,175 @@
+# ---------------------------------------------------------------------------- #
+#                           X-Desktop-Group Defaults                           #
+# ---------------------------------------------------------------------------- #
+
+# https://specifications.freedesktop.org/basedir-spec/latest/index.html
+# xdg stands for "X Desktop Group" which is a set of standards
+
+XDG_DATA_HOME_DEFAULT="$HOME/.local/share"
+XDG_CONFIG_HOME_DEFAULT="$HOME/.config"
+XDG_STATE_HOME_DEFAULT="$HOME/.local/state"
+XDG_CACHE_HOME_DEFAULT="$HOME/.cache"
+
+# Data Files (User-specific data files)
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$XDG_DATA_HOME_DEFAULT}"
+# Config Files (User-specific configuration files)
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$XDG_CONFIG_HOME_DEFAULT}"
+# State Files (Persisting data between app restarts, but not important or portable enough to be stored in the data directory, ex: layout, logs, etc.)
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$XDG_STATE_HOME_DEFAULT}"
+# Cache Files (Non-essential files that can be removed at any time)
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$XDG_CACHE_HOME_DEFAULT}"
+
+# Check if the XDG directories exist, if not, create them
+for dir in "$XDG_DATA_HOME" "$XDG_CONFIG_HOME" "$XDG_STATE_HOME" "$XDG_CACHE_HOME"; do
+    if [ ! -d "$dir" ]; then
+        mkdir -p "$dir"
+    fi
+done
+
+# ---------------------------------------------------------------------------- #
+#                                     Node                                     #
+# ---------------------------------------------------------------------------- #
+
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY=~/.node_history
+# Allow 32³ entries; the default is 1000.
+export NODE_REPL_HISTORY_SIZE='32768'
+# Use sloppy mode by default, matching web browsers.
+export NODE_REPL_MODE='sloppy'
+
+# ---------------------------------------------------------------------------- #
+#                                    Python                                    #
+# ---------------------------------------------------------------------------- #
+
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8'
+
+# Python Better Exceptions
+export BETTER_EXCEPTIONS=1
+
+# ---------------------------------------------------------------------------- #
+#                               Terminal History                               #
+# ---------------------------------------------------------------------------- #
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768'
+export HISTFILESIZE="${HISTSIZE}"
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth'
+
+# ---------------------------------------------------------------------------- #
+#                               Language Settings                              #
+# ---------------------------------------------------------------------------- #
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
+# ---------------------------------------------------------------------------- #
+#                                 Less Settings                                #
+# ---------------------------------------------------------------------------- #
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md="${yellow}"
+
+# ---------------------------------------------------------------------------- #
+#                                 GPG Settings                                 #
+# ---------------------------------------------------------------------------- #
+
+# Avoid issues with `gpg` as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$(tty)
+
+# ---------------------------------------------------------------------------- #
+#                                 Default Apps                                 #
+# ---------------------------------------------------------------------------- #
+
+export EDITOR="lvim"
+export VISUAL="lvim"
+export PAGER="ov"
+export GIT_EDITOR="lvim"
+
+# ---------------------------------------------------------------------------- #
+#                                   Homebrew                                   #
+# ---------------------------------------------------------------------------- #
+
+export HOMEBREW_NO_INSTALL_CLEANUP=
+export HOMEBREW_NO_ENV_HINTS=
+
+export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/gatlen.yaml
+
+# ---------------------------------------------------------------------------- #
+#                                  Oh My Posh                                  #
+# ---------------------------------------------------------------------------- #
+
+export OH_MY_POSH_DIR="$XDG_CONFIG_HOME/oh-my-posh"
+export OH_MY_POSH_THEME="nordcustom_v.3"
+
+# Zellij
+export ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
+
+# ---------------------------------------------------------------------------- #
+#                                      ZSH                                     #
+# ---------------------------------------------------------------------------- #
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/highlighters"
+
+# Hide the "default interactive shell is now zsh" warning on macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+export OH_MY_ZSH=$HOME/.oh-my-zsh
+
+export DRACULA_THEME=$HOME/.config/dracula-theme
+
+
+# ---------------------------------------------------------------------------- #
+#                                    VSCode                                    #
+# ---------------------------------------------------------------------------- #
+
+#!/usr/bin/env bash
+export VSCODE_CONFIG_PATH="/Users/gat/Library/Application Support/Code/User/setting.json"
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    echo "XDG_CONFIG_HOME is not set, run xdg.sh before running this script" >&2
+    exit 1
+fi
+
+export VSCODE_WORKSPACES_PATH="$XDG_CONFIG_HOME/vscode/workspaces"
+
+# ---------------------------------------------------------------------------- #
+#                                      Eza                                     #
+# ---------------------------------------------------------------------------- #
+
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+
+# ---------------------------------------------------------------------------- #
+#                                   Fastfetch                                  #
+# ---------------------------------------------------------------------------- #
+
+export FASTFETCH_CONFIG="$HOME/.config/fastfetch"
+
+# ---------------------------------------------------------------------------- #
+#                                     Ruby                                     #
+# ---------------------------------------------------------------------------- #
+
+# This is to add homebrew ruby as the go-to ruby
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
+
+# ---------------------------------------------------------------------------- #
+#                                     Path                                     #
+# ---------------------------------------------------------------------------- #
+
+# Docker
+export PATH="$HOME/.docker/bin:$PATH"
+# uv
+export PATH="/Users/gat/.local/share/../bin:$PATH"
+# Ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# ---------------------------------------------------------------------------- #
+#                                    Chezmoi                                   #
+# ---------------------------------------------------------------------------- #
+
+export GITHUB_USERNAME="GatlenCulp"
