@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        ".*": "shellscript",
-        "dot_*": "shellscript"
+        "dot_*": "shellscript",
+        "sh.tmpl": "shellscript",
     }
 }
