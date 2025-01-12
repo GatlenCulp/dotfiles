@@ -1,0 +1,10 @@
+# General config for posix shell
+
+SHRC_DIR=$HOME/.config/shrc
+source $HOME/.config/.exports
+source $HOME/.config/.aliases
+source $HOME/.config/.functions
+
+# Load config
+source $SHRC_DIR/fastfetch.sh
+source $SHRC_DIR/thefuck.sh

@@ -1,0 +1,22 @@
+# https://cookiecutter.readthedocs.io/en/1.7.2/advanced/index.html
+# Add using --config-file /path/to/config/file.yml
+
+# default_context:
+#     author_name: Gatlen Culp
+#     author_email: GatlenCulp@gmail.com
+#     author_github_username: GatlenCulp
+#     author_website: https://gatlen.notion.site
+#     python_version_number: "3.12.8"
+#     dataset_storage: none
+#     environment_manager: uv
+#     pydata_packages: basic
+#     open_source_license: MIT
+#     docs: mkdocs
+#     include_code_scaffold: Yes
+#     use_github: Yes
+    
+    
+cookiecutters_dir: "~/.config/cookiecutter/cookiecutters"
+replay_dir: "~/.config/cookiecutter/cookiecutters/"
+abbreviations:
+    gh: https://github.com/{0}.git

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://raw.githubusercontent.com/GatlenCulp/cz-git/refs/heads/main/docs/public/schema/cz-git.json",
+  // AI Usage
+  "aiModel": "o1-mini",
+  "useAI": true,
+  // Emoji Usage
+  "useEmoji": true
+}

@@ -1,0 +1,1 @@
+execx($(oh-my-posh init xonsh))
