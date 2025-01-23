@@ -57,85 +57,165 @@
     "ai-docstring.docstringFormat": "sphinx",
     "autoDocstring.docstringFormat": "google-notypes",
     "autoDocstring.startOnNewLine": true,
-    "better-comments.highlightPlainText": true,
+    "better-comments.highlightPlainText": false,
     "better-comments.tags": [
+        // Window must be reloaded for these to appear
+        // Based on https://draculatheme.com/contribute#color-palette
+        // ━━━━━━━━━━━━━━━━━━━━ Color Reference ━━━━━━━━━━━━━━━━━━━ */
         {
-            "backgroundColor": "#98C379",
-            "color": "#282C34",
-            "strikethrough": false,
-            "tag": "%%"
+            // Background
+            "tag": "background",
+            "color": "#282A36",
+            "italic": true,
+            "bold": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#FF2D00",
-            "italic": false,
-            "strikethrough": false,
+            // Foreground
+            "tag": "foreground",
+            "color": "#F8F8F2",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Selection
+            "tag": "selection",
+            "color": "#44475A",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Comment
+            "tag": "comment",
+            "color": "#6272A4",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Red
+            "tag": "red",
+            "color": "#FF5555",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Orange
+            "tag": "orange",
+            "color": "#FFB86C",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Yellow
+            "tag": "yellow",
+            "color": "#F1FA8C",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Green
+            "tag": "green",
+            "color": "#50FA7B",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Purple
+            "tag": "purple",
+            "color": "#BD93F9",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Cyan
+            "tag": "cyan",
+            "color": "#8BE9FD",
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // Pink
+            "tag": "pink",
+            "color": "#FF79C6",
+            "italic": true,
+            "bold": true,
+        },
+        // ━━━━━━━━━━━━━━━━━━━━━━━━ Actual ━━━━━━━━━━━━━━━━━━━━━━━━
+        {
+            // %% Jupyter Cell
+            "tag": "%%",
+            "color": "#50FA7B", // Green
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // !! Warning
             "tag": "!!",
-            "underline": false
+            "color": "#FF5555", // Red
+            "italic": true,
+            "bold": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#FF2D00",
-            "italic": false,
-            "strikethrough": false,
+            // Warning
             "tag": "warning",
-            "underline": false
+            "color": "#FF5555", // Red
+            "italic": true,
+            "bold": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#3498DB",
-            "italic": false,
-            "strikethrough": false,
+            // ?? Question
             "tag": "??",
-            "underline": false
+            "color": "#FF79C6", // Purple
+            "italic": true,
+            "bold": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#3498DB",
-            "italic": false,
-            "strikethrough": false,
+            // ?? Question
             "tag": "question",
-            "underline": false
+            "color": "#FF79C6", // Purple
+            "italic": true,
+            "bold": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#6891b0",
-            "italic": false,
-            "strikethrough": false,
+            // Info
             "tag": "info",
-            "underline": false
+            "color": "#8BE9FD", // Blue
+            "italic": true,
+            "bold": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#474747",
-            "italic": false,
-            "strikethrough": true,
+            // //Strikethrough
             "tag": "//",
-            "underline": false
+            "color": "#6272A4", // Comment
+            "strikethrough": true,
+            "italic": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#FF8C00",
-            "italic": false,
-            "strikethrough": false,
+            // Fixme
             "tag": "fixme",
-            "underline": false
+            "color": "#FFB86C", // Orange
+            "italic": true,
+            "bold": true,
         },
         {
-            "backgroundColor": "transparent",
-            "bold": false,
-            "color": "#98C379",
-            "italic": false,
-            "strikethrough": false,
-            "tag": "**",
-            "underline": false
+            // ━━━━━━━━━━━━━━━━━━━━━━ Header ━━━━━━━━━━━━━━━━━━━━━━
+            "tag": "━",
+            "color": "#F8F8F2", // Foreground
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // ───────────────────── Subheader ────────────────────
+            "tag": "─",
+            "color": "#F8F8F2", // Foreground
+            "italic": true,
+            "bold": true,
+        },
+        {
+            // # Sub-Subheader
+            "tag": "#",
+            "color": "#F8F8F2", // Foreground
+            "italic": true,
+            "underline": true,
         }
     ],
     "blockman.n04ColorComboPreset": "Classic Dark 1 (Super gradients)",
@@ -243,7 +323,7 @@
         "_redirects": "properties",
         "dot_*": "shellscript",
         "*.sh.tmpl": "shellscript",
-        "*.toml.tmpl": "toml"
+        "*.toml.tmpl": "toml",
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -571,5 +651,11 @@
         "vscode-insiders",
         "docker-desktop"
     ],
-    "cursor.composer.renderPillsInsteadOfBlocks": true
+    "cursor.composer.renderPillsInsteadOfBlocks": true,
+    "comment-divider.length": 70,
+    "comment-divider.lineFiller": "─",
+    "comment-divider.mainHeaderFiller": "━",
+    "comment-divider.shouldLengthIncludeIndent": true,
+    "comment-divider.subheaderFiller": "─",
+    "comment-divider.mainHeaderHeight": "line",
 }
