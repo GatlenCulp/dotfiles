@@ -1,0 +1,38 @@
+# This is Git's per-user configuration file.
+[user]
+	name = GatlenCulp
+	email = GatlenCulp@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = Gatlen Culp
+#	email = gat@gatty.local
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[push]
+	autoSetupRemote = true
+
+
+# Delta Config
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+    conflictstyle = zdiff3

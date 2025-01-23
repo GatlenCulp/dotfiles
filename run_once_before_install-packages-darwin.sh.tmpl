@@ -2,4 +2,6 @@
 #!/bin/bash
 
 brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
+
+defaults write -g ApplePressAndHoldEnabled -bool false
 {{ end -}}

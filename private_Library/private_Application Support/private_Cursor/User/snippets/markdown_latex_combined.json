@@ -1,0 +1,14 @@
+{
+	"Math Block with Alignat": {
+		"prefix": "alignat",
+		"body": [
+			"$$",
+			"\\begin{alignat}{1}",
+			"    $1 &= $2 \\\\",
+			"    &= $3",
+			"\\end{alignat}",
+			"$$"
+		],
+		"description": "Creates a math block with alignat environment",
+	}
+}
