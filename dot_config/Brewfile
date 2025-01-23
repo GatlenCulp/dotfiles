@@ -13,7 +13,7 @@ tap "gatlenculp/vivaria"
 
 ## Custom package repositories
 tap "charmbracelet/tap"          # Terminal tools and TUIs
-tap "konradsz/igrep"             # Fast grep implementation
+# tap "konradsz/igrep"             # Interactive grep (idk fi I like)
 tap "mayowa-ojo/tap"             # Custom tools
 tap "nat-n/poethepoet"           # Task runner for Python projects
 tap "noborus/tap"                # Terminal tools
@@ -30,12 +30,24 @@ cask "google-chrome"             # Google's web browser
 cask "tor-browser"               # Privacy-focused browser
 
 # ────────────────────────────── Video ───────────────────────────── #
-cask "adobe-creative-cloud"      # Creative suite from Adobe
-cask "vlc"                       # Media player with wide format support
-cask "blender"                   # 3D creation suite
-cask "clipgrab"                  # Video downloader and converter
+## Record
 cask "obs"                       # Streaming and recording software
+
+## Code Recording
 brew "vhs"                       # Terminal recorder and animator
+brew "charmbracelet/tap/freeze"  # Generate images of code and terminal output.
+
+## Model
+cask "blender"                   # 3D creation suite
+
+## Edit
+cask "adobe-creative-cloud"      # Creative suite from Adobe
+
+## Download
+cask "clipgrab"                  # Video downloader and converter
+
+## View
+cask "vlc"                       # Media player with wide format support
 
 # ───────────────────────────── Office ───────────────────────────── #
 cask "microsoft-office"          # Microsoft Office suite
@@ -82,6 +94,7 @@ cask "quicklookase"             # QuickLook plugin for Adobe ASE color swatches
 cask "dropbox"                   # Cloud storage service
 brew "xz"                        # Data compression tool
 brew "gnu-tar"                   # GNU version of tar archiving utility
+# brew "brotli" # Generic-purpose lossless compression algorithm by Google
 
 # ────────────────────── Productivity & Health ───────────────────── #
 cask "cold-turkey-blocker"       # Website and application blocker
@@ -92,9 +105,6 @@ cask "flux"                      # Screen color temperature adjuster
 # ────────────────────────────── Misc ────────────────────────────── #
 brew "gambit"                    # Game Theory Calculator
 cask "spotify"                   # Music streaming service
-
-brew "go-task"                   # Task runner / simpler Make alternative
-brew "awscli"                    # Amazon Web Services CLI
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━ Cybersecurity ━━━━━━━━━━━━━━━━━━━━━━━━━ #
 ## Frameworks & Suites
@@ -119,6 +129,8 @@ brew "hydra"                    # Password cracking tool
 brew "john"                     # John the Ripper password cracker
 brew "fcrackzip"                # Zip password cracker
 brew "sqlmap"                   # SQL injection testing tool
+# brew "argon2"                   # Password hashing library and CLI utility
+
 
 ## VPN & Privacy
 brew "openvpn"                  # Open source VPN solution
@@ -180,6 +192,10 @@ brew "latexindent"              # Perl script for formatting LaTeX files
 
 ## Configuration
 brew "taplo"                    # TOML toolkit and parser
+brew "chezmoi" # Manage your dotfiles across multiple diverse machines, securely
+
+
+
 ## Misc
 brew "prettier"                 # Code formatter for multiple languages
 cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
@@ -189,6 +205,10 @@ cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
 cask "orbstack"                  # Docker & Linux on macOS
 # brew "docker-completion"        # Docker completion for the terminal
 cask "kubernetes-cli"            # Command-line tool for Kubernetes
+brew "devcontainer" # Reference implementation for the Development Containers specification
+brew "hadolint" # Smarter Dockerfile linter to validate best practices
+
+
 
 # ──────────────────────────── Databases ─────────────────────────── #
 brew "postgresql@16"             # Object-relational database system
@@ -201,15 +221,14 @@ brew "jupyterlab"
 
 # ──────────────────────── Terminal & Shell ──────────────────────── #
 ## Terminal Emulators
-# Note: Should prob choose between these lol
 cask "warp"                      # Modern terminal with AI features
 cask "ghostty"                   # Modern, fast, featureful terminal
 # cask "iterm2"                    # Terminal emulator for macOS
 # cask "itermai"                   # AI extension for iterm2
 
 ## Terminal Multiplexers
-brew "tmux"                      # Terminal session manager, for compatibiltiy
-brew "zellij"                    # Modern terminal multiplexer in Rust
+brew "tmux"                      # Terminal session manager (for compatibility)
+brew "zellij"                    # Modern terminal multiplexer in Rust (preferred)
 
 ## Shell Environments
 brew "zsh"                       # Z shell, a modern alternative to bash
@@ -230,38 +249,39 @@ brew "shfmt"                     # Shell script formatter
 
 # ─────────────────────── Command Line Tools ─────────────────────── #
 ## File Operations
-brew "eza"                       # `eza` Modern replacement for ls
-brew "bat"                       # `bat` Cat clone with syntax highlighting
+brew "eza"                       # `eza <- ls` Modern replacement for ls
+brew "bat"                       # `bat <- cat` Cat with syntax highlighting
 brew "tre-command"               # `tre` Tree command with git integration
-brew "clipboard"                 # `cb` Command line clipboard tool
+brew "clipboard"                 # `cb <- pbcopy` Command line clipboard tool 
 
 ## Search & Navigation
-brew "fzf"                       # `fzf` Fuzzy finder
-brew "zoxide"                    # `z` Smarter cd command (or zi w/ fzf)
-brew "grep"                      # `grep` GNU grep
-brew "konradsz/igrep/igrep"      # `ig` Interactive grep tool
+brew "zoxide"                    # `z <- cd` Smarter cd command (or zi w/ fzf)
+brew "fzf"                       # `fzf` Fuzzy finder (Use zi though)
+brew "grep"                      # `grep` GNU grep (macOS Version is Old)
 brew "noborus/tap/ov"            # `ov` Terminal pager
+# brew "konradsz/igrep/igrep"      # `ig` Interactive grep tool (idk if I like)
+# brew "ynqa/tap/sigrs"            # Interactive grep for streaming
 
 ## System Monitoring & Management
-brew "btop"                      # System monitor
-brew "fastfetch"                 # System information tool
-brew "mayowa-ojo/tap/chmod-cli"  # chmod permission manager
+brew "btop"                      # `btop <- top` System monitor
+brew "fastfetch"                 # `fastfetch` System information tool
+brew "mayowa-ojo/tap/chmod-cli"  # `chmod-cli` chmod permission manager
 
 ## Network & Remote Tools
-brew "sshs"                      # SSH connection manager
-brew "syncthing"                 # File synchronization tool
-brew "openssh"                   # OpenSSH remote login client
-cask "ngrok"                     # Reverse proxy for sharing localhost
+brew "sshs"                      # SSH connection TUI
+brew "syncthing"                 # File synchronization tool (rsync-like)
+brew "openssh"                   # OpenSSH remote login client (macOS Version is Old)
+brew "zrok"                      # Reverse proxy for sharing localhost
+brew "curl" # Get a file from an HTTP, HTTPS or FTP server (macOS Version is Old)
+# cask "ngrok"                     # Reverse proxy for sharing localhost
 
 ## Development Tools
-brew "yo", link: false           # Scaffolding tool for web apps
-brew "charmbracelet/tap/freeze"  # Generate lock files for dependencies
-brew "ynqa/tap/sigrs"            # Signal handler utility
-brew "rich"                      # Rich text and styling for terminal output
+brew "yo"                        # `yo` Scaffolding tool for web apps
+brew "rich"                      # `rich` Rich text and styling for terminal output
 
 ## Productivity & Assistance
-brew "thefuck"                   # Command correction tool
-brew "tldr"                      # Simplified man pages
+brew "thefuck"                   # `fuck` Command correction tool
+brew "tldr"                      # `tldr` Simplified man pages
 
 # ─────────────────────────────── Git ────────────────────────────── #
 ## Git + Extensions
@@ -290,12 +310,15 @@ brew "actionlint"                # GitHub Actions workflow linter
 # ───────────────────────────── Remote ───────────────────────────── #
 cask "postico"                   # PostgreSQL client for macOS
 cask "postman"                   # API development environment
-brew "openssh"                   # OpenSSH remote login client
-cask "ngrok"                     # Reverse proxy for sharing localhost
 
 # ─────────────────────────────── AI ─────────────────────────────── #
 cask "claude"                    # Anthropic's AI assistant
 cask "netron"                    # Neural network viewer
+brew "huggingface-cli"
+
+# ────────────────────────────── Misc ────────────────────────────── #
+brew "go-task"                   # Task runner / simpler Make alternative
+brew "awscli"                    # Amazon Web Services CLI
 
 # ─────────────────── Random stuff I may not need ────────────────── #
 
@@ -305,6 +328,10 @@ cask "netron"                    # Neural network viewer
 # brew "gmp"                       # GNU Multiple Precision Arithmetic Library
 # brew "binutils"                  # GNU binary tools
 # brew "pkgconf"                   # Package compiler and linker metadata toolkit
+# brew "apr"
+# brew "apr-util"
+# brew "aribb24" # Library for ARIB STD-B24, decoding JIS 8 bit characters and parsing MPEG-TS
+# brew "autoconf" # Automatic configure script builder
 
 ## Likely cybersecurity
 # brew "binwalk"                   # Firmware analysis tool
@@ -320,6 +347,20 @@ cask "netron"                    # Neural network viewer
 # brew "pdf2svg"                   # PDF to SVG converter
 
 # brew "screen"                    # Classic terminal multiplexer
+# brew "c-ares"
+# brew "ca-certificates"
+# brew "certifi"
+# brew "cffi"
+# brew "cjson"
+# brew "dav1d"
+# brew "ffmpeg" Play, record, convert, and stream audio and video
+# brew "flac"
+# brew "fontconfig"
+# brew "freetds"
+# brew "frei0r"
+# brew "fribidi"
+# various lib*
+# gd, ghostscript, harfbuzz, highway
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fonts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
@@ -335,7 +376,6 @@ cask "font-noto-serif-devanagari" # Google Noto font for Devanagari script
 cask "font-noto-serif-hebrew"    # Google Noto font for Hebrew script
 cask "font-noto-serif-thai"      # Google Noto font for Thai script
 cask "font-nova-round"           # Rounded sans-serif font
-
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━ VSCode Extensions ━━━━━━━━━━━━━━━━━━━━━━━ #
