@@ -32,6 +32,7 @@ cask "tor-browser"               # Privacy-focused browser
 # ────────────────────────────── Video ───────────────────────────── #
 ## Record
 cask "obs"                       # Streaming and recording software
+cask "loom" # Screen and video recording software
 
 ## Code Recording
 brew "vhs"                       # Terminal recorder and animator
@@ -76,6 +77,7 @@ cask "pixelsnap"                # Measurement tool for designers
 cask "rectangle-pro"            # Window management tool
 brew "duti"                     # Tool to set default document and URL handlers
 cask "mactex"                   # LaTeX distribution for macOS
+cask "notunes"                  # Simple application that will prevent iTunes or Apple Music from launching
 
 ## Quicklook
 cask "apparency"                # QuickLook plugin for app inspection
@@ -105,6 +107,7 @@ cask "flux"                      # Screen color temperature adjuster
 # ────────────────────────────── Misc ────────────────────────────── #
 brew "gambit"                    # Game Theory Calculator
 cask "spotify"                   # Music streaming service
+cask "applite"
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━ Cybersecurity ━━━━━━━━━━━━━━━━━━━━━━━━━ #
 ## Frameworks & Suites
@@ -123,6 +126,7 @@ brew "dns2tcp"                  # DNS tunneling tool
 brew "knock"                    # Port knock sequence sender
 brew "socat"                    # Multipurpose relay tool
 brew "ucspi-tcp"                # TCP client-server program tools
+cask "zenmap" # Multi-platform graphical interface for official Nmap Security Scanner
 
 ## Password & Access Tools
 brew "hydra"                    # Password cracking tool
@@ -156,6 +160,8 @@ cask "dotnet-sdk"                # SDK for Microsoft's .NET platform
 brew "php"                       # General-purpose scripting language
 brew "ruby"                      # Dynamic, object-oriented programming language
 brew "perl"                      # Highly capable scripting language
+brew "lua"
+brew "luajit"
 
 ## Academic & Scientific
 cask "sage"                      # Mathematics software system
@@ -194,11 +200,10 @@ brew "latexindent"              # Perl script for formatting LaTeX files
 brew "taplo"                    # TOML toolkit and parser
 brew "chezmoi" # Manage your dotfiles across multiple diverse machines, securely
 
-
-
 ## Misc
 brew "prettier"                 # Code formatter for multiple languages
 cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
+brew "tidy-html5"
 
 
 # ─────────────────────────── Containers ─────────────────────────── #
@@ -212,6 +217,7 @@ brew "hadolint" # Smarter Dockerfile linter to validate best practices
 
 # ──────────────────────────── Databases ─────────────────────────── #
 brew "postgresql@16"             # Object-relational database system
+brew "sqlite"
 
 # ───────────────────────────── Editors ──────────────────────────── #
 cask "visual-studio-code"        # Code editor from Microsoft
@@ -360,7 +366,8 @@ brew "awscli"                    # Amazon Web Services CLI
 # brew "frei0r"
 # brew "fribidi"
 # various lib*
-# gd, ghostscript, harfbuzz, highway
+# gd, ghostscript, harfbuzz, highway, imath, jasper, lame, leptonica so many more
+# json-c, krb5, libass, tesseract, theora
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fonts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
