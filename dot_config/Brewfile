@@ -1,221 +1,327 @@
-# ---------------------------------------------------------------------------- #
-#                                     Taps                                     #
-# ---------------------------------------------------------------------------- #
-tap "charmbracelet/tap"
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+#                           How to install                           #
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+# To install this, run:
+# brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Taps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+tap "homebrew/bundle"            # Bundler for Homebrew
+
+## Personal
 tap "gatlenculp/mopman"
 tap "gatlenculp/vivaria"
-tap "homebrew/bundle"
-tap "homebrew/test-bot"
-tap "konradsz/igrep", "https://github.com/konradsz/igrep.git"
-tap "mayowa-ojo/tap"
-tap "nat-n/poethepoet"
-tap "noborus/tap"
-tap "ynqa/tap"
 
-# ---------------------------------------------------------------------------- #
-#                                   Formulas                                   #
-# ---------------------------------------------------------------------------- #
-brew "abseil"
-brew "act"
-brew "shellcheck"
-brew "actionlint"
-brew "aircrack-ng"
-brew "xz"
-brew "python@3.12"
-brew "awscli"
-brew "bash"
-brew "bash-completion@2"
-brew "bat"
-brew "icu4c@76"
-brew "bfg"
-brew "binutils"
-brew "binwalk"
-brew "biome"
-brew "black"
-brew "btop"
-brew "check-jsonschema"
-brew "cifer"
-brew "clipboard"
-brew "commitizen"
-brew "cookiecutter"
-brew "cruft"
-brew "node"
-brew "czg"
-brew "dex2jar"
-brew "dns2tcp"
-brew "duti"
-brew "eza"
-brew "fastfetch"
-brew "fcrackzip"
-brew "gmp"
-brew "flit"
-brew "foremost"
-brew "fzf"
-brew "gambit"
-brew "gh"
-brew "git"
-brew "git-filter-repo"
-brew "git-lfs"
-brew "gitleaks"
-brew "gnu-tar"
-brew "go"
-brew "go-task"
-brew "grep"
-brew "hydra"
-brew "john"
-brew "pandoc"
-brew "jupyterlab"
-brew "knock"
-brew "perl"
-brew "latexindent"
-brew "llvm"
-brew "mdformat"
-brew "neovim"
-brew "netpbm"
-brew "nmap"
-brew "nushell"
-brew "oh-my-posh"
-brew "openssh"
-brew "openvpn"
-brew "pdf2svg"
-brew "php"
-brew "pipx"
-brew "pkgconf"
-brew "pngcheck"
-brew "poetry"
-brew "postgresql@16"
-brew "pre-commit"
-brew "prettier"
-brew "pylint"
-brew "pyright"
-brew "python-tk@3.12"
-brew "re2"
-brew "ruby"
-brew "ruff"
-brew "rust"
-brew "screen"
-brew "shfmt"
-brew "socat"
-brew "sqlmap"
-brew "sshs"
-brew "syncthing"
-brew "taplo"
-brew "tcpflow"
-brew "tcpreplay"
-brew "tcptrace"
-brew "tex-fmt"
-brew "thefuck"
-brew "tldr"
-brew "tmux"
-brew "tre-command"
-brew "trufflehog"
-brew "typescript"
-brew "ucspi-tcp"
-brew "uv"
-brew "vhs"
-brew "wireshark"
-brew "xonsh"
-brew "yo", link: false
-brew "zellij"
-brew "zoxide"
-brew "zsh"
-brew "zsh-autosuggestions"
-brew "zsh-syntax-highlighting"
-brew "charmbracelet/tap/freeze"
-brew "konradsz/igrep/igrep"
-brew "mayowa-ojo/tap/chmod-cli"
-brew "nat-n/poethepoet/poethepoet"
-brew "noborus/tap/ov"
-brew "ynqa/tap/sigrs"
+## Custom package repositories
+tap "charmbracelet/tap"          # Terminal tools and TUIs
+tap "konradsz/igrep"             # Fast grep implementation
+tap "mayowa-ojo/tap"             # Custom tools
+tap "nat-n/poethepoet"           # Task runner for Python projects
+tap "noborus/tap"                # Terminal tools
+tap "ynqa/tap"                   # Development tools
 
-# ---------------------------------------------------------------------------- #
-#                                     Casks                                    #
-# ---------------------------------------------------------------------------- #
+## Testing Homebrew
+tap "homebrew/test-bot"          # Testing tools for Homebrew
 
-cask "adobe-creative-cloud"
-cask "alfred"
-cask "apparency"
-cask "arc"
-cask "blender"
-cask "burp-suite"
-cask "claude"
-cask "cleanshot"
-cask "clipgrab"
-cask "cold-turkey-blocker"
-cask "cork"
-cask "cursor"
-cask "discord"
-cask "dotnet-sdk"
-cask "dropbox"
-cask "epic-games"
-cask "firefox"
-cask "flux"
-cask "font-blackout"
-cask "font-computer-modern"
-cask "font-fira-code"
-cask "font-fira-code-nerd-font"
-cask "font-noto-naskh-arabic"
-cask "font-noto-serif"
-cask "font-noto-serif-bengali"
-cask "font-noto-serif-cjk"
-cask "font-noto-serif-devanagari"
-cask "font-noto-serif-hebrew"
-cask "font-noto-serif-thai"
-cask "font-nova-round"
-cask "git-credential-manager"
-cask "gitkraken"
-cask "gog-galaxy"
-cask "google-chrome"
-cask "ipynb-quicklook"
-cask "iterm2"
-cask "itermai"
-cask "lastpass"
-cask "mactex"
-cask "messenger"
-cask "metasploit"
-cask "microsoft-auto-update"
-cask "microsoft-office"
-cask "minecraft"
-cask "miniconda"
-cask "netron"
-cask "ngrok"
-cask "notion"
-cask "notion-calendar"
-cask "obs"
-cask "orbstack"
-cask "pixelsnap"
-cask "postico"
-cask "postman"
-cask "powershell"
-cask "qflipper"
-cask "qlcolorcode"
-cask "qlimagesize"
-cask "qlmarkdown"
-cask "qlstephen"
-cask "qlvideo"
-cask "quicklook-json"
-cask "quicklookase"
-cask "racket"
-cask "rectangle-pro"
-cask "sage"
-cask "signal"
-cask "slack"
-cask "spotify"
-cask "steam"
-cask "suspicious-package"
-cask "tor-browser"
-cask "visual-studio-code"
-cask "vlc"
-cask "warp"
-cask "whatsapp"
-cask "zenmap"
-cask "zoom"
-cask "zotero"
+# ───────────────────────── Core Utilities ───────────────────────── #
+## Compression
+brew "xz"                        # Data compression tool
+brew "gnu-tar"                   # GNU version of tar archiving utility
+
+brew "go-task"                   # Task runner / simpler Make alternative
+brew "awscli"                    # Amazon Web Services CLI
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━ Applications ━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+# ──────────────────────────── Browsers ──────────────────────────── #
+cask "firefox"                   # Mozilla web browser
+cask "google-chrome"             # Google's web browser
+cask "tor-browser"               # Privacy-focused browser
+
+# ────────────────────────────── Video ───────────────────────────── #
+cask "adobe-creative-cloud"      # Creative suite from Adobe
+cask "vlc"                       # Media player with wide format support
+cask "blender"                   # 3D creation suite
+cask "clipgrab"                  # Video downloader and converter
+cask "obs"                       # Streaming and recording software
+brew "vhs"                       # Terminal recorder and animator
+
+# ───────────────────────────── Office ───────────────────────────── #
+cask "microsoft-office"          # Microsoft Office suite
+cask "microsoft-auto-update"     # Microsoft Office updater
+cask "cold-turkey-blocker"       # Website and application blocker
+cask "dropbox"                   # Cloud storage service
+cask "lastpass"                  # Password manager
+cask "notion"                    # Note-taking and collaboration platform
+cask "notion-calendar"           # Calendar app from Notion
+cask "zotero"                    # Reference management software
+cask "flux"                      # Screen color temperature adjuster
 
 
-# ---------------------------------------------------------------------------- #
-#                      VSCode Extensions (Likely Outdated)                     #
-# ---------------------------------------------------------------------------- #
+# ────────────────────────────── Comms ───────────────────────────── #
+cask "discord"                   # Voice and text chat platform
+cask "messenger"                 # Facebook Messenger desktop client
+cask "whatsapp"                  # WhatsApp desktop client
+cask "zoom"                      # Video conferencing software
+cask "signal"                    # Encrypted messaging app
+cask "slack"                     # Team communication platform
+
+# ────────────────────────────── Games ───────────────────────────── #
+cask "epic-games"               # Epic Games Store client
+cask "gog-galaxy"               # GOG gaming platform client
+cask "steam"                    # Valve's gaming platform
+cask "minecraft"                # Popular sandbox game
+
+# ─────────────────────────── macOS Only ─────────────────────────── #
+cask "alfred"                    # Productivity app for macOS
+cask "cleanshot"                # Screenshot and recording tool
+cask "pixelsnap"                # Measurement tool for designers
+cask "rectangle-pro"            # Window management tool
+brew "duti"                     # Tool to set default document and URL handlers
+cask "mactex"                   # LaTeX distribution for macOS
+
+## Quicklook
+cask "apparency"                # QuickLook plugin for app inspection
+# Quicklook but possibly doesn't work
+cask "qlcolorcode"              # QuickLook plugin for code with syntax highlighting
+cask "qlimagesize"              # QuickLook plugin for image size and resolution
+cask "qlmarkdown"               # QuickLook plugin for Markdown files
+cask "qlstephen"                # QuickLook plugin for plain text files without extension
+cask "qlvideo"                  # QuickLook plugin for video files
+cask "ipynb-quicklook"          # QuickLook plugin for Jupyter notebooks
+cask "quicklook-json"           # QuickLook plugin for JSON files
+cask "quicklookase"             # QuickLook plugin for Adobe ASE color swatches
+cask "suspicious-package"        # QuickLook plugin for macOS installer packages
+
+# ────────────────────────────── Misc ────────────────────────────── #
+brew "gambit"                    # Scheme implementation
+
+# ─────────────────────────── Containers ─────────────────────────── #
+cask "orbstack"                  # Docker & Linux on macOS
+# brew "docker-completion"
+cask "kubernetes-cli"            # Command-line tool for Kubernetes
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━ Cybersecurity ━━━━━━━━━━━━━━━━━━━━━━━━━ #
+## VPN
+brew "openvpn"                   # Open source VPN solution
+## Library
+cask "metasploit"               # Penetration testing framework
+## Network
+cask "burp-suite"               # Web security testing tool
+brew "wireshark"                # Network protocol analyzer
+brew "aircrack-ng"              # Network security tool suite
+## Hardware
+cask "qflipper"                 # Flipper Zero firmware updater
+## Passwords
+brew "hydra"                    # Password cracking tool
+brew "john"                     # John the Ripper password cracker
+brew "fcrackzip"                # Zip password cracker
+brew "knock"                    # Port knock sequence sender
+brew "sqlmap"                   # SQL injection testing tool
+brew "socat"                    # Multipurpose relay tool
+brew "tcpflow"                  # TCP flow recorder
+brew "tcpreplay"                # TCP packet replay tool
+brew "tcptrace"                 # TCP connection analysis tool
+brew "ucspi-tcp"                # TCP client-server program tools
+brew "dns2tcp"                  # DNS tunneling tool
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Development ━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+# ───────────────────────────── Python ───────────────────────────── #
+## Package/Environment Management
+brew "uv"                        # Fast Python package installer and resolver
+# brew "poetry"
+cask "miniconda"                 # Minimal Conda installer
+
+brew "flit"                      # Simplified Python package publishing
+brew "jupyterlab"                # Web-based notebook environment
+
+
+## QA
+brew "pylint"                    # Python code static checker
+brew "pyright"                   # Static type checker for Python
+brew "ruff"                      # Fast Python linter and code formatter
+# brew "pipx"
+
+## Templating
+brew "cookiecutter"              # Project template tool
+brew "cruft"                     # Project template manager
+brew "nat-n/poethepoet/poethepoet" # Task runner for Python projects
+
+# ────────────────────────────── Langs ───────────────────────────── #
+cask "sage"                      # Mathematics software system
+## PHP
+brew "php"                       # General-purpose scripting language
+## JavaScript
+brew "node"                      # JavaScript runtime environment
+brew "biome"                     # Toolchain for web projects
+## Ruby
+brew "ruby"                      # Dynamic, object-oriented programming language
+## Rust
+brew "rust"                      # Systems programming language
+## LISP
+cask "racket"                    # Modern LISP and programming language platform
+## PERL
+brew "perl"                      # Highly capable scripting language
+## GO
+brew "go"                        # Open source programming language
+## Markdown
+brew "mdformat"                  # Markdown formatter
+## LaTeX
+brew "tex-fmt"                   # TeX document formatting system
+brew "latexindent"              # Perl script for formatting LaTeX files
+brew "pandoc"                    # Universal document converter
+## TOML
+brew "taplo"                     # TOML toolkit and parser
+## Misc
+brew "prettier"                  # Code formatter for multiple languages
+cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
+brew "typescript"                # Typed superset of JavaScript
+
+# ──────────────────────────── Databases ─────────────────────────── #
+brew "postgresql@16"             # Object-relational database system
+
+# ───────────────────────────── Editors ──────────────────────────── #
+cask "visual-studio-code"        # Code editor from Microsoft
+cask "cursor"                    # AI-powered code editor
+brew "neovim"                    # Modernized Vim text editor
+
+# ────────────────────────────── Fonts ───────────────────────────── #
+cask "font-blackout"             # Sans-serif display font
+cask "font-computer-modern"      # Computer Modern font family
+cask "font-fira-code"            # Monospace font with programming ligatures
+cask "font-fira-code-nerd-font" # Fira Code with added icons
+cask "font-noto-naskh-arabic"   # Google Noto font for Arabic script
+cask "font-noto-serif"          # Google Noto serif font family
+cask "font-noto-serif-bengali"  # Google Noto font for Bengali script
+cask "font-noto-serif-cjk"      # Google Noto font for CJK languages
+cask "font-noto-serif-devanagari" # Google Noto font for Devanagari script
+cask "font-noto-serif-hebrew"   # Google Noto font for Hebrew script
+cask "font-noto-serif-thai"     # Google Noto font for Thai script
+cask "font-nova-round"          # Rounded sans-serif font
+
+
+
+# ──────────────────────────── Terminal ──────────────────────────── #
+cask "iterm2"                    # Terminal emulator for macOS
+cask "itermai"                   # AI-powered terminal
+cask "warp"                      # Modern terminal with AI features
+
+# ───────────────────────────── Shells ───────────────────────────── #
+## ZSH
+brew "zsh"                       # Z shell, a modern alternative to bash
+brew "zsh-autosuggestions"       # Fish-like autosuggestions for zsh
+brew "zsh-syntax-highlighting"   # Fish-like syntax highlighting for zsh
+
+## BASH
+brew "bash"                      # Bourne Again SHell
+brew "bash-completion@2"         # Programmable completion for Bash
+
+## Misc Shell
+brew "xonsh"                     # Python-powered shell language
+brew "nushell"                   # Modern shell written in Rust
+cask "powershell"               # Microsoft's task automation framework
+
+## Shell Extensions
+
+## Shell Linting
+brew "shellcheck"                # Shell script analysis tool
+brew "shfmt"                     # Shell script formatter
+
+# ───────────────────────── Shell Commands ───────────────────────── #
+brew "eza"                       # Modern replacement for ls
+brew "oh-my-posh"               # Prompt theme engine
+brew "fastfetch"                # System information tool
+brew "bat"                       # Cat clone with syntax highlighting
+
+brew "yo", link: false          # Scaffolding tool for web apps
+
+brew "zoxide"                    # Smarter cd command
+brew "btop"                      # System monitor
+brew "fzf"                       # Fuzzy finder
+
+brew "clipboard"                 # Command line clipboard tool
+brew "grep"                      # GNU grep
+brew "konradsz/igrep/igrep"     # Interactive grep tool
+brew "mayowa-ojo/tap/chmod-cli"  # chmod permission manager
+brew "screen"                    # Terminal multiplexer
+brew "sshs"                      # SSH connection manager
+brew "syncthing"                 # File synchronization tool
+brew "charmbracelet/tap/freeze"  # Generate lock files for dependencies
+brew "noborus/tap/ov"           # Terminal pager
+brew "ynqa/tap/sigrs"           # Signal handler utility
+
+## Terminal Multiplexer
+brew "zellij"                   # Modern terminal multiplexer in Rust
+brew "tmux"                     # Terminal session manager
+brew "rich"                     # Rich text and styling for terminal output
+
+brew "thefuck"                  # Command correction tool
+brew "tldr"                     # Simplified man pages
+brew "tre-command"              # Tree command with git integration
+
+
+# ─────────────────────────────── Git ────────────────────────────── #
+## Git + Extensions
+brew "git"                      # Version control system
+brew "git-filter-repo"          # History rewriting tool
+cask "git-credential-manager"   # Secure Git credential storage
+brew "git-lfs"                  # Git extension for large files
+
+## Git Tools
+cask "gitkraken"               # Git GUI client
+brew "bfg"                      # Git repository cleaner
+
+## Git QA
+brew "commitizen"              # Standardized commit message tool
+brew "czg"                     # Interactive commitizen CLI
+brew "gitleaks"               # Secret scanning tool
+## brew "trufflehog"
+brew "pre-commit"             # Git hooks manager
+brew "check-jsonschema"       # JSON Schema validation tool
+
+## Github
+brew "gh"                     # GitHub CLI tool
+brew "act"                    # Run GitHub Actions locally
+brew "actionlint"             # GitHub Actions workflow linter
+
+# ───────────────────────────── Remote ───────────────────────────── #
+cask "postico"                # PostgreSQL client for macOS
+cask "postman"               # API development environment
+brew "openssh"               # OpenSSH remote login client
+cask "ngrok"                 # Reverse proxy for sharing localhost
+
+# ─────────────────────────────── AI ─────────────────────────────── #
+cask "claude"                    # Anthropic's AI assistant
+cask "netron"                    # Neural network viewer
+
+cask "spotify"                   # Music streaming service
+
+# ─────────────────── Random stuff I may not need ────────────────── #
+
+## Core Libraries
+# brew "abseil"                    # C++ library from Google
+# brew "icu4c@76"                  # C/C++ and Java libraries for Unicode and globalization
+# brew "gmp"                       # GNU Multiple Precision Arithmetic Library
+# brew "binutils"                  # GNU binary tools
+# brew "pkgconf"                   # Package compiler and linker metadata toolkit
+
+## Likely cybersecurity
+# brew "binwalk"                   # Firmware analysis tool
+# brew "foremost"                  # File carving and recovery tool
+# brew "pngcheck"                  # PNG file validator and debugger
+# brew "cifer"                     # Automating cipher cracking
+
+## Misc
+# brew "re2"                       # Fast, safe alternative to backtracking regex engines
+# brew "llvm"                      # LLVM compiler infrastructure
+# brew "dex2jar"                   # Android DEX to Java decompiler
+# brew "netpbm"                    # Graphics conversion tools
+# brew "pdf2svg"                   # PDF to SVG converter
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━ VSCode Extensions ━━━━━━━━━━━━━━━━━━━━━━━ #
 vscode "076923.python-image-preview"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.project-manager"
