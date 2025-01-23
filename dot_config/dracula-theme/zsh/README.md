@@ -46,7 +46,7 @@ DRACULA_DISPLAY_CONTEXT=1
 
 ### Directory Segment
 
-The current working directory is displayed as base name only.  To display full
+The current working directory is displayed as base name only. To display full
 path, use the following in your config file:
 
 ```

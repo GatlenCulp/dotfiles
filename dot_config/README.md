@@ -30,7 +30,7 @@ This might not be the most useful way to spend my time but I find it kind of rel
 
 To install, run [`install.sh`](./install.sh). BE CAREFUL! This is destructive. (And also doesn't work rn)
 
----
+______________________________________________________________________
 
 ## Features 📦
 
@@ -68,7 +68,7 @@ If a configuration is agnostic to BASH/ZSH, I just label it as `sh` instead of `
 [`.aliases`](./.aliases) -- Command Aliases (basically short functions)
 [`.functions`](./.functions) -- Helper functions
 
-The [`.{bash_, z}profile`] files are more for custom configs but honestly this is my own computer so there isn't much of a difference
+The \[`.{bash_, z}profile`\] files are more for custom configs but honestly this is my own computer so there isn't much of a difference
 
 **Linking real and fake rcs**
 
@@ -85,9 +85,7 @@ I don't know how I lived without this extension and syntax highlighting. They're
 
 Check out [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
-
 **Syntax Highlighting Extension**
-
 
 The [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/tree/master) extension highlights commands in terminal as you type them to help better parse the command and catch errors. I combine this with the [Dracula theme for this specific extension](https://draculatheme.com/zsh-syntax-highlighting)
 
@@ -98,7 +96,6 @@ The [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighti
   <br/>
 </div>
 <br>
-
 
 **Other Shells**
 
@@ -123,13 +120,14 @@ I use [Oh My Posh](https://ohmyposh.dev/) for my command line prompt. I use this
 Configuration can be found in [oh-my-posh](./oh-my-posh/). I'm currently using [nordcustom_v.3.omp.json](oh-my-posh/themes/nordcustom_v.3.omp.json)
 
 More than just aesthetic, this helps me parse:
+
 1. Whether the last command succeeded or failed
-2. My current directory
-3. How long the previous command took to run
-4. What virtual environment or project I'm in
-5. Separating different commands and their output
-6. Tells me which git branch I'm on and what the status of my changes are compared to remote
-7. More
+1. My current directory
+1. How long the previous command took to run
+1. What virtual environment or project I'm in
+1. Separating different commands and their output
+1. Tells me which git branch I'm on and what the status of my changes are compared to remote
+1. More
 
 <details>
 <summary>Starship Alternative</summary>
@@ -151,7 +149,6 @@ Another alternative to Oh My Posh is [Starship](https://starship.rs/) which some
 "Fetch-like" tools are command-line system information tools [rice](https://aesthetics.fandom.com/wiki/Linux_Ricing) freaks like me will put at the beginning of their prompt to mark the start of the terminal session and get some info about their machine.
 
 Since the most popular [Neofetch](https://github.com/dylanaraps/neofetch) tool was discontinued, there have been an insane number of replacements since. I forget why I settled on FastFetch, but it's one of the popular ones. I stole configuration and ascii art from someone else.
-
 
 ### 03 Command Line Utilities 🛠️
 
@@ -185,7 +182,6 @@ There are a few other command line tools I have that are not listed here. These 
 </div>
 <br>
 
-
 I used OneDark on everything for such a long time and decided to switch it up and use [Dracula](https://draculatheme.com/). I slightly prefer Dracula now both for the theme itself and the cross-platform standardization available on the website for literally everything. I find standardizaion pretty important so I can quickly identify what is what.
 
 My custom dracula themes are in [`dracula-theme/`](./dracula-theme)
@@ -200,15 +196,13 @@ I use [Cursor](https://www.cursor.com/), an LLM powered fork of [VSCode](https:/
 
 I don't really use the Jupyter Notebook or Lab GUI nor Google Colab primarily because I want to maintain all my VSCode/Cursor settings and use LLMs. If I need more compute for training models I tend to use [RunPod](https://www.runpod.io/) since it has pretty easy setup.
 
-
 ### 08 Misc 🗃️
 
 - [`crossnote`](./crossnote/) -- Mainly used for custom [VSCode Markdown Preview Enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/) KaTeX/MathJax Rendering
 - [`.tmux.conf`](./.tmux.conf) -- The popular [Tmux](https://github.com/tmux/tmux) Terminal multiplexer, never actually set anything up, will probably use [zellij](https://zellij.dev/) instead.
 - [`cookiecutter`](./cookiecutter/) -- My [CookieCutter](https://www.cookiecutter.io/) saved config to speed up templating.
 
-
----
+______________________________________________________________________
 
 ## Security 🔒
 
@@ -272,7 +266,7 @@ There's a ton of "post-modern" Vim-like terminal-based tools like [Helix](https:
 
 ### 02 What's up with Rust? 🦀
 
-[Rust](https://www.rust-lang.org/) has been getting really popular as of late and I see a lot of people annoyed at how much hype online it's been getting, calling it convoluted, a fad, or \<insert some other derogatory statement\>. There's a large chunk of people who will simply use or convert to any tool written in Rust because it's "fast" and "safe".
+[Rust](https://www.rust-lang.org/) has been getting really popular as of late and I see a lot of people annoyed at how much hype online it's been getting, calling it convoluted, a fad, or \<insert some other derogatory statement>. There's a large chunk of people who will simply use or convert to any tool written in Rust because it's "fast" and "safe".
 
 **Rust Background**
 
@@ -293,12 +287,12 @@ It's also a bit refreshing to see a new-found focus on efficiency since a lot of
 Correct me if I'm wrong but we have gone from
 
 1. Assembly abstracted to C
-2. C extended/abstracted to C++
-3. C++ abstracted to Javascript V8 Engine
-4. Javascript V8 Engine extended to Node.js for local development
-5. Node.js JavaScript structured into TypeScript pre-compiler
-6. Entire TypeScript package ecosystem developed in NPM
-7. Using TypeScript + NPM packages with insane dependency stacks and Frameworks like React. This is one of the most common ways to make projects today.
+1. C extended/abstracted to C++
+1. C++ abstracted to Javascript V8 Engine
+1. Javascript V8 Engine extended to Node.js for local development
+1. Node.js JavaScript structured into TypeScript pre-compiler
+1. Entire TypeScript package ecosystem developed in NPM
+1. Using TypeScript + NPM packages with insane dependency stacks and Frameworks like React. This is one of the most common ways to make projects today.
 
 ![TypeScript](https://i.redd.it/t48vn3nn0ed91.png)
 
@@ -315,12 +309,11 @@ In a way I see these GO and Rust as a kind of "flattening" of the large dependen
 While Rust might still be awesome, there are some other possible contributions to by observations.
 
 1. There is a self-selection bias -- Ambitious programmers tend to learn and program in new languages, so the distribution of Rust tooling leans towards being higher quality even if the language itself might not be better.
-2. Breaking free from suboptimal standards -- It's often the case that communities hold onto the legacy established packages and standards in order to maintain compatability with old software and senior engineers that are stuck in their ways. Python is developed so fast that for most standard libraries and practices there exist better alternatives that often go unused (pandas vs polars, os vs pathlib, matplotlib vs seaborn, typing, setuptools vs pyproject.toml, "%s" format vs fstrings, tqdm vs rich.progress, json vs orjson, typed dict vs pydantic, etc.). If a Python clone called SnakeBoy was created, only it outlawed old standards and somehow became popular -- I think generally better projects would come out of it than Python but not for any reason surrounding compatabilities of the language. In terms of formatting itself there exist tons of QA tools and plugins and libraries that one has to be aware of instead of these just being a normal part of the language making it such that part of being a "mature developer" means knowing what the best tools out there are at the time. Also they have the benefit of all working together.
-3. The "Unity" Problem -- Unity is a 3D/2D game engine and probably one of the most popular out there. It's very powerful and fairly easy to use but has a reputation of being an enginer for trashy games. When looking into this, I remember coming across someone who said that it's not actually a bad engine and they think it's probably better than Unreal Engine, it's competitor. Their explanation for this reputation is "Once a tool becomes popular and easy to use enough, the community can sometimes suffer from an onslaught of novices, bad content, and bad recommendations." I think this comes up a bit as it applies to the Python ecosystem. Since it is so easy to use and publish, there are tons of great tools out there but also a lot of awful ones. Separating wheat from chaff becomes difficult. Perhaps Rust being as difficult as it is to learn contributes to the positive connotations around what comes out of it.
+1. Breaking free from suboptimal standards -- It's often the case that communities hold onto the legacy established packages and standards in order to maintain compatability with old software and senior engineers that are stuck in their ways. Python is developed so fast that for most standard libraries and practices there exist better alternatives that often go unused (pandas vs polars, os vs pathlib, matplotlib vs seaborn, typing, setuptools vs pyproject.toml, "%s" format vs fstrings, tqdm vs rich.progress, json vs orjson, typed dict vs pydantic, etc.). If a Python clone called SnakeBoy was created, only it outlawed old standards and somehow became popular -- I think generally better projects would come out of it than Python but not for any reason surrounding compatabilities of the language. In terms of formatting itself there exist tons of QA tools and plugins and libraries that one has to be aware of instead of these just being a normal part of the language making it such that part of being a "mature developer" means knowing what the best tools out there are at the time. Also they have the benefit of all working together.
+1. The "Unity" Problem -- Unity is a 3D/2D game engine and probably one of the most popular out there. It's very powerful and fairly easy to use but has a reputation of being an enginer for trashy games. When looking into this, I remember coming across someone who said that it's not actually a bad engine and they think it's probably better than Unreal Engine, it's competitor. Their explanation for this reputation is "Once a tool becomes popular and easy to use enough, the community can sometimes suffer from an onslaught of novices, bad content, and bad recommendations." I think this comes up a bit as it applies to the Python ecosystem. Since it is so easy to use and publish, there are tons of great tools out there but also a lot of awful ones. Separating wheat from chaff becomes difficult. Perhaps Rust being as difficult as it is to learn contributes to the positive connotations around what comes out of it.
 
 </details>
 
-
 ## Brewfile
 
-See [https://github.com/Homebrew/homebrew-bundle](https://github.com/Homebrew/homebrew-bundle). 
+See [https://github.com/Homebrew/homebrew-bundle](https://github.com/Homebrew/homebrew-bundle).

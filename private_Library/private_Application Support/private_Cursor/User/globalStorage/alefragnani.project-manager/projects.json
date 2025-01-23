@@ -1,155 +1,153 @@
 [
-  {
-    "name": " project_name (Team Workspace)",
-    "rootPath": "/Users/gat/work/gatlens-opinionated-template/manual_test/project_name/.vscode/project_name.team.code-workspace",
-    "tags": ["🪿 gotem",  "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🍪 project_name (Team Workspace)",
-    "rootPath": "/Users/gat/work/gatlens-opinionated-template/manual_test/project_name/.vscode/project_name.team.code-workspace",
-    "tags": ["🪿 gotem",  "⭐️ favorite"],
-    "enabled": false
-  },
-  {
-    "name": "🏟️ arena-2025-iap","rootPath": "/Users/gat/work/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
-    "tags": [
-      "🪿 gotem",
-      "⭐️ favorite"
-    ],
-    "enabled": true
-  },
-  {
-    "name": "🥡 White Box Monitoring (Clymer Work Trial)",
-    "rootPath": "/Users/gat/work/white-box-monitoring/",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "🥚 Project Incubator",
-    "rootPath": "/Users/gat/work/incubator/.vscode/incubator.code-workspace",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": false
-  },
-  {
-    "name": "🖥️ 6.101 Fundamentals of Programming",
-    "rootPath": "/Users/gat/work/FA2024/6101",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": false
-  },
-  {
-    "name": "😢 Embedding Translation (LEAD)",
-    "rootPath": "/Users/gat/work/FA2024/embedding_translation/.vscode/embedding_translation.code-workspace",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": true
-  },
-  {
-    "name": "🪴 METR Vivaria",
-    "rootPath": "/Users/gat/work/vivaria/.vscode/vivaria.code-workspace",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "🌱 METR Task Boilerplate",
-    "rootPath": "/Users/gat/work/metr-task-boilerplate",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "🍁 METR Homebrew Vivaria",
-    "rootPath": "/opt/homebrew/Library/Taps/gatlenculp/homebrew-vivaria",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "🍎 MacOS Setup",
-    "rootPath": "/Users/gat/work/macos_setup",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": false
-  },
-  {
-    "name": "🏠 gat home",
-    "rootPath": "/Users/gat/.vscode/gat.code-workspace",
-    "paths": [],
-    "tags": ["💻 computer"],
-    "enabled": true
-  },
-  {
-    "name": "⚙️ dotfiles",
-    "rootPath": "/Users/gat/.config/.vscode/dotfiles.code-workspace",
-    "paths": [],
-    "tags": ["💻 computer"],
-    "enabled": true
-  },
-  {
-    "name": "↗️ 18.700 Linear Algebra",
-    "rootPath": "/Users/gat/work/FA2024/18700",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": false
-  },
-  {
-    "name": "🎮 14.12 Game Theory",
-    "rootPath": "/Users/gat/work/FA2024/1412/.vscode/1412.code-workspace",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": false
-  },
-  {
-    "name": "🍺 homebrew",
-    "rootPath": "/opt/homebrew",
-    "paths": [],
-    "tags": ["💻 computer"],
-    "enabled": false
-  },
-  {
-    "name": "🤖 6.796 Deep Learning",
-    "rootPath": "/Users/gat/work/FA2024/DL/.vscode/DL.code-workspace",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": false
-  },
-  {
-    "name": "❓ gatlens_prompt_engineering",
-    "rootPath": "/Users/gat/work/gatlens_prompt_engineering",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": true
-  },
-  {
-    "name": "📁 project-boilerplate",
-    "rootPath": "/Users/gat/work/project-boilerplate/.vscode/project-boilerplate.code-workspace",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": true
-  },
-  {
-    "name": "📑 MopMan_Packetmaker",
-    "rootPath": "/Users/gat/work/MopMan_Packetmaker/.vscode/MopMan_Packetmaker.code-workspace",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": false
-  },
-  {
-    "name": "🍪 gotem",
-    "rootPath": "/Users/gat/work/gatlens-opinionated-template/.vscode/gotem.code-workspace",
-    "paths": [],
-    "tags": ["🛠️ tool", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🍪 ccds",
-    "rootPath": "/Users/gat/work/gatlens-opinionated-template/",
-    "paths": [],
-    "tags": ["🛠️ tool", "⭐️ favorite"],
-    "enabled": true
-  }
+	{
+		"name": " project_name (Team Workspace)",
+		"rootPath": "/Users/gat/work/gatlens-opinionated-template/manual_test/project_name/.vscode/project_name.team.code-workspace",
+		"tags": ["🪿 gotem", "⭐️ favorite"],
+		"enabled": true
+	},
+	{
+		"name": "🍪 project_name (Team Workspace)",
+		"rootPath": "/Users/gat/work/gatlens-opinionated-template/manual_test/project_name/.vscode/project_name.team.code-workspace",
+		"tags": ["🪿 gotem", "⭐️ favorite"],
+		"enabled": false
+	},
+	{
+		"name": "🏟️ arena-2025-iap",
+		"rootPath": "/Users/gat/work/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
+		"tags": ["🪿 gotem", "⭐️ favorite"],
+		"enabled": true
+	},
+	{
+		"name": "🥡 White Box Monitoring (Clymer Work Trial)",
+		"rootPath": "/Users/gat/work/white-box-monitoring/",
+		"paths": [],
+		"tags": ["📐 metr"],
+		"enabled": false
+	},
+	{
+		"name": "🥚 Project Incubator",
+		"rootPath": "/Users/gat/work/incubator/.vscode/incubator.code-workspace",
+		"paths": [],
+		"tags": ["🛠️ tool"],
+		"enabled": false
+	},
+	{
+		"name": "🖥️ 6.101 Fundamentals of Programming",
+		"rootPath": "/Users/gat/work/FA2024/6101",
+		"paths": [],
+		"tags": ["🎓 school"],
+		"enabled": false
+	},
+	{
+		"name": "😢 Embedding Translation (LEAD)",
+		"rootPath": "/Users/gat/work/FA2024/embedding_translation/.vscode/embedding_translation.code-workspace",
+		"paths": [],
+		"tags": ["🎓 school"],
+		"enabled": true
+	},
+	{
+		"name": "🪴 METR Vivaria",
+		"rootPath": "/Users/gat/work/vivaria/.vscode/vivaria.code-workspace",
+		"paths": [],
+		"tags": ["📐 metr"],
+		"enabled": false
+	},
+	{
+		"name": "🌱 METR Task Boilerplate",
+		"rootPath": "/Users/gat/work/metr-task-boilerplate",
+		"paths": [],
+		"tags": ["📐 metr"],
+		"enabled": false
+	},
+	{
+		"name": "🍁 METR Homebrew Vivaria",
+		"rootPath": "/opt/homebrew/Library/Taps/gatlenculp/homebrew-vivaria",
+		"paths": [],
+		"tags": ["📐 metr"],
+		"enabled": false
+	},
+	{
+		"name": "🍎 MacOS Setup",
+		"rootPath": "/Users/gat/work/macos_setup",
+		"paths": [],
+		"tags": ["🛠️ tool"],
+		"enabled": false
+	},
+	{
+		"name": "🏠 gat home",
+		"rootPath": "/Users/gat/.vscode/gat.code-workspace",
+		"paths": [],
+		"tags": ["💻 computer"],
+		"enabled": true
+	},
+	{
+		"name": "⚙️ dotfiles",
+		"rootPath": "/Users/gat/.config/.vscode/dotfiles.code-workspace",
+		"paths": [],
+		"tags": ["💻 computer"],
+		"enabled": true
+	},
+	{
+		"name": "↗️ 18.700 Linear Algebra",
+		"rootPath": "/Users/gat/work/FA2024/18700",
+		"paths": [],
+		"tags": ["🎓 school"],
+		"enabled": false
+	},
+	{
+		"name": "🎮 14.12 Game Theory",
+		"rootPath": "/Users/gat/work/FA2024/1412/.vscode/1412.code-workspace",
+		"paths": [],
+		"tags": ["🎓 school"],
+		"enabled": false
+	},
+	{
+		"name": "🍺 homebrew",
+		"rootPath": "/opt/homebrew",
+		"paths": [],
+		"tags": ["💻 computer"],
+		"enabled": false
+	},
+	{
+		"name": "🤖 6.796 Deep Learning",
+		"rootPath": "/Users/gat/work/FA2024/DL/.vscode/DL.code-workspace",
+		"paths": [],
+		"tags": ["🎓 school"],
+		"enabled": false
+	},
+	{
+		"name": "❓ gatlens_prompt_engineering",
+		"rootPath": "/Users/gat/work/gatlens_prompt_engineering",
+		"paths": [],
+		"tags": ["🛠️ tool"],
+		"enabled": true
+	},
+	{
+		"name": "📁 project-boilerplate",
+		"rootPath": "/Users/gat/work/project-boilerplate/.vscode/project-boilerplate.code-workspace",
+		"paths": [],
+		"tags": ["🛠️ tool"],
+		"enabled": true
+	},
+	{
+		"name": "📑 MopMan_Packetmaker",
+		"rootPath": "/Users/gat/work/MopMan_Packetmaker/.vscode/MopMan_Packetmaker.code-workspace",
+		"paths": [],
+		"tags": ["🛠️ tool"],
+		"enabled": false
+	},
+	{
+		"name": "🍪 gotem",
+		"rootPath": "/Users/gat/work/gatlens-opinionated-template/.vscode/gotem.code-workspace",
+		"paths": [],
+		"tags": ["🛠️ tool", "⭐️ favorite"],
+		"enabled": true
+	},
+	{
+		"name": "🍪 ccds",
+		"rootPath": "/Users/gat/work/gatlens-opinionated-template/",
+		"paths": [],
+		"tags": ["🛠️ tool", "⭐️ favorite"],
+		"enabled": true
+	}
 ]

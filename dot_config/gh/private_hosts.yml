@@ -1,5 +1,5 @@
 github.com:
-    git_protocol: ssh
-    users:
-        GatlenCulp:
-    user: GatlenCulp
+  git_protocol: ssh
+  users:
+    GatlenCulp:
+  user: GatlenCulp

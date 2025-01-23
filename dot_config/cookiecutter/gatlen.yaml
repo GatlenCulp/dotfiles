@@ -14,9 +14,8 @@
 #     docs: mkdocs
 #     include_code_scaffold: Yes
 #     use_github: Yes
-    
-    
+
 cookiecutters_dir: "~/.config/cookiecutter/cookiecutters"
 replay_dir: "~/.config/cookiecutter/cookiecutters/"
 abbreviations:
-    gh: https://github.com/{0}.git
+  gh: https://github.com/{0}.git
