@@ -242,7 +242,8 @@
         "_headers": "properties",
         "_redirects": "properties",
         "dot_*": "shellscript",
-        "*.sh.tmpl": "shellscript"
+        "*.sh.tmpl": "shellscript",
+        "*.toml.tmpl": "toml"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
