@@ -57,165 +57,168 @@
     "ai-docstring.docstringFormat": "sphinx",
     "autoDocstring.docstringFormat": "google-notypes",
     "autoDocstring.startOnNewLine": true,
+    "autoHide.hideOnOpen": true,
+    "autofold.default": 1,
+    "autofold.unfold": true,
     "better-comments.highlightPlainText": false,
     "better-comments.tags": [
         // Window must be reloaded for these to appear
         // Based on https://draculatheme.com/contribute#color-palette
         // ━━━━━━━━━━━━━━━━━━━━ Color Reference ━━━━━━━━━━━━━━━━━━━ */
         {
-            // Background
-            "tag": "background",
+            "bold": true,
             "color": "#282A36",
             "italic": true,
-            "bold": true,
+            // Background
+            "tag": "background"
         },
         {
-            // Foreground
-            "tag": "foreground",
+            "bold": true,
             "color": "#F8F8F2",
             "italic": true,
-            "bold": true,
+            // Foreground
+            "tag": "foreground"
         },
         {
-            // Selection
-            "tag": "selection",
+            "bold": true,
             "color": "#44475A",
             "italic": true,
-            "bold": true,
+            // Selection
+            "tag": "selection"
         },
         {
-            // Comment
-            "tag": "comment",
+            "bold": true,
             "color": "#6272A4",
             "italic": true,
-            "bold": true,
+            // Comment
+            "tag": "comment"
         },
         {
-            // Red
-            "tag": "red",
+            "bold": true,
             "color": "#FF5555",
             "italic": true,
-            "bold": true,
+            // Red
+            "tag": "red"
         },
         {
-            // Orange
-            "tag": "orange",
+            "bold": true,
             "color": "#FFB86C",
             "italic": true,
-            "bold": true,
+            // Orange
+            "tag": "orange"
         },
         {
-            // Yellow
-            "tag": "yellow",
+            "bold": true,
             "color": "#F1FA8C",
             "italic": true,
-            "bold": true,
+            // Yellow
+            "tag": "yellow"
         },
         {
-            // Green
-            "tag": "green",
+            "bold": true,
             "color": "#50FA7B",
             "italic": true,
-            "bold": true,
+            // Green
+            "tag": "green"
         },
         {
-            // Purple
-            "tag": "purple",
+            "bold": true,
             "color": "#BD93F9",
             "italic": true,
-            "bold": true,
+            // Purple
+            "tag": "purple"
         },
         {
-            // Cyan
-            "tag": "cyan",
+            "bold": true,
             "color": "#8BE9FD",
             "italic": true,
-            "bold": true,
+            // Cyan
+            "tag": "cyan"
         },
         {
-            // Pink
-            "tag": "pink",
+            "bold": true,
             "color": "#FF79C6",
             "italic": true,
-            "bold": true,
+            // Pink
+            "tag": "pink"
         },
         // ━━━━━━━━━━━━━━━━━━━━━━━━ Actual ━━━━━━━━━━━━━━━━━━━━━━━━
         {
-            // %% Jupyter Cell
-            "tag": "%%",
+            "bold": true,
             "color": "#50FA7B", // Green
             "italic": true,
-            "bold": true,
+            // %% Jupyter Cell
+            "tag": "%%"
         },
         {
+            "bold": true,
+            "color": "#FF5555", // Red
+            "italic": true,
             // !! Warning
-            "tag": "!!",
-            "color": "#FF5555", // Red
-            "italic": true,
-            "bold": true,
+            "tag": "!!"
         },
         {
+            "bold": true,
+            "color": "#FF5555", // Red
+            "italic": true,
             // Warning
-            "tag": "warning",
-            "color": "#FF5555", // Red
-            "italic": true,
-            "bold": true,
+            "tag": "warning"
         },
         {
-            // ?? Question
-            "tag": "??",
+            "bold": true,
             "color": "#FF79C6", // Purple
             "italic": true,
-            "bold": true,
+            // ?? Question
+            "tag": "??"
         },
         {
-            // ?? Question
-            "tag": "question",
+            "bold": true,
             "color": "#FF79C6", // Purple
             "italic": true,
-            "bold": true,
+            // ?? Question
+            "tag": "question"
         },
         {
-            // Info
-            "tag": "info",
+            "bold": true,
             "color": "#8BE9FD", // Blue
             "italic": true,
-            "bold": true,
+            // Info
+            "tag": "info"
         },
         {
-            // //Strikethrough
-            "tag": "//",
             "color": "#6272A4", // Comment
-            "strikethrough": true,
             "italic": true,
+            "strikethrough": true,
+            // //Strikethrough
+            "tag": "//"
         },
         {
-            // Fixme
-            "tag": "fixme",
+            "bold": true,
             "color": "#FFB86C", // Orange
             "italic": true,
-            "bold": true,
+            // Fixme
+            "tag": "fixme"
         },
         {
+            "bold": true,
+            "color": "#F8F8F2", // Foreground
+            "italic": true,
             // ━━━━━━━━━━━━━━━━━━━━━━ Header ━━━━━━━━━━━━━━━━━━━━━━
-            "tag": "━",
-            "color": "#F8F8F2", // Foreground
-            "italic": true,
-            "bold": true,
+            "tag": "━"
         },
         {
+            "bold": true,
+            "color": "#F8F8F2", // Foreground
+            "italic": true,
             // ───────────────────── Subheader ────────────────────
-            "tag": "─",
-            "color": "#F8F8F2", // Foreground
-            "italic": true,
-            "bold": true,
+            "tag": "─"
         },
         {
+            "color": "#F8F8F2", // Foreground
+            "italic": true,
             // # Sub-Subheader
             "tag": "#",
-            "color": "#F8F8F2", // Foreground
-            "italic": true,
-            "underline": true,
+            "underline": true
         }
     ],
     "blockman.n04ColorComboPreset": "Classic Dark 1 (Super gradients)",
@@ -241,17 +244,27 @@
     "blockman.n33A04B1FromFocusToOutwardForFocusTreeBorders": "!40,0,0,0; basic",
     "blockman.n33A04B2FromFocusToOutwardForFocusTreeBackgrounds": "!40,0,0,0; basic",
     "blockman.n33A05B2FromFocusToInwardForAllBackgrounds": "!50,0,0,0; rgba(255, 0, 0, 0.3) > rgba(0, 255, 0, 0.3) > rgba(0, 0, 255, 0.3)",
+    "comment-divider.languagesMap": {
+        "toml": [
+            "#",
+            "#"
+        ]
+    },
+    "comment-divider.length": 70,
+    "comment-divider.lineFiller": "─",
+    "comment-divider.mainHeaderFiller": "━",
+    "comment-divider.mainHeaderHeight": "line",
+    "comment-divider.shouldLengthIncludeIndent": true,
+    "comment-divider.subheaderFiller": "─",
     "cursor.aipreview.enabled": true,
     "cursor.chat.showSuggestedFiles": true,
     "cursor.chat.smoothStreaming": true,
     "cursor.cmdk.useThemedDiffBackground": true,
+    "cursor.composer.renderPillsInsteadOfBlocks": true,
     "cursor.cpp.disabledLanguages": [
         "plaintext",
         "scminput"
     ],
-    "comment-divider.languagesMap": {
-        "toml": ["#", "#"]
-    },
     "debug.console.fontFamily": "FiraCode Nerd Font",
     "debug.console.fontSize": 10,
     "debug.hideLauncherWhileDebugging": true,
@@ -311,19 +324,19 @@
     "errorLens.fontFamily": "FiraCode Nerd Font",
     "errorLens.messageEnabled": true,
     "files.associations": {
-        "*.cursorrules": "markdown",
-        "*.env*": "dotenv",
-        "*.ssh": "ssh_config",
-        ".env*": "dotenv",
         "**/.x-cmd/*": "shellscript",
         "**/.x-cmd/*.yml": "yaml",
         "*.css": "postcss",
+        "*.cursorrules": "markdown",
+        "*.env*": "dotenv",
+        "*.sh.tmpl": "shellscript",
+        "*.ssh": "ssh_config",
+        "*.toml.tmpl": "toml",
         ".czrc": "json",
+        ".env*": "dotenv",
         "_headers": "properties",
         "_redirects": "properties",
-        "dot_*": "shellscript",
-        "*.sh.tmpl": "shellscript",
-        "*.toml.tmpl": "toml",
+        "dot_*": "shellscript"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -335,6 +348,7 @@
         "**/CVS": true,
         "**/Thumbs.db": true
     },
+    "fold.level": 1,
     "git.autofetch": true,
     "git.openRepositoryInParentFolders": "never",
     "github.copilot.editor.enableAutoCompletions": true,
@@ -526,7 +540,16 @@
     "security.promptForLocalFileProtocolHandling": false,
     "shellformat.useEditorConfig": true,
     "sync.gist": "ebb6d31a5a543247119837ef3098f796",
-    "terminal.external.osxExec": "Warp.app",
+    "terminal.external.osxExec": "Ghostty.app",
+    "terminal.integrated.allowedLinkSchemes": [
+        "file",
+        "http",
+        "https",
+        "mailto",
+        "vscode",
+        "vscode-insiders",
+        "docker-desktop"
+    ],
     "terminal.integrated.altClickMovesCursor": true,
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
@@ -535,16 +558,15 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorStyleInactive": "none",
     "terminal.integrated.defaultLocation": "view",
-    "terminal.integrated.defaultPanelWidth": 600,
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.enableImages": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "auto",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font",
     "terminal.integrated.fontSize": 10,
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.hideOnStartup": "whenEmpty",
     "terminal.integrated.inheritEnv": false,
-    "terminal.integrated.lineHeight": 1.15,
+    "terminal.integrated.lineHeight": 1.05,
     "terminal.integrated.persistentCustomizations": {
         "splitTerminals": [
             {
@@ -573,6 +595,7 @@
     },
     "terminal.integrated.rightClickBehavior": "default",
     "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.splitCwd": "workspaceRoot",
     "terminal.integrated.stickyScroll.enabled": true,
     "terminal.integrated.suggest.enabled": true,
@@ -637,25 +660,5 @@
     "yoink": [
         true,
         5
-    ],
-    "fold.level": 1,
-    "autofold.default": 1,
-    "autofold.unfold": true,
-    "autoHide.hideOnOpen": true,
-    "terminal.integrated.allowedLinkSchemes": [
-        "file",
-        "http",
-        "https",
-        "mailto",
-        "vscode",
-        "vscode-insiders",
-        "docker-desktop"
-    ],
-    "cursor.composer.renderPillsInsteadOfBlocks": true,
-    "comment-divider.length": 70,
-    "comment-divider.lineFiller": "─",
-    "comment-divider.mainHeaderFiller": "━",
-    "comment-divider.shouldLengthIncludeIndent": true,
-    "comment-divider.subheaderFiller": "─",
-    "comment-divider.mainHeaderHeight": "line",
+    ]
 }
