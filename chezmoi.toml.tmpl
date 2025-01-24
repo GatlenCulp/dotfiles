@@ -1,9 +1,21 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━ Set Variables ━━━━━━━━━━━━━━━━━━━━━━━━━ #
+# Handle Codespaces (True when in code spaces)
 {{- $codespaces:= env "CODESPACES" | not | not -}}
+
+# Save osid (ex: "darwin" or "linux-debian"
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
+# ━━━━━━━━━━━━━━━━━━━━━━━ Save Configuration ━━━━━━━━━━━━━━━━━━━━━━━ #
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 [data]
     name = "Gatlen Culp"
     codespaces = {{ $codespaces }}
-{{- if $codespaces }}{{/* Codespaces dotfiles setup is non-interactive, so set an email address */}}
+
+    {{- if $codespaces }}
     email = "GatlenCulp@gmail.com"
-{{- end }}
+    {{- end }}
+    osid = {{ $osid | quote }}

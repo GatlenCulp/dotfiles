@@ -1,7 +1,5 @@
-{{- if eq .chezmoi.osid "darwin" -}}
+{{- if contains "linux" .chezmoi.os -}}
 #!/bin/bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
-
-defaults write -g ApplePressAndHoldEnabled -bool false
 {{ end -}}
