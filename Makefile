@@ -10,6 +10,7 @@ clean:
 # Test target that runs chezmoi doctor and builds docker-compose
 test:
 	chezmoi doctor
+	chezmoi execute-template --init < '.chezmoi.toml.tmpl'
 	# TODO: Add docker build
 
 # Install chezmoi by downloading script
