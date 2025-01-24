@@ -215,3 +215,14 @@ repos:
   # ---------------------------------------------------------------------------- #
   #                             🧪 Fast Tests (Local)                            #
   # ---------------------------------------------------------------------------- #
+
+  # Test Chezmoi Doctor
+  - repo: local
+    hooks:
+      - id: chezmoi-doctor
+        name: 🧪 test · Validate Chezmoi Doctor does not fail
+        entry: chezmoi
+        language: system
+        args: ["doctor"]
+        pass_filenames: false
+        always_run: true
