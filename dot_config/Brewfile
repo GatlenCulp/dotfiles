@@ -2,6 +2,7 @@
 #                           How to install                           #
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
+# To see what is already installed use: brew list
 # To install: brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Taps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
@@ -13,11 +14,11 @@ tap "gatlenculp/vivaria"
 
 ## Custom package repositories
 tap "charmbracelet/tap"          # Terminal tools and TUIs
-# tap "konradsz/igrep"             # Interactive grep (idk fi I like)
 tap "mayowa-ojo/tap"             # Custom tools
 tap "nat-n/poethepoet"           # Task runner for Python projects
 tap "noborus/tap"                # Terminal tools
 tap "ynqa/tap"                   # Development tools
+# tap "konradsz/igrep"             # Interactive grep (idk if I like)
 
 ## Testing Homebrew
 tap "homebrew/test-bot"          # Testing tools for Homebrew
@@ -135,13 +136,11 @@ brew "fcrackzip"                # Zip password cracker
 brew "sqlmap"                   # SQL injection testing tool
 # brew "argon2"                   # Password hashing library and CLI utility
 
-
 ## VPN & Privacy
 brew "openvpn"                  # Open source VPN solution
 
 ## Hardware Tools
 cask "qflipper"                 # Flipper Zero firmware updater
-
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Development ━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
@@ -205,15 +204,12 @@ brew "prettier"                 # Code formatter for multiple languages
 cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
 brew "tidy-html5"
 
-
 # ─────────────────────────── Containers ─────────────────────────── #
 cask "orbstack"                  # Docker & Linux on macOS
 # brew "docker-completion"        # Docker completion for the terminal
 cask "kubernetes-cli"            # Command-line tool for Kubernetes
 brew "devcontainer" # Reference implementation for the Development Containers specification
 brew "hadolint" # Smarter Dockerfile linter to validate best practices
-
-
 
 # ──────────────────────────── Databases ─────────────────────────── #
 brew "postgresql@16"             # Object-relational database system
@@ -327,7 +323,6 @@ brew "go-task"                   # Task runner / simpler Make alternative
 brew "awscli"                    # Amazon Web Services CLI
 
 # ─────────────────── Random stuff I may not need ────────────────── #
-
 ## Core Libraries
 # brew "abseil"                    # C++ library from Google
 # brew "icu4c@76"                  # C/C++ and Java libraries for Unicode and globalization
@@ -370,7 +365,6 @@ brew "awscli"                    # Amazon Web Services CLI
 # json-c, krb5, libass, tesseract, theora
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fonts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-
 cask "font-blackout"             # Sans-serif display font
 cask "font-computer-modern"      # Computer Modern font family
 cask "font-fira-code"            # Monospace font with programming ligatures
@@ -383,7 +377,6 @@ cask "font-noto-serif-devanagari" # Google Noto font for Devanagari script
 cask "font-noto-serif-hebrew"    # Google Noto font for Hebrew script
 cask "font-noto-serif-thai"      # Google Noto font for Thai script
 cask "font-nova-round"           # Rounded sans-serif font
-
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━ VSCode Extensions ━━━━━━━━━━━━━━━━━━━━━━━ #
 vscode "076923.python-image-preview"

@@ -2,5 +2,15 @@
     "files.associations": {
         "dot_*": "shellscript",
         "sh.tmpl": "shellscript",
+    },
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#1073cf2d",
+        "editor.lineHighlightBorder": "#9fced11f",
+        "statusBar.background": "#28632b",
+        "statusBar.foreground": "#ffffff",
+        "statusBarItem.hoverBackground": "#327e36",
+        "activityBar.background": "#531C12",
+        "titleBar.activeBackground": "#74271A",
+        "titleBar.activeForeground": "#FDF9F8"
     }
 }
