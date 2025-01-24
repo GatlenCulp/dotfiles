@@ -287,7 +287,6 @@ brew "act"                       # Run GitHub Actions locally
 brew "actionlint"                # GitHub Actions workflow linter
 
 # ───────────────────────────── Remote ───────────────────────────── #
-cask "postico"                   # PostgreSQL client for macOS
 cask "postman"                   # API development environment
 
 # ─────────────────────────────── AI ─────────────────────────────── #

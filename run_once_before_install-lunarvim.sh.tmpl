@@ -1,5 +1,9 @@
-{{- if eq .chezmoi.os "darwin" -}}
+{{- if eq .chezmoi.osid "darwin" -}}
 #!/bin/bash
 
-LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
+if ! command -v lvim >/dev/null 2>&1; then
+    LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
+else
+    echo "LunarVim is already installed, skipping installation"
+fi
 {{ end -}}
