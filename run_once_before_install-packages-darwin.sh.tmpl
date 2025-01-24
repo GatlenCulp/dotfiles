@@ -3,5 +3,36 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
 
+brew bundle --no-lock --file=/dev/stdin <<EOF
+# ─────────────────────────── macOS Only ─────────────────────────── #
+cask "alfred"                   # Productivity app for macOS
+cask "cleanshot"                # Screenshot and recording tool
+cask "pixelsnap"                # Measurement tool for designers
+cask "rectangle-pro"            # Window management tool
+brew "duti"                     # Tool to set default document and URL handlers
+cask "mactex"                   # LaTeX distribution for macOS
+cask "notunes"                  # Simple application that will prevent iTunes or Apple Music from launching
+
+## Quicklook
+cask "apparency"                # QuickLook plugin for app inspection
+cask "suspicious-package"       # QuickLook plugin for macOS installer packages
+# Quicklook but possibly doesn't work
+cask "qlcolorcode"              # QuickLook plugin for code with syntax highlighting
+cask "qlimagesize"              # QuickLook plugin for image size and resolution
+cask "qlmarkdown"               # QuickLook plugin for Markdown files
+cask "qlstephen"                # QuickLook plugin for plain text files without extension
+cask "qlvideo"                  # QuickLook plugin for video files
+cask "ipynb-quicklook"          # QuickLook plugin for Jupyter notebooks
+cask "quicklook-json"           # QuickLook plugin for JSON files
+cask "quicklookase"             # QuickLook plugin for Adobe ASE color swatches
+
+## Containers
+cask "orbstack"                  # Docker & Linux on macOS
+
+## Databases
+cask "postico"                   # PostgreSQL client for macOS
+
+EOF
+
 defaults write -g ApplePressAndHoldEnabled -bool false
 {{ end -}}

@@ -71,28 +71,6 @@ cask "gog-galaxy"               # GOG gaming platform client
 cask "steam"                    # Valve's gaming platform
 cask "minecraft"                # Popular sandbox game
 
-# ─────────────────────────── macOS Only ─────────────────────────── #
-cask "alfred"                   # Productivity app for macOS
-cask "cleanshot"                # Screenshot and recording tool
-cask "pixelsnap"                # Measurement tool for designers
-cask "rectangle-pro"            # Window management tool
-brew "duti"                     # Tool to set default document and URL handlers
-cask "mactex"                   # LaTeX distribution for macOS
-cask "notunes"                  # Simple application that will prevent iTunes or Apple Music from launching
-
-## Quicklook
-cask "apparency"                # QuickLook plugin for app inspection
-cask "suspicious-package"       # QuickLook plugin for macOS installer packages
-# Quicklook but possibly doesn't work
-cask "qlcolorcode"              # QuickLook plugin for code with syntax highlighting
-cask "qlimagesize"              # QuickLook plugin for image size and resolution
-cask "qlmarkdown"               # QuickLook plugin for Markdown files
-cask "qlstephen"                # QuickLook plugin for plain text files without extension
-cask "qlvideo"                  # QuickLook plugin for video files
-cask "ipynb-quicklook"          # QuickLook plugin for Jupyter notebooks
-cask "quicklook-json"           # QuickLook plugin for JSON files
-cask "quicklookase"             # QuickLook plugin for Adobe ASE color swatches
-
 # ───────────────────────── File Mangement ───────────────────────── #
 cask "dropbox"                   # Cloud storage service
 brew "xz"                        # Data compression tool
@@ -205,7 +183,6 @@ cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
 brew "tidy-html5"
 
 # ─────────────────────────── Containers ─────────────────────────── #
-cask "orbstack"                  # Docker & Linux on macOS
 # brew "docker-completion"        # Docker completion for the terminal
 cask "kubernetes-cli"            # Command-line tool for Kubernetes
 brew "devcontainer" # Reference implementation for the Development Containers specification
