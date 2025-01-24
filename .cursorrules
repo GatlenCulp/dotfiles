@@ -1,0 +1,55 @@
+# Chezmoi Cursor Rules
+
+Chezmoi is a dotfile manager that helps you manage your configuration files across multiple machines.
+
+## Common Commands
+
+### Basic Operations
+- `chezmoi init` - Initialize chezmoi in your home directory
+- `chezmoi add <file>` - Add a file to chezmoi management
+- `chezmoi edit <file>` - Edit a file managed by chezmoi
+- `chezmoi apply` - Apply changes to your home directory
+- `chezmoi diff` - Show differences between managed files and actual files
+- `chezmoi status` - Show status of managed files
+
+### Advanced Operations
+- `chezmoi cd` - Change to the chezmoi source directory
+- `chezmoi git` - Run git commands in the chezmoi source directory
+- `chezmoi merge` - Merge changes from remote into local config
+- `chezmoi update` - Pull latest changes and apply them
+- `chezmoi verify` - Verify that files match their targets
+
+### Template Operations
+- `chezmoi execute-template` - Execute a template file
+- `chezmoi data` - Print template data
+- `chezmoi dump` - Dump the target state
+
+### Management
+- `chezmoi forget` - Remove a file from chezmoi management
+- `chezmoi unmanage` - Stop managing a file with chezmoi
+- `chezmoi managed` - List all files managed by chezmoi
+- `chezmoi unmanaged` - List files not managed by chezmoi
+
+## File Attributes
+
+- `empty` - Create an empty file
+- `executable` - Make file executable
+- `private` - Set restrictive permissions
+- `template` - Process file as a template
+- `symlink` - Create a symbolic link
+
+## Common Template Variables
+
+- `.chezmoi.os` - Operating system
+- `.chezmoi.arch` - CPU architecture
+- `.chezmoi.hostname` - Host name
+- `.chezmoi.homeDir` - Home directory
+- `.chezmoi.username` - User name
+
+## Best Practices
+
+1. Always review changes with `chezmoi diff` before applying
+2. Use `chezmoi edit` instead of directly editing files
+3. Commit changes to source control regularly
+4. Test templates with `chezmoi execute-template`
+5. Keep sensitive data encrypted using supported encryption tools

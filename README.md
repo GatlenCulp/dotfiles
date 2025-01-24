@@ -1,5 +1,7 @@
 # chezmoi_dotfiles
 
+Chezmoi is a dotfile manager. The name literally translates to "at my house"
+
 To install these, choose the appropriate command for your environment:
 
 ## Linux/Windows (VS Code)
