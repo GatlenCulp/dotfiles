@@ -7,4 +7,5 @@ source $HOME/.config/.shrc
 export BASHRC_DIR="$HOME/.config/bashrc"
 
 source $BASHRC_DIR/fzf.bash
-source $BASHRC_DIR/oh-my-posh.bash
+source $BASHRC_DIR/starship.bash
+# source $BASHRC_DIR/oh-my-posh.bash

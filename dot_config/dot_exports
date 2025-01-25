@@ -85,6 +85,12 @@ export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/gatlen.yaml
 export OH_MY_POSH_DIR="$XDG_CONFIG_HOME/oh-my-posh"
 export OH_MY_POSH_THEME="nordcustom_v.3"
 
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Starship ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Move env var to starship dir.
+source "$HOME/.config/starship/starship.sh"
+# export STARSHIP_CONFIG="$HOME/.config/starship/Gaurav-Gosain.toml"
+
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Zellij ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 export ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
 

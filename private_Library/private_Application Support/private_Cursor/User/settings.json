@@ -324,19 +324,32 @@
     "errorLens.fontFamily": "FiraCode Nerd Font",
     "errorLens.messageEnabled": true,
     "files.associations": {
+        // Config Files
+        ".aliases": "shellscript",
+        ".exports": "shellscript",
+        ".bashrc": "shellscript",
+        ".zshrc": "shellscript",
+        ".shrc": "shellscript",
+        ".xonshrc": "xonsh",
+        ".functions": "shellscript",
+        "dot_*": "shellscript",
+        "*.sh.tmpl": "shellscript",
+        "*.toml.tmpl": "toml",
+        "*.ssh": "ssh_config",
+        ".czrc": "json",
+        // Unknown
+        // Cursor
+        "*.cursorrules": "markdown",
+        // Rewrites
+        "*.css": "postcss",
+        // Should be known
+        "*.env*": "dotenv",
+        ".env*": "dotenv",
+        // Misc
         "**/.x-cmd/*": "shellscript",
         "**/.x-cmd/*.yml": "yaml",
-        "*.css": "postcss",
-        "*.cursorrules": "markdown",
-        "*.env*": "dotenv",
-        "*.sh.tmpl": "shellscript",
-        "*.ssh": "ssh_config",
-        "*.toml.tmpl": "toml",
-        ".czrc": "json",
-        ".env*": "dotenv",
         "_headers": "properties",
         "_redirects": "properties",
-        "dot_*": "shellscript"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -646,6 +659,8 @@
         "**/views.py": "👁️ ${dirname}/${filename}",
         "*/.vscode/launch.json": "🚀 ${dirname}/${filename}"
     },
+    "workbench.accounts.experimental.showEntitlements": true,
+    "workbench.list.smoothScrolling": true,
     "workbench.editor.labelFormat": "default",
     "workbench.editor.limit.value": 4,
     "workbench.editor.tabSizing": "shrink",
@@ -656,9 +671,15 @@
     "workbench.layoutControl.enabled": false,
     "workbench.panel.opensMaximized": "never",
     "workbench.productIconTheme": "material-product-icons",
-    "workbench.startupEditor": "newUntitledFile",
     "yoink": [
         true,
         5
-    ]
+    ],
+    "projectManager.cacheProjectsBetweenSessions": false,
+    "projectManager.confirmSwitchOnActiveWindow": "always",
+    "projectManager.sortList": "Saved",
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.general.enableShadowWorkspace": true,
+    "marquee.configuration.background": "11",
+    "marquee.configuration.name": "Gatlen"
 }
