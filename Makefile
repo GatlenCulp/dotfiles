@@ -32,18 +32,22 @@ generate-install:
 
 # Generate and run docker image for testing
 docker-build:
-	docker build --platform linux/amd64 -t chezmoi-test -f ./docker/chezmoi.Dockerfile .
+	docker build --platform linux/amd64 -t chezmoi-test-ubuntu -f ./docker/chezmoi-ubuntu.Dockerfile .
 
 # Run an interactive shell in the container
 docker-shell: docker-build
-	docker run -it chezmoi-test /bin/bash
+	docker run -it chezmoi-test-ubuntu /bin/bash
 
 # Run the chezmoi test
 docker-test: docker-build
-	docker run -it chezmoi-test sh -c 'sh -c "$$(curl -fsLS get.chezmoi.io)" -- init --apply GatlenCulp && eza || exit 1'
+	docker run -it chezmoi-test-ubuntu sh -c 'sh -c "$$(curl -fsLS get.chezmoi.io)" -- init --apply GatlenCulp && eza || exit 1'
 
 # Build and run interactive shell (default)
 docker: docker-shell
+
+docker-osx:
+	docker build --platform linux/amd64 -t chezmoi-test-osx -f ./docker/chezmoi-osx.Dockerfile .
+	docker run -it --entrypoint=/bin/sh chezmoi-test-osx -c 'sh -c "$$(curl -fsLS get.chezmoi.io)" -- init --apply GatlenCulp && eza || exit 1'
 
 linux-brew:
 	# Install Linuxbrew

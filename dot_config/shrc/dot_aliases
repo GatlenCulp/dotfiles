@@ -34,7 +34,7 @@ fi
 export EZA_COMMON="--all --icons --time-style '+%Y-%m-%d %H:%M' --group-directories-last -I .DS_STORE"
 alias ez="eza $EZA_COMMON"
 alias ezd="eza -D $EZA_COMMON"
-alias ezf="eza -F $EZA_COMMON"
+alias ezf="eza -f $EZA_COMMON"
 alias ezdf="ezd && echo '----Files----' && ezf"
 alias ezfd="ezf && echo '----Dirs----' && ezd"
 alias ezt="eza -l --git-repos --no-user --git $EZA_COMMON -T --level=1"
