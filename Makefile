@@ -1,4 +1,4 @@
-.PHONY: test generate-install install-by-script install docker docker-build docker-shell docker-test all clean
+.PHONY: test generate-install install-by-script install docker docker-build docker-shell docker-test all clean linux-brew
 
 # Default target
 all: test
@@ -32,7 +32,7 @@ generate-install:
 
 # Generate and run docker image for testing
 docker-build:
-	docker build -t chezmoi-test -f ./docker/chezmoi.Dockerfile .
+	docker build --platform linux/amd64 -t chezmoi-test -f ./docker/chezmoi.Dockerfile .
 
 # Run an interactive shell in the container
 docker-shell: docker-build
@@ -44,3 +44,11 @@ docker-test: docker-build
 
 # Build and run interactive shell (default)
 docker: docker-shell
+
+linux-brew:
+	# Install Linuxbrew
+	RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+	# Add Linuxbrew to PATH
+	ENV PATH="/home/linuxbrew/.linuxbrew/bin:${PATH}"
+	ENV HOMEBREW_NO_AUTO_UPDATE=1

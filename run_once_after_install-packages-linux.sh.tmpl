@@ -1,5 +1,0 @@
-{{- if contains "linux" .osid -}}
-#!/bin/bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
-{{ end -}}

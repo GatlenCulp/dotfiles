@@ -1,2 +1,14 @@
+.cursorrules
+.github
+.history
+.ruff_cache
+.vscode
+docker
+logs
+
+
+.gitconfig
 install.sh
-install.sh
+LICENSE
+Makefile
+README.md
