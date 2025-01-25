@@ -31,10 +31,13 @@ fi
 
 # ------------------- Modern command line tool replacements ------------------ #
 # See https://github.com/eza-community/eza
-alias ez="eza --icons --hyperlink -a --git-repos --time-style '+%Y-%m-%d %H:%M' --no-user"
-alias ezt="eza --icons -l --hyperlink -a -T --level=1 --git-repos --time-style '+%Y-%m-%d %H:%M' --no-user"
+export EZA_COMMON="--all --icons --time-style '+%Y-%m-%d %H:%M'"
+alias ez="eza --git-repos --no-user $EZA_COMMON"
+alias ezt="eza -l --git-repos --no-user --git $EZA_COMMON -T --level=1"
+alias eztt="eza -l --git-repos --no-user --git $EZA_COMMON -T --level=2"
 alias la="eza -la --icons --tree --level=1 --time-style '+%Y-%m-%d %H:%M' --no-user"
 alias tre="tre --limit 3"
+
 alias z="zoxide"  # Modern replacement for cd
 
 # alias ls="(Consider using ez over ls) && ls"
