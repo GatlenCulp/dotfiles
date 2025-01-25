@@ -9,15 +9,15 @@
 tap "homebrew/bundle"            # Bundler for Homebrew
 
 ## Personal
-tap "gatlenculp/mopman"
-tap "gatlenculp/vivaria"
+# tap "gatlenculp/mopman"
+# tap "gatlenculp/vivaria"
 
 ## Custom package repositories
 tap "charmbracelet/tap"          # Terminal tools and TUIs
 tap "mayowa-ojo/tap"             # Custom tools
-tap "nat-n/poethepoet"           # Task runner for Python projects
+# tap "nat-n/poethepoet"           # Task runner for Python projects
 tap "noborus/tap"                # Terminal tools
-tap "ynqa/tap"                   # Development tools
+# tap "ynqa/tap"                   # Development tools
 # tap "konradsz/igrep"             # Interactive grep (idk if I like)
 
 ## Testing Homebrew
@@ -73,8 +73,6 @@ cask "minecraft"                # Popular sandbox game
 
 # ───────────────────────── File Mangement ───────────────────────── #
 cask "dropbox"                   # Cloud storage service
-brew "xz"                        # Data compression tool
-brew "gnu-tar"                   # GNU version of tar archiving utility
 # brew "brotli" # Generic-purpose lossless compression algorithm by Google
 
 # ────────────────────── Productivity & Health ───────────────────── #
@@ -84,8 +82,8 @@ cask "lastpass"                  # Password manager
 cask "flux"                      # Screen color temperature adjuster
 
 # ────────────────────────────── Misc ────────────────────────────── #
-brew "gambit"                    # Game Theory Calculator
 cask "spotify"                   # Music streaming service
+# brew "gambit"                    # Game Theory Calculator
 cask "applite"
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━ Cybersecurity ━━━━━━━━━━━━━━━━━━━━━━━━━ #
@@ -162,7 +160,7 @@ brew "ruff"                      # Fast Python linter and code formatter
 ## Project Tools
 brew "cookiecutter"              # Project template tool
 brew "cruft"                     # Project template manager
-brew "nat-n/poethepoet/poethepoet" # Task runner for Python projects
+# brew "nat-n/poethepoet/poethepoet" # Task runner for Python projects
 
 # ─────────────────────── Document Languages ─────────────────────── #
 ## Markdown
@@ -191,12 +189,6 @@ brew "hadolint" # Smarter Dockerfile linter to validate best practices
 # ──────────────────────────── Databases ─────────────────────────── #
 brew "postgresql@16"             # Object-relational database system
 brew "sqlite"
-
-# ───────────────────────────── Editors ──────────────────────────── #
-cask "visual-studio-code"        # Code editor from Microsoft
-cask "cursor"                    # AI-powered code editor
-brew "neovim"                    # Modernized Vim text editor
-brew "jupyterlab"
 
 # ──────────────────────── Terminal & Shell ──────────────────────── #
 ## Terminal Emulators
@@ -232,6 +224,10 @@ brew "eza"                       # `eza <- ls` Modern replacement for ls
 brew "bat"                       # `bat <- cat` Cat with syntax highlighting
 brew "tre-command"               # `tre` Tree command with git integration
 brew "clipboard"                 # `cb <- pbcopy` Command line clipboard tool 
+
+## File
+brew "xz"                        # Data compression tool
+brew "gnu-tar"                   # GNU version of tar archiving utility
 
 ## Search & Navigation
 brew "zoxide"                    # `z <- cd` Smarter cd command (or zi w/ fzf)
@@ -339,6 +335,12 @@ brew "awscli"                    # Amazon Web Services CLI
 # various lib*
 # gd, ghostscript, harfbuzz, highway, imath, jasper, lame, leptonica so many more
 # json-c, krb5, libass, tesseract, theora
+
+# ───────────────────────────── Editors ──────────────────────────── #
+cask "visual-studio-code"        # Code editor from Microsoft
+cask "cursor"                    # AI-powered code editor
+brew "neovim"                    # Modernized Vim text editor
+brew "jupyterlab"
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fonts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 cask "font-blackout"             # Sans-serif display font

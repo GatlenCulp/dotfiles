@@ -1,8 +1,8 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━ Set Variables ━━━━━━━━━━━━━━━━━━━━━━━━━ #
-# Handle Codespaces (True when in code spaces)
+## Handle Codespaces (True when in code spaces)
 {{- $codespaces:= env "CODESPACES" | not | not}}
 
-# Save osid (ex: "darwin" or "linux-debian")
+## Save osid (ex: "darwin" or "linux-debian")
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
@@ -12,8 +12,35 @@
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 [data]
+    ## Personal Info
     name = "Gatlen Culp"
     email = "GatlenCulp@gmail.com"
     domain = "gatlen.me"
+
+    ## Social
+    github = "https://github.com/GatlenCulp"
+    linkedin = "https://www.linkedin.com/in/gatlen-culp/"
+    medium = "https://medium.com/@gatlenculp"
+    twitter = "https://twitter.com/GatlenCulp"
+    bluesky = "https://bsky.app/profile/gatlen.bsky.social"
+    stackoverflow = "https://stackoverflow.com/users/8298372/gatlen-culp"
+    calendly = "https://calendly.com/gatlen"
+    tripit = "https://tripit.com/people/culpdesigns2"
+    paypal = "https://paypal.me/GatlenC"
+
+
+    ## Machine Info
     codespaces = {{ $codespaces }}
     osid = {{ $osid | quote }}
+
+    ## Install Options
+    # IDE
+    minimal = false
+    python = true
+    {{ if ! .chezmoi.minimal }}
+    vscode = true
+    cybersecurity = false
+    document_languages = true
+    containers = true
+    databases = true
+    {{end}}

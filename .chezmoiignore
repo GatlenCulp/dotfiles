@@ -6,8 +6,8 @@
 docker
 logs
 
-
 .gitconfig
+.pre-commit-config.yaml
 install.sh
 LICENSE
 Makefile
