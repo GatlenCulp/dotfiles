@@ -1,9 +1,9 @@
 # General config for posix shell
 
 SHRC_DIR=$HOME/.config/shrc
-source $HOME/.config/.exports
-source $HOME/.config/.aliases
-source $HOME/.config/.functions
+source $SHRC_DIR/.exports
+source $SHRC_DIR/.aliases
+source $SHRC_DIR/.functions
 
 # Load config
 source $SHRC_DIR/fastfetch.sh
