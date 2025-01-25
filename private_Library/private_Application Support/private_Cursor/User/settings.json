@@ -7,7 +7,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "biomejs.biome"
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -15,7 +15,7 @@
         "editor.wordWrap": "on"
     },
     "[jsonc]": {
-        "edioolor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[latex]": {
         "editor.defaultFormatter": "James-Yu.latex-workshop",

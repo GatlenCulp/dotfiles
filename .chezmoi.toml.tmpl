@@ -33,14 +33,41 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
     codespaces = {{ $codespaces }}
     osid = {{ $osid | quote }}
 
-    ## Install Options
-    # IDE
-    minimal = false
-    python = true
-    {{ if ! .chezmoi.minimal }}
-    vscode = true
-    cybersecurity = false
-    document_languages = true
-    containers = true
-    databases = true
-    {{end}}
+    # ─────────────────────── Install Options ────────────────────── #
+    
+    # Core Development (installed regardless of minimal)
+    python = true               # Python development environment
+    node = true                 # Node.js/JavaScript development
+    rust = true                 # Rust development environment
+    go = true                   # Go development environment
+    enhanced_shell = true                # Neovim configuration
+
+    minimal = false              # Minimal installation (CLI tools only)
+    {{ if not .minimal }}
+    # Document Processing
+    latex = {{ not .minimal }}               # LaTeX tools and environment
+    markdown = {{ not .minimal }}            # Markdown tools and processors
+    
+    # Applications
+    terminals = {{ not .minimal }}
+    browsers = {{ not .minimal }}           # Web browsers (Chrome, Firefox, etc)
+    media = {{ not .minimal }}             # Media tools (VLC, OBS, etc)
+    office = {{ not .minimal }}            # Office applications
+    communication = {{ not .minimal }}      # Communication apps (Slack, Discord, etc)
+    games = {{ not .minimal }}          # Game development tools
+
+    # Special Purpose
+    cybersecurity = {{ not .minimal }}      # Cybersecurity tools and frameworks
+    fonts = {{ not .minimal }}
+
+    # Development Tools
+    databases = {{ not .minimal }}           # Database tools and clients
+    editors = {{ not .minimal }}              # Visual Studio Code and extensions
+    
+    # Development
+    supporting_languages = {{ not .minimal }}
+    containers = {{ not .minimal }}          # Container tools and Docker
+    shell_utils = {{ not .minimal }}
+    git_utils = {{ not .minimal }}
+    misc_utils = {{ not .minimal }}
+    {{ end }}

@@ -3,10 +3,12 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
 # To see what is already installed use: brew list
-# To install: brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
+# To install: brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/.Brewfile
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Taps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+## Homebrew Core
 tap "homebrew/bundle"            # Bundler for Homebrew
+# tap "homebrew/test-bot"          # Testing tools for Homebrew
 
 ## Personal
 # tap "gatlenculp/mopman"
@@ -20,128 +22,10 @@ tap "noborus/tap"                # Terminal tools
 # tap "ynqa/tap"                   # Development tools
 # tap "konradsz/igrep"             # Interactive grep (idk if I like)
 
-## Testing Homebrew
-tap "homebrew/test-bot"          # Testing tools for Homebrew
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━ Applications ━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+# ━━━━━━━━━━━━━━━━━━━━━━━━ Core Development ━━━━━━━━━━━━━━━━━━━━━━━━ #
 
-# ──────────────────────────── Browsers ──────────────────────────── #
-cask "firefox"                   # Mozilla web browser
-cask "google-chrome"             # Google's web browser
-cask "tor-browser"               # Privacy-focused browser
-
-# ────────────────────────────── Video ───────────────────────────── #
-## Record
-cask "obs"                       # Streaming and recording software
-cask "loom" # Screen and video recording software
-
-## Code Recording
-brew "vhs"                       # Terminal recorder and animator
-brew "charmbracelet/tap/freeze"  # Generate images of code and terminal output.
-
-## Model
-cask "blender"                   # 3D creation suite
-
-## Edit
-cask "adobe-creative-cloud"      # Creative suite from Adobe
-
-## Download
-cask "clipgrab"                  # Video downloader and converter
-
-## View
-cask "vlc"                       # Media player with wide format support
-
-# ───────────────────────────── Office ───────────────────────────── #
-cask "microsoft-office"          # Microsoft Office suite
-cask "microsoft-auto-update"     # Microsoft Office updater
-cask "notion"                    # Note-taking and collaboration platform
-cask "notion-calendar"           # Calendar app from Notion
-
-# ────────────────────────────── Comms ───────────────────────────── #
-cask "discord"                   # Voice and text chat platform
-cask "messenger"                 # Facebook Messenger desktop client
-cask "whatsapp"                  # WhatsApp desktop client
-cask "zoom"                      # Video conferencing software
-cask "signal"                    # Encrypted messaging app
-cask "slack"                     # Team communication platform
-
-# ────────────────────────────── Games ───────────────────────────── #
-cask "epic-games"               # Epic Games Store client
-cask "gog-galaxy"               # GOG gaming platform client
-cask "steam"                    # Valve's gaming platform
-cask "minecraft"                # Popular sandbox game
-
-# ───────────────────────── File Mangement ───────────────────────── #
-cask "dropbox"                   # Cloud storage service
-# brew "brotli" # Generic-purpose lossless compression algorithm by Google
-
-# ────────────────────── Productivity & Health ───────────────────── #
-cask "cold-turkey-blocker"       # Website and application blocker
-cask "zotero"                    # Reference management software
-cask "lastpass"                  # Password manager
-cask "flux"                      # Screen color temperature adjuster
-
-# ────────────────────────────── Misc ────────────────────────────── #
-cask "spotify"                   # Music streaming service
-# brew "gambit"                    # Game Theory Calculator
-cask "applite"
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━ Cybersecurity ━━━━━━━━━━━━━━━━━━━━━━━━━ #
-## Frameworks & Suites
-cask "metasploit"               # Penetration testing framework
-cask "burp-suite"               # Web security testing tool
-
-## Network Analysis & Monitoring
-brew "wireshark"                # Network protocol analyzer
-brew "tcpflow"                  # TCP flow recorder
-brew "tcptrace"                 # TCP connection analysis tool
-brew "tcpreplay"                # TCP packet replay tool
-
-## Network Security Tools
-brew "aircrack-ng"              # Network security tool suite
-brew "dns2tcp"                  # DNS tunneling tool
-brew "knock"                    # Port knock sequence sender
-brew "socat"                    # Multipurpose relay tool
-brew "ucspi-tcp"                # TCP client-server program tools
-cask "zenmap" # Multi-platform graphical interface for official Nmap Security Scanner
-
-## Password & Access Tools
-brew "hydra"                    # Password cracking tool
-brew "john"                     # John the Ripper password cracker
-brew "fcrackzip"                # Zip password cracker
-brew "sqlmap"                   # SQL injection testing tool
-# brew "argon2"                   # Password hashing library and CLI utility
-
-## VPN & Privacy
-brew "openvpn"                  # Open source VPN solution
-
-## Hardware Tools
-cask "qflipper"                 # Flipper Zero firmware updater
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Development ━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-
-# ───────────────────────── Core Languages ────────────────────────── #
-## System Programming
-brew "rust"                      # Systems programming language
-brew "go"                        # Open source programming language
-
-## Web Development
-brew "node"                      # JavaScript runtime environment
-brew "typescript"                # Typed superset of JavaScript
-brew "biome"                     # Toolchain for web projects
-cask "dotnet-sdk"                # SDK for Microsoft's .NET platform
-
-## Scripting Languages
-brew "php"                       # General-purpose scripting language
-brew "ruby"                      # Dynamic, object-oriented programming language
-brew "perl"                      # Highly capable scripting language
-brew "lua"
-brew "luajit"
-
-## Academic & Scientific
-cask "sage"                      # Mathematics software system
-cask "racket"                    # Modern LISP and programming language platform
-
+{{ if .python }}
 # ─────────────────────── Python Environment ──────────────────────── #
 ## Package Management
 brew "uv"                        # Fast Python package installer and resolver
@@ -162,61 +46,49 @@ brew "cookiecutter"              # Project template tool
 brew "cruft"                     # Project template manager
 # brew "nat-n/poethepoet/poethepoet" # Task runner for Python projects
 
-# ─────────────────────── Document Languages ─────────────────────── #
-## Markdown
-brew "mdformat"                 # Markdown formatter
-brew "pandoc"                   # Universal document converter
+{{ end }}
 
-## LaTeX
-brew "tex-fmt"                  # TeX document formatting system
-brew "latexindent"              # Perl script for formatting LaTeX files
+# ───────────────────────── Core Languages ───────────────────────── #
 
-## Configuration
-brew "taplo"                    # TOML toolkit and parser
-brew "chezmoi" # Manage your dotfiles across multiple diverse machines, securely
+{{ if .node }}
+## Web Development
+brew "node"                      # JavaScript runtime environment
+brew "typescript"                # Typed superset of JavaScript
+brew "biome"                     # Toolchain for web projects
+cask "dotnet-sdk"                # SDK for Microsoft's .NET platform
+{{ end }}
 
-## Misc
-brew "prettier"                 # Code formatter for multiple languages
-cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
-brew "tidy-html5"
+## System Programming
+{{ if .rust }}
+brew "rust"                      # Systems programming language
+{{ end }}
 
-# ─────────────────────────── Containers ─────────────────────────── #
-# brew "docker-completion"        # Docker completion for the terminal
-cask "kubernetes-cli"            # Command-line tool for Kubernetes
-brew "devcontainer" # Reference implementation for the Development Containers specification
-brew "hadolint" # Smarter Dockerfile linter to validate best practices
+{{ if .go }}
+brew "go"                        # Open source programming language
+{{ end }}
 
-# ──────────────────────────── Databases ─────────────────────────── #
-brew "postgresql@16"             # Object-relational database system
-brew "sqlite"
+# ───────────────────────────── Editing ──────────────────────────── #
 
-# ──────────────────────── Terminal & Shell ──────────────────────── #
-## Terminal Emulators
-cask "warp"                      # Modern terminal with AI features
-cask "ghostty"                   # Modern, fast, featureful terminal
-# cask "iterm2"                    # Terminal emulator for macOS
-# cask "itermai"                   # AI extension for iterm2
+## Git tools
+brew "git"                       # Version control system
+brew "gh"                        # GitHub CLI tool
+brew "pre-commit"                # Git hooks manager
 
-## Terminal Multiplexers
-brew "tmux"                      # Terminal session manager (for compatibility)
-brew "zellij"                    # Modern terminal multiplexer in Rust (preferred)
-
-## Shell Environments
-brew "zsh"                       # Z shell, a modern alternative to bash
+## Shells
 brew "bash"                      # Bourne Again SHell
-brew "nushell"                   # Modern shell written in Rust
-brew "xonsh"                     # Python-powered shell language
-cask "powershell"                # Microsoft's task automation framework
+brew "zsh"# Z shell, a modern alternative to bash
+
+## Editor
+{{ if .enhanced_shell }}
+brew "neovim"                    # Modernized Vim text editor
+{{ end }}
 
 ## Shell Enhancements
+brew "oh-my-posh"                # Cross-shell prompt theme engine
+{{ if .enhanced_shell }}
 brew "zsh-autosuggestions"       # Fish-like autosuggestions for zsh
 brew "zsh-syntax-highlighting"   # Fish-like syntax highlighting for zsh
 brew "bash-completion@2"         # Programmable completion for Bash
-brew "oh-my-posh"                # Cross-shell prompt theme engine
-
-## Shell Development Tools
-brew "shellcheck"                # Shell script analysis tool
-brew "shfmt"                     # Shell script formatter
 
 # ─────────────────────── Command Line Tools ─────────────────────── #
 ## File Operations
@@ -257,10 +129,186 @@ brew "rich"                      # `rich` Rich text and styling for terminal out
 ## Productivity & Assistance
 brew "thefuck"                   # `fuck` Command correction tool
 brew "tldr"                      # `tldr` Simplified man pages
+{{ end }}
 
-# ─────────────────────────────── Git ────────────────────────────── #
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━ Applications ━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+{{ if .terminals }}
+# ─────────────────────── Terminal Emulators ─────────────────────── #
+cask "warp"                      # Modern terminal with AI features
+cask "ghostty"                   # Modern, fast, featureful terminal
+# cask "iterm2"                    # Terminal emulator for macOS
+# cask "itermai"                   # AI extension for iterm2
+{{ end }}
+
+{{ if .browsers }}
+# ──────────────────────────── Browsers ──────────────────────────── #
+cask "firefox"                   # Mozilla web browser
+cask "google-chrome"             # Google's web browser
+cask "tor-browser"               # Privacy-focused browser
+{{ end }}
+
+{{ if .media }}
+# ────────────────────────────── Video ───────────────────────────── #
+## Record
+cask "obs"                       # Streaming and recording software
+cask "loom" # Screen and video recording software
+
+## Model
+cask "blender"                   # 3D creation suite
+
+## Edit
+cask "adobe-creative-cloud"      # Creative suite from Adobe
+
+## Download
+cask "clipgrab"                  # Video downloader and converter
+
+## View
+cask "vlc"                       # Media player with wide format support
+{{ end }}
+
+{{ if .office }}
+# ───────────────────────────── Office ───────────────────────────── #
+cask "microsoft-office"          # Microsoft Office suite
+cask "microsoft-auto-update"     # Microsoft Office updater
+cask "notion"                    # Note-taking and collaboration platform
+cask "notion-calendar"           # Calendar app from Notion
+cask "dropbox"                   # Cloud storage service
+
+# ────────────────────── Productivity & Health ───────────────────── #
+cask "cold-turkey-blocker"       # Website and application blocker
+cask "zotero"                    # Reference management software
+cask "lastpass"                  # Password manager
+cask "flux"                      # Screen color temperature adjuster
+
+# ────────────────────────────── Misc ────────────────────────────── #
+cask "spotify"                   # Music streaming service
+cask "applite"
+# brew "gambit"                    # Game Theory Calculator
+{{ end }}
+
+{{ if .communication }}
+# ────────────────────────────── Comms ───────────────────────────── #
+cask "discord"                   # Voice and text chat platform
+cask "messenger"                 # Facebook Messenger desktop client
+cask "whatsapp"                  # WhatsApp desktop client
+cask "zoom"                      # Video conferencing software
+cask "signal"                    # Encrypted messaging app
+cask "slack"                     # Team communication platform
+{{ end }}
+
+{{ if .games }}
+# ────────────────────────────── Games ───────────────────────────── #
+cask "epic-games"               # Epic Games Store client
+cask "gog-galaxy"               # GOG gaming platform client
+cask "steam"                    # Valve's gaming platform
+cask "minecraft"                # Popular sandbox game
+{{ end }}
+
+{{ if .cybersecurity }}
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━ Cybersecurity ━━━━━━━━━━━━━━━━━━━━━━━━━ #
+## Frameworks & Suites
+cask "metasploit"               # Penetration testing framework
+cask "burp-suite"               # Web security testing tool
+
+## Network Analysis & Monitoring
+brew "wireshark"                # Network protocol analyzer
+brew "tcpflow"                  # TCP flow recorder
+brew "tcptrace"                 # TCP connection analysis tool
+brew "tcpreplay"                # TCP packet replay tool
+
+## Network Security Tools
+brew "aircrack-ng"              # Network security tool suite
+brew "dns2tcp"                  # DNS tunneling tool
+brew "knock"                    # Port knock sequence sender
+brew "socat"                    # Multipurpose relay tool
+brew "ucspi-tcp"                # TCP client-server program tools
+cask "zenmap" # Multi-platform graphical interface for official Nmap Security Scanner
+
+## Password & Access Tools
+brew "hydra"                    # Password cracking tool
+brew "john"                     # John the Ripper password cracker
+brew "fcrackzip"                # Zip password cracker
+brew "sqlmap"                   # SQL injection testing tool
+# brew "argon2"                   # Password hashing library and CLI utility
+
+## VPN & Privacy
+brew "openvpn"                  # Open source VPN solution
+
+## Hardware Tools
+cask "qflipper"                 # Flipper Zero firmware updater
+{{ end }}
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Development ━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+{{ if .supporting_languages }}
+# ────────────────────── Supporting Languages ────────────────────── #
+## Scripting Languages
+brew "php"                       # General-purpose scripting language
+brew "ruby"                      # Dynamic, object-oriented programming language
+brew "perl"                      # Highly capable scripting language
+brew "lua"
+brew "luajit"
+
+## Academic & Scientific
+cask "sage"                      # Mathematics software system
+cask "racket"                    # Modern LISP and programming language platform
+
+## LaTeX
+{{ if .latex }}
+brew "tex-fmt"                  # TeX document formatting system
+brew "latexindent"              # Perl script for formatting LaTeX files
+{{ end }}
+
+## Markdown
+{{ if .markdown }}
+brew "mdformat"                 # Markdown formatter
+brew "pandoc"                   # Universal document converter
+{{ end }}
+
+## Configuration
+brew "taplo"                    # TOML toolkit and parser
+brew "chezmoi" # Manage your dotfiles across multiple diverse machines, securely
+
+## Misc
+brew "prettier"                 # Code formatter for multiple languages
+cask "dotnet-sdk"               # SDK for Microsoft's .NET platform
+brew "tidy-html5"
+{{ end }}
+
+{{ if .containers }}
+# ─────────────────────────── Containers ─────────────────────────── #
+# brew "docker-completion"        # Docker completion for the terminal
+cask "kubernetes-cli"            # Command-line tool for Kubernetes
+brew "devcontainer" # Reference implementation for the Development Containers specification
+brew "hadolint" # Smarter Dockerfile linter to validate best practices
+{{ end }}
+
+# ──────────────────────────── Databases ─────────────────────────── #
+{{ if .databases }}
+brew "postgresql@16"             # Object-relational database system
+brew "sqlite"
+{{ end }}
+
+{{ if .shell_utils}}
+# ───────────────────────── Shell Utilities ──────────────────────── #
+## Terminal Multiplexers
+brew "tmux"                      # Terminal session manager (for compatibility)
+brew "zellij"                    # Modern terminal multiplexer in Rust (preferred)
+
+## Shell Environments
+brew "nushell"                   # Modern shell written in Rust
+brew "xonsh"                     # Python-powered shell language
+cask "powershell"                # Microsoft's task automation framework
+
+## Shell Development Tools
+brew "shellcheck"                # Shell script analysis tool
+brew "shfmt"                     # Shell script formatter
+{{ end }}
+
+{{ if .git_utils }}
+# ────────────────────────── Git Utilities ───────────────────────── #
 ## Git + Extensions
-brew "git"                       # Version control system
 brew "git-filter-repo"           # History rewriting tool
 cask "git-credential-manager"    # Secure Git credential storage
 brew "git-lfs"                   # Git extension for large files
@@ -272,28 +320,37 @@ brew "bfg"                       # Git repository cleaner
 ## Git Quality Assurance
 brew "commitizen"                # Standardized commit message tool
 brew "czg"                       # Interactive commitizen CLI
-brew "pre-commit"                # Git hooks manager
 brew "check-jsonschema"          # JSON Schema validation tool
 brew "gitleaks"                  # Secret scanning tool
 # brew "trufflehog"
 
-## Github
-brew "gh"                        # GitHub CLI tool
+## Github Actions
 brew "act"                       # Run GitHub Actions locally
 brew "actionlint"                # GitHub Actions workflow linter
+{{ end }}
 
-# ───────────────────────────── Remote ───────────────────────────── #
+{{ if .misc_utils }}
+# ────────────────────────────── Misc ────────────────────────────── #
+## Task Running
+brew "go-task"                   # Task runner / simpler Make alternative
+
+## Cloud
+brew "awscli"                    # Amazon Web Services CLI
+
+## API Development
 cask "postman"                   # API development environment
 
-# ─────────────────────────────── AI ─────────────────────────────── #
+## AI
 cask "claude"                    # Anthropic's AI assistant
 cask "netron"                    # Neural network viewer
 brew "huggingface-cli"
 
-# ────────────────────────────── Misc ────────────────────────────── #
-brew "go-task"                   # Task runner / simpler Make alternative
-brew "awscli"                    # Amazon Web Services CLI
+## Code Recording
+brew "vhs"                       # Terminal recorder and animator
+brew "charmbracelet/tap/freeze"  # Generate images of code and terminal output.
+{{ end }}
 
+{{ /*
 # ─────────────────── Random stuff I may not need ────────────────── #
 ## Core Libraries
 # brew "abseil"                    # C++ library from Google
@@ -335,26 +392,13 @@ brew "awscli"                    # Amazon Web Services CLI
 # various lib*
 # gd, ghostscript, harfbuzz, highway, imath, jasper, lame, leptonica so many more
 # json-c, krb5, libass, tesseract, theora
+*/ }}
 
+{{ if .editors }}
 # ───────────────────────────── Editors ──────────────────────────── #
 cask "visual-studio-code"        # Code editor from Microsoft
 cask "cursor"                    # AI-powered code editor
-brew "neovim"                    # Modernized Vim text editor
 brew "jupyterlab"
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fonts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-cask "font-blackout"             # Sans-serif display font
-cask "font-computer-modern"      # Computer Modern font family
-cask "font-fira-code"            # Monospace font with programming ligatures
-cask "font-fira-code-nerd-font"  # Fira Code with added icons
-cask "font-noto-naskh-arabic"    # Google Noto font for Arabic script
-cask "font-noto-serif"           # Google Noto serif font family
-cask "font-noto-serif-bengali"   # Google Noto font for Bengali script
-cask "font-noto-serif-cjk"       # Google Noto font for CJK languages
-cask "font-noto-serif-devanagari" # Google Noto font for Devanagari script
-cask "font-noto-serif-hebrew"    # Google Noto font for Hebrew script
-cask "font-noto-serif-thai"      # Google Noto font for Thai script
-cask "font-nova-round"           # Rounded sans-serif font
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━ VSCode Extensions ━━━━━━━━━━━━━━━━━━━━━━━ #
 vscode "076923.python-image-preview"
@@ -523,3 +567,20 @@ vscode "yoavbls.pretty-ts-errors"
 vscode "yzane.markdown-pdf"
 vscode "yzhang.markdown-all-in-one"
 vscode "ziyasal.vscode-open-in-github"
+{{ end }}
+
+{{ if .fonts }}
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Fonts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+cask "font-blackout"             # Sans-serif display font
+cask "font-computer-modern"      # Computer Modern font family
+cask "font-fira-code"            # Monospace font with programming ligatures
+cask "font-fira-code-nerd-font"  # Fira Code with added icons
+cask "font-noto-naskh-arabic"    # Google Noto font for Arabic script
+cask "font-noto-serif"           # Google Noto serif font family
+cask "font-noto-serif-bengali"   # Google Noto font for Bengali script
+cask "font-noto-serif-cjk"       # Google Noto font for CJK languages
+cask "font-noto-serif-devanagari" # Google Noto font for Devanagari script
+cask "font-noto-serif-hebrew"    # Google Noto font for Hebrew script
+cask "font-noto-serif-thai"      # Google Noto font for Thai script
+cask "font-nova-round"           # Rounded sans-serif font
+{{ end }}
