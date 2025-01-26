@@ -27,11 +27,11 @@
 		"enabled": false
 	},
 	{
-		"name": "METR Baslines",
-		"rootPath": "~/work/",
+		"name": "👨🏿‍🦰 METR Human Baslines",
+		"rootPath": "~/work/metr-baselines",
 		"paths": [],
 		"tags": ["📐 metr"],
-		"enabled": false
+		"enabled": true
 	},
 	{
 		"name": "🌱 METR Task Boilerplate",

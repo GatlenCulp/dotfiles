@@ -265,6 +265,8 @@
         "plaintext",
         "scminput"
     ],
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.general.enableShadowWorkspace": true,
     "debug.console.fontFamily": "FiraCode Nerd Font",
     "debug.console.fontSize": 10,
     "debug.hideLauncherWhileDebugging": true,
@@ -324,32 +326,32 @@
     "errorLens.fontFamily": "FiraCode Nerd Font",
     "errorLens.messageEnabled": true,
     "files.associations": {
-        // Config Files
-        ".aliases": "shellscript",
-        ".exports": "shellscript",
-        ".bashrc": "shellscript",
-        ".zshrc": "shellscript",
-        ".shrc": "shellscript",
-        ".xonshrc": "xonsh",
-        ".functions": "shellscript",
-        "dot_*": "shellscript",
-        "*.sh.tmpl": "shellscript",
-        "*.toml.tmpl": "toml",
-        "*.ssh": "ssh_config",
-        ".czrc": "json",
-        // Unknown
-        // Cursor
-        "*.cursorrules": "markdown",
-        // Rewrites
-        "*.css": "postcss",
-        // Should be known
-        "*.env*": "dotenv",
-        ".env*": "dotenv",
         // Misc
         "**/.x-cmd/*": "shellscript",
         "**/.x-cmd/*.yml": "yaml",
+        // Rewrites
+        "*.css": "postcss",
+        // Unknown
+        // Cursor
+        "*.cursorrules": "markdown",
+        // Should be known
+        "*.env*": "dotenv",
+        "*.sh.tmpl": "shellscript",
+        "*.ssh": "ssh_config",
+        "*.toml.tmpl": "toml",
+        // Config Files
+        ".aliases": "shellscript",
+        ".bashrc": "shellscript",
+        ".czrc": "json",
+        ".env*": "dotenv",
+        ".exports": "shellscript",
+        ".functions": "shellscript",
+        ".shrc": "shellscript",
+        ".xonshrc": "xonsh",
+        ".zshrc": "shellscript",
         "_headers": "properties",
         "_redirects": "properties",
+        "dot_*": "shellscript"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -455,6 +457,8 @@
     "markdown-preview-enhanced.mathRenderingOption": "MathJax",
     "markdown-preview-enhanced.previewTheme": "github-light.css",
     "markdown.math.enabled": false,
+    "marquee.configuration.background": "11",
+    "marquee.configuration.name": "Gatlen",
     "material-icon-theme.files.color": "#90a4ae",
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.opacity": 1,
@@ -518,9 +522,12 @@
     "powermode.explosions.gifMode": "restart",
     "powermode.explosions.maxExplosions": 3,
     "powermode.explosions.size": 10,
+    "projectManager.cacheProjectsBetweenSessions": false,
+    "projectManager.confirmSwitchOnActiveWindow": "always",
     "projectManager.git.baseFolders": [
         "/Users/gat/work/"
     ],
+    "projectManager.sortList": "Saved",
     "projectManager.tags": [
         "Personal",
         "Work",
@@ -548,6 +555,75 @@
     "redhat.telemetry.enabled": false,
     "references.preferredLocation": "view",
     "remote.autoForwardPortsSource": "hybrid",
+    // "remote.SSH.enableAgentForwarding": true, I think this copies SSH Agent status? Would be helpful, examine.
+    "remote.SSH.localServerDownload": "always",
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.useExecServer": false,
+    "remote.SSH.logLevel": "trace",
+    "remote.ssh."
+    "remote.SSH.defaultExtensions": [
+        // Python Development
+        "ms-python.vscode-pylance", // Python Language Server w/ Typing
+        "ms-python.debugpy", // VSCode Python Debugger
+        "charliermarsh.ruff", // Fast Python Linter & Formatter
+        "njpwerner.autodocstring", // Automatically generate Python docstrings
+        "rodolphebarbanneau.python-docstring-highlighter", // Highlight Python docstring syntax
+        "kevinrose.vsc-python-indent", // Correct indents for python
+        // Data Science & Notebooks
+        "ms-toolsai.jupyter", // Jupyter Notebooks in VSCode
+        "ms-toolsai.jupyter-renderers", // Jupyter Cell Output Renderer
+        "mechatroner.rainbow-csv", // Color-coded CSV Columns
+        "sbsnippets.pytorch-snippets", // Snippits for PyTorch
+        // Shell & Command Line
+        "mads-hartmann.bash-ide-vscode", // .*sh script language support
+        "timonwong.shellcheck", // .*sh script linting
+        "foxundermoon.shell-format", // .*sh script formatting
+        // Document Formats & Preview
+        "mathematic.vscode-pdf", // PDF Preview
+        "vitaliymaz.vscode-svg-previewer", // SVG Preview
+        "ctcuff.font-preview", // Font PReview
+        "james-yu.latex-workshop", // LaTeX File Renderer for Documents
+        "shd101wyy.markdown-preview-enhanced", // Improved Markdown Preview
+        // Code Formatting & Style
+        "esbenp.prettier-vscode", // Prettier general formatting tool
+        "mrmlnc.vscode-attrs-sorter", // HTML Attribute Sorter
+        "richie5um2.vscode-sort-json", // JSON Sorter
+        "2gua.rainbow-brackets", // Multi-colored brackets for readability
+        "aaron-bond.better-comments", // Comments w/ Styling
+        // Project Management & Navigation
+        "alefragnani.project-manager", // Manage VSCode Workspaces
+        /* Add the below to your projects.json file to add this project
+      '~/Library/Application Support/Cursor/User/globalStorage/alefragnani.project-manager/projects.json'
+      {
+        "name": "🍪 arena-2025-iap",
+        "rootPath": "/Path/to/your/project/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
+        "tags": [
+          "🪿 gotem"
+        ],
+        "enabled": true
+      },
+      */
+        "peterschmalfeldt.explorer-exclude", // Keep Explorer Clean by Hiding Files
+        "christian-kohler.path-intellisense", // Path Intellisense
+        "kisstkondoros.vscode-gutter-preview", // Image Preview
+        // Git & Version Control
+        "eamodio.gitlens", // View git diffs, edits, branches and more
+        // TODO: Add cookiecutter template types, include if web only
+        // API Development
+        "humao.rest-client", // Easily make HTTP queries for API testing
+        // Build Tools
+        "ms-vscode.makefile-tools", // Tools for Makefiles
+        "task.vscode-task", // Tools for Taskfiles
+        // Configuration Files
+        "tamasfe.even-better-toml", // .toml language support
+        "dotenv.dotenv-vscode", // .env language support
+        "redhat.vscode-yaml", // .yaml language support
+        "redhat.vscode-xml", // .xml language support
+        // Output & Debugging
+        "ibm.output-colorizer", // Automatically color-code VSCode Output logs
+        "usernamehw.errorlens",
+        "spmeesseman.vscode-taskexplorer" // Highlight errors in-line
+    ],
     "rest-client.fontFamily": "FiraCode Nerd Font",
     "ruff.lineLength": 100,
     "security.promptForLocalFileProtocolHandling": false,
@@ -633,6 +709,7 @@
     "window.openFilesInNewWindow": "default",
     "window.title": "🪿${activeRepositoryName} (${activeRepositoryBranchName}) ${separator} ${activeEditorMedium}",
     "winopacity.opacity": 200,
+    "workbench.accounts.experimental.showEntitlements": true,
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",
         "editor.lineHighlightBorder": "#9fced11f",
@@ -659,8 +736,6 @@
         "**/views.py": "👁️ ${dirname}/${filename}",
         "*/.vscode/launch.json": "🚀 ${dirname}/${filename}"
     },
-    "workbench.accounts.experimental.showEntitlements": true,
-    "workbench.list.smoothScrolling": true,
     "workbench.editor.labelFormat": "default",
     "workbench.editor.limit.value": 4,
     "workbench.editor.tabSizing": "shrink",
@@ -669,17 +744,7 @@
     },
     "workbench.iconTheme": "material-icon-theme",
     "workbench.layoutControl.enabled": false,
+    "workbench.list.smoothScrolling": true,
     "workbench.panel.opensMaximized": "never",
     "workbench.productIconTheme": "material-product-icons",
-    "yoink": [
-        true,
-        5
-    ],
-    "projectManager.cacheProjectsBetweenSessions": false,
-    "projectManager.confirmSwitchOnActiveWindow": "always",
-    "projectManager.sortList": "Saved",
-    "cursor.cpp.enablePartialAccepts": true,
-    "cursor.general.enableShadowWorkspace": true,
-    "marquee.configuration.background": "11",
-    "marquee.configuration.name": "Gatlen"
 }
