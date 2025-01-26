@@ -31,7 +31,7 @@ fi
 
 # ------------------- Modern command line tool replacements ------------------ #
 # See https://github.com/eza-community/eza
-export EZA_COMMON="--all --icons --time-style '+%Y-%m-%d %H:%M' --group-directories-last -I .DS_STORE"
+export EZA_COMMON="--all --icons --time-style '+%Y-%m-%d %H:%M' --total-size --sort=Name --group-directories-last -I .DS_STORE"
 alias ez="eza $EZA_COMMON"
 alias ezd="eza -D $EZA_COMMON"
 alias ezf="eza -f $EZA_COMMON"
