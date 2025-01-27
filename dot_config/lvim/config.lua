@@ -4,4 +4,4 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-lvim.colorscheme = "Dracula"
+-- lvim.colorscheme = "Dracula"

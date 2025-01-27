@@ -42,8 +42,6 @@ alias eztt="eza -l --git-repos --no-user --git $EZA_COMMON -T --level=2"
 alias la="eza -la --icons --tree --level=1 --time-style '+%Y-%m-%d %H:%M' --no-user"
 alias tre="tre --limit 3"
 
-alias z="zoxide"  # Modern replacement for cd
-
 # alias ls="(Consider using ez over ls) && ls"
 
 # --------------------------- List only directories -------------------------- #
