@@ -143,7 +143,7 @@ export PATH="$HOME/.local/share/../bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Nix
-export NIX_PATH="darwin=$HOME/.config/nix-darwin/:$NIX_PATH"
+export NIX_PATH="darwin-config=$HOME/.config/nix-darwin/darwin.nix:darwin=$HOME/.config/nix-darwin/:$NIX_PATH"
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Chezmoi ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 

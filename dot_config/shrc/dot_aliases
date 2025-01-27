@@ -43,6 +43,10 @@ alias la="eza -la --icons --tree --level=1 --time-style '+%Y-%m-%d %H:%M' --no-u
 alias tre="tre --limit 3"
 
 # alias ls="(Consider using ez over ls) && ls"
+#
+# Vim Overwrites
+alias vi="lvim"
+alias vim="lvim"
 
 # --------------------------- List only directories -------------------------- #
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
@@ -179,3 +183,5 @@ alias vhsr="source $HOME/.config/vhs/vhsrc.sh && vhs"
 alias czgai="czg ai -N=3 -M='gpt-4o'"
 alias commit="czg --config ~/.config/commitizen/cz.jsonc"
 
+# Chezmoi
+alias moi="chezmoi"

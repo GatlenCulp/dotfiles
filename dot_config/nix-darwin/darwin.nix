@@ -45,7 +45,6 @@
       "brave-browser"
       "fantastical"
       "firefox"
-      "hammerspoon"
       "karabiner-elements"
       "obsidian"
       "raycast"
