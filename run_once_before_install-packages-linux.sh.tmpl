@@ -1,15 +1,16 @@
 {{- if contains "linux" .osid -}}
 #!/bin/bash
 
+# Linuxbrew is sad =[
 # Check if brew is already installed
-if ! command -v brew &> /dev/null; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo >> /root/.bashrc
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.bashrc
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-else
-    echo "Homebrew is already installed"
-fi
-
-brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
+#if ! command -v brew &> /dev/null; then
+#    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#    echo >> /root/.bashrc
+#    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.bashrc
+#    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#else
+#    echo "Homebrew is already installed"
+#fi
+#
+#brew bundle --no-lock --file={{ .chezmoi.sourceDir }}/dot_config/Brewfile
 {{ end -}}
