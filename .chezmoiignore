@@ -12,3 +12,7 @@ install.sh
 LICENSE
 Makefile
 README.md
+
+{{- if ne .osid "windows" }}
+Documents
+{{- end }}
