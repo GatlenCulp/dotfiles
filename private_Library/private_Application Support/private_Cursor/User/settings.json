@@ -340,6 +340,7 @@
         "*.ssh": "ssh_config",
         "*.toml.tmpl": "toml",
         // Config Files
+        "*Brewfile*": "ruby",
         ".aliases": "shellscript",
         ".bashrc": "shellscript",
         ".czrc": "json",

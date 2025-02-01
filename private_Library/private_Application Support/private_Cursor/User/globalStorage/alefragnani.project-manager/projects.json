@@ -1,7 +1,13 @@
 [
 	{
-		"name": "🏟️ arena-2025-iap",
+		"name": "🏟️ ARENA 2025 IAP",
 		"rootPath": "~/work/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
+		"tags": ["🪿 gotem", "⭐️ favorite"],
+		"enabled": true
+	},
+	{
+		"name": "🪿 Desktop Goose Payload",
+		"rootPath": "~/work/desktop-goose-payload/.vscode/desktop-goose-payload.code-workspace",
 		"tags": ["🪿 gotem", "⭐️ favorite"],
 		"enabled": true
 	},
