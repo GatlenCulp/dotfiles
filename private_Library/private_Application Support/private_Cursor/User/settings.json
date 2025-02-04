@@ -48,6 +48,11 @@
     "[shellscript]": {
         "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
     },
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "[eval-log]": {
+    },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -339,6 +344,7 @@
         "*.sh.tmpl": "shellscript",
         "*.ssh": "ssh_config",
         "*.toml.tmpl": "toml",
+        "*.eval": "eval-log",
         // Config Files
         "*Brewfile*": "ruby",
         ".aliases": "shellscript",
