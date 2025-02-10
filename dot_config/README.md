@@ -317,3 +317,4 @@ While Rust might still be awesome, there are some other possible contributions t
 ## Brewfile
 
 See [https://github.com/Homebrew/homebrew-bundle](https://github.com/Homebrew/homebrew-bundle).
+TODO: Figure out whether the rayconfig file for raycast contains sensitive information

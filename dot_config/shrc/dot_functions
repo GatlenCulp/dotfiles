@@ -161,3 +161,39 @@ function o() {
 		open "$@";
 	fi;
 }
+
+# `fork` is my custom fork workflow which forks a repository onto my account,
+# makes a branch called upstream-base and a branch called dev, then switches
+# to dev.
+function fork() {
+	# Check if a repository argument is provided
+	if [ $# -eq 0 ]; then
+		echo "Usage: fork <repository>"
+		echo "Example: fork microsoft/vscode"
+		return 1
+	fi
+
+	# Fork the repository using GitHub CLI
+	echo "🍴 Forking repository $1..."
+	gh repo fork "$1" --clone=true || return 1
+
+	# Extract repository name from the full path
+	repo_name=$(basename "$1")
+	
+	# Change into the repository directory
+	cd "$repo_name" || return 1
+
+	# Create and switch to upstream-base branch
+	echo "📦 Creating upstream-base branch..."
+	git checkout -b upstream-base main
+
+	# Create and switch to dev branch
+	echo "🛠️  Creating and switching to dev branch..."
+	git checkout -b dev
+
+	echo "✅ Fork workflow complete! You're now on the 'dev' branch."
+	echo "📝 Repository structure:"
+	echo "  - main (tracks your fork)"
+	echo "  - upstream-base (tracks upstream main)"
+	echo "  - dev (your working branch)"
+}
