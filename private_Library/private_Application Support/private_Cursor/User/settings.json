@@ -335,7 +335,7 @@
         "**/.x-cmd/*": "shellscript",
         "**/.x-cmd/*.yml": "yaml",
         // Rewrites
-        "*.css": "postcss",
+        "*.css": "css",
         // Unknown
         // Cursor
         "*.cursorrules": "markdown",
@@ -426,23 +426,23 @@
         "4"
     ],
     "latex-workshop.intellisense.subsuperscript.enabled": true,
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "Make with XeTeX Gatlen",
-            "tools": [
-                "latexmk"
-            ]
-        },
-        {
-            "name": "xetex -> bibtex -> xetex* 2",
-            "tools": [
-                "xetex",
-                "bibtex",
-                "xetex",
-                "xetex"
-            ]
-        }
-    ],
+    // "latex-workshop.latex.recipes": [
+    //     {
+    //         "name": "Make with XeTeX Gatlen",
+    //         "tools": [
+    //             "latexmk"
+    //         ]
+    //     },
+    //     {
+    //         "name": "xetex -> bibtex -> xetex* 2",
+    //         "tools": [
+    //             "xetex",
+    //             "bibtex",
+    //             "xetex",
+    //             "xetex"
+    //         ]
+    //     }
+    // ],
     "latex-workshop.showContextMenu": true,
     "latex-workshop.synctex.indicator": "circle",
     "latex-workshop.view.autoFocus.enabled": true,

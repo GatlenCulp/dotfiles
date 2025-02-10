@@ -16,3 +16,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/Library/TeX/texbin:$PATH"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select
