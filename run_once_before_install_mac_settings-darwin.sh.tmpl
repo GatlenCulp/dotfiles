@@ -1,4 +1,7 @@
 {{- if eq .osid "darwin" -}}
 #!/bin/bash
 
+# Disable startup sound
+sudo nvram StartupMute=%01
+
 {{ end -}}
