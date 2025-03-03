@@ -21,3 +21,5 @@ export PATH="/Library/TeX/texbin:$PATH"
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 zstyle ':completion:*' menu select
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config

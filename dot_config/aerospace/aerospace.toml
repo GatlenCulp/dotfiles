@@ -12,16 +12,16 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
-# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
+# Normalizations. See: https://nikitabobko.github.ººio/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 50
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -41,7 +41,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -56,12 +56,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 0
-inner.vertical =   0
-outer.left =       0
-outer.bottom =     0
-outer.top =        0
-outer.right =      0
+inner.horizontal = 5
+inner.vertical =   5
+outer.left =       5
+outer.bottom =     5
+outer.top =        5
+outer.right =      5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -86,12 +86,12 @@ outer.right =      0
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-# alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
-#     do script
-#     activate
-# end tell'
-# '''
+alt-enter = '''exec-and-forget osascript -e '
+tell application "Ghostty"
+    do script
+    activate
+end tell'
+'''
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -114,70 +114,180 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-alt-b = 'workspace B'
-alt-c = 'workspace C'
-alt-d = 'workspace D'
-alt-e = 'workspace E'
-alt-f = 'workspace F'
-alt-g = 'workspace G'
-alt-i = 'workspace I'
-alt-m = 'workspace M'
-alt-n = 'workspace N'
-alt-o = 'workspace O'
-alt-p = 'workspace P'
-alt-q = 'workspace Q'
-alt-r = 'workspace R'
-alt-s = 'workspace S'
-alt-t = 'workspace T'
-alt-u = 'workspace U'
-alt-v = 'workspace V'
-alt-w = 'workspace W'
-alt-x = 'workspace X'
-alt-y = 'workspace Y'
-alt-z = 'workspace Z'
+
+
+# ### WORKSPACES ###
+# # Organized by column-topics (0-9)
+
+# ## 01-🏠_Common: Spotify, Calendar, Terminal, ex.
+# alt-1 = 'workspace 01-🏠_Common'
+# alt-q = 'workspace 01.q-🏠_Common'
+# alt-a = 'workspace 01.a-🏠_Common'
+# alt-z = 'workspace 01.z-🏠_Common'
+
+# alt-shift-1 = 'move-node-to-workspace 01-🏠_Common'
+# alt-shift-q = 'move-node-to-workspace 01.q-🏠_Common'
+# alt-shift-a = 'move-node-to-workspace 01.a-🏠_Common'
+# alt-shift-z = 'move-node-to-workspace 01.z-🏠_Common'
+
+# ## 02-📊_METR
+# alt-2 = 'workspace 02-📊_METR'    # METR related
+# alt-w = 'workspace 02.w-📊_METR'
+# alt-s = 'workspace 02.s-📊_METR'
+# alt-x = 'workspace 02.x-📊_METR'
+
+# alt-shift-2 = 'move-node-to-workspace 02-📊_METR'
+# alt-shift-w = 'move-node-to-workspace 02.w-📊_METR'
+# alt-shift-s = 'move-node-to-workspace 02.s-📊_METR'
+# alt-shift-x = 'move-node-to-workspace 02.x-📊_METR'
+
+# ## 03-🤖_MAIA
+# alt-3 = 'workspace 03-🤖_MAIA'    # MAIA related
+# alt-e = 'workspace 03.e-🤖_MAIA'
+# alt-d = 'workspace 03.d-🤖_MAIA'
+# alt-c = 'workspace 03.c-🤖_MAIA'
+
+# alt-shift-3 = 'move-node-to-workspace 03-🤖_MAIA'
+# alt-shift-e = 'move-node-to-workspace 03.e-🤖_MAIA'
+# alt-shift-d = 'move-node-to-workspace 03.d-🤖_MAIA'
+# alt-shift-c = 'move-node-to-workspace 03.c-🤖_MAIA'
+
+# ## 04-🎓_School
+# alt-4 = 'workspace 04-🎓_School'  # General school stuff
+# alt-r = 'workspace 04.r-🎓_School'
+# alt-f = 'workspace 04.f-🎓_School'
+# alt-v = 'workspace 04.v-🎓_School'
+
+# alt-shift-4 = 'move-node-to-workspace 04-🎓_School'
+# alt-shift-r = 'move-node-to-workspace 04.r-🎓_School'
+# alt-shift-f = 'move-node-to-workspace 04.f-🎓_School'
+# alt-shift-v = 'move-node-to-workspace 04.v-🎓_School'
+
+# ## 05-📼_Complex
+# alt-5 = 'workspace 05-📼_Complex' # 6.1400 Complexity
+# alt-t = 'workspace 05.t-📼_Complex'
+# alt-g = 'workspace 05.g-📼_Complex'
+# alt-b = 'workspace 05.b-📼_Complex'
+
+# alt-shift-5 = 'move-node-to-workspace 05-📼_Complex'
+# alt-shift-t = 'move-node-to-workspace 05.t-📼_Complex'
+# alt-shift-g = 'move-node-to-workspace 05.g-📼_Complex'
+# alt-shift-b = 'move-node-to-workspace 05.b-📼_Complex'
+
+# ## 06-🌐_SysEng
+# alt-6 = 'workspace 06-🌐_SysEng'  # 6.1800 Systems Engineering
+# alt-y = 'workspace 06.y-🌐_SysEng'
+# # alt-h = 'workspace 06.h-🌐_SysEng'
+# alt-n = 'workspace 06.n-🌐_SysEng'
+
+# alt-shift-6 = 'move-node-to-workspace 06-🌐_SysEng'
+# alt-shift-y = 'move-node-to-workspace 06.y-🌐_SysEng'
+# # alt-shift-h = 'move-node-to-workspace 06.h-🌐_SysEng'
+# alt-shift-n = 'move-node-to-workspace 06.n-🌐_SysEng'
+
+# ## 07-🤷🏻‍♀️_Uncert
+# alt-7 = 'workspace 07-🤷🏻‍♀️_Uncert'  # 6.4110 Uncertainty
+# alt-u = 'workspace 07.u-🤷🏻‍♀️_Uncert'
+# # alt-j = 'workspace 07.j-🤷🏻‍♀️_Uncert'
+# alt-m = 'workspace 07.m-🤷🏻‍♀️_Uncert'
+
+# alt-shift-7 = 'move-node-to-workspace 07-🤷🏻‍♀️_Uncert'
+# alt-shift-u = 'move-node-to-workspace 07.u-🤷🏻‍♀️_Uncert'
+# # alt-shift-j = 'move-node-to-workspace 07.j-🤷🏻‍♀️_Uncert'
+# alt-shift-m = 'move-node-to-workspace 07.m-🤷🏻‍♀️_Uncert'
+
+# ## 08-↗️_LinAlg
+# alt-8 = 'workspace 08-↗️_LinAlg'  # 18.06 Linear Algebra
+# alt-i = 'workspace 08.i-↗️_LinAlg'
+# # alt-k = 'workspace 08.k-↗️_LinAlg'
+# # alt-comma = 'workspace 08.comma-↗️_LinAlg'
+
+# alt-shift-8 = 'move-node-to-workspace 08-↗️_LinAlg'
+# alt-shift-i = 'move-node-to-workspace 08.i-↗️_LinAlg'
+# # alt-shift-k = 'move-node-to-workspace 08.k-↗️_LinAlg'
+# # alt-shift-comma = 'move-node-to-workspace 08.comma-↗️_LinAlg'
+
+# ## 09-🔄_Other
+# alt-9 = 'workspace 09-🔄_Other'   # Miscellaneous
+# alt-o = 'workspace 09.o-🔄_Other'
+# # alt-l = 'workspace 09.l-🔄_Other'
+# # alt-period = 'workspace 09.period-🔄_Other'
+
+# alt-shift-9 = 'move-node-to-workspace 09-🔄_Other'
+# alt-shift-o = 'move-node-to-workspace 09.o-🔄_Other'
+# # alt-shift-l = 'move-node-to-workspace 09.l-🔄_Other'
+# # alt-shift-period = 'move-node-to-workspace 09.-🔄_Other'
+
+
+
+### WORKSPACES ###
+# Organized by column-topics (0-9)
+
+## 01-🏠_Common: Spotify, Calendar, Terminal, ex.
+alt-1 = 'workspace 01-🏠_Common'
+alt-q = 'workspace 01.q-🏠_Common'
+
+alt-shift-1 = 'move-node-to-workspace 01-🏠_Common'
+alt-shift-q = 'move-node-to-workspace 01.q-🏠_Common'
+
+## 02-📊_METR
+alt-2 = 'workspace 02-📊_METR'    # METR related
+alt-w = 'workspace 02.w-📊_METR'
+
+alt-shift-2 = 'move-node-to-workspace 02-📊_METR'
+alt-shift-w = 'move-node-to-workspace 02.w-📊_METR'
+
+## 03-🤖_MAIA
+alt-3 = 'workspace 03-🤖_MAIA'    # MAIA related
+alt-e = 'workspace 03.e-🤖_MAIA'
+
+alt-shift-3 = 'move-node-to-workspace 03-🤖_MAIA'
+alt-shift-e = 'move-node-to-workspace 03.e-🤖_MAIA'
+
+## 04-🎓_School
+alt-4 = 'workspace 04-🎓_School'  # General school stuff
+alt-r = 'workspace 04.r-🎓_School'
+
+alt-shift-4 = 'move-node-to-workspace 04-🎓_School'
+alt-shift-r = 'move-node-to-workspace 04.r-🎓_School'
+
+## 05-📼_Complex
+alt-5 = 'workspace 05-📼_Complex' # 6.1400 Complexity
+alt-t = 'workspace 05.t-📼_Complex'
+
+alt-shift-5 = 'move-node-to-workspace 05-📼_Complex'
+alt-shift-t = 'move-node-to-workspace 05.t-📼_Complex'
+
+## 06-🌐_SysEng
+alt-6 = 'workspace 06-🌐_SysEng'  # 6.1800 Systems Engineering
+alt-y = 'workspace 06.y-🌐_SysEng'
+
+alt-shift-6 = 'move-node-to-workspace 06-🌐_SysEng'
+alt-shift-y = 'move-node-to-workspace 06.y-🌐_SysEng'
+
+## 07-🤷🏻‍♀️_Uncert
+alt-7 = 'workspace 07-🤷🏻‍♀️_Uncert'  # 6.4110 Uncertainty
+alt-u = 'workspace 07.u-🤷🏻‍♀️_Uncert'
+
+alt-shift-7 = 'move-node-to-workspace 07-🤷🏻‍♀️_Uncert'
+alt-shift-u = 'move-node-to-workspace 07.u-🤷🏻‍♀️_Uncert'
+
+## 08-↗️_LinAlg
+alt-8 = 'workspace 08-↗️_LinAlg'  # 18.06 Linear Algebra
+alt-i = 'workspace 08.i-↗️_LinAlg'
+
+alt-shift-8 = 'move-node-to-workspace 08-↗️_LinAlg'
+alt-shift-i = 'move-node-to-workspace 08.i-↗️_LinAlg'
+
+## 09-🔄_Other
+alt-9 = 'workspace 09-🔄_Other'   # Miscellaneous
+alt-o = 'workspace 09.o-🔄_Other'
+
+alt-shift-9 = 'move-node-to-workspace 09-🔄_Other'
+alt-shift-o = 'move-node-to-workspace 09.o-🔄_Other'
+
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
-alt-shift-a = 'move-node-to-workspace A'
-alt-shift-b = 'move-node-to-workspace B'
-alt-shift-c = 'move-node-to-workspace C'
-alt-shift-d = 'move-node-to-workspace D'
-alt-shift-e = 'move-node-to-workspace E'
-alt-shift-f = 'move-node-to-workspace F'
-alt-shift-g = 'move-node-to-workspace G'
-alt-shift-i = 'move-node-to-workspace I'
-alt-shift-m = 'move-node-to-workspace M'
-alt-shift-n = 'move-node-to-workspace N'
-alt-shift-o = 'move-node-to-workspace O'
-alt-shift-p = 'move-node-to-workspace P'
-alt-shift-q = 'move-node-to-workspace Q'
-alt-shift-r = 'move-node-to-workspace R'
-alt-shift-s = 'move-node-to-workspace S'
-alt-shift-t = 'move-node-to-workspace T'
-alt-shift-u = 'move-node-to-workspace U'
-alt-shift-v = 'move-node-to-workspace V'
-alt-shift-w = 'move-node-to-workspace W'
-alt-shift-x = 'move-node-to-workspace X'
-alt-shift-y = 'move-node-to-workspace Y'
-alt-shift-z = 'move-node-to-workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'

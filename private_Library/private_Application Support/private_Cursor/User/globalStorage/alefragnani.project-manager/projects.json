@@ -1,7 +1,28 @@
 [
   {
+    "name": "📞 CAIP Phone Lines",
+    "rootPath": "~/maia/caip-phone-lines",
+    "paths": [],
+    "tags": ["⭐️ favorite"],
+    "enabled": true
+  },
+  {
+    "name": "🕸️ MAIA Website",
+    "rootPath": "~/maia/maia",
+    "paths": [],
+    "tags": ["🤖 MAIA"],
+    "enabled": true
+  },
+  {
     "name": "📑 gatpack",
-    "rootPath": "~/work/gatpack",
+    "rootPath": "~/maia/gatpack",
+    "paths": [],
+    "tags": ["🪿 gotem", "🛠️ tool"],
+    "enabled": true
+  },
+  {
+    "name": "📑 cookiecutter-gatpack",
+    "rootPath": "~/maia/cookiecutter-gatpack",
     "paths": [],
     "tags": ["🪿 gotem", "🛠️ tool"],
     "enabled": true
@@ -14,29 +35,29 @@
     "enabled": true
   },
   {
-    "name": "📼 MIT 6.1400 Complexity Theory",
-    "rootPath": "~/work/mit_complexity_theory",
+    "name": "📼 MIT 6.140 Complexity",
+    "rootPath": "~/school/6140_complexity",
     "paths": [],
     "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
     "enabled": true
   },
   {
-    "name": "🌐 MIT 6.1800 CompSys",
-    "rootPath": "/Users/gat/work/mit_computer_systems",
+    "name": "🌐 MIT 6.180 Systems",
+    "rootPath": "~/school/6180_systems",
     "paths": [],
     "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
     "enabled": true
   },
   {
     "name": "🤷🏻‍♀️ MIT 6.4110 Uncertainty",
-    "rootPath": "~/work/mit_uncertainty/.vscode/uncertainty.code-workspace",
+    "rootPath": "~/school/6411_uncertainty",
     "paths": [],
     "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
     "enabled": true
   },
   {
     "name": "↗️ MIT 18.06 Linear Algebra",
-    "rootPath": "~/work/mit_linear_algebra/.vscode/mit_linear_algebra.code-workspace",
+    "rootPath": "~/school/1806_linalg",
     "paths": [],
     "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
     "enabled": true

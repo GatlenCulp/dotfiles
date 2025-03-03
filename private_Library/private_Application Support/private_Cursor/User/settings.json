@@ -3,6 +3,7 @@
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[eval-log]": {},
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -25,6 +26,11 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.snippetSuggestions": "inline",
         "editor.suggest.showSnippets": true
+    },
+    "[nix]": {
+        "editor.defaultFormatter": "jnoortheen.nix-ide",
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
     },
     "[python]": {
         "editor.codeActionsOnSave": {
@@ -50,8 +56,6 @@
     },
     "[svelte]": {
         "editor.defaultFormatter": "svelte.svelte-vscode"
-    },
-    "[eval-log]": {
     },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -331,21 +335,16 @@
     "errorLens.fontFamily": "FiraCode Nerd Font",
     "errorLens.messageEnabled": true,
     "files.associations": {
-        // Misc
         "**/.x-cmd/*": "shellscript",
         "**/.x-cmd/*.yml": "yaml",
-        // Rewrites
         "*.css": "css",
-        // Unknown
-        // Cursor
         "*.cursorrules": "markdown",
-        // Should be known
         "*.env*": "dotenv",
+        "*.eval": "eval-log",
         "*.sh.tmpl": "shellscript",
+        "*.spec": "python",
         "*.ssh": "ssh_config",
         "*.toml.tmpl": "toml",
-        "*.eval": "eval-log",
-        // Config Files
         "*Brewfile*": "ruby",
         ".aliases": "shellscript",
         ".bashrc": "shellscript",
@@ -561,13 +560,6 @@
     "pythonTestExplorer.testFramework": "pytest",
     "redhat.telemetry.enabled": false,
     "references.preferredLocation": "view",
-    "remote.autoForwardPortsSource": "hybrid",
-    // "remote.SSH.enableAgentForwarding": true, I think this copies SSH Agent status? Would be helpful, examine.
-    "remote.SSH.localServerDownload": "always",
-    "remote.SSH.showLoginTerminal": true,
-    "remote.SSH.useExecServer": false,
-    "remote.SSH.logLevel": "trace",
-    "remote.ssh."
     "remote.SSH.defaultExtensions": [
         // Python Development
         "ms-python.vscode-pylance", // Python Language Server w/ Typing
@@ -631,6 +623,12 @@
         "usernamehw.errorlens",
         "spmeesseman.vscode-taskexplorer" // Highlight errors in-line
     ],
+    // "remote.SSH.enableAgentForwarding": true, I think this copies SSH Agent status? Would be helpful, examine.
+    "remote.SSH.localServerDownload": "always",
+    "remote.SSH.logLevel": "trace",
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.useExecServer": false,
+    "remote.autoForwardPortsSource": "hybrid",
     "rest-client.fontFamily": "FiraCode Nerd Font",
     "ruff.lineLength": 100,
     "security.promptForLocalFileProtocolHandling": false,
@@ -705,6 +703,18 @@
         "yellow": 60
     },
     "testing.coverageToolbarEnabled": true,
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "block-outline",
+    "vim.cursorStylePerMode.replace": "underline",
+    "vim.cursorStylePerMode.visual": "block",
+    "vim.cursorStylePerMode.visualblock": "block",
+    "vim.cursorStylePerMode.visualline": "block",
+    "vim.disableExtension": false,
+    "vim.enableNeovim": true,
+    "vim.highlightedyank.enable": true,
+    "vim.neovimConfigPath": "~/.config/nvim/init.vim",
+    "vim.neovimUseConfigFile": false,
+    "vim.smartRelativeLine": true,
     "vscode-office.editorTheme": "Dracula",
     "vscode-office.openOutline": false,
     "vscode-pets.petSize": "small",
@@ -754,4 +764,35 @@
     "workbench.list.smoothScrolling": true,
     "workbench.panel.opensMaximized": "never",
     "workbench.productIconTheme": "material-product-icons",
+    "python.analysis.packageIndexDepths": [
+        {
+            "name": "sklearn",
+            "depth": 2
+        },
+        {
+            "name": "matplotlib",
+            "depth": 2
+        },
+        {
+            "name": "scipy",
+            "depth": 2
+        },
+        {
+            "name": "django",
+            "depth": 2
+        },
+        {
+            "name": "flask",
+            "depth": 2
+        },
+        {
+            "name": "fastapi",
+            "depth": 2
+        },
+        {
+            "name": "inspect_ai",
+            "depth": 2
+        }
+    ],
+    "svelte.enable-ts-plugin": true
 }

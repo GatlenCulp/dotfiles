@@ -33,7 +33,7 @@ lvim.plugins = {
       "nvim-tree/nvim-web-devicons",
       "zbirenbaum/copilot.lua",
       {
-        "HakonHarnes/img-clip.nvim",
+        "HakoHarnes/img-clip.nvim",
         event = "VeryLazy",
         opts = {
           default = {
@@ -56,7 +56,29 @@ lvim.plugins = {
     },
     {
       "xiyaowong/transparent.nvim",
-    }
+    },
+    {
+      "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      ft = { "markdown" },
+      build = function() vim.fn["mkdp#util#install"]() end,
+    },
+    {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
+  },
+  {
+    "dccsillag/magma-nvim",
+    lazy = false,                    -- ensure it's loaded eagerly
+    build = ":UpdateRemotePlugins",  -- run this command after installation
+    config = function()
+      -- Optional: Set up your keybindings for magma-nvim
+      vim.keymap.set("n", "<LocalLeader>rr", ":MagmaEvaluateLine<CR>", { desc = "Evaluate current line" })
+      vim.keymap.set("n", "<LocalLeader>r", ":MagmaEvaluateOperator<CR>", { desc = "Evaluate operator" })
+      vim.keymap.set("v", "<LocalLeader>r", ":<C-u>MagmaEvaluateVisual<CR>", { desc = "Evaluate visual selection" })
+      vim.keymap.set("n", "<LocalLeader>rc", ":MagmaReevaluateCell<CR>", { desc = "Reevaluate cell" })
+      vim.keymap.set("n", "<LocalLeader>rd", ":MagmaDelete<CR>", { desc = "Delete cell" })
+      vim.keymap.set("n", "<LocalLeader>ro", ":MagmaShowOutput<CR>", { desc = "Show cell output" })
+      -- Additional configuration can be set here if needed.
+    end,
   },
 --   {
 --     "miversen33/sunglasses.nvim",
@@ -66,3 +88,10 @@ lvim.plugins = {
 
 lvim.colorscheme = "Dracula"
 
+-- For autosave
+vim.opt.autowrite = true
+vim.opt.autowriteall = true
+
+-- Numbering
+vim.opt.number = true
+vim.opt.relativenumber = true
