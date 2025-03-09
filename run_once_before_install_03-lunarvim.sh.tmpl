@@ -1,6 +1,7 @@
 {{- if eq .osid "darwin" -}}
 #!/bin/bash
 
+# Make sure this script runs after package installation
 if ! command -v lvim >/dev/null 2>&1; then
     LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 else
