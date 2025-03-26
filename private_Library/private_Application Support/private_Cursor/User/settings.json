@@ -226,7 +226,7 @@
             "color": "#F8F8F2", // Foreground
             "italic": true,
             // # Sub-Subheader
-            "tag": "#",
+            "tag": "##",
             "underline": true
         }
     ],
@@ -357,7 +357,9 @@
         ".zshrc": "shellscript",
         "_headers": "properties",
         "_redirects": "properties",
-        "dot_*": "shellscript"
+        "dot_*": "shellscript",
+        "sh.tmpl": "shellscript",
+        ".envrc": "shellscript"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -367,7 +369,12 @@
         "**/.ruby-lsp": true,
         "**/.svn": true,
         "**/CVS": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        "**/.trunk/*actions/": true,
+        "**/.trunk/*logs/": true,
+        "**/.trunk/*notifications/": true,
+        "**/.trunk/*out/": true,
+        "**/.trunk/*plugins/": true
     },
     "fold.level": 1,
     "git.autofetch": true,
@@ -730,9 +737,15 @@
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",
         "editor.lineHighlightBorder": "#9fced11f",
-        "statusBar.background": "#28632b",
+        "statusBar.background": "#5f0000",
         "statusBar.foreground": "#ffffff",
-        "statusBarItem.hoverBackground": "#327e36"
+        "statusBarItem.hoverBackground": "#327e36",
+        "activityBar.background": "#012B63",
+        "titleBar.activeBackground": "#023D8A",
+        "titleBar.activeForeground": "#F6FAFF",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000",
+        "statusBar.debuggingForeground": "#ffffff"
     },
     "workbench.colorTheme": "Dracula Theme",
     "workbench.editor.customLabels.enabled": true,
@@ -794,5 +807,16 @@
             "depth": 2
         }
     ],
-    "svelte.enable-ts-plugin": true
+    "svelte.enable-ts-plugin": true,
+    "vim.sneak": true,
+    "vim.statusBarColorControl": true,
+    "files.watcherExclude": {
+        "**/.trunk/*actions/": true,
+        "**/.trunk/*logs/": true,
+        "**/.trunk/*notifications/": true,
+        "**/.trunk/*out/": true,
+        "**/.trunk/*plugins/": true
+    },
+    "editor.defaultFormatter": "trunk.io",
+    "trunk.showPreexistingIssues": true
 }

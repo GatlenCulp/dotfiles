@@ -23,3 +23,6 @@ fpath+=~/.zfunc; autoload -Uz compinit; compinit
 zstyle ':completion:*' menu select
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config
+export PATH="$HOME/bin:$PATH"
+
+test -f /Users/gat/.cache/trunk/shell-hooks/zsh.rc && source /Users/gat/.cache/trunk/shell-hooks/zsh.rc;

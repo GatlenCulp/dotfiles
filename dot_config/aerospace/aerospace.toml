@@ -224,67 +224,67 @@ alt-shift-equal = 'resize smart +50'
 # Organized by column-topics (0-9)
 
 ## 01-🏠_Common: Spotify, Calendar, Terminal, ex.
-alt-1 = 'workspace 01-🏠_Common'
-alt-q = 'workspace 01.q-🏠_Common'
+alt-1 = 'workspace 1'
+alt-q = 'workspace q'
 
-alt-shift-1 = 'move-node-to-workspace 01-🏠_Common'
-alt-shift-q = 'move-node-to-workspace 01.q-🏠_Common'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-q = 'move-node-to-workspace q'
 
 ## 02-📊_METR
-alt-2 = 'workspace 02-📊_METR'    # METR related
-alt-w = 'workspace 02.w-📊_METR'
+alt-2 = 'workspace 2'    # METR related
+alt-w = 'workspace w'
 
-alt-shift-2 = 'move-node-to-workspace 02-📊_METR'
-alt-shift-w = 'move-node-to-workspace 02.w-📊_METR'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-w = 'move-node-to-workspace w'
 
 ## 03-🤖_MAIA
-alt-3 = 'workspace 03-🤖_MAIA'    # MAIA related
-alt-e = 'workspace 03.e-🤖_MAIA'
+alt-3 = 'workspace 3'    # MAIA related
+alt-e = 'workspace e'
 
-alt-shift-3 = 'move-node-to-workspace 03-🤖_MAIA'
-alt-shift-e = 'move-node-to-workspace 03.e-🤖_MAIA'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-e = 'move-node-to-workspace e'
 
 ## 04-🎓_School
-alt-4 = 'workspace 04-🎓_School'  # General school stuff
-alt-r = 'workspace 04.r-🎓_School'
+alt-4 = 'workspace 4'  # General school stuff
+alt-r = 'workspace r'
 
-alt-shift-4 = 'move-node-to-workspace 04-🎓_School'
-alt-shift-r = 'move-node-to-workspace 04.r-🎓_School'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-r = 'move-node-to-workspace r'
 
 ## 05-📼_Complex
-alt-5 = 'workspace 05-📼_Complex' # 6.1400 Complexity
-alt-t = 'workspace 05.t-📼_Complex'
+alt-5 = 'workspace 5' # 6.1400 Complexity
+alt-t = 'workspace t'
 
-alt-shift-5 = 'move-node-to-workspace 05-📼_Complex'
-alt-shift-t = 'move-node-to-workspace 05.t-📼_Complex'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-t = 'move-node-to-workspace t'
 
 ## 06-🌐_SysEng
-alt-6 = 'workspace 06-🌐_SysEng'  # 6.1800 Systems Engineering
-alt-y = 'workspace 06.y-🌐_SysEng'
+alt-6 = 'workspace 6'  # 6.1800 Systems Engineering
+alt-y = 'workspace y'
 
-alt-shift-6 = 'move-node-to-workspace 06-🌐_SysEng'
-alt-shift-y = 'move-node-to-workspace 06.y-🌐_SysEng'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-y = 'move-node-to-workspace y'
 
 ## 07-🤷🏻‍♀️_Uncert
-alt-7 = 'workspace 07-🤷🏻‍♀️_Uncert'  # 6.4110 Uncertainty
-alt-u = 'workspace 07.u-🤷🏻‍♀️_Uncert'
+alt-7 = 'workspace 7'  # 6.4110 Uncertainty
+alt-u = 'workspace u'
 
-alt-shift-7 = 'move-node-to-workspace 07-🤷🏻‍♀️_Uncert'
-alt-shift-u = 'move-node-to-workspace 07.u-🤷🏻‍♀️_Uncert'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-u = 'move-node-to-workspace u'
 
 ## 08-↗️_LinAlg
-alt-8 = 'workspace 08-↗️_LinAlg'  # 18.06 Linear Algebra
-alt-i = 'workspace 08.i-↗️_LinAlg'
+alt-8 = 'workspace 8'  # 18.06 Linear Algebra
+alt-i = 'workspace i'
 
-alt-shift-8 = 'move-node-to-workspace 08-↗️_LinAlg'
-alt-shift-i = 'move-node-to-workspace 08.i-↗️_LinAlg'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-i = 'move-node-to-workspace i'
 
 ## 09-🔄_Other
-alt-9 = 'workspace 09-🔄_Other'   # Miscellaneous
-alt-o = 'workspace 09.o-🔄_Other'
+alt-9 = 'workspace 9'   # Miscellaneous
+alt-o = 'workspace o'
 
-alt-shift-9 = 'move-node-to-workspace 09-🔄_Other'
-alt-shift-o = 'move-node-to-workspace 09.o-🔄_Other'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-o = 'move-node-to-workspace o'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace

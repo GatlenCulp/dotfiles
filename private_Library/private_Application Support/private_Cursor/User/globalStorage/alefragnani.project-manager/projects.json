@@ -29,7 +29,7 @@
   },
   {
     "name": "🏟️ ARENA 2025 IAP",
-    "rootPath": "~/work/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
+    "rootPath": "~/maia/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
     "paths": [],
     "tags": ["🪿 gotem", "⭐️ favorite"],
     "enabled": true
@@ -77,10 +77,24 @@
     "enabled": false
   },
   {
+    "name": "📏 MP4-Tasks (AWM)",
+    "rootPath": "~/metr/mp4-tasks/awm_inspect/",
+    "paths": [],
+    "tags": ["📐 metr"],
+    "enabled": true
+  },
+  {
     "name": "😢 Embedding Translation (LEAD)",
     "rootPath": "~/work/FA2024/embedding_translation/.vscode/embedding_translation.code-workspace",
     "paths": [],
     "tags": ["🎓 school"],
+    "enabled": true
+  },
+  {
+    "name": "🦿 METR SWE Agent",
+    "rootPath": "~/metr/SWE-agent/",
+    "paths": [],
+    "tags": ["📐 metr"],
     "enabled": true
   },
   {
@@ -148,38 +162,10 @@
   },
   {
     "name": "🍪 gotem",
-    "rootPath": "~/work/gatlens-opinionated-template/.vscode/gotem.code-workspace",
+    "rootPath": "~/work/gatlens-opinionated-template",
     "paths": [],
     "tags": ["🛠️ tool", "⭐️ favorite"],
     "enabled": true
-  },
-  {
-    "name": "🍪 ccds",
-    "rootPath": "~/work/gatlens-opinionated-template/",
-    "paths": [],
-    "tags": ["🛠️ tool", "⭐️ favorite"],
-    "enabled": false
-  },
-  {
-    "name": "🍪 project_name (Team Workspace)",
-    "rootPath": "~/work/gatlens-opinionated-template/manual_test/project_name/.vscode/project_name.team.code-workspace",
-    "paths": [],
-    "tags": ["🪿 gotem", "⭐️ favorite"],
-    "enabled": false
-  },
-  {
-    "name": "📑 MopMan_Packetmaker",
-    "rootPath": "~/work/MopMan_Packetmaker/.vscode/MopMan_Packetmaker.code-workspace",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": false
-  },
-  {
-    "name": "🍺 homebrew",
-    "rootPath": "/opt/homebrew",
-    "paths": [],
-    "tags": ["💻 computer"],
-    "enabled": false
   },
   {
     "name": "🤖 6.796 Deep Learning",
@@ -191,13 +177,6 @@
   {
     "name": "gatpack dev-container",
     "rootPath": "vscode-remote://dev-container+7b22686f737450617468223a222f55736572732f6761742f776f726b2f6761747061636b222c226c6f63616c446f636b6572223a66616c73652c2273657474696e6773223a7b22636f6e74657874223a226f7262737461636b227d2c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspaces/gatpack",
-    "paths": [],
-    "tags": [],
-    "enabled": true
-  },
-  {
-    "name": "mit_linear_algebra",
-    "rootPath": "/Users/gat/work/mit_linear_algebra/.vscode/mit_linear_algebra.code-workspace",
     "paths": [],
     "tags": [],
     "enabled": true
