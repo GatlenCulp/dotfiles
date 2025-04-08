@@ -1,8 +1,35 @@
 [
   {
+    "name": "⚙️ Config",
+    "rootPath": "~/.local/share/chezmoi",
+    "paths": [],
+    "tags": ["⭐️ favorite"],
+    "enabled": true
+  },
+  {
+    "name": "📄 Resume",
+    "rootPath": "~/personal/resume",
+    "paths": [],
+    "tags": ["⭐️ favorite"],
+    "enabled": true
+  },
+  {
+    "name": "grade-forecast",
+    "rootPath": "~/school/grade-forecast",
+    "paths": [],
+    "tags": ["🎓 school"],
+    "enabled": true
+  },
+  {
     "name": "📞 CAIP Phone Lines",
     "rootPath": "~/maia/caip-phone-lines",
     "paths": [],
+    "tags": ["⭐️ favorite"],
+    "enabled": true
+  },
+  {
+    "name": "🌐 Gatlen's Blog",
+    "rootPath": "~/personal/blog",
     "tags": ["⭐️ favorite"],
     "enabled": true
   },

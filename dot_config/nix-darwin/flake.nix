@@ -16,6 +16,7 @@
         [
           pkgs.vim
           pkgs.neo-cowsay
+          pkgs.devenv
         ];
 
       # Necessary for using flakes on this system.

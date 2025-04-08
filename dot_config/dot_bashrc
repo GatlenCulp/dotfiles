@@ -8,4 +8,5 @@ export BASHRC_DIR="$HOME/.config/bashrc"
 
 source $BASHRC_DIR/fzf.bash
 source $BASHRC_DIR/starship.bash
+source $BASHRC_DIR/direnv.bash
 # source $BASHRC_DIR/oh-my-posh.bash

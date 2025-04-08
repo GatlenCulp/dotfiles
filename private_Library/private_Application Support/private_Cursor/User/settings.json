@@ -328,7 +328,7 @@
         "textMateRules": []
     },
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.wordWrap": "off",
+    "editor.wordWrap": "bounded",
     "errorLens.codeLensEnabled": false,
     "errorLens.codeLensOnClick": "showProblemsView",
     "errorLens.followCursor": "allLinesExceptActive",
@@ -740,9 +740,9 @@
         "statusBar.background": "#5f0000",
         "statusBar.foreground": "#ffffff",
         "statusBarItem.hoverBackground": "#327e36",
-        "activityBar.background": "#012B63",
-        "titleBar.activeBackground": "#023D8A",
-        "titleBar.activeForeground": "#F6FAFF",
+        "activityBar.background": "#312165",
+        "titleBar.activeBackground": "#452E8D",
+        "titleBar.activeForeground": "#FBFAFD",
         "statusBar.noFolderBackground": "#5f0000",
         "statusBar.debuggingBackground": "#5f0000",
         "statusBar.debuggingForeground": "#ffffff"
@@ -818,5 +818,11 @@
         "**/.trunk/*plugins/": true
     },
     "editor.defaultFormatter": "trunk.io",
-    "trunk.showPreexistingIssues": true
+    "trunk.showPreexistingIssues": true,
+    "[typst]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    }
 }

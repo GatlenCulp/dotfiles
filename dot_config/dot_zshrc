@@ -9,5 +9,6 @@ source $ZSHRC_DIR/oh-my-zsh.zsh
 source $ZSHRC_DIR/zoxide.zsh
 source $ZSHRC_DIR/chezmoi.zsh
 source $ZSHRC_DIR/starship.zsh
+source $ZSHRC_DIR/direnv.zsh
 
 # source $ZSHRC_DIR/oh-my-posh.zsh
