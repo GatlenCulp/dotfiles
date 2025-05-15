@@ -91,8 +91,14 @@ function update() {
 		omz update
 	fi
 
+	# TLDR Documentation
 	if command -v tldr &>/dev/null; then
 		tldr --update
+	fi
+
+	# Nix and Flakes
+	if command -v nix &>/dev/null; then
+		sudo determinate-nixd upgrade
 	fi
 
 	echo "✅ System update complete!"

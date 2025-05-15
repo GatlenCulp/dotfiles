@@ -5,6 +5,7 @@
 .vscode
 docker
 logs
+tests
 
 .gitconfig
 .pre-commit-config.yaml

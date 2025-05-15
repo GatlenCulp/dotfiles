@@ -745,9 +745,9 @@
         "statusBar.background": "#005f5f",
         "statusBar.foreground": "#ffffff",
         "statusBarItem.hoverBackground": "#327e36",
-        "activityBar.background": "#302559",
-        "titleBar.activeBackground": "#43347C",
-        "titleBar.activeForeground": "#FAFAFD",
+        "activityBar.background": "#531C12",
+        "titleBar.activeBackground": "#74271A",
+        "titleBar.activeForeground": "#FDF9F8",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f",
         "statusBar.debuggingForeground": "#ffffff"
