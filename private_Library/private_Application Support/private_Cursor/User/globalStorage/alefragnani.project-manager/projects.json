@@ -1,211 +1,304 @@
 [
-  {
-    "name": "⚙️ Config",
-    "rootPath": "~/.local/share/chezmoi",
-    "paths": [],
-    "tags": ["⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "📄 Resume",
-    "rootPath": "~/personal/resume",
-    "paths": [],
-    "tags": ["⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "grade-forecast",
-    "rootPath": "~/school/grade-forecast",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": true
-  },
-  {
-    "name": "📞 CAIP Phone Lines",
-    "rootPath": "~/maia/caip-phone-lines",
-    "paths": [],
-    "tags": ["⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🌐 Gatlen's Blog",
-    "rootPath": "~/personal/blog",
-    "tags": ["⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🕸️ MAIA Website",
-    "rootPath": "~/maia/maia",
-    "paths": [],
-    "tags": ["🤖 MAIA"],
-    "enabled": true
-  },
-  {
-    "name": "📑 gatpack",
-    "rootPath": "~/maia/gatpack",
-    "paths": [],
-    "tags": ["🪿 gotem", "🛠️ tool"],
-    "enabled": true
-  },
-  {
-    "name": "📑 cookiecutter-gatpack",
-    "rootPath": "~/maia/cookiecutter-gatpack",
-    "paths": [],
-    "tags": ["🪿 gotem", "🛠️ tool"],
-    "enabled": true
-  },
-  {
-    "name": "🏟️ ARENA 2025 IAP",
-    "rootPath": "~/maia/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
-    "paths": [],
-    "tags": ["🪿 gotem", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "📼 MIT 6.140 Complexity",
-    "rootPath": "~/school/6140_complexity",
-    "paths": [],
-    "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🌐 MIT 6.180 Systems",
-    "rootPath": "~/school/6180_systems",
-    "paths": [],
-    "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🤷🏻‍♀️ MIT 6.4110 Uncertainty",
-    "rootPath": "~/school/6411_uncertainty",
-    "paths": [],
-    "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "↗️ MIT 18.06 Linear Algebra",
-    "rootPath": "~/school/1806_linalg",
-    "paths": [],
-    "tags": ["🪿 gotem", "🎓 school", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🪿 Desktop Goose Payload",
-    "rootPath": "~/work/desktop-goose-payload/.vscode/desktop-goose-payload.code-workspace",
-    "paths": [],
-    "tags": ["🪿 gotem", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🥡 White Box Monitoring (Clymer Work Trial)",
-    "rootPath": "~/work/white-box-monitoring/",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "📏 MP4-Tasks (AWM)",
-    "rootPath": "~/metr/mp4-tasks/awm_inspect/",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": true
-  },
-  {
-    "name": "😢 Embedding Translation (LEAD)",
-    "rootPath": "~/work/FA2024/embedding_translation/.vscode/embedding_translation.code-workspace",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": true
-  },
-  {
-    "name": "🦿 METR SWE Agent",
-    "rootPath": "~/metr/SWE-agent/",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": true
-  },
-  {
-    "name": "🪴 METR Vivaria",
-    "rootPath": "~/work/vivaria/.vscode/vivaria.code-workspace",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "👨🏿‍🦰 METR Human Baslines",
-    "rootPath": "~/work/metr-baselines",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": true
-  },
-  {
-    "name": "🌱 METR Task Boilerplate",
-    "rootPath": "~/work/metr-task-boilerplate",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "🍁 METR Homebrew Vivaria",
-    "rootPath": "/opt/homebrew/Library/Taps/gatlenculp/homebrew-vivaria",
-    "paths": [],
-    "tags": ["📐 metr"],
-    "enabled": false
-  },
-  {
-    "name": "🍎 MacOS Setup",
-    "rootPath": "~/work/macos_setup",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": false
-  },
-  {
-    "name": "🏠 gat home",
-    "rootPath": "~/.vscode/gat.code-workspace",
-    "paths": [],
-    "tags": ["💻 computer"],
-    "enabled": true
-  },
-  {
-    "name": "⚙️ dotfiles",
-    "rootPath": "~/.config/.vscode/dotfiles.code-workspace",
-    "paths": [],
-    "tags": ["💻 computer"],
-    "enabled": true
-  },
-  {
-    "name": "❓ gatlens_prompt_engineering",
-    "rootPath": "~/work/gatlens_prompt_engineering",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": true
-  },
-  {
-    "name": "📁 project-boilerplate",
-    "rootPath": "~/work/project-boilerplate/.vscode/project-boilerplate.code-workspace",
-    "paths": [],
-    "tags": ["🛠️ tool"],
-    "enabled": true
-  },
-  {
-    "name": "🍪 gotem",
-    "rootPath": "~/work/gatlens-opinionated-template",
-    "paths": [],
-    "tags": ["🛠️ tool", "⭐️ favorite"],
-    "enabled": true
-  },
-  {
-    "name": "🤖 6.796 Deep Learning",
-    "rootPath": "~/work/FA2024/DL/.vscode/DL.code-workspace",
-    "paths": [],
-    "tags": ["🎓 school"],
-    "enabled": false
-  },
-  {
-    "name": "gatpack dev-container",
-    "rootPath": "vscode-remote://dev-container+7b22686f737450617468223a222f55736572732f6761742f776f726b2f6761747061636b222c226c6f63616c446f636b6572223a66616c73652c2273657474696e6773223a7b22636f6e74657874223a226f7262737461636b227d2c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspaces/gatpack",
-    "paths": [],
-    "tags": [],
-    "enabled": true
-  }
+	{
+		"name": "⚙️ Config",
+		"rootPath": "~/.local/share/chezmoi",
+		"paths": [],
+		"tags": [
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "📄 Resume",
+		"rootPath": "~/personal/resume",
+		"paths": [],
+		"tags": [
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "grade-forecast",
+		"rootPath": "~/school/grade-forecast",
+		"paths": [],
+		"tags": [
+			"🎓 school"
+		],
+		"enabled": true
+	},
+	{
+		"name": "📞 CAIP Phone Lines",
+		"rootPath": "~/maia/caip-phone-lines",
+		"paths": [],
+		"tags": [
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🌐 Gatlen's Blog",
+		"rootPath": "~/personal/blog",
+		"paths": [],
+		"tags": [
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🕸️ MAIA Website",
+		"rootPath": "~/maia/maia",
+		"paths": [],
+		"tags": [
+			"🤖 MAIA"
+		],
+		"enabled": true
+	},
+	{
+		"name": "📑 gatpack",
+		"rootPath": "~/maia/gatpack",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"🛠️ tool"
+		],
+		"enabled": true
+	},
+	{
+		"name": "📑 cookiecutter-gatpack",
+		"rootPath": "~/maia/cookiecutter-gatpack",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"🛠️ tool"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🏟️ ARENA 2025 IAP",
+		"rootPath": "~/maia/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "📼 MIT 6.140 Complexity",
+		"rootPath": "~/school/6140_complexity",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"🎓 school",
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🌐 MIT 6.180 Systems",
+		"rootPath": "~/school/6180_systems",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"🎓 school",
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🤷🏻‍♀️ MIT 6.4110 Uncertainty",
+		"rootPath": "~/school/6411_uncertainty",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"🎓 school",
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "↗️ MIT 18.06 Linear Algebra",
+		"rootPath": "~/school/1806_linalg",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"🎓 school",
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🪿 Desktop Goose Payload",
+		"rootPath": "~/work/desktop-goose-payload/.vscode/desktop-goose-payload.code-workspace",
+		"paths": [],
+		"tags": [
+			"🪿 gotem",
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🥡 White Box Monitoring (Clymer Work Trial)",
+		"rootPath": "~/work/white-box-monitoring/",
+		"paths": [],
+		"tags": [
+			"📐 metr"
+		],
+		"enabled": false
+	},
+	{
+		"name": "📏 MP4-Tasks (AWM)",
+		"rootPath": "~/metr/mp4-tasks/awm_inspect/",
+		"paths": [],
+		"tags": [
+			"📐 metr"
+		],
+		"enabled": true
+	},
+	{
+		"name": "😢 Embedding Translation (LEAD)",
+		"rootPath": "~/work/FA2024/embedding_translation/.vscode/embedding_translation.code-workspace",
+		"paths": [],
+		"tags": [
+			"🎓 school"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🦿 METR SWE Agent",
+		"rootPath": "~/metr/SWE-agent/",
+		"paths": [],
+		"tags": [
+			"📐 metr"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🪴 METR Vivaria",
+		"rootPath": "~/work/vivaria/.vscode/vivaria.code-workspace",
+		"paths": [],
+		"tags": [
+			"📐 metr"
+		],
+		"enabled": false
+	},
+	{
+		"name": "👨🏿‍🦰 METR Human Baslines",
+		"rootPath": "~/work/metr-baselines",
+		"paths": [],
+		"tags": [
+			"📐 metr"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🌱 METR Task Boilerplate",
+		"rootPath": "~/work/metr-task-boilerplate",
+		"paths": [],
+		"tags": [
+			"📐 metr"
+		],
+		"enabled": false
+	},
+	{
+		"name": "🍁 METR Homebrew Vivaria",
+		"rootPath": "/opt/homebrew/Library/Taps/gatlenculp/homebrew-vivaria",
+		"paths": [],
+		"tags": [
+			"📐 metr"
+		],
+		"enabled": false
+	},
+	{
+		"name": "🍎 MacOS Setup",
+		"rootPath": "~/work/macos_setup",
+		"paths": [],
+		"tags": [
+			"🛠️ tool"
+		],
+		"enabled": false
+	},
+	{
+		"name": "🏠 gat home",
+		"rootPath": "~/.vscode/gat.code-workspace",
+		"paths": [],
+		"tags": [
+			"💻 computer"
+		],
+		"enabled": true
+	},
+	{
+		"name": "⚙️ dotfiles",
+		"rootPath": "~/.config/.vscode/dotfiles.code-workspace",
+		"paths": [],
+		"tags": [
+			"💻 computer"
+		],
+		"enabled": true
+	},
+	{
+		"name": "❓ gatlens_prompt_engineering",
+		"rootPath": "~/work/gatlens_prompt_engineering",
+		"paths": [],
+		"tags": [
+			"🛠️ tool"
+		],
+		"enabled": true
+	},
+	{
+		"name": "📁 project-boilerplate",
+		"rootPath": "~/work/project-boilerplate/.vscode/project-boilerplate.code-workspace",
+		"paths": [],
+		"tags": [
+			"🛠️ tool"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🍪 gotem",
+		"rootPath": "~/work/gatlens-opinionated-template",
+		"paths": [],
+		"tags": [
+			"🛠️ tool",
+			"⭐️ favorite"
+		],
+		"enabled": true
+	},
+	{
+		"name": "🤖 6.796 Deep Learning",
+		"rootPath": "~/work/FA2024/DL/.vscode/DL.code-workspace",
+		"paths": [],
+		"tags": [
+			"🎓 school"
+		],
+		"enabled": false
+	},
+	{
+		"name": "gatpack dev-container",
+		"rootPath": "vscode-remote://dev-container+7b22686f737450617468223a222f55736572732f6761742f776f726b2f6761747061636b222c226c6f63616c446f636b6572223a66616c73652c2273657474696e6773223a7b22636f6e74657874223a226f7262737461636b227d2c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f55736572732f6761742f776f726b2f6761747061636b2f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspaces/gatpack",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "leetcode",
+		"rootPath": "/Users/gat/work/leetcode",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "end2end-bench",
+		"rootPath": "/Users/gat/metr/end2end-bench",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "rustlings",
+		"rootPath": "/Users/gat/work/rustlings",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	}
 ]

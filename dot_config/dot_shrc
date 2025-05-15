@@ -8,3 +8,6 @@ source $SHRC_DIR/.functions
 # Load config
 source $SHRC_DIR/fastfetch.sh
 source $SHRC_DIR/thefuck.sh
+
+# Add cargo to path
+export PATH="$PATH:/Users/gat/.cargo/bin"

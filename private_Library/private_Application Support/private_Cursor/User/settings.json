@@ -20,6 +20,13 @@
     },
     "[latex]": {
         "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.wordWrap": "on",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[tex]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
         "editor.wordWrap": "on"
     },
     "[markdown]": {
@@ -327,6 +334,9 @@
         },
         "textMateRules": []
     },
+    "tinymist.formatterMode": "typstyle",
+    "tinymist.preview.invertColors": "never",
+    // "tinymist.serverPath": "tinymist",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.wordWrap": "bounded",
     "errorLens.codeLensEnabled": false,
@@ -426,11 +436,6 @@
     "kite.showWelcomeNotificationOnStartup": false,
     "latex-workshop.bibtex-format.sort.enabled": true,
     "latex-workshop.formatting.latex": "tex-fmt",
-    "latex-workshop.formatting.tex-fmt.args": [
-        "--keep",
-        "--tab",
-        "4"
-    ],
     "latex-workshop.intellisense.subsuperscript.enabled": true,
     // "latex-workshop.latex.recipes": [
     //     {
@@ -737,14 +742,14 @@
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",
         "editor.lineHighlightBorder": "#9fced11f",
-        "statusBar.background": "#5f0000",
+        "statusBar.background": "#005f5f",
         "statusBar.foreground": "#ffffff",
         "statusBarItem.hoverBackground": "#327e36",
-        "activityBar.background": "#312165",
-        "titleBar.activeBackground": "#452E8D",
-        "titleBar.activeForeground": "#FBFAFD",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000",
+        "activityBar.background": "#302559",
+        "titleBar.activeBackground": "#43347C",
+        "titleBar.activeForeground": "#FAFAFD",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
         "statusBar.debuggingForeground": "#ffffff"
     },
     "workbench.colorTheme": "Dracula Theme",
@@ -817,12 +822,24 @@
         "**/.trunk/*out/": true,
         "**/.trunk/*plugins/": true
     },
-    "editor.defaultFormatter": "trunk.io",
     "trunk.showPreexistingIssues": true,
     "[typst]": {
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+        "editor.formatOnSave": true
     },
     "[typst-code]": {
         "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
-    }
+    },
+    "editor.wordWrapColumn": 100,
+    "pddl.selectedPlanner": "Planning as a service (solver.planning.domains)",
+    "editor.formatOnType": true,
+    "[pddl]": {
+        "editor.defaultFormatter": "jan-dolejsi.pddl"
+    },
+    "material-icon-theme.activeIconPack": "react",
+    "workbench.panel.showLabels": false,
+    "tinymist.preview.cursorIndicator": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true
 }
