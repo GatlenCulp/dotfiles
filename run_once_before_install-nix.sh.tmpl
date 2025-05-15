@@ -1,0 +1,10 @@
+{{- if eq .osid "darwin" -}}
+#!/bin/bash
+
+# Make sure this script runs after package installation
+if ! command -v nix-shell >/dev/null 2>&1; then
+    sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+else
+    echo "nix is already installed, skipping installation"
+fi
+{{ end -}}
