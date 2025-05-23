@@ -742,14 +742,14 @@
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",
         "editor.lineHighlightBorder": "#9fced11f",
-        "statusBar.background": "#005f5f",
+        "statusBar.background": "#5f0000",
         "statusBar.foreground": "#ffffff",
         "statusBarItem.hoverBackground": "#327e36",
         "activityBar.background": "#4B2125",
         "titleBar.activeBackground": "#692E33",
         "titleBar.activeForeground": "#FDFBFC",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000",
         "statusBar.debuggingForeground": "#ffffff"
     },
     "workbench.colorTheme": "Dracula Theme",

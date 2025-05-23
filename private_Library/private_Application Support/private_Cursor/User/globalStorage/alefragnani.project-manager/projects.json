@@ -89,10 +89,9 @@
 		"paths": [],
 		"tags": [
 			"🪿 gotem",
-			"🎓 school",
-			"⭐️ favorite"
+			"🎓 school"
 		],
-		"enabled": true
+		"enabled": false
 	},
 	{
 		"name": "🌐 MIT 6.180 Systems",
@@ -100,10 +99,9 @@
 		"paths": [],
 		"tags": [
 			"🪿 gotem",
-			"🎓 school",
-			"⭐️ favorite"
+			"🎓 school"
 		],
-		"enabled": true
+		"enabled": false
 	},
 	{
 		"name": "🤷🏻‍♀️ MIT 6.4110 Uncertainty",
@@ -111,10 +109,9 @@
 		"paths": [],
 		"tags": [
 			"🪿 gotem",
-			"🎓 school",
-			"⭐️ favorite"
+			"🎓 school"
 		],
-		"enabled": true
+		"enabled": false
 	},
 	{
 		"name": "↗️ MIT 18.06 Linear Algebra",
@@ -122,10 +119,9 @@
 		"paths": [],
 		"tags": [
 			"🪿 gotem",
-			"🎓 school",
-			"⭐️ favorite"
+			"🎓 school"
 		],
-		"enabled": true
+		"enabled": false
 	},
 	{
 		"name": "🪿 Desktop Goose Payload",

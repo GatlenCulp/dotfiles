@@ -28,8 +28,10 @@
       environment.darwinConfig = "$HOME/.config/nix-darwin";
 
       # Auto upgrade nix package and the daemon service
-      services.nix-daemon.enable = true;
+      services.nix-daemon.enable = false;
       nix = {
+        # Determinate systems, don't update nix.
+        enable = false;
         package = pkgs.nix;
         settings = {
           "extra-experimental-features" = [
@@ -80,21 +82,150 @@
       ];
 
       # Homebrew configuration
-      # homebrew = {
-      #   enable = true;
+      homebrew = {
+        enable = true;
+        
+        # Separate taps section
+        taps = [
+          "homebrew/bundle"
+          "charmbracelet/tap"
+          "mayowa-ojo/tap"
+          "noborus/tap"
+        ];
+        
+        # Core brew formulas
+        brews = [
+          # Core tools
+          "git"
+          "gh"
+          "pre-commit"
+          "bash"
+          "zsh"
+          "oh-my-posh"
+          
+          # File operations
+          "eza"
+          "bat"
+          "tre-command"
+          "clipboard"
+          "xz"
+          "gnu-tar"
+          
+          # Search & Navigation
+          "zoxide"
+          "fzf"
+          "grep"
+          "ov" # from noborus/tap
+          
+          # System Monitoring
+          "btop"
+          "fastfetch"
+          "chmod-cli" # from mayowa-ojo/tap
+          
+          # Network tools
+          "sshs"
+          "syncthing"
+          "xxh"
+          "openssh"
+          "zrok"
+          "curl"
+          
+          # Development tools
+          "rich"
+          "thefuck"
+          "tldr"
+          
+          # Version control
+          "git-filter-repo"
+          "git-lfs"
+          "bfg"
+          "commitizen"
+          "czg"
+          "check-jsonschema"
+          "gitleaks"
+          
+          # Task running
+          "go-task"
+          "awscli"
+          
+          # Terminal tools
+          "tmux"
+          "zellij"
+          "freeze" # from charmbracelet/tap
+          "vhs"
+          "huggingface-cli"
+          
+          # Shell utilities
+          "shellcheck"
+          "shfmt"
+          
+          # Configuration
+          "chezmoi"
+        ];
 
-      #   casks = [
-      #     "1password"
-      #     "bartender"
-      #     "brave-browser"
-      #     "fantastical"
-      #     "firefox"
-      #     "karabiner-elements"
-      #     "obsidian"
-      #     "raycast"
-      #     "soundsource"
-      #     "wezterm"
-      #   ];
+        casks = [
+          # Existing
+          "1password"
+          "bartender"
+          "brave-browser"
+          "fantastical"
+          "firefox"
+          "karabiner-elements"
+          "obsidian"
+          "raycast"
+          "soundsource"
+          "wezterm"
+          
+          # Terminals
+          "warp"
+          "ghostty"
+          
+          # Browsers (additional)
+          "google-chrome"
+          "tor-browser"
+          
+          # Media
+          "obs"
+          "loom"
+          "blender"
+          "adobe-creative-cloud"
+          "clipgrab"
+          "vlc"
+          
+          # Office & Productivity
+          "microsoft-office"
+          "microsoft-auto-update"
+          "notion"
+          "notion-calendar"
+          "dropbox"
+          "cold-turkey-blocker"
+          "zotero"
+          "lastpass"
+          "flux"
+          "spotify"
+          "applite"
+          
+          # Communication
+          "discord"
+          "messenger"
+          "whatsapp"
+          "zoom"
+          "signal"
+          "slack"
+          
+          # Development
+          "visual-studio-code"
+          "cursor"
+          "postman"
+          "git-credential-manager"
+          "gitkraken"
+          "claude"
+          "netron"
+          
+          # Fonts
+          "font-fira-code"
+          "font-fira-code-nerd-font"
+        ];
 
         # masApps = {
         #   "Drafts" = 1435957248;
@@ -102,7 +233,7 @@
         #   "Things" = 904280696;
         #   "Timery" = 1425368544;
         # };
-      # };
+      };
 
       # System defaults
       system.defaults = {
