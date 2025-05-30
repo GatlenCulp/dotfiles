@@ -1,9 +1,9 @@
 .cursorrules
 .github
-.history
 .ruff_cache
 .vscode
 docker
+docs
 logs
 tests
 
