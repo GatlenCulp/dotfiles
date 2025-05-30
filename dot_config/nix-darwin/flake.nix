@@ -8,7 +8,7 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-
+  
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
     configuration = { pkgs, ... }: {
@@ -19,9 +19,51 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+          # Core tools
           pkgs.vim
           pkgs.neo-cowsay
           pkgs.devenv
+          pkgs.git
+          pkgs.gh
+          pkgs.pre-commit
+          pkgs.bash
+          pkgs.zsh
+          
+          # File operations
+          pkgs.eza
+          pkgs.bat
+          pkgs.xz
+          pkgs.gnutar
+          
+          # Search & Navigation
+          pkgs.zoxide
+          pkgs.fzf
+          pkgs.gnugrep
+          
+          # System Monitoring
+          pkgs.btop
+          pkgs.fastfetch
+          
+          # Network tools
+          pkgs.openssh
+          pkgs.curl
+          
+          # Development tools
+          pkgs.thefuck
+          pkgs.tldr
+          
+          # Version control
+          pkgs.git-lfs
+          
+          # Terminal tools
+          pkgs.tmux
+          
+          # Shell utilities
+          pkgs.shellcheck
+          pkgs.shfmt
+          
+          # Configuration
+          pkgs.chezmoi
         ];
 
       # Use a custom configuration.nix location
@@ -96,48 +138,48 @@
         # Core brew formulas
         brews = [
           # Core tools
-          "git"
-          "gh"
-          "pre-commit"
-          "bash"
-          "zsh"
+          # "git"  # Using nixpkgs
+          # "gh"  # Using nixpkgs
+          # "pre-commit"  # Using nixpkgs
+          # "bash"  # Using nixpkgs
+          # "zsh"  # Using nixpkgs
           "oh-my-posh"
           
           # File operations
-          "eza"
-          "bat"
+          # "eza"  # Using nixpkgs
+          # "bat"  # Using nixpkgs
           "tre-command"
           "clipboard"
-          "xz"
-          "gnu-tar"
+          # "xz"  # Using nixpkgs
+          # "gnu-tar"  # Using nixpkgs
           
           # Search & Navigation
-          "zoxide"
-          "fzf"
-          "grep"
+          # "zoxide"  # Using nixpkgs
+          # "fzf"  # Using nixpkgs
+          # "grep"  # Using nixpkgs
           "ov" # from noborus/tap
           
           # System Monitoring
-          "btop"
-          "fastfetch"
+          # "btop"  # Using nixpkgs
+          # "fastfetch"  # Using nixpkgs
           "chmod-cli" # from mayowa-ojo/tap
           
           # Network tools
           "sshs"
           "syncthing"
           "xxh"
-          "openssh"
+          # "openssh"  # Using nixpkgs
           "zrok"
-          "curl"
+          # "curl"  # Using nixpkgs
           
           # Development tools
           "rich"
-          "thefuck"
-          "tldr"
+          # "thefuck"  # Using nixpkgs
+          # "tldr"  # Using nixpkgs
           
           # Version control
           "git-filter-repo"
-          "git-lfs"
+          # "git-lfs"  # Using nixpkgs
           "bfg"
           "commitizen"
           "czg"
@@ -149,18 +191,18 @@
           "awscli"
           
           # Terminal tools
-          "tmux"
+          # "tmux"  # Using nixpkgs
           "zellij"
           "freeze" # from charmbracelet/tap
           "vhs"
           "huggingface-cli"
           
           # Shell utilities
-          "shellcheck"
-          "shfmt"
+          # "shellcheck"  # Using nixpkgs
+          # "shfmt"  # Using nixpkgs
           
           # Configuration
-          "chezmoi"
+          # "chezmoi"  # Using nixpkgs
         ];
 
         casks = [
