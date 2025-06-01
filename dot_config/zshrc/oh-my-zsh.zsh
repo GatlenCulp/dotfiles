@@ -2,10 +2,10 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"  # Now managed by nix-darwin
 
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="dracula"
+# ZSH_THEME="dracula"  # Now managed by nix-darwin
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -62,9 +62,9 @@ export ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git)
+# plugins=(git)  # Now managed by nix-darwin
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh  # Now managed by nix-darwin
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
