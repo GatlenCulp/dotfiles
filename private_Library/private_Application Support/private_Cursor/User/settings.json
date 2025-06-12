@@ -20,13 +20,8 @@
     },
     "[latex]": {
         "editor.defaultFormatter": "James-Yu.latex-workshop",
-        "editor.wordWrap": "on",
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true
-    },
-    "[tex]": {
-        "editor.tabSize": 2,
         "editor.insertSpaces": true,
+        "editor.tabSize": 2,
         "editor.wordWrap": "on"
     },
     "[markdown]": {
@@ -39,11 +34,11 @@
         "editor.insertSpaces": true,
         "editor.tabSize": 2
     },
+    "[pddl]": {
+        "editor.defaultFormatter": "jan-dolejsi.pddl"
+    },
     "[python]": {
-        "editor.codeActionsOnSave": {
-            // "source.fixAll": "explicit",
-            // "source.organizeImports": "explicit"
-        },
+        "editor.codeActionsOnSave": {},
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
     "[racket]": {
@@ -64,8 +59,20 @@
     "[svelte]": {
         "editor.defaultFormatter": "svelte.svelte-vscode"
     },
+    "[tex]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on"
+    },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "[typst]": {
+        "editor.formatOnSave": true,
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -78,188 +85,139 @@
     "autofold.unfold": true,
     "better-comments.highlightPlainText": false,
     "better-comments.tags": [
-        // Window must be reloaded for these to appear
-        // Based on https://draculatheme.com/contribute#color-palette
-        // ━━━━━━━━━━━━━━━━━━━━ Color Reference ━━━━━━━━━━━━━━━━━━━ */
         {
             "bold": true,
             "color": "#282A36",
             "italic": true,
-            // Background
             "tag": "background"
         },
         {
             "bold": true,
             "color": "#F8F8F2",
             "italic": true,
-            // Foreground
             "tag": "foreground"
         },
         {
             "bold": true,
             "color": "#44475A",
             "italic": true,
-            // Selection
             "tag": "selection"
         },
         {
             "bold": true,
             "color": "#6272A4",
             "italic": true,
-            // Comment
             "tag": "comment"
         },
         {
             "bold": true,
             "color": "#FF5555",
             "italic": true,
-            // Red
             "tag": "red"
         },
         {
             "bold": true,
             "color": "#FFB86C",
             "italic": true,
-            // Orange
             "tag": "orange"
         },
         {
             "bold": true,
             "color": "#F1FA8C",
             "italic": true,
-            // Yellow
             "tag": "yellow"
         },
         {
             "bold": true,
             "color": "#50FA7B",
             "italic": true,
-            // Green
             "tag": "green"
         },
         {
             "bold": true,
             "color": "#BD93F9",
             "italic": true,
-            // Purple
             "tag": "purple"
         },
         {
             "bold": true,
             "color": "#8BE9FD",
             "italic": true,
-            // Cyan
             "tag": "cyan"
         },
         {
             "bold": true,
             "color": "#FF79C6",
             "italic": true,
-            // Pink
             "tag": "pink"
         },
-        // ━━━━━━━━━━━━━━━━━━━━━━━━ Actual ━━━━━━━━━━━━━━━━━━━━━━━━
         {
             "bold": true,
-            "color": "#50FA7B", // Green
+            "color": "#50FA7B",
             "italic": true,
-            // %% Jupyter Cell
             "tag": "%%"
         },
         {
             "bold": true,
-            "color": "#FF5555", // Red
+            "color": "#FF5555",
             "italic": true,
-            // !! Warning
             "tag": "!!"
         },
         {
             "bold": true,
-            "color": "#FF5555", // Red
+            "color": "#FF5555",
             "italic": true,
-            // Warning
             "tag": "warning"
         },
         {
             "bold": true,
-            "color": "#FF79C6", // Purple
+            "color": "#FF79C6",
             "italic": true,
-            // ?? Question
             "tag": "??"
         },
         {
             "bold": true,
-            "color": "#FF79C6", // Purple
+            "color": "#FF79C6",
             "italic": true,
-            // ?? Question
             "tag": "question"
         },
         {
             "bold": true,
-            "color": "#8BE9FD", // Blue
+            "color": "#8BE9FD",
             "italic": true,
-            // Info
             "tag": "info"
         },
         {
-            "color": "#6272A4", // Comment
+            "color": "#6272A4",
             "italic": true,
             "strikethrough": true,
-            // //Strikethrough
             "tag": "//"
         },
         {
             "bold": true,
-            "color": "#FFB86C", // Orange
+            "color": "#FFB86C",
             "italic": true,
-            // Fixme
             "tag": "fixme"
         },
         {
             "bold": true,
-            "color": "#F8F8F2", // Foreground
+            "color": "#F8F8F2",
             "italic": true,
-            // ━━━━━━━━━━━━━━━━━━━━━━ Header ━━━━━━━━━━━━━━━━━━━━━━
             "tag": "━"
         },
         {
             "bold": true,
-            "color": "#F8F8F2", // Foreground
+            "color": "#F8F8F2",
             "italic": true,
-            // ───────────────────── Subheader ────────────────────
             "tag": "─"
         },
         {
-            "color": "#F8F8F2", // Foreground
+            "color": "#F8F8F2",
             "italic": true,
-            // # Sub-Subheader
             "tag": "##",
             "underline": true
         }
     ],
-    "blockman.n04ColorComboPreset": "Classic Dark 1 (Super gradients)",
-    "blockman.n04Sub01ColorComboPresetForDarkTheme": "Argon Dark (Solid colors)",
-    "blockman.n04Sub02ColorComboPresetForLightTheme": "none",
-    "blockman.n05CustomColorOfDepth0": "none",
-    "blockman.n06CustomColorOfDepth1": "none",
-    "blockman.n07CustomColorOfDepth2": "none",
-    "blockman.n08CustomColorOfDepth3": "none",
-    "blockman.n10CustomColorOfDepth5": "none",
-    "blockman.n11CustomColorOfDepth6": "none",
-    "blockman.n13CustomColorOfDepth8": "none",
-    "blockman.n14CustomColorOfDepth9": "none",
-    "blockman.n15CustomColorOfDepth10": "none",
-    "blockman.n16EnableFocus": false,
-    "blockman.n17CustomColorOfFocusedBlock": "same",
-    "blockman.n18CustomColorOfFocusedBlockBorder": "same",
-    "blockman.n20CustomColorOfDepth0Border": "none",
-    "blockman.n23AnalyzeSquareBrackets": true,
-    "blockman.n24AnalyzeRoundBrackets": true,
-    "blockman.n28TimeToWaitBeforeRerenderAfterLastChangeEvent": 0.2,
-    "blockman.n33A01B1FromDepth0ToInwardForAllBorders": "10,0,0,0; rgba(255, 0, 0, 0) > rgba(255, 0, 0, 0.3) > rgba(0, 255, 0, 0.3) > rgba(0, 0, 255, 0.4)",
-    "blockman.n33A04B1FromFocusToOutwardForFocusTreeBorders": "!40,0,0,0; basic",
-    "blockman.n33A04B2FromFocusToOutwardForFocusTreeBackgrounds": "!40,0,0,0; basic",
-    "blockman.n33A05B2FromFocusToInwardForAllBackgrounds": "!50,0,0,0; rgba(255, 0, 0, 0.3) > rgba(0, 255, 0, 0.3) > rgba(0, 0, 255, 0.3)",
     "comment-divider.languagesMap": {
         "toml": [
             "#",
@@ -276,9 +234,13 @@
     "cursor.chat.showSuggestedFiles": true,
     "cursor.chat.smoothStreaming": true,
     "cursor.cmdk.useThemedDiffBackground": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
     "cursor.composer.renderPillsInsteadOfBlocks": true,
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
     "cursor.cpp.disabledLanguages": [
         "plaintext",
+        "markdown",
         "scminput"
     ],
     "cursor.cpp.enablePartialAccepts": true,
@@ -297,6 +259,7 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.fontFamily": "FiraCode Nerd Font",
     "editor.fontLigatures": true,
+    "editor.formatOnType": true,
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleImplementations": "gotoAndPeek",
     "editor.gotoLocation.multipleReferences": "gotoAndPeek",
@@ -312,16 +275,6 @@
     "editor.minimap.side": "left",
     "editor.peekWidgetDefaultFocus": "editor",
     "editor.tokenColorCustomizations": {
-        "[*Dark*]": {
-            "textMateRules": [
-                {
-                    "scope": "ref.matchtext",
-                    "settings": {
-                        "foreground": "#fff"
-                    }
-                }
-            ]
-        },
         "[*Light*]": {
             "textMateRules": [
                 {
@@ -332,13 +285,21 @@
                 }
             ]
         },
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#fff"
+                    }
+                }
+            ]
+        },
         "textMateRules": []
     },
-    "tinymist.formatterMode": "typstyle",
-    "tinymist.preview.invertColors": "never",
-    // "tinymist.serverPath": "tinymist",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100,
     "errorLens.codeLensEnabled": false,
     "errorLens.codeLensOnClick": "showProblemsView",
     "errorLens.followCursor": "allLinesExceptActive",
@@ -360,6 +321,7 @@
         ".bashrc": "shellscript",
         ".czrc": "json",
         ".env*": "dotenv",
+        ".envrc": "shellscript",
         ".exports": "shellscript",
         ".functions": "shellscript",
         ".shrc": "shellscript",
@@ -368,8 +330,7 @@
         "_headers": "properties",
         "_redirects": "properties",
         "dot_*": "shellscript",
-        "sh.tmpl": "shellscript",
-        ".envrc": "shellscript"
+        "sh.tmpl": "shellscript"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -378,8 +339,15 @@
         "**/.hg": true,
         "**/.ruby-lsp": true,
         "**/.svn": true,
+        "**/.trunk/*actions/": true,
+        "**/.trunk/*logs/": true,
+        "**/.trunk/*notifications/": true,
+        "**/.trunk/*out/": true,
+        "**/.trunk/*plugins/": true,
         "**/CVS": true,
-        "**/Thumbs.db": true,
+        "**/Thumbs.db": true
+    },
+    "files.watcherExclude": {
         "**/.trunk/*actions/": true,
         "**/.trunk/*logs/": true,
         "**/.trunk/*notifications/": true,
@@ -437,23 +405,6 @@
     "latex-workshop.bibtex-format.sort.enabled": true,
     "latex-workshop.formatting.latex": "tex-fmt",
     "latex-workshop.intellisense.subsuperscript.enabled": true,
-    // "latex-workshop.latex.recipes": [
-    //     {
-    //         "name": "Make with XeTeX Gatlen",
-    //         "tools": [
-    //             "latexmk"
-    //         ]
-    //     },
-    //     {
-    //         "name": "xetex -> bibtex -> xetex* 2",
-    //         "tools": [
-    //             "xetex",
-    //             "bibtex",
-    //             "xetex",
-    //             "xetex"
-    //         ]
-    //     }
-    // ],
     "latex-workshop.showContextMenu": true,
     "latex-workshop.synctex.indicator": "circle",
     "latex-workshop.view.autoFocus.enabled": true,
@@ -477,6 +428,7 @@
     "markdown.math.enabled": false,
     "marquee.configuration.background": "11",
     "marquee.configuration.name": "Gatlen",
+    "material-icon-theme.activeIconPack": "react",
     "material-icon-theme.files.color": "#90a4ae",
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.opacity": 1,
@@ -496,6 +448,7 @@
     "notebook.stickyScroll.enabled": true,
     "oneDarkPro.bold": true,
     "oneDarkPro.italic": true,
+    "pddl.selectedPlanner": "Planning as a service (solver.planning.domains)",
     "peacock.favoriteColors": [
         {
             "name": "Angular Red",
@@ -553,6 +506,36 @@
         "FlipperZero"
     ],
     "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.packageIndexDepths": [
+        {
+            "depth": 2,
+            "name": "sklearn"
+        },
+        {
+            "depth": 2,
+            "name": "matplotlib"
+        },
+        {
+            "depth": 2,
+            "name": "scipy"
+        },
+        {
+            "depth": 2,
+            "name": "django"
+        },
+        {
+            "depth": 2,
+            "name": "flask"
+        },
+        {
+            "depth": 2,
+            "name": "fastapi"
+        },
+        {
+            "depth": 2,
+            "name": "inspect_ai"
+        }
+    ],
     "python.createEnvironment.trigger": "off",
     "python.defaultInterpreterPath": "python3.10",
     "python.linting.pylintArgs": [
@@ -573,69 +556,45 @@
     "redhat.telemetry.enabled": false,
     "references.preferredLocation": "view",
     "remote.SSH.defaultExtensions": [
-        // Python Development
-        "ms-python.vscode-pylance", // Python Language Server w/ Typing
-        "ms-python.debugpy", // VSCode Python Debugger
-        "charliermarsh.ruff", // Fast Python Linter & Formatter
-        "njpwerner.autodocstring", // Automatically generate Python docstrings
-        "rodolphebarbanneau.python-docstring-highlighter", // Highlight Python docstring syntax
-        "kevinrose.vsc-python-indent", // Correct indents for python
-        // Data Science & Notebooks
-        "ms-toolsai.jupyter", // Jupyter Notebooks in VSCode
-        "ms-toolsai.jupyter-renderers", // Jupyter Cell Output Renderer
-        "mechatroner.rainbow-csv", // Color-coded CSV Columns
-        "sbsnippets.pytorch-snippets", // Snippits for PyTorch
-        // Shell & Command Line
-        "mads-hartmann.bash-ide-vscode", // .*sh script language support
-        "timonwong.shellcheck", // .*sh script linting
-        "foxundermoon.shell-format", // .*sh script formatting
-        // Document Formats & Preview
-        "mathematic.vscode-pdf", // PDF Preview
-        "vitaliymaz.vscode-svg-previewer", // SVG Preview
-        "ctcuff.font-preview", // Font PReview
-        "james-yu.latex-workshop", // LaTeX File Renderer for Documents
-        "shd101wyy.markdown-preview-enhanced", // Improved Markdown Preview
-        // Code Formatting & Style
-        "esbenp.prettier-vscode", // Prettier general formatting tool
-        "mrmlnc.vscode-attrs-sorter", // HTML Attribute Sorter
-        "richie5um2.vscode-sort-json", // JSON Sorter
-        "2gua.rainbow-brackets", // Multi-colored brackets for readability
-        "aaron-bond.better-comments", // Comments w/ Styling
-        // Project Management & Navigation
-        "alefragnani.project-manager", // Manage VSCode Workspaces
-        /* Add the below to your projects.json file to add this project
-      '~/Library/Application Support/Cursor/User/globalStorage/alefragnani.project-manager/projects.json'
-      {
-        "name": "🍪 arena-2025-iap",
-        "rootPath": "/Path/to/your/project/arena-2025-iap/.vscode/arena-2025-iap.code-workspace",
-        "tags": [
-          "🪿 gotem"
-        ],
-        "enabled": true
-      },
-      */
-        "peterschmalfeldt.explorer-exclude", // Keep Explorer Clean by Hiding Files
-        "christian-kohler.path-intellisense", // Path Intellisense
-        "kisstkondoros.vscode-gutter-preview", // Image Preview
-        // Git & Version Control
-        "eamodio.gitlens", // View git diffs, edits, branches and more
-        // TODO: Add cookiecutter template types, include if web only
-        // API Development
-        "humao.rest-client", // Easily make HTTP queries for API testing
-        // Build Tools
-        "ms-vscode.makefile-tools", // Tools for Makefiles
-        "task.vscode-task", // Tools for Taskfiles
-        // Configuration Files
-        "tamasfe.even-better-toml", // .toml language support
-        "dotenv.dotenv-vscode", // .env language support
-        "redhat.vscode-yaml", // .yaml language support
-        "redhat.vscode-xml", // .xml language support
-        // Output & Debugging
-        "ibm.output-colorizer", // Automatically color-code VSCode Output logs
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "charliermarsh.ruff",
+        "njpwerner.autodocstring",
+        "rodolphebarbanneau.python-docstring-highlighter",
+        "kevinrose.vsc-python-indent",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+        "mechatroner.rainbow-csv",
+        "sbsnippets.pytorch-snippets",
+        "mads-hartmann.bash-ide-vscode",
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format",
+        "mathematic.vscode-pdf",
+        "vitaliymaz.vscode-svg-previewer",
+        "ctcuff.font-preview",
+        "james-yu.latex-workshop",
+        "shd101wyy.markdown-preview-enhanced",
+        "esbenp.prettier-vscode",
+        "mrmlnc.vscode-attrs-sorter",
+        "richie5um2.vscode-sort-json",
+        "2gua.rainbow-brackets",
+        "aaron-bond.better-comments",
+        "alefragnani.project-manager",
+        "peterschmalfeldt.explorer-exclude",
+        "christian-kohler.path-intellisense",
+        "kisstkondoros.vscode-gutter-preview",
+        "eamodio.gitlens",
+        "humao.rest-client",
+        "ms-vscode.makefile-tools",
+        "task.vscode-task",
+        "tamasfe.even-better-toml",
+        "dotenv.dotenv-vscode",
+        "redhat.vscode-yaml",
+        "redhat.vscode-xml",
+        "ibm.output-colorizer",
         "usernamehw.errorlens",
-        "spmeesseman.vscode-taskexplorer" // Highlight errors in-line
+        "spmeesseman.vscode-taskexplorer"
     ],
-    // "remote.SSH.enableAgentForwarding": true, I think this copies SSH Agent status? Would be helpful, examine.
     "remote.SSH.localServerDownload": "always",
     "remote.SSH.logLevel": "trace",
     "remote.SSH.showLoginTerminal": true,
@@ -645,6 +604,7 @@
     "ruff.lineLength": 100,
     "security.promptForLocalFileProtocolHandling": false,
     "shellformat.useEditorConfig": true,
+    "svelte.enable-ts-plugin": true,
     "sync.gist": "ebb6d31a5a543247119837ef3098f796",
     "terminal.external.osxExec": "Ghostty.app",
     "terminal.integrated.allowedLinkSchemes": [
@@ -715,6 +675,10 @@
         "yellow": 60
     },
     "testing.coverageToolbarEnabled": true,
+    "tinymist.formatterMode": "typstyle",
+    "tinymist.preview.cursorIndicator": true,
+    "tinymist.preview.invertColors": "never",
+    "trunk.showPreexistingIssues": true,
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block-outline",
     "vim.cursorStylePerMode.replace": "underline",
@@ -727,6 +691,8 @@
     "vim.neovimConfigPath": "~/.config/nvim/init.vim",
     "vim.neovimUseConfigFile": false,
     "vim.smartRelativeLine": true,
+    "vim.sneak": true,
+    "vim.statusBarColorControl": true,
     "vscode-office.editorTheme": "Dracula",
     "vscode-office.openOutline": false,
     "vscode-pets.petSize": "small",
@@ -740,17 +706,17 @@
     "winopacity.opacity": 200,
     "workbench.accounts.experimental.showEntitlements": true,
     "workbench.colorCustomizations": {
+        "activityBar.background": "#4B2125",
         "editor.lineHighlightBackground": "#1073cf2d",
         "editor.lineHighlightBorder": "#9fced11f",
-        "statusBar.background": "#005f5f",
+        "statusBar.background": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000",
+        "statusBar.debuggingForeground": "#ffffff",
         "statusBar.foreground": "#ffffff",
+        "statusBar.noFolderBackground": "#5f0000",
         "statusBarItem.hoverBackground": "#327e36",
-        "activityBar.background": "#4B2125",
         "titleBar.activeBackground": "#692E33",
-        "titleBar.activeForeground": "#FDFBFC",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f",
-        "statusBar.debuggingForeground": "#ffffff"
+        "titleBar.activeForeground": "#FDFBFC"
     },
     "workbench.colorTheme": "Dracula Theme",
     "workbench.editor.customLabels.enabled": true,
@@ -778,68 +744,8 @@
         "{git,gitlens}:/**/*.{md,csv,svg}": "default"
     },
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.layoutControl.enabled": false,
     "workbench.list.smoothScrolling": true,
     "workbench.panel.opensMaximized": "never",
-    "workbench.productIconTheme": "material-product-icons",
-    "python.analysis.packageIndexDepths": [
-        {
-            "name": "sklearn",
-            "depth": 2
-        },
-        {
-            "name": "matplotlib",
-            "depth": 2
-        },
-        {
-            "name": "scipy",
-            "depth": 2
-        },
-        {
-            "name": "django",
-            "depth": 2
-        },
-        {
-            "name": "flask",
-            "depth": 2
-        },
-        {
-            "name": "fastapi",
-            "depth": 2
-        },
-        {
-            "name": "inspect_ai",
-            "depth": 2
-        }
-    ],
-    "svelte.enable-ts-plugin": true,
-    "vim.sneak": true,
-    "vim.statusBarColorControl": true,
-    "files.watcherExclude": {
-        "**/.trunk/*actions/": true,
-        "**/.trunk/*logs/": true,
-        "**/.trunk/*notifications/": true,
-        "**/.trunk/*out/": true,
-        "**/.trunk/*plugins/": true
-    },
-    "trunk.showPreexistingIssues": true,
-    "[typst]": {
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
-        "editor.formatOnSave": true
-    },
-    "[typst-code]": {
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
-    },
-    "editor.wordWrapColumn": 100,
-    "pddl.selectedPlanner": "Planning as a service (solver.planning.domains)",
-    "editor.formatOnType": true,
-    "[pddl]": {
-        "editor.defaultFormatter": "jan-dolejsi.pddl"
-    },
-    "material-icon-theme.activeIconPack": "react",
     "workbench.panel.showLabels": false,
-    "tinymist.preview.cursorIndicator": true,
-    "cursor.composer.collapsePaneInputBoxPills": true,
-    "cursor.composer.shouldAllowCustomModes": true,
-    "cursor.composer.shouldChimeAfterChatFinishes": true
+    "workbench.productIconTheme": "material-product-icons"
 }
