@@ -28,60 +28,39 @@
         # Add the overlay for VSCode extensions
         nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ];
 
-        # Enables ZSH completion 
-        environment.pathsToLink = [ "/share/zsh" ];
+        environment.pathsToLink = [ "/share/zsh" "/share/bash-completion" ];
+        environment.systemPath = [ "/Users/gat/.cargo/bin" ];
 
-        # List packages installed in system profile. To search by name, run:
-        # $ nix-env -qaP | grep wget
         environment.systemPackages = [
           # Core tools
-          # pkgs.vim # neovim is preferred
           pkgs.lunarvim
           pkgs.neo-cowsay
-          pkgs.direnv
-          pkgs.devenv
-          # pkgs.git
-          # pkgs.gh
-          # pkgs.bash
-          # pkgs.zsh
-          # pkgs.nushell
+
           pkgs.nixpkgs-fmt
           pkgs.nixfmt-classic
-          # # pkgs.pre-commit # Takes too long to build
+          # pkgs.pre-commit # Takes too long to build
 
-          # # File operations
+          # File operations
           pkgs.xz
           pkgs.gnutar
 
-          # # Search & Navigation
-          # pkgs.zoxide
-          # pkgs.fzf
+          # Search & Navigation
           pkgs.gnugrep
 
-          # # Network tools
-          # pkgs.openssh
+          # Network tools
           pkgs.curl
           pkgs.wireshark
           pkgs.tcpflow
-          # pkgs.tcptrace
           pkgs.tcpreplay
           pkgs.socat
           pkgs.openvpn
+          # pkgs.tcptrace
 
           # Development tools
           pkgs.tldr
 
           # Version control
           pkgs.git-lfs
-          # # pkgs.pre-commit # Takes too long to build
-
-          # # Terminal tools
-          pkgs.tmux
-          # pkgs.starship
-          # pkgs.oh-my-zsh # Now managed via programs.zsh.ohMyZsh
-          # pkgs.zsh-autosuggestions
-          # pkgs.zsh-syntax-highlighting # Managed via home-manager
-          pkgs.bash-completion
 
           # # Shell utilities
           pkgs.shellcheck
@@ -96,8 +75,12 @@
 
           # # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Programming Languages ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
-          # System Programming
-          # pkgs.rust
+          # Rust
+          pkgs.rustc
+          pkgs.cargo
+          pkgs.clippy
+
+          # Go
           pkgs.go
 
           # # Web Development
@@ -115,7 +98,6 @@
 
           # Package Management & Tools
           pkgs.python3
-          # pkgs.uv
 
           # Quality Assurance
           pkgs.pylint
@@ -132,7 +114,7 @@
           # # Configuration Formats
           pkgs.taplo # TOML toolkit
 
-          # # Code Formatting
+          # Code Formatting
           # pkgs.prettier
           # pkgs.tidy-html5
 
@@ -191,52 +173,17 @@
         services.aerospace = {
           enable = true;
           settings = {
-            # You can use it to add commands that run after login to macOS user session.
-            # 'start-at-login' needs to be 'true' for 'after-login-command' to work
             after-login-command = [ ];
-
-            # You can use it to add commands that run after AeroSpace startup.
-            # 'after-startup-command' is run after 'after-login-command'
             after-startup-command = [ ];
-
-            # Start AeroSpace at login
-            # start-at-login = true;
-
-            # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
             enable-normalization-flatten-containers = true;
             enable-normalization-opposite-orientation-for-nested-containers =
               true;
-
-            # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
-            # The 'accordion-padding' specifies the size of accordion padding
-            # You can set 0 to disable the padding feature
             accordion-padding = 50;
-
-            # Possible values: tiles|accordion
             default-root-container-layout = "tiles";
-
-            # Possible values: horizontal|vertical|auto
-            # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
-            #               tall monitor (anything higher than wide) gets vertical orientation
             default-root-container-orientation = "auto";
-
-            # Mouse follows focus when focused monitor changes
-            # Drop it from your config, if you don't like this behavior
-            # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
-            # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
-            # Fallback value (if you omit the key): on-focused-monitor-changed = []
             on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
-
-            # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
-            # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
-            # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
             automatically-unhide-macos-hidden-apps = true;
-
-            # Possible values: (qwerty|dvorak)
-            # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
             key-mapping = { preset = "qwerty"; };
-
-            # Gaps between windows (inner-*) and between monitor edges (outer-*).
             gaps = {
               inner = {
                 horizontal = 5;
@@ -249,13 +196,7 @@
                 right = 5;
               };
             };
-
-            # 'main' binding mode declaration
-            # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-            # 'main' binding mode must be always presented
             mode.main.binding = {
-              # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-              # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
               alt-enter = ''
                 exec-and-forget osascript -e '
                 tell application "Ghostty"
@@ -264,23 +205,19 @@
                 end tell'
               '';
 
-              # See: https://nikitabobko.github.io/AeroSpace/commands#layout
               alt-slash = "layout tiles horizontal vertical";
               alt-comma = "layout accordion horizontal vertical";
 
-              # See: https://nikitabobko.github.io/AeroSpace/commands#focus
               alt-h = "focus left";
               alt-j = "focus down";
               alt-k = "focus up";
               alt-l = "focus right";
 
-              # See: https://nikitabobko.github.io/AeroSpace/commands#move
               alt-shift-h = "move left";
               alt-shift-j = "move down";
               alt-shift-k = "move up";
               alt-shift-l = "move right";
 
-              # See: https://nikitabobko.github.io/AeroSpace/commands#resize
               alt-shift-minus = "resize smart -50";
               alt-shift-equal = "resize smart +50";
 
@@ -340,17 +277,10 @@
               alt-shift-9 = "move-node-to-workspace 9";
               alt-shift-o = "move-node-to-workspace o";
 
-              # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
               alt-tab = "workspace-back-and-forth";
-              # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
               alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
-
-              # See: https://nikitabobko.github.io/AeroSpace/commands#mode
               alt-shift-semicolon = "mode service";
             };
-
-            # 'service' binding mode declaration.
-            # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
             mode.service.binding = {
               esc = [ "reload-config" "mode main" ];
               r = [ "flatten-workspace-tree" "mode main" ]; # reset layout
@@ -360,9 +290,6 @@
               ]; # Toggle between floating and tiling layout
               backspace = [ "close-all-windows-but-current" "mode main" ];
 
-              # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-              #s = ["layout sticky tiling" "mode main"];
-
               alt-shift-h = [ "join-with left" "mode main" ];
               alt-shift-j = [ "join-with down" "mode main" ];
               alt-shift-k = [ "join-with up" "mode main" ];
@@ -371,6 +298,7 @@
           };
         };
 
+        # TODO
         # Launch Agents for startup programs
         # launchd.user.agents = {
         #   # Example: Auto-start a service
@@ -394,7 +322,6 @@
           };
         };
 
-        # Create /etc/zshrc that loads the nix-darwin environment
         programs.gnupg.agent.enable = true;
 
         # Set Git commit hash for darwin-version
@@ -441,9 +368,7 @@
             programs.mpv.enable = true;
             programs.thunderbird = {
               enable = true;
-              profiles."Gatlen" = {
-                isDefault = true;
-              };
+              profiles."Gatlen" = { isDefault = true; };
             };
             # programs.obs-studio.enable = true; # Not available on arm
             # programs.obsidian.enable = true; # Fails?
@@ -472,6 +397,7 @@
                 file = "Dracula.tmTheme";
               };
             };
+            programs.awscli.enable = true;
             programs.btop.enable = true;
             programs.eza = {
               enable = true;
@@ -772,12 +698,8 @@
                 "[pddl]" = { "editor.defaultFormatter" = "jan-dolejsi.pddl"; };
 
                 # Extension-specific settings
-                "ai-docstring.docstringFormat" = "sphinx";
                 "autoDocstring.docstringFormat" = "google-notypes";
                 "autoDocstring.startOnNewLine" = true;
-                "autoHide.hideOnOpen" = true;
-                "autofold.default" = 1;
-                "autofold.unfold" = true;
 
                 # Better Comments configuration
                 "better-comments.highlightPlainText" = false;
@@ -950,7 +872,7 @@
                 "diffEditor.wordWrap" = "off";
 
                 # Dotenv settings
-                "dotenv.enableAutocloaking" = false;
+                "dotenv.enableAutocloaking" = true;
 
                 # Editor settings
                 "editor.acceptSuggestionOnEnter" = "off";
@@ -1004,28 +926,28 @@
 
                 # Files settings
                 "files.associations" = {
-                  "**/.x-cmd/*" = "shellscript";
                   "**/.x-cmd/*.yml" = "yaml";
                   "*.css" = "css";
                   "*.cursorrules" = "markdown";
                   "*.env*" = "dotenv";
                   "*.eval" = "eval-log";
-                  "*.sh.tmpl" = "shellscript";
                   "*.spec" = "python";
                   "*.ssh" = "ssh_config";
                   "*.toml.tmpl" = "toml";
                   "*Brewfile*" = "ruby";
-                  ".aliases" = "shellscript";
-                  ".bashrc" = "shellscript";
                   ".czrc" = "json";
                   ".env*" = "dotenv";
+                  ".xonshrc" = "xonsh";
+                  "_headers" = "properties";
+                  "**/.x-cmd/*" = "shellscript";
+                  "_redirects" = "properties";
+                  ".aliases" = "shellscript";
+                  ".bashrc" = "shellscript";
                   ".exports" = "shellscript";
                   ".functions" = "shellscript";
+                  "*.sh.tmpl" = "shellscript";
                   ".shrc" = "shellscript";
-                  ".xonshrc" = "xonsh";
                   ".zshrc" = "shellscript";
-                  "_headers" = "properties";
-                  "_redirects" = "properties";
                   "dot_*" = "shellscript";
                   "sh.tmpl" = "shellscript";
                   ".envrc" = "shellscript";
@@ -1088,16 +1010,6 @@
                 "gitlens.statusBar.enabled" = false;
                 "gitlens.views.commitDetails.files.layout" = "list";
 
-                # Indent rainbow settings
-                "indentRainbow.colors" = [
-                  "rgba(255,255,64,0.03)"
-                  "rgba(127,255,127,0.03)"
-                  "rgba(255,127,255,0.03)"
-                  "rgba(79,236,236,0.03)"
-                ];
-                "indentRainbow.errorColor" = "rgba(128,32,32,0.3)";
-                "indentRainbow.tabmixColor" = "rgba(128,32,96,0.3)";
-
                 # Interactive window settings
                 "interactiveWindow.executeWithShiftEnter" = true;
 
@@ -1115,9 +1027,6 @@
                 "jupyter.kernels.trusted" =
                   [ "/Users/gat/work/FA2024/DL/secrets/kernel.json" ];
                 "jupyter.themeMatplotlibPlots" = true;
-
-                # Kite settings
-                "kite.showWelcomeNotificationOnStartup" = false;
 
                 # LaTeX Workshop settings
                 "latex-workshop.bibtex-format.sort.enabled" = true;
@@ -1149,10 +1058,6 @@
                 "markdown-preview-enhanced.mathRenderingOption" = "MathJax";
                 "markdown-preview-enhanced.previewTheme" = "github-light.css";
                 "markdown.math.enabled" = false;
-
-                # Marquee settings
-                "marquee.configuration.background" = "11";
-                "marquee.configuration.name" = "Gatlen";
 
                 # Material Icon Theme settings
                 "material-icon-theme.files.color" = "#90a4ae";
@@ -1224,14 +1129,6 @@
                 "pddl.selectedPlanner" =
                   "Planning as a service (solver.planning.domains)";
 
-                # Power mode settings
-                "powermode.combo.counterSize" = 1;
-                "powermode.combo.location" = "editor";
-                "powermode.combo.threshold" = 5;
-                "powermode.explosions.gifMode" = "restart";
-                "powermode.explosions.maxExplosions" = 3;
-                "powermode.explosions.size" = 10;
-
                 # Project Manager settings
                 "projectManager.cacheProjectsBetweenSessions" = false;
                 "projectManager.confirmSwitchOnActiveWindow" = "always";
@@ -1273,32 +1170,9 @@
                   }
                 ];
                 "python.createEnvironment.trigger" = "off";
-                "python.defaultInterpreterPath" = "python3.10";
                 "python.linting.pylintArgs" =
                   [ "--extension-pkg-whitelist=cv2" ];
                 "python.testing.pytestEnabled" = true;
-
-                # Python Preview settings
-                "pythonPreview.code.fontFamily" =
-                  "FiraCode Nerd Font, Andale mono, monospace";
-                "pythonPreview.codeFooterDocs.fontFamily" =
-                  "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif";
-                "pythonPreview.fontFamily" =
-                  "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif";
-                "pythonPreview.heapObject.fontFamily" =
-                  "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif";
-                "pythonPreview.printOutputDocs.fontFamily" =
-                  "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif";
-                "pythonPreview.pyStdout.fontFamily" =
-                  "FiraCode Nerd Font, Andale mono, monospace";
-                "pythonPreview.stackAndHeapHeader.fontFamily" =
-                  "FiraCode Nerd Font, erdana, arial, helvetica, sans-serif";
-                "pythonPreview.stackFrame.fontFamily" =
-                  "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif";
-                "pythonPreview.stackFrameHeader.fontFamily" =
-                  "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif";
-                "pythonPreview.typeLabel.fontFamily" =
-                  "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif";
 
                 # Python Test Explorer settings
                 "pythonTestExplorer.testFramework" = "pytest";
@@ -1485,9 +1359,6 @@
                 "window.title" =
                   "🪿\${activeRepositoryName} (\${activeRepositoryBranchName}) \${separator} \${activeEditorMedium}";
 
-                # Win opacity settings
-                "winopacity.opacity" = 200;
-
                 # Workbench settings
                 "workbench.accounts.experimental.showEntitlements" = true;
                 "workbench.activityBar.location" = "top";
@@ -1546,30 +1417,11 @@
                 njpwerner.autodocstring
                 rodolphebarbanneau.python-docstring-highlighter
                 sbsnippets.pytorch-snippets
-                # cameron.vscode-pytest
-                # ms-python.pylint
-                # ms-python.black-formatter
-                # ms-python.debugpy
-                # ms-python.isort
-                # ms-python.mypy-type-checker
-                # ms-pyright.pyright
-                # graykode.ai-docstring
-                # almenon.arepl
-                # littlefoxteam.vscode-python-test-adapter
-                # donjayamanne.python-environment-manager
-                # "076923".python-image-preview
 
                 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Git & Version Control ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
                 eamodio.gitlens
-                # donjayamanne.githistory
-                # mhutchie.git-graph
-                # waderyan.gitblame
                 github.vscode-pull-request-github
                 github.vscode-github-actions
-                # github.remotehub
-                # github.copilot
-                # github.copilot-chat
-                # ziyasal.vscode-open-in-github
 
                 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Language Support ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
                 # C/C++
@@ -1618,7 +1470,6 @@
                 redhat.vscode-yaml
                 tamasfe.even-better-toml
                 dotenv.dotenv-vscode
-                # mikestead.dotenv
                 mechatroner.rainbow-csv
                 grapecity.gc-excelviewer
                 richie5um2.vscode-sort-json
@@ -1978,7 +1829,7 @@
           };
           menuExtraClock = {
             Show24Hour = true;
-            # ShowDate = true;
+            ShowDate = 0;
           };
           controlcenter = {
             BatteryShowPercentage = false;
@@ -1993,8 +1844,8 @@
             AppleShowAllFiles = true; # Show hidden files
             AppleShowAllExtensions = true; # Show file extensions
             AppleInterfaceStyle = "Dark"; # Dark mode
+            "com.apple.keyboard.fnState" = false; # I don't remember what this is
             # AppleKeyboardUIMode = 3; # I don't remember what this is
-            # "com.apple.keyboard.fnState" = true; # I don't remember what this is
           };
         };
         # WindowManager = {
