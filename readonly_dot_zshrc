@@ -49,13 +49,12 @@ fi
 
 eval "$(/nix/store/1iaqkinkdysms8zy6z3qkkz0k5zl70yz-mise-2025.5.3/bin/mise activate zsh)"
 
-eval "$(/nix/store/9cfr229ml8lkw3rpsfhz318gy833rq44-direnv-2.36.0/bin/direnv hook zsh)"
-
 if [[ $options[zle] = on ]]; then
   eval "$(/nix/store/dkxmsswa3w28gj60jnfyc6c98r51zkih-atuin-18.6.1/bin/atuin init zsh )"
 fi
 
-alias -- eza='eza --icons auto --git'
+alias -- config='$EDITOR ~/.config/nix-darwin'
+alias -- eza='eza --icons auto --git '\''--width=100'\'' --group-directories-first --all'
 alias -- la='eza -a'
 alias -- ll='eza -l'
 alias -- lla='eza -la'

@@ -12,7 +12,8 @@ shopt -s extglob
 shopt -s globstar
 shopt -s checkjobs
 
-alias eza='eza --icons auto --git'
+alias config='$EDITOR ~/.config/nix-darwin'
+alias eza='eza --icons auto --git '\''--width=100'\'' --group-directories-first --all'
 alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
@@ -48,8 +49,6 @@ if [[ :$SHELLOPTS: =~ :(vi|emacs): ]]; then
   source "/nix/store/lf4285khvlml9l5lbivp5y73dslxgksl-bash-preexec-0.5.0/share/bash/bash-preexec.sh"
   eval "$(/nix/store/dkxmsswa3w28gj60jnfyc6c98r51zkih-atuin-18.6.1/bin/atuin init bash )"
 fi
-
-eval "$(/nix/store/9cfr229ml8lkw3rpsfhz318gy833rq44-direnv-2.36.0/bin/direnv hook bash)"
 
 eval "$(/nix/store/jv18aslvkghnwypgi58hi7sx4p35cc6d-zoxide-0.9.7/bin/zoxide init bash )"
 

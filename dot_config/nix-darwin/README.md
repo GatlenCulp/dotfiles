@@ -26,9 +26,8 @@ abs_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # Set wallpaper
 osascript -e "tell application 'Finder' to set desktop picture to POSIX file \'${abs_dir}/wallpaper.jpg\'"
-
-# Enable Dark Mode
-defaults write -g AppleInterfaceStyle Dark
 ```
 - Install Rosetta
 - Bartender settings or smthn
+
+_Note: Some nix-darwin things are mirrored in home-manager, make sure to use proper settings._

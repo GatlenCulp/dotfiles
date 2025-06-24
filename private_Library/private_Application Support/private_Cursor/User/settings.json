@@ -706,17 +706,17 @@
     "winopacity.opacity": 200,
     "workbench.accounts.experimental.showEntitlements": true,
     "workbench.colorCustomizations": {
-        "activityBar.background": "#4B2125",
+        "activityBar.background": "#012B63",
         "editor.lineHighlightBackground": "#1073cf2d",
         "editor.lineHighlightBorder": "#9fced11f",
-        "statusBar.background": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.background": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000",
         "statusBar.debuggingForeground": "#ffffff",
         "statusBar.foreground": "#ffffff",
-        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.noFolderBackground": "#5f0000",
         "statusBarItem.hoverBackground": "#327e36",
-        "titleBar.activeBackground": "#692E33",
-        "titleBar.activeForeground": "#FDFBFC"
+        "titleBar.activeBackground": "#023D8A",
+        "titleBar.activeForeground": "#F6FAFF"
     },
     "workbench.colorTheme": "Dracula Theme",
     "workbench.editor.customLabels.enabled": true,
@@ -747,5 +747,6 @@
     "workbench.list.smoothScrolling": true,
     "workbench.panel.opensMaximized": "never",
     "workbench.panel.showLabels": false,
-    "workbench.productIconTheme": "material-product-icons"
+    "workbench.productIconTheme": "material-product-icons",
+    "editor.defaultFormatter": "trunk.io"
 }

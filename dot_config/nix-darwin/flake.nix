@@ -1,12 +1,10 @@
+# Not yet installed: sudo nix run nix-darwin -- switch --flake ~/.config/nix-darwin
+# Installed: sudo darwin-rebuild switch --flake ~/.config/nix-darwin
+# 
+# nix-darwin: https://nix-darwin.github.io/nix-darwin/manual/index.html
+# home-manager: https://nix-community.github.io/home-manager/options.xhtml
 {
   description = "Gatlen's nix-darwin macOS nix configuration";
-  # To run: sudo darwin-rebuild switch --flake ~/.config/nix-darwin#gatty
-  # OR sudo nix run nix-darwin -- switch --flake ~/.config/nix-darwin
-  # 
-  # nix-darwin: https://nix-darwin.github.io/nix-darwin/manual/index.html
-  # home-manager: https://nix-community.github.io/home-manager/options.xhtml
-  # 
-  # Note: Some nix-darwin things are mirrored in home-manager, make sure to use proper settings.
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
@@ -29,7 +27,8 @@
         nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ];
 
         environment.pathsToLink = [ "/share/zsh" "/share/bash-completion" ];
-        environment.systemPath = [ "/Users/gat/.cargo/bin" ];
+        environment.systemPath =
+          [ "/Users/gat/.cargo/bin" "/Users/gat/.local/share/../bin" ];
 
         environment.systemPackages = [
           # Core tools
@@ -83,7 +82,7 @@
           # Go
           pkgs.go
 
-          # # Web Development
+          # Web Development
           # pkgs.nodejs
           # pkgs.typescript
 
@@ -103,15 +102,15 @@
           pkgs.pylint
           pkgs.ruff
 
-          # # Project Tools
+          # Project Tools
           pkgs.cookiecutter
 
           # # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Document & Text Processing ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
-          # # Markdown & Documentation
+          # Markdown & Documentation
           pkgs.pandoc
 
-          # # Configuration Formats
+          # Configuration Formats
           pkgs.taplo # TOML toolkit
 
           # Code Formatting
@@ -131,33 +130,35 @@
 
           # pkgs.jupyterlab
 
-          # # Task Runners & Build Tools
+          # Task Runners & Build Tools
           pkgs.go-task
 
-          # # API & Testing
+          # API & Testing
           pkgs.awscli
 
-          # # GitHub Actions
+          # GitHub Actions
           pkgs.act
           pkgs.actionlint
 
           # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Security & Penetration Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
-          # # Network Security
+          # Network Security
           pkgs.aircrack-ng
           pkgs.nmap
 
-          # # Password Tools
+          # Password Tools
           # pkgs.hydra
           pkgs.john
 
-          # # SQL Security
+          # SQL Security
           pkgs.sqlmap
 
           # # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ System Utilities ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
 
-          # # Archive & Compression
+          # Archive & Compression
           pkgs.brotli
+
+          pkgs.tailscale
         ];
 
         # Use a custom configuration.nix location
@@ -341,6 +342,7 @@
           useUserPackages = true;
           users.gat = { pkgs, ... }: {
             home.stateVersion = "25.05";
+            home.shellAliases = { config = "$EDITOR ~/.config/nix-darwin"; };
             home.shell.enableShellIntegration = true;
             home.shell.enableZshIntegration = true;
 
@@ -382,7 +384,30 @@
             programs.zoxide.enable = true;
 
             ### Terminal Shtuff ###
-            programs.atuin.enable = true;
+            programs.atuin = {
+              enable = true;
+              settings = {
+                inline_height = 18;
+                theme.name = "dracula";
+                max_preview_height = 1;
+              };
+              themes = {
+                dracula = {
+                  theme.name = "Dracula";
+
+                  colors = {
+                    AlertInfo = "#D6ACFF";
+                    AlertWarn = "#FFFFA5";
+                    AlertError = "#FF6E6E";
+                    Annotation = "#6272A4";
+                    Base = "#F8F8F2";
+                    Guidance = "#50FA7B";
+                    Important = "#A4FFFF";
+                    Title = "#ABB2BF";
+                  };
+                };
+              };
+            };
             programs.bat = {
               enable = true;
               config.theme = "dracula";
@@ -403,8 +428,46 @@
               enable = true;
               git = true;
               icons = "auto";
+              theme = "dracula";
+              extraOptions = [
+                # General Options
+                "--width=100"
+                # "--hyperlink" A bit distracting
+                "--group-directories-first"
+                "--all"
+                # 
+              ];
             };
-            programs.fastfetch = { enable = true; };
+            programs.fastfetch = {
+              enable = true;
+              # This doesn't work? :(
+              settings = {
+                logo = {
+                  source = "nixos_small";
+                  padding = { right = 1; };
+                };
+                display = {
+                  size = { binaryPrefix = "si"; };
+                  color = "blue";
+                  separator = "  ";
+                };
+                modules = [
+                  {
+                    type = "datetime";
+                    key = "Date";
+                    format = "{1}-{3}-{11}";
+                  }
+                  {
+                    type = "datetime";
+                    key = "Time";
+                    format = "{14}:{17}:{20}";
+                  }
+                  "break"
+                  "player"
+                  "media"
+                ];
+              };
+            };
             programs.thefuck.enable = true;
             programs.less.enable = true;
             programs.gh.enable = true;
@@ -412,7 +475,14 @@
               enable = true;
               userEmail = "GatlenCulp@gmail.com";
               userName = "GatlenCulp";
-              delta.enable = true;
+              delta = {
+                enable = true;
+                options = { };
+              };
+              ignores = [ ".DS_Store" ];
+              lfs.enable = true;
+              extraConfig = { init.defaultBranch = "main"; };
+
             };
             programs.neovim = {
               enable = true;
@@ -421,7 +491,7 @@
             };
             programs.topgrade.enable = true;
             programs.uv.enable = true;
-            programs.direnv.enable = true;
+            # programs.direnv.enable = true; # Not recommended to use with mise
             programs.mise.enable = true;
             programs.starship = {
               enable = true;
@@ -596,6 +666,11 @@
               enable = true;
               enableCompletion = true;
             };
+            programs.ssh.extraConfig = ''
+              Include ~/.ssh/align.ssh
+              Include ~/.ssh/metr.ssh
+              Include ~/.ssh/extra.ssh
+            '';
             programs.nushell = { enable = true; };
             programs.zsh = {
               enable = true;
@@ -1537,6 +1612,7 @@
                 aaron-bond.better-comments
                 streetsidesoftware.code-spell-checker
                 usernamehw.errorlens
+                trunk.io
                 # shardulm94.trailing-spaces
                 # stkb.rewrap
                 lmcarreiro.vscode-smart-column-indenter
@@ -1844,7 +1920,10 @@
             AppleShowAllFiles = true; # Show hidden files
             AppleShowAllExtensions = true; # Show file extensions
             AppleInterfaceStyle = "Dark"; # Dark mode
-            "com.apple.keyboard.fnState" = false; # I don't remember what this is
+            ApplePressAndHoldEnabled =
+              false; # Supposedly for holding key for accent
+            "com.apple.keyboard.fnState" =
+              false; # I don't remember what this is
             # AppleKeyboardUIMode = 3; # I don't remember what this is
           };
         };
