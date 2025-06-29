@@ -53,6 +53,7 @@ if [[ $options[zle] = on ]]; then
   eval "$(/nix/store/dkxmsswa3w28gj60jnfyc6c98r51zkih-atuin-18.6.1/bin/atuin init zsh )"
 fi
 
+export CSAIL_USERNAME=gatlen
 alias -- config='$EDITOR ~/.config/nix-darwin'
 alias -- eza='eza --icons auto --git '\''--width=100'\'' --group-directories-first --all'
 alias -- la='eza -a'

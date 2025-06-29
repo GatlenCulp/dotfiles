@@ -50,5 +50,6 @@ if [[ :$SHELLOPTS: =~ :(vi|emacs): ]]; then
   eval "$(/nix/store/dkxmsswa3w28gj60jnfyc6c98r51zkih-atuin-18.6.1/bin/atuin init bash )"
 fi
 
+export CSAIL_USERNAME=gatlen
 eval "$(/nix/store/jv18aslvkghnwypgi58hi7sx4p35cc6d-zoxide-0.9.7/bin/zoxide init bash )"
 
