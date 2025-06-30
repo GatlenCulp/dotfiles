@@ -18,6 +18,8 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-vscode-extensions }:
     let
+      # Import secrets (create secrets.nix based on secrets-template.nix)
+      secrets = import ./secrets.nix;
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ System Packages ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
       systemPackages = pkgs: with pkgs; [
         # Core Development Tools
@@ -238,7 +240,13 @@
         bash = {
           enable = true;
           enableCompletion = true;
-          initExtra = "export CSAIL_USERNAME=gatlen";
+          initExtra = ''
+            export CSAIL_USERNAME=${secrets.csailUsername}
+            # API Keys from secrets.nix
+            export OPENAI_API_KEY="${secrets.apiKeys.openai}"
+            export ANTHROPIC_API_KEY="${secrets.apiKeys.anthropic}"
+            export GITHUB_TOKEN="${secrets.apiKeys.github}"
+          '';
         };
 
         zsh = {
@@ -250,7 +258,13 @@
           };
           enableCompletion = true;
           syntaxHighlighting.enable = true;
-          initContent = "export CSAIL_USERNAME=gatlen";
+          initContent = ''
+            export CSAIL_USERNAME=gatlen
+            # API Keys from secrets.nix
+            export OPENAI_API_KEY="${secrets.apiKeys.openai}"
+            export ANTHROPIC_API_KEY="${secrets.apiKeys.anthropic}"
+            export GITHUB_TOKEN="${secrets.apiKeys.github}"
+          '';
         };
 
         nushell.enable = true;

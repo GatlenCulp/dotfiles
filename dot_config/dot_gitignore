@@ -39,3 +39,5 @@ cookiecutter/replays
 !Icon
 !LICENSE
 !README.md
+!nix-darwin/**
+nix-darwin/secrets.nix
