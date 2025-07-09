@@ -72,7 +72,8 @@
     },
     "[typst]": {
         "editor.formatOnSave": true,
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+        "editor.defaultFormatter": "myriad-dreamin.tinymist"
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
