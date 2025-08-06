@@ -1,8 +1,9 @@
-# Not yet installed: sudo nix run nix-darwin -- switch --flake ~/.config/nix-darwin
-# Installed: sudo darwin-rebuild switch --flake ~/.config/nix-darwin
+# Initial installation: sudo nix run nix-darwin -- switch --flake ~/.config/nix-darwin
+# Subsequent updates: darwin-rebuild switch --flake ~/.config/nix-darwin
 # 
 # nix-darwin: https://nix-darwin.github.io/nix-darwin/manual/index.html
 # home-manager: https://nix-community.github.io/home-manager/options.xhtml
+# TODO: Add image2icon from app store
 {
   description = "Gatlen's nix-darwin macOS nix configuration";
 
@@ -22,63 +23,72 @@
     let
       # Import secrets (create secrets.nix based on secrets-template.nix)
       secrets = import ./secrets.nix;
+
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ System Packages ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
       systemPackages = pkgs:
         with pkgs; [
           # Core Development Tools
           lunarvim
-          neo-cowsay
-          nixpkgs-fmt
           nixfmt-classic
+          nixpkgs-fmt
 
           # File Operations & Utilities
-          xz
+          brotli
+          curl
           gnutar
           gnugrep
-          curl
+          xz
 
           # Network & Security Tools
-          wireshark
+          aircrack-ng
+          john
+          nmap
+          openvpn
+          socat
+          sqlmap
           tcpflow
           tcpreplay
-          socat
-          openvpn
-          aircrack-ng
-          nmap
-          john
-          sqlmap
+          wireshark
 
           # Development & Productivity
-          terraform
-          tldr
-          git-lfs
-          shellcheck
-          shfmt
-          typst
-          typstyle
-          chezmoi
-          go-task
-          awscli
           act
           actionlint
+          awscli
+          chezmoi
+          go-task
+          shellcheck
+          shfmt
+          terraform
+          tldr
+          dvc-with-remotes
+          # python312Packages.dvc
+          # python312Packages.dvc-gdrive
 
           # Programming Languages & Runtimes
-          rustc
           cargo
           clippy
-          go
-          ruby
-          python3
-          pylint
-          ruff
           cookiecutter
+          go
+          pylint
+          python3
+          ruby
+          rustc
+          # ruff
 
           # Document Processing & Databases
           pandoc
-          taplo
           sqlite
-          brotli
+          taplo
+          typst
+          typstyle
+
+          # Miscellaneous
+          git-lfs
+          neo-cowsay
+          resvg
+          poppler
           # tailscale
+          # claude-code (out of date)
         ];
 
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Aerospace Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
@@ -94,45 +104,47 @@
 
         brews = [
           # CLI Tools
-          "tre-command"
           "clipboard"
-          "ov"
           "mayowa-ojo/tap/chmod-cli"
+          "ov"
+          "rich"
+          "tre-command"
 
           # Network Tools
-          "sshs"
-          "syncthing"
-          "xxh"
-          "zrok"
           "dns2tcp"
           "knock"
+          "sshs"
+          "syncthing"
           "ucspi-tcp"
+          "xxh"
+          "zrok"
 
           # Development Tools
-          "rich"
-          "yo"
           "biome"
-          "flit"
-          "pyright"
           "cruft"
-          "mdformat"
-          "tex-fmt"
-          "latexindent"
           "devcontainer"
+          "flit"
           "hadolint"
+          "mdformat"
+          "pyright"
+          "yo"
+
+          # LaTeX & Document Processing
+          "latexindent"
+          "tex-fmt"
 
           # Git Tools
-          "git-filter-repo"
           "bfg"
+          "check-jsonschema"
           "commitizen"
           "czg"
-          "check-jsonschema"
+          "git-filter-repo"
           "gitleaks"
 
           # Creative Tools
           "charmbracelet/tap/freeze"
-          "vhs"
           "huggingface-cli"
+          "vhs"
 
           # Security & Archive
           "fcrackzip"
@@ -146,67 +158,67 @@
           "tor-browser"
 
           # Development & Productivity
-          "visual-studio-code"
+          "claude"
+          "claude-code"
           "cursor"
-          "postman"
           "git-credential-manager"
           "gitkraken"
-          "claude"
           "netron"
           "orbstack"
-          "cold-turkey-blocker"
+          "postman"
 
           # Communication
           "discord"
           "messenger"
-          "whatsapp"
-          "zoom"
           "signal"
           "slack"
+          "whatsapp"
+          "zoom"
 
           # Media & Creative
-          "obs"
-          "loom"
-          "blender"
           "adobe-creative-cloud"
+          "blender"
           "clipgrab"
+          "loom"
+          "obs"
           "vlc"
+          "notunes"
 
           # Office & Organization
-          "microsoft-office"
+          "applite"
+          "bartender"
+          "cold-turkey-blocker"
+          "dropbox"
+          "flux"
+          "freedom"
           "microsoft-auto-update"
+          "microsoft-office"
           "notion"
           "notion-calendar"
-          "dropbox"
-          "freedom"
-          "zotero"
-          "flux"
-          "spotify"
-          "applite"
-          "obsidian"
           "raycast"
-          "bartender"
+          "spotify"
+          "zotero"
 
           # Gaming
           "epic-games"
           "gog-galaxy"
-          "steam"
           "minecraft"
+          "steam"
 
           # Security & Terminals
-          "metasploit"
           "burp-suite"
-          "qflipper"
-          "warp"
           "ghostty"
+          "metasploit"
           "powershell"
           "protonvpn"
+          "qflipper"
+          "warp"
 
           # Fonts
-          "font-fira-code"
-          "font-fira-code-nerd-font"
           "font-blackout"
           "font-computer-modern"
+          "font-fira-code"
+          "font-fira-code-nerd-font"
           "font-noto-naskh-arabic"
           "font-noto-serif"
           "font-noto-serif-bengali"
@@ -216,6 +228,7 @@
           "font-noto-serif-thai"
           "font-nova-round"
 
+          # Utilities
           "tailscale"
         ];
       };
@@ -226,23 +239,23 @@
 
         defaults = {
           dock = {
+            expose-animation-duration = 5.0e-2;
+            largesize = 32;
+            minimize-to-application = true;
             orientation = "left";
             show-process-indicators = true;
             show-recents = false;
-            expose-animation-duration = 5.0e-2;
             tilesize = 24;
-            largesize = 32;
-            minimize-to-application = true;
           };
 
           finder = {
             AppleShowAllExtensions = true;
             AppleShowAllFiles = true;
             CreateDesktop = false;
-            ShowPathbar = true;
             FXEnableExtensionChangeWarning = false;
             FXPreferredViewStyle = "clmv";
             QuitMenuItem = true;
+            ShowPathbar = true;
           };
 
           menuExtraClock = {
@@ -260,10 +273,10 @@
 
           NSGlobalDomain = {
             AppleICUForce24HourTime = true;
-            AppleShowAllFiles = true;
-            AppleShowAllExtensions = true;
             AppleInterfaceStyle = "Dark";
             ApplePressAndHoldEnabled = false;
+            AppleShowAllExtensions = true;
+            AppleShowAllFiles = true;
             "com.apple.keyboard.fnState" = false;
           };
         };
@@ -276,15 +289,15 @@
           enable = true;
           settings = {
             inline_height = 18;
-            theme.name = "dracula";
             max_preview_height = 1;
+            theme.name = "dracula";
           };
           themes.dracula = {
             theme.name = "Dracula";
             colors = {
+              AlertError = "#FF6E6E";
               AlertInfo = "#D6ACFF";
               AlertWarn = "#FFFFA5";
-              AlertError = "#FF6E6E";
               Annotation = "#6272A4";
               Base = "#F8F8F2";
               Guidance = "#50FA7B";
@@ -310,106 +323,142 @@
 
         eza = {
           enable = true;
+          extraOptions = [ "--width=100" "--group-directories-first" "--all" ];
           git = true;
           icons = "auto";
           theme = "dracula";
-          extraOptions = [ "--width=100" "--group-directories-first" "--all" ];
         };
-
+        jq.enable = true;
+        fzf.enable = true;
+        fd.enable = true;
         starship = {
           enable = true;
           settings = import ./starship-config.nix;
         };
+        yazi.enable = true;
+        zoxide.enable = true;
 
         # Development Tools
         git = {
           enable = true;
-          userEmail = "GatlenCulp@gmail.com";
-          userName = "GatlenCulp";
           delta.enable = true;
+          extraConfig.init.defaultBranch = "main";
           ignores = [ ".DS_Store" ];
           lfs.enable = true;
-          extraConfig.init.defaultBranch = "main";
+          userEmail = "GatlenCulp@gmail.com";
+          userName = "GatlenCulp";
         };
 
-        # Misc Terminal Tools
-        btop.enable = true;
-        fastfetch.enable = true;
-        thefuck.enable = true;
-        less.enable = true;
-        gh.enable = true;
+        gh = {
+          enable = true;
+          # gitCredentialHelper.enable = true;
+          # hosts = {
+          #   "github.com" = { user = "GatlenCulp"; };
+          #   settings = { git_protocol = "ssh"; };
+          # };
+        };
+
+        jujutsu = {
+          enable = true;
+          settings = {
+            user = {
+              email = "GatlenCulp@gmail.com";
+              name = "Gatlen Culp";
+            };
+          };
+        };
+
+        # Programming Environment
+        awscli.enable = true;
+        bun.enable = true;
+        mise.enable = true;
+        nh.enable = true;
+        nix-index.enable = true;
+        poetry.enable = true;
+        uv.enable = true;
+
+        # Editors
+        helix.enable = true;
         neovim = {
+          # TODO: Configure this
           enable = true;
           viAlias = true;
           vimAlias = true;
         };
-        topgrade.enable = true;
-        uv.enable = true;
-        poetry.enable = true;
-        mise.enable = true;
-        yazi.enable = true;
-        nh.enable = true;
-        fzf.enable = true;
-        helix.enable = true;
-        awscli.enable = true;
-        bun.enable = true;
         zed-editor.enable = true;
+
+        # System Monitoring & Utilities
+        btop.enable = true;
+        fastfetch = {
+          enable = true;
+          settings = import ./fastfetch-config.nix;
+        };
+        less.enable = true;
+        thefuck.enable = true;
+        topgrade.enable = true;
+
+        # Terminal Multiplexers & Session Management
+        zellij.enable = true;
+        # sketchybar.enable = true;
+        # obs-studio.enable = true;
+        # obsidian.enable = true;
       };
 
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Shell Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-      shellConfig = {
-        bash = {
-          enable = true;
-          enableCompletion = true;
-          initExtra = ''
+      shellConfig = 
+        let
+          sharedShellInit = ''
             export EDITOR=cursor
             export CSAIL_USERNAME=${secrets.csailUsername}
             # API Keys from secrets.nix
             export OPENAI_API_KEY="${secrets.apiKeys.openai}"
             export ANTHROPIC_API_KEY="${secrets.apiKeys.anthropic}"
-            export GITHUB_TOKEN="${secrets.apiKeys.github}"
+            # export GITHUB_TOKEN="${secrets.apiKeys.github}"
             export AWS_DEFAULT_REGION="${secrets.aws.defaultRegion}"
             export AWS_PROFILE="${secrets.aws.profile}"
+            fastfetch
           '';
+        in {
+        bash = {
+          enable = true;
+          enableCompletion = true;
+          initExtra = sharedShellInit;
         };
 
         zsh = {
           enable = true;
+          enableCompletion = true;
+          initContent = sharedShellInit;
           prezto = {
             enable = true;
             python.virtualenvAutoSwitch = true;
             utility.safeOps = true;
           };
-          enableCompletion = true;
           syntaxHighlighting.enable = true;
-          initContent = ''
-            export EDITOR=cursor
-            export CSAIL_USERNAME=${secrets.csailUsername}
-            # API Keys from secrets.nix
-            export OPENAI_API_KEY="${secrets.apiKeys.openai}"
-            export ANTHROPIC_API_KEY="${secrets.apiKeys.anthropic}"
-            export GITHUB_TOKEN="${secrets.apiKeys.github}"
-            export AWS_DEFAULT_REGION="${secrets.aws.defaultRegion}"
-            export AWS_PROFILE="${secrets.aws.profile}"
-          '';
         };
 
         nushell.enable = true;
+        tmux.enable = true;
+        vesktop.enable = true;
       };
 
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Application Programs ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
       applicationPrograms = pkgs: {
-        firefox = import ./firefox.nix { inherit pkgs; };
+        # Media & Communication
         mpv.enable = true;
         thunderbird = {
           enable = true;
-          profiles."Gatlen".isDefault = true;
+          profiles."Gatlen" = { isDefault = true; };
         };
+
+        # Development & Productivity
         pandoc.enable = true;
         ruff = {
           enable = true;
           settings = { };
         };
+
+        # Network & Security
         ssh = {
           enable = true;
           extraConfig = ''
@@ -418,7 +467,12 @@
             Include ~/.ssh/extra.ssh
           '';
         };
-        zoxide.enable = true;
+
+        # Browsers (commented out)
+        # chromium = {
+        #   enable = true;
+        # };
+        # firefox = import ./firefox.nix { inherit pkgs; };
       };
 
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Home Manager Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
@@ -432,9 +486,9 @@
 
         xdg = {
           enable = true;
-          dataHome = "/Users/gat/.local/share";
-          configHome = "/Users/gat/.config";
           cacheHome = "/Users/gat/.cache";
+          configHome = "/Users/gat/.config";
+          dataHome = "/Users/gat/.local/share";
         };
 
         programs = terminalPrograms pkgs // shellConfig
@@ -442,8 +496,8 @@
             vscode = {
               enable = true;
               profiles.default = {
-                userSettings = import ./vscode-settings.nix;
                 extensions = import ./vscode-extensions.nix { inherit pkgs; };
+                userSettings = import ./vscode-settings.nix;
               };
             };
           };
@@ -453,54 +507,56 @@
       configuration = { pkgs, ... }: {
         # Core Setup
         imports = [ home-manager.darwinModules.home-manager ];
+        nixpkgs.config.allowUnfree = true;
+        nixpkgs.hostPlatform = "aarch64-darwin";
         nixpkgs.overlays =
           [ nix-vscode-extensions.overlays.default nur.overlays.default ];
-        nixpkgs.hostPlatform = "aarch64-darwin";
-        nixpkgs.config.allowUnfree = true;
 
         # Environment
         environment = {
+          darwinConfig = "$HOME/.config/nix-darwin";
           pathsToLink = [ "/share/zsh" "/share/bash-completion" ];
+          systemPackages = systemPackages pkgs;
           systemPath =
             [ "/Users/gat/.cargo/bin" "/Users/gat/.local/share/../bin" ];
-          systemPackages = systemPackages pkgs;
-          darwinConfig = "$HOME/.config/nix-darwin";
-        };
-
-        # Services
-        services.aerospace = aerospaceConfig;
-        programs.gnupg.agent.enable = true;
-
-        # Nix Configuration
-        nix = {
-          # Handled by Determinate Nix
-          enable = false;
-          package = pkgs.nix;
-          settings."extra-experimental-features" = [ "nix-command" "flakes" ];
         };
 
         # System Configuration
         system = systemDefaults // {
           configurationRevision = self.rev or self.dirtyRev or null;
-          stateVersion = 5;
           primaryUser = "gat";
+          stateVersion = 5;
         };
 
         # User Configuration
         users.users.gat = {
-          name = "gat";
           home = "/Users/gat";
+          name = "gat";
         };
 
         # Fonts
         fonts.packages = with pkgs; [
-          monaspace
-          julia-mono
-          newcomputermodern
           fira-code
-          nerd-fonts.fira-code
           fira-math
+          julia-mono
+          monaspace
+          nerd-fonts.fira-code
+          newcomputermodern
         ];
+
+        # Services
+        services.aerospace = aerospaceConfig;
+        programs.gnupg.agent.enable = true;
+        # services.syncthing.enable = true;
+        # services.ludusavi.enable = true;
+        # services.flameshot.enable = false;
+
+        # Nix Configuration
+        nix = {
+          enable = false; # Handled by Determinate Nix
+          package = pkgs.nix;
+          settings."extra-experimental-features" = [ "nix-command" "flakes" ];
+        };
 
         # Homebrew
         homebrew = homebrewConfig;
