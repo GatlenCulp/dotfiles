@@ -4,17 +4,33 @@ This will install nix-darwin if you don't already have it.
 ```bash
 nix run nix-darwin -- switch --flake ~/.config/nix-darwin
 ```
+
+To do a faster install once set up
+```bash
+rebuild
+```
+
+
+To Upgrade
+```bash
+upgrade
+```
+
 Everything should happen or be imported into `flake.nix`
 
+
+## Notes
 NixOS inspired setup:
 https://github.com/notusknot/dotfiles-nix
 
 And a nix-darwin setup:
 https://github.com/heywoodlh/nix-darwin-flake
 
-Add everything from here:
-https://github.com/GatlenCulp/macos_setup/tree/main/src/macos
 
+## TODO
+
+- Add everything from here:
+https://github.com/GatlenCulp/macos_setup/tree/main/src/macos
 - Setting default apps with Duti
 - Set theme
 ```bash
