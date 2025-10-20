@@ -265,7 +265,7 @@
     "editor.gotoLocation.multipleImplementations": "gotoAndPeek",
     "editor.gotoLocation.multipleReferences": "gotoAndPeek",
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
-    "editor.guides.bracketPairs": false,
+    "editor.guides.bracketPairs": true,
     "editor.inlayHints.enabled": "off",
     "editor.inlayHints.fontFamily": "FiraCode Nerd Font",
     "editor.inlineSuggest.enabled": true,
@@ -307,6 +307,7 @@
     "errorLens.fontFamily": "FiraCode Nerd Font",
     "errorLens.messageEnabled": true,
     "files.associations": {
+        "flake.lock": "json",
         "**/.x-cmd/*": "shellscript",
         "**/.x-cmd/*.yml": "yaml",
         "*.css": "css",
@@ -749,5 +750,21 @@
     "workbench.panel.opensMaximized": "never",
     "workbench.panel.showLabels": false,
     "workbench.productIconTheme": "material-product-icons",
-    "editor.defaultFormatter": "trunk.io"
+    "editor.defaultFormatter": "trunk.io",
+    "typst-math.renderingMode": "nothing",
+    "typst-math.renderSpaces": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "cursor.agent_layout_browser_beta_setting": true
 }

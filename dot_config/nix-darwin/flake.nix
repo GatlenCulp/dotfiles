@@ -22,30 +22,23 @@
     , nix-vscode-extensions, nur }:
     let
       # Import secrets (create secrets.nix based on secrets-template.nix)
-      secrets = import "${self}/secrets.nix";
-
-      # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ System Packages ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+      secrets = import "${self}/secrets/secrets.nix";
       systemPackages = pkgs:
-        import "${self}/modules/system-packages.nix" { inherit pkgs; };
-
-      # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Homebrew Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-      homebrewConfig = import "${self}/modules/homebrew.nix";
-
-      # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ System Defaults ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-      systemDefaults = import "${self}/modules/system-defaults.nix";
-
+        import "${self}/modules/darwin/system-packages.nix" { inherit pkgs; };
+      homebrewConfig = import "${self}/modules/darwin/homebrew.nix";
+      systemDefaults = import "${self}/modules/darwin/system-defaults.nix";
       terminalPrograms = pkgs:
-        import "${self}/terminal/terminal-programs.nix" { inherit pkgs; };
+        import "${self}/modules/home/terminal/terminal-programs.nix" { inherit pkgs; };
       # zed-editor.enable = true;
       # sketchybar.enable = true;
       # obs-studio.enable = true;
       # obsidian.enable = true;
 
       shellConfig =
-        import "${self}/terminal/shell-config.nix" { inherit secrets; };
+        import "${self}/modules/home/terminal/shell-config.nix" { inherit secrets; };
 
       applicationPrograms = pkgs:
-        import "${self}/modules/applications.nix" { inherit pkgs; };
+        import "${self}/modules/home/applications.nix" { inherit pkgs; };
 
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Home Manager Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
       homeManagerConfig = { pkgs, ... }: {
@@ -53,7 +46,7 @@
         home.shellAliases = {
           config = "$EDITOR ~/.config/nix-darwin";
           rebuild = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin";
-          upgrade = "sudo determinate-nixd upgrade && topgrade";
+          upgrade = "topgrade";
         };
         home.shell = {
           enableShellIntegration = true;
@@ -73,8 +66,8 @@
               enable = true;
               profiles.default = {
                 extensions =
-                  import "${self}/vscode-extensions.nix" { inherit pkgs; };
-                userSettings = import "${self}/vscode-settings.nix";
+                  import "${self}/modules/home/vscode/vscode-extensions.nix" { inherit pkgs; };
+                userSettings = import "${self}/modules/home/vscode/vscode-settings.nix";
               };
             };
           };
@@ -112,12 +105,12 @@
         };
 
         # Fonts
-        fonts.packages = import "${self}/modules/fonts.nix" { inherit pkgs; };
+        fonts.packages = import "${self}/modules/darwin/fonts.nix" { inherit pkgs; };
 
         # Services
         services.aerospace = {
           enable = true;
-          settings = import "${self}/aerospace-config.nix";
+          settings = import "${self}/modules/home/aerospace-config.nix";
         };
         programs.gnupg.agent.enable = true;
         # services.syncthing.enable = true;
