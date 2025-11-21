@@ -39,7 +39,7 @@
     },
     "[python]": {
         "editor.codeActionsOnSave": {},
-        "editor.defaultFormatter": "charliermarsh.ruff"
+        "editor.defaultFormatter": "charliermarsh.ruff",
     },
     "[racket]": {
         "editor.defaultFormatter": "evzen-wybitul.magic-racket"
@@ -85,6 +85,7 @@
     "autofold.default": 1,
     "autofold.unfold": true,
     "better-comments.highlightPlainText": false,
+    "cSpell.enabled": false,
     "better-comments.tags": [
         {
             "bold": true,
@@ -766,5 +767,41 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "cursor.agent_layout_browser_beta_setting": true
+    "cursor.agent_layout_browser_beta_setting": true,
+    "cursor.composer.textSizeScale": 1.15,
+    "gitlens.ai.model": "gitkraken",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    // LSP config can be passed via the ``nix.serverSettings.{lsp}`` as shown below.
+    "nix.serverSettings": {
+        // check https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md for all nixd config
+        "nixd": {
+            "formatting": {
+                "command": [
+                    "/run/current-system/sw/bin/nixfmt"
+                ],
+            },
+            "options": {
+                // By default, this entry will be read from `import <nixpkgs> { }`.
+                // You can write arbitrary Nix expressions here, to produce valid "options" declaration result.
+                // Tip: for flake-based configuration, utilize `builtins.getFlake`
+                // Note: Not sure if I'm using this right...
+                "nixos": {
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").nixosConfigurations.gatty.options",
+                },
+                "home-manager": {
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").homeConfigurations.gatty.options",
+                },
+                // Tip: use ${workspaceFolder} variable to define path
+                "nix-darwin": {
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").darwinConfigurations.gatty.options",
+                },
+            },
+        }
+    },
+    "cursor.terminal.usePreviewBox": true,
+    "ruff.codeAction.fixViolation": {
+        "enable": false
+    }
 }

@@ -16,10 +16,12 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
+    tytanic.url = "github:typst-community/tytanic/v0.3.1";
+    tytanic.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager
-    , nix-vscode-extensions, nur }:
+    , nix-vscode-extensions, nur, tytanic }:
     let
       # Import secrets (create secrets.nix based on secrets-template.nix)
       secrets = import "${self}/secrets/secrets.nix";
@@ -28,24 +30,33 @@
       homebrewConfig = import "${self}/modules/darwin/homebrew.nix";
       systemDefaults = import "${self}/modules/darwin/system-defaults.nix";
       terminalPrograms = pkgs:
-        import "${self}/modules/home/terminal/terminal-programs.nix" { inherit pkgs; };
+        import "${self}/modules/home/terminal/terminal-programs.nix" {
+          inherit pkgs;
+        };
+      customSystemPackages = { inputs, pkgs }:
+        import "${self}/modules/darwin/custom-system-packages.nix" {
+          inherit inputs pkgs;
+        };
       # zed-editor.enable = true;
       # sketchybar.enable = true;
       # obs-studio.enable = true;
       # obsidian.enable = true;
 
-      shellConfig =
-        import "${self}/modules/home/terminal/shell-config.nix" { inherit secrets; };
+      shellConfig = import "${self}/modules/home/terminal/shell-config.nix" {
+        inherit secrets;
+      };
 
       applicationPrograms = pkgs:
         import "${self}/modules/home/applications.nix" { inherit pkgs; };
+
+      ruffSettings = import "${self}/modules/home/ruff.nix";
 
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Home Manager Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
       homeManagerConfig = { pkgs, ... }: {
         home.stateVersion = "25.05";
         home.shellAliases = {
           config = "$EDITOR ~/.config/nix-darwin";
-          rebuild = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin";
+          rebuild = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin --show-trace";
           upgrade = "topgrade";
         };
         home.shell = {
@@ -62,12 +73,20 @@
 
         programs = terminalPrograms pkgs // shellConfig
           // applicationPrograms pkgs // {
+            ruff = {
+              enable = true;
+              settings = ruffSettings;
+            };
+          } // {
             vscode = {
               enable = true;
               profiles.default = {
                 extensions =
-                  import "${self}/modules/home/vscode/vscode-extensions.nix" { inherit pkgs; };
-                userSettings = import "${self}/modules/home/vscode/vscode-settings.nix";
+                  import "${self}/modules/home/vscode/vscode-extensions.nix" {
+                    inherit pkgs;
+                  };
+                userSettings =
+                  import "${self}/modules/home/vscode/vscode-settings.nix";
               };
             };
           };
@@ -86,9 +105,21 @@
         environment = {
           darwinConfig = "$HOME/.config/nix-darwin";
           pathsToLink = [ "/share/zsh" "/share/bash-completion" ];
-          systemPackages = systemPackages pkgs;
+          systemPackages = (systemPackages pkgs)
+            ++ (customSystemPackages { inherit inputs pkgs; });
           systemPath =
             [ "/Users/gat/.cargo/bin" "/Users/gat/.local/share/../bin" ];
+        };
+
+        # launchd
+        launchd.user.agents = {
+          zed-test = {
+            command = "${pkgs.zed}/bin/zed";
+            serviceConfig = {
+              KeepAlive = false;
+              RunAtLoad = true;
+            };
+          };
         };
 
         # System Configuration
@@ -105,15 +136,17 @@
         };
 
         # Fonts
-        fonts.packages = import "${self}/modules/darwin/fonts.nix" { inherit pkgs; };
+        fonts.packages =
+          import "${self}/modules/darwin/fonts.nix" { inherit pkgs; };
 
         # Services
         services.aerospace = {
           enable = true;
           settings = import "${self}/modules/home/aerospace-config.nix";
         };
+        # services.dropbox.enable = true; # Doesn't work? For dropbox cli it seems
         programs.gnupg.agent.enable = true;
-        # services.syncthing.enable = true;
+        # services.syncthing.enable = true; # Doesn't work for some reason
         # services.ludusavi.enable = true;
         # services.flameshot.enable = false;
 

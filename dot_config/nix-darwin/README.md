@@ -47,3 +47,6 @@ osascript -e "tell application 'Finder' to set desktop picture to POSIX file \'$
 - Bartender settings or smthn
 
 _Note: Some nix-darwin things are mirrored in home-manager, make sure to use proper settings._
+
+To look into:
+- https://github.com/nix-community/nix-init#configuration
