@@ -1,22 +1,24 @@
 {
-    "C_Cpp.updateChannel": "Insiders",
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[dockercompose]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
     "[eval-log]": {},
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
         "editor.defaultFormatter": "biomejs.biome"
     },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[json][jsonc][jsonl]": {
+        "editor.defaultFormatter": "biomejs.biome",
         "editor.tabSize": 2,
         "editor.wordWrap": "on"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[latex]": {
         "editor.defaultFormatter": "James-Yu.latex-workshop",
@@ -31,6 +33,7 @@
     },
     "[nix]": {
         "editor.defaultFormatter": "jnoortheen.nix-ide",
+        "editor.formatOnSave": true,
         "editor.insertSpaces": true,
         "editor.tabSize": 2
     },
@@ -38,8 +41,12 @@
         "editor.defaultFormatter": "jan-dolejsi.pddl"
     },
     "[python]": {
-        "editor.codeActionsOnSave": {},
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        },
         "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true
     },
     "[racket]": {
         "editor.defaultFormatter": "evzen-wybitul.magic-racket"
@@ -47,7 +54,6 @@
     "[ruby]": {
         "editor.defaultFormatter": "Shopify.ruby-lsp",
         "editor.formatOnSave": true,
-        "editor.formatOnType": true,
         "editor.insertSpaces": true,
         "editor.semanticHighlighting.enabled": true,
         "editor.tabSize": 2,
@@ -65,27 +71,22 @@
         "editor.wordWrap": "on"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "biomejs.biome"
     },
     "[typst-code]": {
         "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
     },
     "[typst]": {
+        "editor.defaultFormatter": "myriad-dreamin.tinymist",
         "editor.formatOnSave": true,
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
-        "editor.defaultFormatter": "myriad-dreamin.tinymist"
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "ai-docstring.docstringFormat": "sphinx",
     "autoDocstring.docstringFormat": "google-notypes",
     "autoDocstring.startOnNewLine": true,
-    "autoHide.hideOnOpen": true,
-    "autofold.default": 1,
-    "autofold.unfold": true,
     "better-comments.highlightPlainText": false,
-    "cSpell.enabled": false,
     "better-comments.tags": [
         {
             "bold": true,
@@ -220,26 +221,21 @@
             "underline": true
         }
     ],
-    "comment-divider.languagesMap": {
-        "toml": [
-            "#",
-            "#"
-        ]
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "addWords": true,
+            "name": "custom-dictionary-user",
+            "path": "~/.config/nix-darwin/assets/.cspell/custom-dictionary-user.txt",
+            "scope": "user"
+        }
     },
-    "comment-divider.length": 70,
-    "comment-divider.lineFiller": "─",
-    "comment-divider.mainHeaderFiller": "━",
-    "comment-divider.mainHeaderHeight": "line",
-    "comment-divider.shouldLengthIncludeIndent": true,
-    "comment-divider.subheaderFiller": "─",
-    "cursor.aipreview.enabled": true,
-    "cursor.chat.showSuggestedFiles": true,
-    "cursor.chat.smoothStreaming": true,
-    "cursor.cmdk.useThemedDiffBackground": true,
+    "cSpell.diagnosticLevel": "Hint",
+    "cSpell.dictionaries": [
+        "vim"
+    ],
     "cursor.composer.collapsePaneInputBoxPills": true,
-    "cursor.composer.renderPillsInsteadOfBlocks": true,
-    "cursor.composer.shouldAllowCustomModes": true,
     "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor.composer.textSizeScale": 1.15,
     "cursor.cpp.disabledLanguages": [
         "plaintext",
         "markdown",
@@ -247,6 +243,7 @@
     ],
     "cursor.cpp.enablePartialAccepts": true,
     "cursor.general.enableShadowWorkspace": true,
+    "cursor.terminal.usePreviewBox": true,
     "debug.console.fontFamily": "FiraCode Nerd Font",
     "debug.console.fontSize": 10,
     "debug.hideLauncherWhileDebugging": true,
@@ -261,7 +258,6 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.fontFamily": "FiraCode Nerd Font",
     "editor.fontLigatures": true,
-    "editor.formatOnType": true,
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleImplementations": "gotoAndPeek",
     "editor.gotoLocation.multipleReferences": "gotoAndPeek",
@@ -276,64 +272,50 @@
     "editor.minimap.renderCharacters": false,
     "editor.minimap.side": "left",
     "editor.peekWidgetDefaultFocus": "editor",
-    "editor.tokenColorCustomizations": {
-        "[*Light*]": {
-            "textMateRules": [
-                {
-                    "scope": "ref.matchtext",
-                    "settings": {
-                        "foreground": "#000"
-                    }
-                }
-            ]
-        },
-        "[*Dark*]": {
-            "textMateRules": [
-                {
-                    "scope": "ref.matchtext",
-                    "settings": {
-                        "foreground": "#fff"
-                    }
-                }
-            ]
-        },
-        "textMateRules": []
-    },
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
+    "errorLens.borderRadius": "",
     "errorLens.codeLensEnabled": false,
     "errorLens.codeLensOnClick": "showProblemsView",
-    "errorLens.followCursor": "allLinesExceptActive",
+    "errorLens.decorations": {
+        "errorMessage": {
+            "backgroundColor": "#FF555520",
+            "color": "#FF5555"
+        },
+        "hintMessage": {
+            "backgroundColor": "#6272A420",
+            "color": "#6272A4"
+        },
+        "infoMessage": {
+            "backgroundColor": "#F1FA8C20",
+            "color": "#F1FA8C"
+        },
+        "warningMessage": {
+            "backgroundColor": "#8BE9FD20",
+            "color": "#8BE9FD"
+        }
+    },
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info",
+        "hint"
+    ],
+    "errorLens.followCursor": "allLines",
     "errorLens.fontFamily": "FiraCode Nerd Font",
+    "errorLens.fontSize": "0.8em",
+    "errorLens.messageBackgroundMode": "message",
     "errorLens.messageEnabled": true,
+    "errorLens.padding": "2px 1ch",
     "files.associations": {
-        "flake.lock": "json",
-        "**/.x-cmd/*": "shellscript",
-        "**/.x-cmd/*.yml": "yaml",
-        "*.css": "css",
-        "*.cursorrules": "markdown",
         "*.env*": "dotenv",
-        "*.eval": "eval-log",
-        "*.sh.tmpl": "shellscript",
-        "*.spec": "python",
-        "*.ssh": "ssh_config",
         "*.toml.tmpl": "toml",
         "*Brewfile*": "ruby",
         ".aliases": "shellscript",
         ".bashrc": "shellscript",
-        ".czrc": "json",
-        ".env*": "dotenv",
         ".envrc": "shellscript",
-        ".exports": "shellscript",
-        ".functions": "shellscript",
-        ".shrc": "shellscript",
-        ".xonshrc": "xonsh",
-        ".zshrc": "shellscript",
-        "_headers": "properties",
-        "_redirects": "properties",
-        "dot_*": "shellscript",
-        "sh.tmpl": "shellscript"
+        ".zshrc": "shellscript"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -350,27 +332,10 @@
         "**/CVS": true,
         "**/Thumbs.db": true
     },
-    "files.watcherExclude": {
-        "**/.trunk/*actions/": true,
-        "**/.trunk/*logs/": true,
-        "**/.trunk/*notifications/": true,
-        "**/.trunk/*out/": true,
-        "**/.trunk/*plugins/": true
-    },
-    "fold.level": 1,
     "git.autofetch": true,
     "git.openRepositoryInParentFolders": "never",
-    "github.copilot.editor.enableAutoCompletions": true,
-    "github.copilot.enable": {
-        "*": true,
-        "markdown": false,
-        "plaintext": false
-    },
-    "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
-    "githubPullRequests.pullBranch": "never",
-    "gitlens.ai.experimental.model": "anthropic:claude-3-5-sonnet-20240620",
-    "gitlens.ai.experimental.openai.model": "gpt-4o",
-    "gitlens.ai.experimental.provider": "openai",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+    "gitlens.ai.model": "gitkraken",
     "gitlens.blame.fontFamily": "FiraCode Nerd Font",
     "gitlens.currentLine.fontFamily": "FiraCode Nerd Font",
     "gitlens.graph.dateFormat": null,
@@ -393,18 +358,19 @@
     ],
     "indentRainbow.errorColor": "rgba(128,32,32,0.3)",
     "indentRainbow.tabmixColor": "rgba(128,32,96,0.3)",
-    "interactiveWindow.executeWithShiftEnter": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "julia.enableTelemetry": true,
-    "julia.symbolCacheDownload": true,
-    "jupyter.askForKernelRestart": false,
-    "jupyter.interactiveWindow.creationMode": "perFile",
-    "jupyter.interactiveWindow.textEditor.autoAddNewCell": false,
-    "jupyter.kernels.trusted": [
-        "/Users/gat/work/FA2024/DL/secrets/kernel.json"
+    "json.format.enable": true,
+    "json.schemaDownload.enable": true,
+    "json.schemas": [
+        {
+            "fileMatch": [
+                ".cursor/hooks.json"
+            ],
+            "url": "https://unpkg.com/cursor-hooks/schema/hooks.schema.json"
+        }
     ],
-    "jupyter.themeMatplotlibPlots": true,
-    "kite.showWelcomeNotificationOnStartup": false,
+    "json.validate.enable": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.themeMatplotlibPlots": false,
     "latex-workshop.bibtex-format.sort.enabled": true,
     "latex-workshop.formatting.latex": "tex-fmt",
     "latex-workshop.intellisense.subsuperscript.enabled": true,
@@ -421,21 +387,34 @@
     },
     "livePreview.openPreviewTarget": "External Browser",
     "livePreview.portNumber": 4000,
-    "makefile.configureOnOpen": true,
-    "markdown-preview-enhanced.codeBlockTheme": "auto.css",
-    "markdown-preview-enhanced.enableCriticMarkupSyntax": true,
-    "markdown-preview-enhanced.enableScriptExecution": true,
-    "markdown-preview-enhanced.liveUpdate": false,
-    "markdown-preview-enhanced.mathRenderingOption": "MathJax",
-    "markdown-preview-enhanced.previewTheme": "github-light.css",
-    "markdown.math.enabled": false,
-    "marquee.configuration.background": "11",
-    "marquee.configuration.name": "Gatlen",
     "material-icon-theme.activeIconPack": "react",
     "material-icon-theme.files.color": "#90a4ae",
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.opacity": 1,
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    "nix.serverSettings": {
+        "nixd": {
+            "formatting": {
+                "command": [
+                    "/run/current-system/sw/bin/nixfmt"
+                ]
+            },
+            "options": {
+                "home-manager": {
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").homeConfigurations.gatty.options"
+                },
+                "nix-darwin": {
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").darwinConfigurations.gatty.options"
+                }
+            }
+        }
+    },
     "notebook.cellFocusIndicator": "border",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    },
     "notebook.codeActionsOnSave": {
         "notebook.source.fixAll": "explicit",
         "notebook.source.organizeImports": "explicit"
@@ -449,47 +428,7 @@
     "notebook.output.fontSize": 9,
     "notebook.output.scrolling": true,
     "notebook.stickyScroll.enabled": true,
-    "oneDarkPro.bold": true,
-    "oneDarkPro.italic": true,
     "pddl.selectedPlanner": "Planning as a service (solver.planning.domains)",
-    "peacock.favoriteColors": [
-        {
-            "name": "Angular Red",
-            "value": "#dd0531"
-        },
-        {
-            "name": "Azure Blue",
-            "value": "#007fff"
-        },
-        {
-            "name": "JavaScript Yellow",
-            "value": "#f9e64f"
-        },
-        {
-            "name": "Mandalorian Blue",
-            "value": "#1857a4"
-        },
-        {
-            "name": "Node Green",
-            "value": "#215732"
-        },
-        {
-            "name": "React Blue",
-            "value": "#61dafb"
-        },
-        {
-            "name": "Something Different",
-            "value": "#832561"
-        },
-        {
-            "name": "Svelte Orange",
-            "value": "#ff3d00"
-        },
-        {
-            "name": "Vue Green",
-            "value": "#42b883"
-        }
-    ],
     "powermode.combo.counterSize": 1,
     "powermode.combo.location": "editor",
     "powermode.combo.threshold": 5,
@@ -508,56 +447,7 @@
         "Mantis",
         "FlipperZero"
     ],
-    "python.analysis.inlayHints.pytestParameters": true,
-    "python.analysis.packageIndexDepths": [
-        {
-            "depth": 2,
-            "name": "sklearn"
-        },
-        {
-            "depth": 2,
-            "name": "matplotlib"
-        },
-        {
-            "depth": 2,
-            "name": "scipy"
-        },
-        {
-            "depth": 2,
-            "name": "django"
-        },
-        {
-            "depth": 2,
-            "name": "flask"
-        },
-        {
-            "depth": 2,
-            "name": "fastapi"
-        },
-        {
-            "depth": 2,
-            "name": "inspect_ai"
-        }
-    ],
-    "python.createEnvironment.trigger": "off",
-    "python.defaultInterpreterPath": "python3.10",
-    "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=cv2"
-    ],
     "python.testing.pytestEnabled": true,
-    "pythonPreview.code.fontFamily": "FiraCode Nerd Font, Andale mono, monospace",
-    "pythonPreview.codeFooterDocs.fontFamily": "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif",
-    "pythonPreview.fontFamily": "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif",
-    "pythonPreview.heapObject.fontFamily": "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif",
-    "pythonPreview.printOutputDocs.fontFamily": "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif",
-    "pythonPreview.pyStdout.fontFamily": "FiraCode Nerd Font, Andale mono, monospace",
-    "pythonPreview.stackAndHeapHeader.fontFamily": "FiraCode Nerd Font, erdana, arial, helvetica, sans-serif",
-    "pythonPreview.stackFrame.fontFamily": "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif",
-    "pythonPreview.stackFrameHeader.fontFamily": "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif",
-    "pythonPreview.typeLabel.fontFamily": "FiraCode Nerd Font, verdana, arial, helvetica, sans-serif",
-    "pythonTestExplorer.testFramework": "pytest",
-    "redhat.telemetry.enabled": false,
-    "references.preferredLocation": "view",
     "remote.SSH.defaultExtensions": [
         "ms-python.vscode-pylance",
         "ms-python.debugpy",
@@ -602,39 +492,18 @@
     "remote.SSH.logLevel": "trace",
     "remote.SSH.showLoginTerminal": true,
     "remote.SSH.useExecServer": false,
-    "remote.autoForwardPortsSource": "hybrid",
-    "rest-client.fontFamily": "FiraCode Nerd Font",
-    "ruff.lineLength": 100,
-    "security.promptForLocalFileProtocolHandling": false,
-    "shellformat.useEditorConfig": true,
-    "svelte.enable-ts-plugin": true,
-    "sync.gist": "ebb6d31a5a543247119837ef3098f796",
+    "ruff.codeAction.fixViolation": {
+        "enable": false
+    },
+    "ruff.configuration": "~/.config/ruff/ruff.toml",
     "terminal.external.osxExec": "Ghostty.app",
-    "terminal.integrated.allowedLinkSchemes": [
-        "file",
-        "http",
-        "https",
-        "mailto",
-        "vscode",
-        "vscode-insiders",
-        "docker-desktop"
-    ],
-    "terminal.integrated.altClickMovesCursor": true,
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.cursorStyleInactive": "none",
-    "terminal.integrated.defaultLocation": "view",
-    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.osx": "Gatlen",
     "terminal.integrated.enableImages": true,
-    "terminal.integrated.enableMultiLinePasteWarning": "auto",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font",
     "terminal.integrated.fontSize": 10,
-    "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.hideOnStartup": "whenEmpty",
-    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.lineHeight": 1.05,
     "terminal.integrated.persistentCustomizations": {
         "splitTerminals": [
@@ -649,7 +518,7 @@
         ]
     },
     "terminal.integrated.profiles.osx": {
-        "zsh": {
+        "Gatlen": {
             "args": [
                 "-l"
             ],
@@ -670,18 +539,9 @@
     "terminal.integrated.suggest.enabled": true,
     "terminal.integrated.tabs.enabled": true,
     "terminal.integrated.tabs.location": "left",
-    "testing.automaticallyOpenPeekView": "never",
-    "testing.countBadge": "off",
-    "testing.coverageBarThresholds": {
-        "green": 90,
-        "red": 0,
-        "yellow": 60
-    },
-    "testing.coverageToolbarEnabled": true,
     "tinymist.formatterMode": "typstyle",
-    "tinymist.preview.cursorIndicator": true,
-    "tinymist.preview.invertColors": "never",
-    "trunk.showPreexistingIssues": true,
+    "typst-math.renderSpaces": true,
+    "typst-math.renderingMode": "nothing",
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.normal": "block-outline",
     "vim.cursorStylePerMode.replace": "underline",
@@ -696,30 +556,13 @@
     "vim.smartRelativeLine": true,
     "vim.sneak": true,
     "vim.statusBarColorControl": true,
-    "vscode-office.editorTheme": "Dracula",
-    "vscode-office.openOutline": false,
-    "vscode-pets.petSize": "small",
-    "vscode-pets.petType": "chicken",
-    "vscode-pets.theme": "castle",
-    "vscode-pets.throwBallWithMouse": true,
     "window.commandCenter": false,
     "window.density.editorTabHeight": "compact",
     "window.openFilesInNewWindow": "default",
-    "window.title": "🪿${activeRepositoryName} (${activeRepositoryBranchName}) ${separator} ${activeEditorMedium}",
-    "winopacity.opacity": 200,
+    "window.title": "🪿 ${separator} 🌳 ${activeRepositoryName} (${activeRepositoryBranchName}) ${separator} 📁 ${activeEditorMedium}",
     "workbench.accounts.experimental.showEntitlements": true,
     "workbench.colorCustomizations": {
-        "activityBar.background": "#012B63",
-        "editor.lineHighlightBackground": "#1073cf2d",
-        "editor.lineHighlightBorder": "#9fced11f",
-        "statusBar.background": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000",
-        "statusBar.debuggingForeground": "#ffffff",
-        "statusBar.foreground": "#ffffff",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBarItem.hoverBackground": "#327e36",
-        "titleBar.activeBackground": "#023D8A",
-        "titleBar.activeForeground": "#F6FAFF"
+        "titleBar.activeBackground": "#692E33"
     },
     "workbench.colorTheme": "Dracula Theme",
     "workbench.editor.customLabels.enabled": true,
@@ -750,58 +593,5 @@
     "workbench.list.smoothScrolling": true,
     "workbench.panel.opensMaximized": "never",
     "workbench.panel.showLabels": false,
-    "workbench.productIconTheme": "material-product-icons",
-    "editor.defaultFormatter": "trunk.io",
-    "typst-math.renderingMode": "nothing",
-    "typst-math.renderSpaces": true,
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "right"
-    },
-    "[dockercompose]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "advanced",
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "[github-actions-workflow]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "cursor.agent_layout_browser_beta_setting": true,
-    "cursor.composer.textSizeScale": 1.15,
-    "gitlens.ai.model": "gitkraken",
-    "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
-    "nix.enableLanguageServer": true,
-    "nix.serverPath": "nixd",
-    // LSP config can be passed via the ``nix.serverSettings.{lsp}`` as shown below.
-    "nix.serverSettings": {
-        // check https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md for all nixd config
-        "nixd": {
-            "formatting": {
-                "command": [
-                    "/run/current-system/sw/bin/nixfmt"
-                ],
-            },
-            "options": {
-                // By default, this entry will be read from `import <nixpkgs> { }`.
-                // You can write arbitrary Nix expressions here, to produce valid "options" declaration result.
-                // Tip: for flake-based configuration, utilize `builtins.getFlake`
-                // Note: Not sure if I'm using this right...
-                "nixos": {
-                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").nixosConfigurations.gatty.options",
-                },
-                "home-manager": {
-                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").homeConfigurations.gatty.options",
-                },
-                // Tip: use ${workspaceFolder} variable to define path
-                "nix-darwin": {
-                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").darwinConfigurations.gatty.options",
-                },
-            },
-        }
-    },
-    "cursor.terminal.usePreviewBox": true,
-    "ruff.codeAction.fixViolation": {
-        "enable": false
-    }
+    "workbench.productIconTheme": "material-product-icons"
 }

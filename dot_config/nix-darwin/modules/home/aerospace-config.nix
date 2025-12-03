@@ -78,23 +78,26 @@
     alt-y = "workspace y";
     alt-shift-6 = "move-node-to-workspace 6";
     alt-shift-y = "move-node-to-workspace y";
-    alt-7 = "workspace 7";
-    alt-u = "workspace u";
-    alt-shift-7 = "move-node-to-workspace 7";
-    alt-shift-u = "move-node-to-workspace u";
-    alt-8 = "workspace 8";
-    alt-i = "workspace i";
-    alt-shift-8 = "move-node-to-workspace 8";
-    alt-shift-i = "move-node-to-workspace i";
-    alt-9 = "workspace 9";
-    alt-o = "workspace o";
-    alt-shift-9 = "move-node-to-workspace 9";
-    alt-shift-o = "move-node-to-workspace o";
+    # alt-7 = "workspace 7";
+    # alt-u = "workspace u";
+    # alt-shift-7 = "move-node-to-workspace 7";
+    # alt-shift-u = "move-node-to-workspace u";
+    # alt-8 = "workspace 8";
+    # alt-i = "workspace i";
+    # alt-shift-8 = "move-node-to-workspace 8";
+    # alt-shift-i = "move-node-to-workspace i";
+    # alt-9 = "workspace 9";
+    # alt-o = "workspace o";
+    # alt-shift-9 = "move-node-to-workspace 9";
+    # alt-shift-o = "move-node-to-workspace o";
 
     # Workspace Management
     alt-tab = "workspace-back-and-forth";
     alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
     alt-shift-semicolon = "mode service";
+
+    cmd-h = []; # Disable "hide application"
+    cmd-alt-h = []; # Disable "hide others"
   };
 
   mode.service.binding = {
@@ -109,12 +112,8 @@
   };
 
   # Doesn't work :/
-  on-window-detected = [
-    {
-      "if" = {
-        app-id = "pl.maketheweb.cleanshotx";
-      };
-      run = ["layout floating"];
-    }
-  ];
+  on-window-detected = [{
+    "if" = { app-id = "pl.maketheweb.cleanshotx"; };
+    run = [ "layout floating" ];
+  }];
 }

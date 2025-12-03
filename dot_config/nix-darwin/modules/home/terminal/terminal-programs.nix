@@ -2,6 +2,7 @@
   # Shell & Navigation
   atuin = {
     enable = true;
+    enableZshIntegration = true;
     settings = {
       inline_height = 18;
       max_preview_height = 1;
@@ -37,22 +38,33 @@
   };
 
   eza = {
+
     enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
     extraOptions = [ "--width=100" "--group-directories-first" "--all" ];
     git = true;
     icons = "auto";
     theme = "dracula";
   };
   jq.enable = true;
+  jqp.enable = true;
+  tealdeer.enable = true;
   fzf.enable = true;
   fd.enable = true;
   starship = {
     enable = true;
+    enableZshIntegration = true;
     settings = import ./starship-config.nix;
   };
   yazi.enable = true;
-  zoxide.enable = true;
+  zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
   tex-fmt.enable = true;
+  sqls.enable = true;
+  readline.enable = true;
 
   # Additional terminal programs
   zed-editor.enable = true;
@@ -70,8 +82,6 @@
     settings = import ./fastfetch-config.nix;
   };
   less.enable = true;
-  thefuck.enable = true;
-  # topgrade.enable = true;
   topgrade = {
     # https://github.com/topgrade-rs/topgrade/blob/main/config.example.toml
     enable = true;
@@ -93,18 +103,31 @@
   };
 
   # Terminal Multiplexers & Session Management
-  zellij.enable = true;
+  zellij = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   tmux.enable = true;
 
   # Development Tools
   git = {
     enable = true;
-    delta.enable = true;
-    extraConfig.init.defaultBranch = "main";
     ignores = [ ".DS_Store" ];
     lfs.enable = true;
-    userEmail = "GatlenCulp@gmail.com";
-    userName = "GatlenCulp";
+    settings = {
+      user.email = "GatlenCulp@gmail.com";
+      user.name = "GatlenCulp";
+      init.defaultBranch = "main";
+      # https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories
+      # TODO: Write the ~/.git-template dir using nix
+      init.templateDir = "~/.git-template";
+    };
+  };
+
+  delta = {
+    enable = true;
+    enableGitIntegration = true;
+    enableJujutsuIntegration = true;
   };
 
   gh = {
@@ -128,10 +151,21 @@
 
   # Programming Environment
   awscli.enable = true;
-  bun.enable = true;
-  mise.enable = true;
+  bun = {
+    enable = true;
+    enableGitIntegration = true;
+  };
+  mise = {
+    enable = true;
+    enableBashIntegration = true;
+    enableNushellIntegration = true;
+  };
   nh.enable = true;
-  nix-index.enable = true;
+  nix-index = 
+    {
+      enable = true;
+      enableBashIntegration = true;
+    };
   poetry.enable = true;
   uv.enable = true;
 
@@ -147,12 +181,18 @@
   # Network & Security
   ssh = {
     enable = true;
+    enableDefaultConfig = false;
+    matchBlocks."*" = { forwardAgent = false; addKeysToAgent = "no"; compression = false; serverAliveInterval = 0; serverAliveCountMax = 3; hashKnownHosts = false; userKnownHostsFile = "~/.ssh/known_hosts"; controlMaster = "no"; controlPath = "~/.ssh/master-%r@%n:%p"; controlPersist = "no"; };
+
+
     extraConfig = ''
       Include ~/.ssh/align.ssh
       Include ~/.ssh/metr.ssh
       Include ~/.ssh/extra.ssh
     '';
   };
+
+  go.enable = true;
 
   # grep.enable = true; #not available?
 }

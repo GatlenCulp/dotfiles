@@ -1,111 +1,319 @@
 { pkgs }:
 
-with pkgs.vscode-marketplace; [
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Python Development ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  ms-python.python
-  ms-python.vscode-pylance
-  charliermarsh.ruff
-  kevinrose.vsc-python-indent
-  njpwerner.autodocstring
-  rodolphebarbanneau.python-docstring-highlighter
-  sbsnippets.pytorch-snippets
+with pkgs.vscode-marketplace;
+let
+  # Profiles. Select subsets later; for now we concatenate them all.
+  profiles = {
+    general = [
+      editorconfig.editorconfig
+      codezombiech.gitignore
+      usernamehw.errorlens
+      streetsidesoftware.code-spell-checker
+      aaron-bond.better-comments
+      alefragnani.project-manager
+      peterschmalfeldt.explorer-exclude
+      ibm.output-colorizer
+      mohammadbaqer.better-folding
+      pflannery.vscode-versionlens
+      ms-vscode.makefile-tools
+    ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Git & Version Control ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  eamodio.gitlens
-  github.vscode-pull-request-github
-  github.vscode-github-actions
+    themes = [
+      dracula-theme.theme-dracula
+      pkief.material-icon-theme
+      pkief.material-product-icons
+    ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Language Support ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  # Web Development
-  ms-vscode.live-server
-  esbenp.prettier-vscode
+    python = [
+      ms-python.python
+      # ms-pyright.pyright # Redundant, anysphere has their own version
+      ms-python.vscode-pylance # Redundant?
+      ms-python.debugpy
+      charliermarsh.ruff # redundant?
+      kevinrose.vsc-python-indent
+      njpwerner.autodocstring
+      rodolphebarbanneau.python-docstring-highlighter
+      sbsnippets.pytorch-snippets
+      ms-python.vscode-python-envs
+      ms-python.gather
+      # twixes.pypi-assistant
+    ];
 
-  # Other Languages
-  rust-lang.rust-analyzer
-  julialang.language-julia
-  ms-dotnettools.csharp
-  ms-vscode.powershell
+    typst = [
+      myriad-dreamin.tinymist
+      surv.typst-math
+    ];
 
-  # Shell/Bash
-  mads-hartmann.bash-ide-vscode
-  rogalmic.bash-debug
-  timonwong.shellcheck
+    web = [
+      biomejs.biome
+      ms-vscode.live-server
+      esbenp.prettier-vscode
+      svelte.svelte-vscode
+      bradlc.vscode-tailwindcss
+      vitest.explorer
+      ecmel.vscode-html-css
+      zignd.html-css-class-completion
+      mkaufman.htmlhint
+      tht13.html-preview-vscode
+      samuelcolvin.jinjahtml
+      wholroyd.jinja
+      ms-vscode.vscode-typescript-next
+      christian-kohler.npm-intellisense
+      # YoavBls.pretty-ts-errors # not available
+    ];
 
-  # Nix
-  jnoortheen.nix-ide
+    rust = [ rust-lang.rust-analyzer ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Data & Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  redhat.vscode-yaml
-  tamasfe.even-better-toml
-  dotenv.dotenv-vscode
-  mechatroner.rainbow-csv
-  grapecity.gc-excelviewer
-  richie5um2.vscode-sort-json
-  codezombiech.gitignore
-  editorconfig.editorconfig
+    julia = [ julialang.language-julia ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Database ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  ckolkman.vscode-postgres
+    csharp = [ ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ DevOps & Cloud ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  ms-azuretools.vscode-docker
-  formulahendry.docker-explorer
-  ms-vscode-remote.remote-containers
-  ms-vscode-remote.remote-ssh
-  ms-vscode-remote.remote-ssh-edit
-  ms-vscode-remote.remote-wsl
-  ms-vscode.remote-explorer
-  ms-vscode.remote-repositories
-  ms-vscode.remote-server
+    powershell = [ ms-vscode.powershell ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Documentation & Markdown ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  yzhang.markdown-all-in-one
-  davidanson.vscode-markdownlint
+    shell = [
+      mads-hartmann.bash-ide-vscode
+      rogalmic.bash-debug
+      timonwong.shellcheck
+      foxundermoon.shell-format
+      jetmartin.bats
+      xadillax.viml
+      # xjnoortheen.xonsh # Not available
+    ];
 
-  # LaTeX
-  james-yu.latex-workshop
+    nix = [ jnoortheen.nix-ide ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Data Science & ML ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  ms-toolsai.jupyter
-  ms-toolsai.jupyter-renderers
-  ms-toolsai.vscode-jupyter-cell-tags
-  ms-toolsai.vscode-jupyter-powertoys
-  ms-toolsai.vscode-jupyter-slideshow
+    data-config = [
+      redhat.vscode-yaml
+      redhat.vscode-xml
+      tamasfe.even-better-toml
+      dotenv.dotenv-vscode
+      mikestead.dotenv
+      mechatroner.rainbow-csv
+      grapecity.gc-excelviewer
+      richie5um2.vscode-sort-json
+      remcohaszing.schemastore
+      dvirtz.parquet-viewer
+      # ZainChen.json # Not available
+      kdl-org.kdl
+      cweijan.vscode-office
+      # quarto.quarto # Idk if I need this
+    ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Testing & Debugging ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  ms-vscode.test-adapter-converter
+    database = [
+      ckolkman.vscode-postgres
+      mtxr.sqltools
+      randomfractalsinc.duckdb-sql-tools
+      ms-toolsai.datawrangler
+    ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Code Quality & Formatting ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  aaron-bond.better-comments
-  streetsidesoftware.code-spell-checker
-  usernamehw.errorlens
-  trunk.io
-  lmcarreiro.vscode-smart-column-indenter
-  mohammadbaqer.better-folding
+    r-lang = [
+      REditorSupport.r
+      REditorSupport.r-syntax
+    ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Productivity & Organization ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  alefragnani.project-manager
-  peterschmalfeldt.explorer-exclude
+    devops = [
+      ### Containers
+      ms-azuretools.vscode-docker
+      formulahendry.docker-explorer
+      jeff-hykin.better-dockerfile-syntax
+      ms-kubernetes-tools.vscode-kubernetes-tools
+      ipedrazas.kubernetes-snippets
+      ### Remote
+      ms-vscode-remote.remote-wsl
+      ms-vscode.remote-repositories
+      ms-vscode.remote-server
+      ### Infrastructure as Code (IaC)
+      redhat.ansible
+      amazonwebservices.aws-toolkit-vscode
+      hashicorp.terraform
+      ### CI/CD & Testing
+      exiasr.hadolint
+      ### Misc
+      philnash.ngrok-for-vscode
+      # anysphere.remote-containers # Doesn't work on cursor
+      # Postman.postman-for-vscode # Not in vscode-extensions
+    ];
 
-  # File Operations
-  ionutvmi.path-autocomplete
-  shinotatwu-ds.file-tree-generator
+    docs = [
+      # yzhang.markdown-all-in-one
+      shd101wyy.markdown-preview-enhanced
+      davidanson.vscode-markdownlint
+    ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Themes & UI ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  dracula-theme.theme-dracula
-  pkief.material-icon-theme
-  pkief.material-product-icons
-  ibm.output-colorizer
+    latex = [ james-yu.latex-workshop ];
 
-  # Fonts
-  janne252.fontawesome-autocomplete
+    ds-ml = [
+      ms-toolsai.jupyter
+      ms-toolsai.jupyter-renderers
+      ms-toolsai.vscode-jupyter-cell-tags
+      ms-toolsai.vscode-jupyter-powertoys
+      ms-toolsai.vscode-jupyter-slideshow
+      ukaisi.inspect-ai
+    ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Specialized Tools ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  mathematic.vscode-pdf
-  humao.rest-client
+    testing = [ ms-vscode.test-adapter-converter ];
 
-  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Additional Languages & Frameworks ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
-  myriad-dreamin.tinymist
-  surv.typst-math
-  vscodevim.vim
-]
+    code-quality = [
+      trunk.io
+      lmcarreiro.vscode-smart-column-indenter
+    ];
+
+    file-ops = [
+      ionutvmi.path-autocomplete
+      christian-kohler.path-intellisense
+      shinotatwu-ds.file-tree-generator
+      kisstkondoros.vscode-gutter-preview
+      # YuTengjing.vscode-archive # Not available
+    ];
+
+    git = [
+      eamodio.gitlens
+      github.vscode-pull-request-github
+      github.vscode-github-actions
+      # SanjulaGanepola.github-local-actions # Not in vscode-extensions
+    ];
+
+    lisp = [
+      evzen-wybitul.magic-racket
+      sjhuangx.vscode-scheme
+    ];
+
+    lean = [
+      leanprover.lean4
+    ];
+
+    ruby = [
+      rubocop.vscode-rubocop
+      # Shopify.ruby-lsp # Not available
+      sorbet.sorbet-vscode-extension
+    ];
+
+    specialized = [
+      mathematic.vscode-pdf
+      mathematic.vscode-latex
+      humao.rest-client
+      # tonybaloney.vscode-pets
+      # hediet.vscode-drawio
+      vitaliymaz.vscode-svg-previewer
+      vincent-templier.vscode-netron
+      ban.troff
+      # jan-dolejsi.pddl
+      # WakaTime.vscode-wakatime # Not available
+    ];
+
+    fonts = [
+      janne252.fontawesome-autocomplete
+      # SeyyedKhandon.firacode
+      ctcuff.font-preview
+    ];
+
+    vim = [
+      vscodevim.vim
+    ];
+
+    cpp = [
+      jeff-hykin.better-cpp-syntax
+      ms-vscode.cpptools-themes
+      cschlosser.doxdocgen
+    ];
+
+    cloud = [
+      aws-scripting-guy.cform
+      # GitHub.codespaces
+      github.remotehub
+      ms-vsliveshare.vsliveshare
+    ];
+
+    debugging = [
+      hediet.debug-visualizer
+      ms-vscode.hexeditor
+    ];
+
+    snippets-templates = [
+      adpyke.codesnap
+      helixquar.asciidecorator
+      dsznajder.es7-react-js-snippets
+      abusaidm.html-snippets
+    ];
+
+    ui-ux = [
+      alefragnani.bookmarks
+      antfu.iconify
+      arthurlobo.vscode-doom
+      exodiusstudios.comment-anchors
+      stackbreak.comment-divider
+      johnpapa.vscode-peacock
+      xiaoluoboding.vscode-folder-size
+    ];
+
+    utilities = [
+      atishay-jain.all-autocomplete
+      formulahendry.auto-rename-tag
+      salbert.copy-text
+      mrmlnc.vscode-duplicate
+      liamhammett.inline-parameters
+      elagil.pre-commit-helper
+      louiswt.regexp-preview
+      stkb.rewrap
+      griimick.vhs
+    ];
+
+    hardware = [
+      cvbenur.ducky-script-lang-vscode
+      xqua.ducky-script-lang-vscode-flipper
+    ];
+
+    security = [
+      wscats.cors-browser
+    ];
+
+    remote = [
+      ms-vscode-remote.remote-containers
+      ms-vscode-remote.remote-ssh
+      ms-vscode-remote.remote-ssh-edit
+      ms-vscode.remote-explorer
+    ];
+
+  };
+
+  # Default selection: include all profiles to preserve current behavior.
+  selected = with profiles; [
+    general
+    themes
+    python
+    typst
+    web
+    rust
+    # julia
+    csharp
+    powershell
+    shell
+    nix
+    data-config
+    database
+    devops
+    docs
+    latex
+    # lisp
+    ds-ml
+    testing
+    code-quality
+    file-ops
+    git
+    specialized
+    fonts
+    vim
+    lean
+    # ruby
+    # cpp
+    cloud
+    debugging
+    # snippets-templates
+    ui-ux
+    utilities
+    # hardware
+    security
+    remote
+  ];
+in
+builtins.concatLists selected

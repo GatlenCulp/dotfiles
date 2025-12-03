@@ -1,21 +1,32 @@
 { secrets }:
 let
   sharedShellInit = ''
+    # TODO: Convert to use LastPass
     export EDITOR=cursor
-    export CSAIL_USERNAME=${secrets.csailUsername}
 
-    # API Keys from secrets.nix
+    ### API KEYS FROM secrets.nix
+    # AI API KEYS
     export OPENAI_API_KEY="${secrets.apiKeys.openai}"
     export ANTHROPIC_API_KEY="${secrets.apiKeys.anthropic}"
-    export UV_PUBLISH_TOKEN="${secrets.apiKeys.pypi-token}"
-    # export GITHUB_TOKEN="${secrets.apiKeys.github}"
-    export HUGGING_FACE_HUB_TOKEN="${secrets.apiKeys.huggingface}"
+    export GEMINI_API_KEY="${secrets.apiKeys.gemini}"
 
+    # OTHER API KEYS
+    export UV_PUBLISH_TOKEN="${secrets.apiKeys.pypi-token}"
+    export HUGGING_FACE_HUB_TOKEN="${secrets.apiKeys.huggingface}"
+    # export GITHUB_TOKEN="${secrets.apiKeys.github}"
+
+    ### AWS
     export AWS_DEFAULT_REGION="${secrets.aws.defaultRegion}"
     export AWS_PROFILE="${secrets.aws.profile}"
 
+    ### MIT
+    export CSAIL_USERNAME=${secrets.csailUsername}
+
+    ### COOKIECUTTER
+    # TODO: Update to use dynamic xdg config
     export COOKIECUTTER_CONFIG="/Users/gat/.config/nix-darwin/assets/gatlen-cookiecutter-config.yaml"
 
+    ### FAST FETCH
     fastfetch
   '';
 in {

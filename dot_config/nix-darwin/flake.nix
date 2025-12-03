@@ -8,20 +8,36 @@
   description = "Gatlen's nix-darwin macOS nix configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
-    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = "github:nix-community/NUR";
-    tytanic.url = "github:typst-community/tytanic/v0.3.1";
-    tytanic.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-stable-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    nixpkgs.follows = "nixpkgs-stable-darwin";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin/nix-darwin-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      # url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    tytanic = {
+      url = "github:typst-community/tytanic/v0.3.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager
-    , nix-vscode-extensions, nur, tytanic }:
+    , nix-vscode-extensions, nur, tytanic, ... }:
     let
       # Import secrets (create secrets.nix based on secrets-template.nix)
       secrets = import "${self}/secrets/secrets.nix";
@@ -33,14 +49,12 @@
         import "${self}/modules/home/terminal/terminal-programs.nix" {
           inherit pkgs;
         };
+      accountsConfig = import "${self}/modules/home/accounts.nix";
       customSystemPackages = { inputs, pkgs }:
         import "${self}/modules/darwin/custom-system-packages.nix" {
           inherit inputs pkgs;
         };
-      # zed-editor.enable = true;
-      # sketchybar.enable = true;
-      # obs-studio.enable = true;
-      # obsidian.enable = true;
+
 
       shellConfig = import "${self}/modules/home/terminal/shell-config.nix" {
         inherit secrets;
@@ -50,10 +64,12 @@
         import "${self}/modules/home/applications.nix" { inherit pkgs; };
 
       ruffSettings = import "${self}/modules/home/ruff.nix";
+      sketchybarSettings = import "${self}/modules/home/sketchybar.nix";
 
       # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Home Manager Configuration ━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
       homeManagerConfig = { pkgs, ... }: {
         home.stateVersion = "25.05";
+        home.enableNixpkgsReleaseCheck = false; # So I can use old nixpkgs with new home-manager. Can't update nixpkgs bc then nix-darwin freaks.
         home.shellAliases = {
           config = "$EDITOR ~/.config/nix-darwin";
           rebuild = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin --show-trace";
@@ -61,8 +77,13 @@
         };
         home.shell = {
           enableShellIntegration = true;
-          enableZshIntegration = true;
+          # Set universally above
+          # enableZshIntegration = true;
+          # enableNushellIntegration = true;
         };
+
+
+        accounts = accountsConfig;
 
         xdg = {
           enable = true;
@@ -80,6 +101,7 @@
           } // {
             vscode = {
               enable = true;
+              # enableMcpIntegration = true; # Error?
               profiles.default = {
                 extensions =
                   import "${self}/modules/home/vscode/vscode-extensions.nix" {
@@ -88,6 +110,12 @@
                 userSettings =
                   import "${self}/modules/home/vscode/vscode-settings.nix";
               };
+            };
+          } // {
+            sketchybar = {
+              enable = false;
+              config = sketchybarSettings;
+              service.enable = true;
             };
           };
       };
@@ -133,6 +161,9 @@
         users.users.gat = {
           home = "/Users/gat";
           name = "gat";
+          # Doesn't work?
+          # shell = home-manager.pkgs.nushell;
+          shell = pkgs.nushell;
         };
 
         # Fonts
@@ -147,8 +178,13 @@
         # services.dropbox.enable = true; # Doesn't work? For dropbox cli it seems
         programs.gnupg.agent.enable = true;
         # services.syncthing.enable = true; # Doesn't work for some reason
-        # services.ludusavi.enable = true;
-        # services.flameshot.enable = false;
+        # services.ludusavi.enable = true; # Doesn't exist
+        # services.flameshot.enable = false; # Doesn't exist
+        # services.gpg-agent = {
+        #   enable = true;
+        #   enableZshIntegration = true;
+        #   enableNushellIntegration = true;
+        # };
 
         # Nix Configuration
         nix = {

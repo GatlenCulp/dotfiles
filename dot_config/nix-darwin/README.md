@@ -50,3 +50,8 @@ _Note: Some nix-darwin things are mirrored in home-manager, make sure to use pro
 
 To look into:
 - https://github.com/nix-community/nix-init#configuration
+
+Home-Manager's Email Module Example:
+https://beb.ninja/post/email/
+
+Can select branches. Also unstable is tested. Also unstable includes darwin pacakges. But also unstable breaks!

@@ -1,163 +1,664 @@
-{
-  "workbench.colorTheme" = "Dracula Theme";
-  "C_Cpp.updateChannel" = "Insiders";
-
-  # Language-specific formatting settings
-  "[css]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-  "[eval-log]" = { };
-  "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-  "[javascript]"."editor.defaultFormatter" = "biomejs.biome";
-  "[json]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-    "editor.tabSize" = 2;
-    "editor.wordWrap" = "on";
-  };
-  "[jsonc]"."editor.defaultFormatter" = "vscode.json-language-features";
-  "[latex]" = {
-    "editor.defaultFormatter" = "James-Yu.latex-workshop";
-    "editor.wordWrap" = "on";
-    "editor.tabSize" = 2;
-    "editor.insertSpaces" = true;
-  };
-  "[tex]" = {
-    "editor.tabSize" = 2;
-    "editor.insertSpaces" = true;
-    "editor.wordWrap" = "on";
-  };
-  "[markdown]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-    "editor.snippetSuggestions" = "inline";
-    "editor.suggest.showSnippets" = true;
-  };
-  "[nix]" = {
-    "editor.defaultFormatter" = "jnoortheen.nix-ide";
-    "editor.insertSpaces" = true;
-    "editor.tabSize" = 2;
-  };
-  "[python]" = {
-    "editor.codeActionsOnSave" = {
-      # "source.fixAll" = "explicit";
-      # "source.organizeImports" = "explicit";
+let
+  profiles = {
+    themes = {
+      "material-icon-theme.activeIconPack" = "react";
+      "material-icon-theme.files.color" = "#90a4ae";
+      "material-icon-theme.hidesExplorerArrows" = true;
+      "material-icon-theme.opacity" = 1;
+      "workbench.colorCustomizations" = {
+        "titleBar.activeBackground" = "#692E33";
+      };
+      "workbench.colorTheme" = "Dracula Theme";
+      "workbench.iconTheme" = "material-icon-theme";
+      "workbench.productIconTheme" = "material-product-icons";
     };
-    "editor.defaultFormatter" = "charliermarsh.ruff";
-  };
-  "[ruby]" = {
-    "editor.defaultFormatter" = "Shopify.ruby-lsp";
-    "editor.formatOnSave" = true;
-    "editor.formatOnType" = true;
-    "editor.insertSpaces" = true;
-    "editor.semanticHighlighting.enabled" = true;
-    "editor.tabSize" = 2;
-    "editor.wordSeparators" = ''`~@#$%^&*()-=+[{]}\|;:'",.<>/'';
-  };
-  "[shellscript]"."editor.defaultFormatter" = "mads-hartmann.bash-ide-vscode";
-  "[svelte]"."editor.defaultFormatter" = "svelte.svelte-vscode";
-  "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-  "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
-  "[typst]" = {
-    "editor.wordSeparators" = ''`~!@#$%^&*()=+[{]}\|;:'",.<>/?'';
-    "editor.formatOnSave" = true;
-  };
-  "[typst-code]"."editor.wordSeparators" = ''`~!@#$%^&*()=+[{]}\|;:'",.<>/?'';
-  "[pddl]"."editor.defaultFormatter" = "jan-dolejsi.pddl";
 
-  # Editor Core Settings
-  "editor.acceptSuggestionOnEnter" = "off";
-  "editor.fontFamily" = "FiraCode Nerd Font";
-  "editor.fontLigatures" = true;
-  "editor.formatOnType" = true;
-  "editor.cursorSmoothCaretAnimation" = "on";
-  "editor.wordWrap" = "bounded";
-  "editor.wordWrapColumn" = 100;
-  "editor.minimap.enabled" = false;
-  "editor.inlineSuggest.enabled" = true;
+    general = {
+      "cSpell.customDictionaries" = {
+        "custom-dictionary-user" = {
+          "name" = "custom-dictionary-user";
+          "path" = "~/.config/nix-darwin/assets/.cspell/custom-dictionary-user.txt";
+          "addWords" = true;
+          "scope" = "user";
+        }; 
+      };
+      "cSpell.diagnosticLevel"= "Hint";
+      "cSpell.dictionaries"= [ "vim" ];
+      "debug.console.fontFamily" = "FiraCode Nerd Font";
+      "debug.console.fontSize" = 10;
+      "debug.hideLauncherWhileDebugging" = true;
+      "debug.internalConsoleOptions" = "openOnSessionStart";
+      "debug.showSubSessionsInToolBar" = true;
+      "debug.showVariableTypes" = true;
+      "diffEditor.wordWrap" = "off";
+      "dotenv.enableAutocloaking" = false;
+      "editor.acceptSuggestionOnEnter" = "off";
+      "editor.accessibilityPageSize" = 11;
+      "editor.codeLensFontFamily" = "FiraCode Nerd Font";
+      "editor.cursorSmoothCaretAnimation" = "on";
+      "editor.gotoLocation.multipleDefinitions" = "gotoAndPeek";
+      "editor.gotoLocation.multipleImplementations" = "gotoAndPeek";
+      "editor.gotoLocation.multipleReferences" = "gotoAndPeek";
+      "editor.gotoLocation.multipleTypeDefinitions" = "gotoAndPeek";
+      "editor.guides.bracketPairs" = true;
+      "editor.inlayHints.enabled" = "off";
+      "editor.inlayHints.fontFamily" = "FiraCode Nerd Font";
+      "editor.inlineSuggest.enabled" = true;
+      "editor.largeFileOptimizations" = false;
+      "editor.minimap.autohide" = true;
+      "editor.minimap.enabled" = false;
+      "editor.minimap.renderCharacters" = false;
+      "editor.minimap.side" = "left";
+      "editor.peekWidgetDefaultFocus" = "editor";
+      "editor.unicodeHighlight.ambiguousCharacters" = false;
+      "editor.wordWrap" = "bounded";
+      "editor.wordWrapColumn" = 100;
+      "files.associations" = {
+        "*.env*" = "dotenv";
+        # "*.nix" = "nix";
+        "*.toml.tmpl" = "toml";
+        "*Brewfile*" = "ruby";
+        ".aliases" = "shellscript";
+        ".bashrc" = "shellscript";
+        ".envrc" = "shellscript";
+        ".zshrc" = "shellscript";
+      };
+      "files.autoSave" = "afterDelay";
+      "files.exclude" = {
+        "**/.DS_Store" = true;
+        "**/.git" = true;
+        "**/.hg" = true;
+        "**/.ruby-lsp" = true;
+        "**/.svn" = true;
+        "**/.trunk/*actions/" = true;
+        "**/.trunk/*logs/" = true;
+        "**/.trunk/*notifications/" = true;
+        "**/.trunk/*out/" = true;
+        "**/.trunk/*plugins/" = true;
+        "**/CVS" = true;
+        "**/Thumbs.db" = true;
+      };
+      "projectManager.cacheProjectsBetweenSessions" = false;
+      "projectManager.confirmSwitchOnActiveWindow" = "always";
+      "projectManager.git.baseFolders" = [ "/Users/gat/work/" ];
+      "projectManager.sortList" = "Saved";
+      "projectManager.tags" = [ "Personal" "Work" "Mantis" "FlipperZero" ];
+      # Starship config helps
+      "window.commandCenter" = false;
+      "window.density.editorTabHeight" = "compact";
+      "window.openFilesInNewWindow" = "default";
+      "window.title" = "🪿 \${separator} 🌳 \${activeRepositoryName} (\${activeRepositoryBranchName}) \${separator} 📁 \${activeEditorMedium}";
+      "workbench.accounts.experimental.showEntitlements" = true;
+      "workbench.activityBar.location" = "top";
+      "workbench.editor.customLabels.enabled" = true;
+      "workbench.editor.customLabels.patterns" = {
+        "**/__init__.py" = "📦 \${dirname}/\${filename}";
+        "**/admin.py" = "🔒 \${dirname}/\${filename}";
+        "**/apps.py" = "📦 \${dirname}/\${filename}";
+        "**/extensions.json" = "🧩 \${dirname}/\${filename}";
+        "**/forms.py" = "📝 \${dirname}/\${filename}";
+        "**/keybindings.json" = "⌨️ \${dirname}/\${filename}";
+        "**/models.py" = "📁 \${dirname}/\${filename}";
+        "**/serializers.py" = "👍 \${dirname}/\${filename}";
+        "**/settings.json" = "⚙️ \${dirname}/\${filename}";
+        "**/snippets/*.json" = "📝 \${dirname}/\${filename}";
+        "**/test_*.py" = "🧪 \${filename}";
+        "**/tests.py" = "🧪 \${dirname}/\${filename}";
+        "**/urls.py" = "🔗 \${dirname}/\${filename}";
+        "**/views.py" = "👁️ \${dirname}/\${filename}";
+        "*/.vscode/launch.json" = "🚀 \${dirname}/\${filename}";
+      };
+      "workbench.editor.labelFormat" = "default";
+      "workbench.editor.limit.value" = 4;
+      "workbench.editor.tabSizing" = "shrink";
+      "workbench.editorAssociations" = {
+        "{git,gitlens}:/**/*.{md,csv,svg}" = "default";
+      };
+      "workbench.list.smoothScrolling" = true;
+      "workbench.panel.opensMaximized" = "never";
+      "workbench.panel.showLabels" = false;
+    };
 
-  # Terminal Settings
-  "terminal.external.osxExec" = "Ghostty.app";
-  "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
-  "terminal.integrated.fontSize" = 10;
-  "terminal.integrated.defaultProfile.osx" = "zsh";
-  "terminal.integrated.cursorBlinking" = true;
-  "terminal.integrated.cursorStyle" = "line";
-  "terminal.integrated.enableImages" = true;
-  "terminal.integrated.shellIntegration.enabled" = true;
+    code-cursor = {
+      "cursor.composer.collapsePaneInputBoxPills" = true;
+      "cursor.composer.shouldChimeAfterChatFinishes" = true;
+      "cursor.composer.textSizeScale" = 1.15;
+      "cursor.cpp.disabledLanguages" = [ "plaintext" "markdown" "scminput" ];
+      "cursor.cpp.enablePartialAccepts" = true;
+      "cursor.general.enableShadowWorkspace" = true;
+      "cursor.terminal.usePreviewBox" = true;
+    };
 
-  # Git & GitHub
-  "git.autofetch" = true;
-  "git.openRepositoryInParentFolders" = "never";
-  "github.copilot.editor.enableAutoCompletions" = true;
-  "github.copilot.enable" = {
-    "*" = true;
-    "markdown" = false;
-    "plaintext" = false;
+    better-comments = {
+      "better-comments.highlightPlainText" = false;
+      "better-comments.tags" = [
+        {
+          bold = true;
+          color = "#282A36";
+          italic = true;
+          tag = "background";
+        }
+        {
+          bold = true;
+          color = "#F8F8F2";
+          italic = true;
+          tag = "foreground";
+        }
+        {
+          bold = true;
+          color = "#44475A";
+          italic = true;
+          tag = "selection";
+        }
+        {
+          bold = true;
+          color = "#6272A4";
+          italic = true;
+          tag = "comment";
+        }
+        {
+          bold = true;
+          color = "#FF5555";
+          italic = true;
+          tag = "red";
+        }
+        {
+          bold = true;
+          color = "#FFB86C";
+          italic = true;
+          tag = "orange";
+        }
+        {
+          bold = true;
+          color = "#F1FA8C";
+          italic = true;
+          tag = "yellow";
+        }
+        {
+          bold = true;
+          color = "#50FA7B";
+          italic = true;
+          tag = "green";
+        }
+        {
+          bold = true;
+          color = "#BD93F9";
+          italic = true;
+          tag = "purple";
+        }
+        {
+          bold = true;
+          color = "#8BE9FD";
+          italic = true;
+          tag = "cyan";
+        }
+        {
+          bold = true;
+          color = "#FF79C6";
+          italic = true;
+          tag = "pink";
+        }
+        {
+          bold = true;
+          color = "#50FA7B";
+          italic = true;
+          tag = "%%";
+        }
+        {
+          bold = true;
+          color = "#FF5555";
+          italic = true;
+          tag = "!!";
+        }
+        {
+          bold = true;
+          color = "#FF5555";
+          italic = true;
+          tag = "warning";
+        }
+        {
+          bold = true;
+          color = "#FF79C6";
+          italic = true;
+          tag = "??";
+        }
+        {
+          bold = true;
+          color = "#FF79C6";
+          italic = true;
+          tag = "question";
+        }
+        {
+          bold = true;
+          color = "#8BE9FD";
+          italic = true;
+          tag = "info";
+        }
+        {
+          color = "#6272A4";
+          italic = true;
+          strikethrough = true;
+          tag = "//";
+        }
+        {
+          bold = true;
+          color = "#FFB86C";
+          italic = true;
+          tag = "fixme";
+        }
+        {
+          bold = true;
+          color = "#F8F8F2";
+          italic = true;
+          tag = "━";
+        }
+        {
+          bold = true;
+          color = "#F8F8F2";
+          italic = true;
+          tag = "─";
+        }
+        {
+          color = "#F8F8F2";
+          italic = true;
+          tag = "##";
+          underline = true;
+        }
+      ];
+    };
+
+    fonts = {
+      "editor.fontFamily" = "FiraCode Nerd Font";
+      "editor.fontLigatures" = true;
+      "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
+      "terminal.integrated.fontSize" = 10;
+    };
+
+    shell = {
+      "[shellscript]"."editor.defaultFormatter" = "mads-hartmann.bash-ide-vscode";
+      # OSX Settings
+      "terminal.external.osxExec" = "Ghostty.app";
+      "terminal.integrated.cursorBlinking" = true;
+      "terminal.integrated.cursorStyle" = "line";
+      "terminal.integrated.defaultProfile.osx" = "Gatlen";
+      "terminal.integrated.enableImages" = true;
+      "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
+      "terminal.integrated.fontSize" = 10;
+      "terminal.integrated.hideOnStartup" = "whenEmpty";
+      "terminal.integrated.lineHeight" = 1.05;
+      "terminal.integrated.persistentCustomizations" = {
+        "splitTerminals" = [
+          {
+            "command" =
+              "echo 'Terminal 1'; \${command:workbench.action.terminal.new}";
+            "name" = "Terminal 1";
+          }
+          {
+            "command" =
+              "echo 'Terminal 2'; \${command:workbench.action.terminal.new}";
+            "name" = "Terminal 2";
+          }
+        ];
+      };
+      "terminal.integrated.profiles.osx" = {
+        "Gatlen" = {
+          "args" = [ "-l" ];
+          "color" = "terminal.ansiBlue";
+          "env" = { "value" = "\${workspaceFolder}/secrets/.env"; };
+          "icon" = "robot";
+          "overrideName" = true;
+          "path" = "zsh";
+        };
+      };
+      "terminal.integrated.rightClickBehavior" = "default";
+      "terminal.integrated.shellIntegration.enabled" = true;
+      "terminal.integrated.smoothScrolling" = true;
+      "terminal.integrated.splitCwd" = "workspaceRoot";
+      "terminal.integrated.stickyScroll.enabled" = true;
+      "terminal.integrated.suggest.enabled" = true;
+      "terminal.integrated.tabs.enabled" = true;
+      "terminal.integrated.tabs.location" = "left";
+    };
+
+    git = {
+      "git.autofetch" = true;
+      "git.openRepositoryInParentFolders" = "never";
+      "gitlens.ai.gitkraken.model" = "gemini:gemini-2.0-flash";
+      "gitlens.ai.model" = "gitkraken";
+      "gitlens.blame.fontFamily" = "FiraCode Nerd Font";
+      "gitlens.currentLine.fontFamily" = "FiraCode Nerd Font";
+      "gitlens.graph.dateFormat" = null;
+      "gitlens.graph.dimMergeCommits" = true;
+      "gitlens.graph.minimap.additionalTypes" = [ "stashes" ];
+      "gitlens.graph.minimap.enabled" = false;
+      "gitlens.heatmap.locations" = [ "gutter" "overview" ];
+      "gitlens.statusBar.enabled" = false;
+      "gitlens.views.commitDetails.files.layout" = "list";
+    };
+
+    file_ops = {
+
+    };
+
+    python = {
+      "[python]" = {
+        "editor.codeActionsOnSave" = {
+          "source.fixAll" = "explicit";
+          "source.organizeImports" = "explicit";
+        };
+        "editor.defaultFormatter" = "charliermarsh.ruff";
+        # Worth disabling for repos that are not my own
+        "editor.formatOnSave" = true;
+      };
+      "autoDocstring.docstringFormat" = "google-notypes";
+      "autoDocstring.startOnNewLine" = true;
+      "python.testing.pytestEnabled" = true;
+      "ruff.codeAction.fixViolation" = { enable = false; };
+      "ruff.configuration" = "~/.config/ruff/ruff.toml";
+    };
+
+    nix = {
+      "[nix]" = {
+        "editor.defaultFormatter" = "jnoortheen.nix-ide";
+        "editor.formatOnSave" = true;
+        "editor.insertSpaces" = true;
+        "editor.tabSize" = 2;
+      };
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nixd";
+      "nix.serverSettings" = {
+        "nixd" = {
+          "formatting" = {
+            "command" = [ "/run/current-system/sw/bin/nixfmt" ];
+          };
+          "options" = {
+            "home-manager" = {
+              "expr" = ''
+                (builtins.getFlake "/Users/gat/.config/nix-darwin/flake.nix").homeConfigurations.gatty.options'';
+            };
+            "nix-darwin" = {
+              "expr" = ''
+                (builtins.getFlake "/Users/gat/.config/nix-darwin/flake.nix").darwinConfigurations.gatty.options'';
+            };
+            # "nixos" = {
+            #   "expr" = ''
+            #     (builtins.getFlake "/Users/gat/.config/nix-darwin/flake.nix").nixosConfigurations.gatty.options'';
+            # };
+          };
+        };
+      };
+    };
+
+    typst = {
+      "[typst]" = {
+        "editor.defaultFormatter" = "myriad-dreamin.tinymist";
+        "editor.formatOnSave" = true;
+        "editor.wordSeparators" = ''`~!@#$%^&*()=+[{]}\|;:'",.<>/?'';
+      };
+      "[typst-code]"."editor.wordSeparators" = ''`~!@#$%^&*()=+[{]}\|;:'",.<>/?'';
+      "tinymist.formatterMode" = "typstyle";
+      "typst-math.renderingMode" = "nothing";
+      "typst-math.renderSpaces" = true;
+    };
+
+    latex = {
+      "[latex]" = {
+        "editor.defaultFormatter" = "James-Yu.latex-workshop";
+        "editor.tabSize" = 2;
+        "editor.insertSpaces" = true;
+        "editor.wordWrap" = "on";
+      };
+      "[tex]" = {
+        "editor.tabSize" = 2;
+        "editor.insertSpaces" = true;
+        "editor.wordWrap" = "on";
+      };
+      "latex-workshop.bibtex-format.sort.enabled" = true;
+      "latex-workshop.formatting.latex" = "tex-fmt";
+      "latex-workshop.intellisense.subsuperscript.enabled" = true;
+      "latex-workshop.showContextMenu" = true;
+      "latex-workshop.synctex.indicator" = "circle";
+      "latex-workshop.view.autoFocus.enabled" = true;
+      "latex-workshop.view.outline.sync.viewer" = true;
+      "latex-workshop.view.pdf.color.dark.backgroundColor" = "#333333";
+    };
+
+    web = {
+      "[css]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[javascript]"."editor.defaultFormatter" = "biomejs.biome";
+      "[svelte]"."editor.defaultFormatter" = "svelte.svelte-vscode";
+      "[typescript]"."editor.defaultFormatter" = "biomejs.biome";
+      "livePreview.customExternalBrowser" = "Chrome";
+      "livePreview.debugOnExternalPreview" = true;
+      "livePreview.defaultPreviewPath" = "https://localhost:4000";
+      "livePreview.httpHeaders" = { "Accept-Ranges" = "bytes"; };
+      "livePreview.openPreviewTarget" = "External Browser";
+      "livePreview.portNumber" = 4000;
+    };
+
+    data_config = {
+      # YAML Configs
+      "[dockercompose]" = {
+        "editor.defaultFormatter" = "redhat.vscode-yaml";
+      };
+      "[github-actions-workflow]"."editor.defaultFormatter" = "redhat.vscode-yaml";
+      # JSON Configs
+      "[json][jsonc][jsonl]" = {
+        "editor.defaultFormatter" = "biomejs.biome";
+        "editor.tabSize" = 2;
+        "editor.wordWrap" = "on";
+      };
+      "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
+      "json.format.enable" = true;
+      "json.schemaDownload.enable" = true;
+      "json.schemas" = [
+        {
+          "fileMatch" = [".cursor/hooks.json"];
+          "url" = "https://unpkg.com/cursor-hooks/schema/hooks.schema.json";
+        }
+      ];
+      "json.validate.enable" = true;
+    };
+
+    docs = {
+      "[markdown]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.snippetSuggestions" = "inline";
+        "editor.suggest.showSnippets" = true;
+      };
+    };
+
+    ds_ml = {
+      "jupyter.askForKernelRestart" = false;
+      "jupyter.themeMatplotlibPlots" = false;
+      ### NOTEBOOKS
+      # Layout
+      "notebook.cellFocusIndicator" = "border";
+      "notebook.cellToolbarLocation" = {
+        "default" = "right";
+        "jupyter-notebook" = "right";
+      };
+      "notebook.codeActionsOnSave" = {
+        "notebook.source.fixAll" = "explicit";
+        "notebook.source.organizeImports" = "explicit";
+      };
+      "notebook.consolidatedRunButton" = true;
+      "notebook.defaultFormatter" = "charliermarsh.ruff";
+      "notebook.diff.overviewRuler" = true;
+      "notebook.formatOnSave.enabled" = true;
+      "notebook.lineNumbers" = "on";
+      "notebook.output.fontFamily" = "FiraCode Nerd Font";
+      "notebook.output.fontSize" = 9;
+      "notebook.output.scrolling" = true;
+      "notebook.stickyScroll.enabled" = true;
+    };
+
+    devops = {
+      "remote.SSH.showLoginTerminal" = true;
+      "remote.SSH.localServerDownload" = "always";
+      "remote.SSH.defaultExtensions" = [
+        "ms-python.vscode-pylance"
+        "ms-python.debugpy"
+        "charliermarsh.ruff"
+        "njpwerner.autodocstring"
+        "rodolphebarbanneau.python-docstring-highlighter"
+        "kevinrose.vsc-python-indent"
+        "ms-toolsai.jupyter"
+        "ms-toolsai.jupyter-renderers"
+        "mechatroner.rainbow-csv"
+        "sbsnippets.pytorch-snippets"
+        "mads-hartmann.bash-ide-vscode"
+        "timonwong.shellcheck"
+        "foxundermoon.shell-format"
+        "mathematic.vscode-pdf"
+        "vitaliymaz.vscode-svg-previewer"
+        "ctcuff.font-preview"
+        "james-yu.latex-workshop"
+        "shd101wyy.markdown-preview-enhanced"
+        "esbenp.prettier-vscode"
+        "mrmlnc.vscode-attrs-sorter"
+        "richie5um2.vscode-sort-json"
+        "2gua.rainbow-brackets"
+        "aaron-bond.better-comments"
+        "alefragnani.project-manager"
+        "peterschmalfeldt.explorer-exclude"
+        "christian-kohler.path-intellisense"
+        "kisstkondoros.vscode-gutter-preview"
+        "eamodio.gitlens"
+        "humao.rest-client"
+        "ms-vscode.makefile-tools"
+        "task.vscode-task"
+        "tamasfe.even-better-toml"
+        "dotenv.dotenv-vscode"
+        "redhat.vscode-yaml"
+        "redhat.vscode-xml"
+        "ibm.output-colorizer"
+        "usernamehw.errorlens"
+        "spmeesseman.vscode-taskexplorer"
+      ];
+      "remote.SSH.logLevel" = "trace";
+      "remote.SSH.useExecServer" = false;
+    };
+
+    vim = {
+      "vim.cursorStylePerMode.insert" = "line";
+      "vim.cursorStylePerMode.normal" = "block-outline";
+      "vim.cursorStylePerMode.replace" = "underline";
+      "vim.cursorStylePerMode.visual" = "block";
+      "vim.cursorStylePerMode.visualblock" = "block";
+      "vim.cursorStylePerMode.visualline" = "block";
+      "vim.disableExtension" = false;
+      "vim.enableNeovim" = true;
+      "vim.highlightedyank.enable" = true;
+      "vim.neovimConfigPath" = "~/.config/nvim/init.vim";
+      "vim.neovimUseConfigFile" = false;
+      "vim.smartRelativeLine" = true;
+      "vim.sneak" = true;
+      "vim.statusBarColorControl" = true;
+    };
+
+    lisp = {
+      "[racket]" = {
+        "editor.defaultFormatter" = "evzen-wybitul.magic-racket";
+      };
+    };
+
+    ruby = {
+      "[ruby]" = {
+        "editor.defaultFormatter" = "Shopify.ruby-lsp";
+        "editor.formatOnSave" = true;
+        "editor.insertSpaces" = true;
+        "editor.semanticHighlighting.enabled" = true;
+        "editor.tabSize" = 2;
+        "editor.wordSeparators" = ''`~@#$%^&*()-=+[{]}\|;:'",.<>/'';
+      };
+    };
+
+    general_additional_languages = {
+      "[eval-log]" = { };
+      "[pddl]"."editor.defaultFormatter" = "jan-dolejsi.pddl";
+      "pddl.selectedPlanner" = "Planning as a service (solver.planning.domains)";
+    };
+
+    misc = {
+      # Error lens docs: https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontsize
+      "errorLens.borderRadius" = "";
+      "errorLens.codeLensEnabled" = false;
+      "errorLens.codeLensOnClick" = "showProblemsView";
+      # To match dracula theme (looks ugly otherwise)
+      "errorLens.decorations" = {
+        "errorMessage" = {
+          "backgroundColor" = "#FF555520";
+          "color" = "#FF5555";
+        };
+        "hintMessage" = {
+          "backgroundColor" = "#6272A420";
+          "color" = "#6272A4";
+        };
+        "infoMessage" = {
+          "backgroundColor" = "#F1FA8C20";
+          "color" = "#F1FA8C";
+        };
+        "warningMessage" = {
+          "backgroundColor" = "#8BE9FD20";
+          "color" = "#8BE9FD";
+        };
+      };
+      "errorLens.enabledDiagnosticLevels" = [
+        "error"
+        "warning"
+        "info"
+        "hint"
+      ];
+      "errorLens.followCursor" = "allLines";
+      "errorLens.fontFamily" = "FiraCode Nerd Font";
+      "errorLens.fontSize" = "0.8em";
+      "errorLens.messageBackgroundMode" = "message";
+      "errorLens.messageEnabled" = true;
+      "errorLens.padding" = "2px 1ch";
+      "indentRainbow.colors" = [
+        "rgba(255,255,64,0.03)"
+        "rgba(127,255,127,0.03)"
+        "rgba(255,127,255,0.03)"
+        "rgba(79,236,236,0.03)"
+      ];
+      "indentRainbow.errorColor" = "rgba(128,32,32,0.3)";
+      "indentRainbow.tabmixColor" = "rgba(128,32,96,0.3)";
+      "powermode.combo.counterSize" = 1;
+      "powermode.combo.location" = "editor";
+      "powermode.combo.threshold" = 5;
+      "powermode.explosions.gifMode" = "restart";
+      "powermode.explosions.maxExplosions" = 3;
+      "powermode.explosions.size" = 10;
+    };
   };
 
-  # Files & Workspace
-  "files.autoSave" = "afterDelay";
-  "files.associations" = {
-    "*.env*" = "dotenv";
-    # "*.nix" = "nix";
-    "*.toml.tmpl" = "toml";
-    "*Brewfile*" = "ruby";
-    ".envrc" = "shellscript";
-    ".aliases" = "shellscript";
-    ".bashrc" = "shellscript";
-    ".zshrc" = "shellscript";
-  };
-
-  # Python Settings
-  "python.analysis.packageIndexDepths" = [
-    {
-      "name" = "sklearn";
-      "depth" = 2;
-    }
-    {
-      "name" = "matplotlib";
-      "depth" = 2;
-    }
-    {
-      "name" = "scipy";
-      "depth" = 2;
-    }
-    {
-      "name" = "inspect_ai";
-      "depth" = 2;
-    }
+  selected = with profiles; [
+    themes
+    general
+    fonts
+    shell
+    git
+    file_ops
+    python
+    nix
+    typst
+    latex
+    code-cursor
+    better-comments
+    lisp
+    web
+    data_config
+    docs
+    ds_ml
+    devops
+    vim
+    general_additional_languages
+    ruby
+    misc
   ];
-  "python.testing.pytestEnabled" = true;
+in builtins.foldl' (acc: next: acc // next) { } selected
 
-  # Jupyter
-  "jupyter.askForKernelRestart" = false;
-  "jupyter.themeMatplotlibPlots" = true;
-  "notebook.formatOnSave.enabled" = true;
-  "notebook.lineNumbers" = "on";
-
-  # Workbench & UI
-  "workbench.activityBar.location" = "top";
-  "workbench.iconTheme" = "material-icon-theme";
-  "workbench.colorCustomizations" = {
-    "editor.lineHighlightBackground" = "#1073cf2d";
-    "statusBar.background" = "#005f5f";
-    "statusBar.foreground" = "#ffffff";
-    "activityBar.background" = "#4B2125";
-    "titleBar.activeBackground" = "#692E33";
-    "titleBar.activeForeground" = "#FDFBFC";
-  };
-
-  # Window
-  "window.title" =
-    "🪿\${activeRepositoryName} (\${activeRepositoryBranchName}) \${separator} \${activeEditorMedium}";
-  "window.commandCenter" = false;
-
-  # Remote SSH
-  "remote.SSH.showLoginTerminal" = true;
-  "remote.SSH.localServerDownload" = "always";
-
-  # Extensions & Tools
-  # Described in
-  "ruff.configuration" = "~/.config/ruff/ruff.toml";
-  "tinymist.formatterMode" = "typstyle";
-  "vim.enableNeovim" = true;
-  "vim.smartRelativeLine" = true;
-  "errorLens.messageEnabled" = true;
-}
+# TODO: Add icons in panel
+# TODO: Add small tabs
