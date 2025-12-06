@@ -1,4 +1,23 @@
 let
+  # Dracula Color Palette
+  # https://draculatheme.com/contribute
+  dracula = {
+    background = "#282a36";
+    currentLine = "#44475a";
+    selection = "#44475a";
+    foreground = "#f8f8f2";
+    comment = "#6272a4";
+    cyan = "#8be9fd";
+    green = "#50fa7b";
+    orange = "#ffb86c";
+    pink = "#ff79c6";
+    purple = "#bd93f9";
+    red = "#ff5555";
+    yellow = "#f1fa8c";
+    # Additional variants with transparency
+    withAlpha = alpha: color: "${color}${alpha}";
+  };
+
   profiles = {
     themes = {
       "material-icon-theme.activeIconPack" = "react";
@@ -20,10 +39,10 @@ let
           "path" = "~/.config/nix-darwin/assets/.cspell/custom-dictionary-user.txt";
           "addWords" = true;
           "scope" = "user";
-        }; 
+        };
       };
-      "cSpell.diagnosticLevel"= "Hint";
-      "cSpell.dictionaries"= [ "vim" ];
+      "cSpell.diagnosticLevel" = "Hint";
+      "cSpell.dictionaries" = [ "vim" ];
       "debug.console.fontFamily" = "FiraCode Nerd Font";
       "debug.console.fontSize" = 10;
       "debug.hideLauncherWhileDebugging" = true;
@@ -82,12 +101,18 @@ let
       "projectManager.confirmSwitchOnActiveWindow" = "always";
       "projectManager.git.baseFolders" = [ "/Users/gat/work/" ];
       "projectManager.sortList" = "Saved";
-      "projectManager.tags" = [ "Personal" "Work" "Mantis" "FlipperZero" ];
+      "projectManager.tags" = [
+        "Personal"
+        "Work"
+        "Mantis"
+        "FlipperZero"
+      ];
       # Starship config helps
       "window.commandCenter" = false;
       "window.density.editorTabHeight" = "compact";
       "window.openFilesInNewWindow" = "default";
-      "window.title" = "🪿 \${separator} 🌳 \${activeRepositoryName} (\${activeRepositoryBranchName}) \${separator} 📁 \${activeEditorMedium}";
+      "window.title" =
+        "🪿 \${separator} 🌳 \${activeRepositoryName} (\${activeRepositoryBranchName}) \${separator} 📁 \${activeEditorMedium}";
       "workbench.accounts.experimental.showEntitlements" = true;
       "workbench.activityBar.location" = "top";
       "workbench.editor.customLabels.enabled" = true;
@@ -123,146 +148,94 @@ let
       "cursor.composer.collapsePaneInputBoxPills" = true;
       "cursor.composer.shouldChimeAfterChatFinishes" = true;
       "cursor.composer.textSizeScale" = 1.15;
-      "cursor.cpp.disabledLanguages" = [ "plaintext" "markdown" "scminput" ];
+      "cursor.cpp.disabledLanguages" = [
+        "plaintext"
+        "markdown"
+        "scminput"
+      ];
       "cursor.cpp.enablePartialAccepts" = true;
       "cursor.general.enableShadowWorkspace" = true;
       "cursor.terminal.usePreviewBox" = true;
     };
 
     better-comments = {
+      # Note: Uses better-comments next for more features
       "better-comments.highlightPlainText" = false;
       "better-comments.tags" = [
+        ### TAGS
         {
           bold = true;
-          color = "#282A36";
-          italic = true;
-          tag = "background";
-        }
-        {
-          bold = true;
-          color = "#F8F8F2";
-          italic = true;
-          tag = "foreground";
-        }
-        {
-          bold = true;
-          color = "#44475A";
-          italic = true;
-          tag = "selection";
-        }
-        {
-          bold = true;
-          color = "#6272A4";
-          italic = true;
-          tag = "comment";
-        }
-        {
-          bold = true;
-          color = "#FF5555";
-          italic = true;
-          tag = "red";
-        }
-        {
-          bold = true;
-          color = "#FFB86C";
-          italic = true;
-          tag = "orange";
-        }
-        {
-          bold = true;
-          color = "#F1FA8C";
-          italic = true;
-          tag = "yellow";
-        }
-        {
-          bold = true;
-          color = "#50FA7B";
-          italic = true;
-          tag = "green";
-        }
-        {
-          bold = true;
-          color = "#BD93F9";
-          italic = true;
-          tag = "purple";
-        }
-        {
-          bold = true;
-          color = "#8BE9FD";
-          italic = true;
-          tag = "cyan";
-        }
-        {
-          bold = true;
-          color = "#FF79C6";
-          italic = true;
-          tag = "pink";
-        }
-        {
-          bold = true;
-          color = "#50FA7B";
-          italic = true;
-          tag = "%%";
-        }
-        {
-          bold = true;
-          color = "#FF5555";
+          color = dracula.red;
           italic = true;
           tag = "!!";
         }
         {
           bold = true;
-          color = "#FF5555";
+          color = dracula.red;
           italic = true;
           tag = "warning";
         }
         {
           bold = true;
-          color = "#FF79C6";
+          color = dracula.pink;
           italic = true;
           tag = "??";
         }
         {
           bold = true;
-          color = "#FF79C6";
+          color = dracula.pink;
           italic = true;
           tag = "question";
         }
         {
           bold = true;
-          color = "#8BE9FD";
+          color = dracula.cyan;
           italic = true;
           tag = "info";
         }
         {
-          color = "#6272A4";
+          color = dracula.comment;
           italic = true;
           strikethrough = true;
           tag = "//";
         }
         {
           bold = true;
-          color = "#FFB86C";
+          color = dracula.orange;
           italic = true;
           tag = "fixme";
         }
         {
           bold = true;
-          color = "#F8F8F2";
+          color = dracula.foreground;
           italic = true;
           tag = "━";
         }
         {
           bold = true;
-          color = "#F8F8F2";
+          color = dracula.foreground;
           italic = true;
           tag = "─";
         }
         {
-          color = "#F8F8F2";
+          color = dracula.foreground;
           italic = true;
           tag = "##";
           underline = true;
+        }
+        ### PYTHON (Python Interactive Specifically)
+        # Would provide backgroud but does not cover full line :/
+        {
+          bold = true;
+          color = dracula.green;
+          italic = true;
+          tag = "%%";
+        }
+        {
+          bold = true;
+          color = dracula.green;
+          italic = true;
+          tag = ">>";
         }
       ];
     };
@@ -282,29 +255,15 @@ let
       "terminal.integrated.cursorStyle" = "line";
       "terminal.integrated.defaultProfile.osx" = "Gatlen";
       "terminal.integrated.enableImages" = true;
-      "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
-      "terminal.integrated.fontSize" = 10;
       "terminal.integrated.hideOnStartup" = "whenEmpty";
       "terminal.integrated.lineHeight" = 1.05;
-      "terminal.integrated.persistentCustomizations" = {
-        "splitTerminals" = [
-          {
-            "command" =
-              "echo 'Terminal 1'; \${command:workbench.action.terminal.new}";
-            "name" = "Terminal 1";
-          }
-          {
-            "command" =
-              "echo 'Terminal 2'; \${command:workbench.action.terminal.new}";
-            "name" = "Terminal 2";
-          }
-        ];
-      };
       "terminal.integrated.profiles.osx" = {
         "Gatlen" = {
           "args" = [ "-l" ];
           "color" = "terminal.ansiBlue";
-          "env" = { "value" = "\${workspaceFolder}/secrets/.env"; };
+          "env" = {
+            "value" = "\${workspaceFolder}/secrets/.env";
+          };
           "icon" = "robot";
           "overrideName" = true;
           "path" = "zsh";
@@ -331,7 +290,10 @@ let
       "gitlens.graph.dimMergeCommits" = true;
       "gitlens.graph.minimap.additionalTypes" = [ "stashes" ];
       "gitlens.graph.minimap.enabled" = false;
-      "gitlens.heatmap.locations" = [ "gutter" "overview" ];
+      "gitlens.heatmap.locations" = [
+        "gutter"
+        "overview"
+      ];
       "gitlens.statusBar.enabled" = false;
       "gitlens.views.commitDetails.files.layout" = "list";
     };
@@ -352,8 +314,11 @@ let
       };
       "autoDocstring.docstringFormat" = "google-notypes";
       "autoDocstring.startOnNewLine" = true;
+      "python.REPL.sendToNativeREPL" = true;
       "python.testing.pytestEnabled" = true;
-      "ruff.codeAction.fixViolation" = { enable = false; };
+      "ruff.codeAction.fixViolation" = {
+        enable = false;
+      };
       "ruff.configuration" = "~/.config/ruff/ruff.toml";
     };
 
@@ -365,6 +330,8 @@ let
         "editor.tabSize" = 2;
       };
       "nix.enableLanguageServer" = true;
+      # Fallback formatter
+      "nix.formatterPath" = "nixfmt";
       "nix.serverPath" = "nixd";
       "nix.serverSettings" = {
         "nixd" = {
@@ -373,17 +340,14 @@ let
           };
           "options" = {
             "home-manager" = {
-              "expr" = ''
-                (builtins.getFlake "/Users/gat/.config/nix-darwin/flake.nix").homeConfigurations.gatty.options'';
+              "expr" = ''(builtins.getFlake "/Users/gat/.config/nix-darwin").darwinConfigurations.gatty.options'';
             };
             "nix-darwin" = {
-              "expr" = ''
-                (builtins.getFlake "/Users/gat/.config/nix-darwin/flake.nix").darwinConfigurations.gatty.options'';
+              "expr" = ''(builtins.getFlake "/Users/gat/.config/nix-darwin").darwinConfigurations.gatty.options'';
             };
-            # "nixos" = {
-            #   "expr" = ''
-            #     (builtins.getFlake "/Users/gat/.config/nix-darwin/flake.nix").nixosConfigurations.gatty.options'';
-            # };
+            "nixos" = {
+              "expr" = ''(builtins.getFlake "/Users/gat/.config/nix-darwin").darwinConfigurations.gatty.options'';
+            };
           };
         };
       };
@@ -424,15 +388,17 @@ let
     };
 
     web = {
-      "[css]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[css]"."editor.defaultFormatter" = "prettier.prettier-vscode";
+      "[html]"."editor.defaultFormatter" = "prettier.prettier-vscode";
       "[javascript]"."editor.defaultFormatter" = "biomejs.biome";
       "[svelte]"."editor.defaultFormatter" = "svelte.svelte-vscode";
       "[typescript]"."editor.defaultFormatter" = "biomejs.biome";
       "livePreview.customExternalBrowser" = "Chrome";
       "livePreview.debugOnExternalPreview" = true;
       "livePreview.defaultPreviewPath" = "https://localhost:4000";
-      "livePreview.httpHeaders" = { "Accept-Ranges" = "bytes"; };
+      "livePreview.httpHeaders" = {
+        "Accept-Ranges" = "bytes";
+      };
       "livePreview.openPreviewTarget" = "External Browser";
       "livePreview.portNumber" = 4000;
     };
@@ -454,7 +420,7 @@ let
       "json.schemaDownload.enable" = true;
       "json.schemas" = [
         {
-          "fileMatch" = [".cursor/hooks.json"];
+          "fileMatch" = [ ".cursor/hooks.json" ];
           "url" = "https://unpkg.com/cursor-hooks/schema/hooks.schema.json";
         }
       ];
@@ -463,7 +429,7 @@ let
 
     docs = {
       "[markdown]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.defaultFormatter" = "prettier.prettier-vscode";
         "editor.snippetSuggestions" = "inline";
         "editor.suggest.showSnippets" = true;
       };
@@ -516,7 +482,7 @@ let
         "ctcuff.font-preview"
         "james-yu.latex-workshop"
         "shd101wyy.markdown-preview-enhanced"
-        "esbenp.prettier-vscode"
+        "prettier.prettier-vscode"
         "mrmlnc.vscode-attrs-sorter"
         "richie5um2.vscode-sort-json"
         "2gua.rainbow-brackets"
@@ -589,27 +555,28 @@ let
       # To match dracula theme (looks ugly otherwise)
       "errorLens.decorations" = {
         "errorMessage" = {
-          "backgroundColor" = "#FF555520";
-          "color" = "#FF5555";
+          "backgroundColor" = dracula.withAlpha "20" dracula.red;
+          "color" = dracula.red;
         };
         "hintMessage" = {
-          "backgroundColor" = "#6272A420";
-          "color" = "#6272A4";
+          "backgroundColor" = dracula.withAlpha "20" dracula.comment;
+          "color" = dracula.comment;
         };
         "infoMessage" = {
-          "backgroundColor" = "#F1FA8C20";
-          "color" = "#F1FA8C";
+          "backgroundColor" = dracula.withAlpha "20" dracula.yellow;
+          "color" = dracula.yellow;
         };
         "warningMessage" = {
-          "backgroundColor" = "#8BE9FD20";
-          "color" = "#8BE9FD";
+          "backgroundColor" = dracula.withAlpha "20" dracula.cyan;
+          "color" = dracula.cyan;
         };
       };
       "errorLens.enabledDiagnosticLevels" = [
         "error"
-        "warning"
-        "info"
-        "hint"
+        # Low-key a bit distracting
+        # "warning"
+        # "info"
+        # "hint"
       ];
       "errorLens.followCursor" = "allLines";
       "errorLens.fontFamily" = "FiraCode Nerd Font";
@@ -658,7 +625,8 @@ let
     ruby
     misc
   ];
-in builtins.foldl' (acc: next: acc // next) { } selected
+in
+builtins.foldl' (acc: next: acc // next) { } selected
 
 # TODO: Add icons in panel
 # TODO: Add small tabs

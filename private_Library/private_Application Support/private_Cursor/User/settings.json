@@ -1,6 +1,6 @@
 {
     "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "prettier.prettier-vscode"
     },
     "[dockercompose]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -10,7 +10,7 @@
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "prettier.prettier-vscode"
     },
     "[javascript]": {
         "editor.defaultFormatter": "biomejs.biome"
@@ -27,7 +27,7 @@
         "editor.wordWrap": "on"
     },
     "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "prettier.prettier-vscode",
         "editor.snippetSuggestions": "inline",
         "editor.suggest.showSnippets": true
     },
@@ -90,135 +90,75 @@
     "better-comments.tags": [
         {
             "bold": true,
-            "color": "#282A36",
-            "italic": true,
-            "tag": "background"
-        },
-        {
-            "bold": true,
-            "color": "#F8F8F2",
-            "italic": true,
-            "tag": "foreground"
-        },
-        {
-            "bold": true,
-            "color": "#44475A",
-            "italic": true,
-            "tag": "selection"
-        },
-        {
-            "bold": true,
-            "color": "#6272A4",
-            "italic": true,
-            "tag": "comment"
-        },
-        {
-            "bold": true,
-            "color": "#FF5555",
-            "italic": true,
-            "tag": "red"
-        },
-        {
-            "bold": true,
-            "color": "#FFB86C",
-            "italic": true,
-            "tag": "orange"
-        },
-        {
-            "bold": true,
-            "color": "#F1FA8C",
-            "italic": true,
-            "tag": "yellow"
-        },
-        {
-            "bold": true,
-            "color": "#50FA7B",
-            "italic": true,
-            "tag": "green"
-        },
-        {
-            "bold": true,
-            "color": "#BD93F9",
-            "italic": true,
-            "tag": "purple"
-        },
-        {
-            "bold": true,
-            "color": "#8BE9FD",
-            "italic": true,
-            "tag": "cyan"
-        },
-        {
-            "bold": true,
-            "color": "#FF79C6",
-            "italic": true,
-            "tag": "pink"
-        },
-        {
-            "bold": true,
-            "color": "#50FA7B",
-            "italic": true,
-            "tag": "%%"
-        },
-        {
-            "bold": true,
-            "color": "#FF5555",
+            "color": "#ff5555",
             "italic": true,
             "tag": "!!"
         },
         {
             "bold": true,
-            "color": "#FF5555",
+            "color": "#ff5555",
             "italic": true,
             "tag": "warning"
         },
         {
             "bold": true,
-            "color": "#FF79C6",
+            "color": "#ff79c6",
             "italic": true,
             "tag": "??"
         },
         {
             "bold": true,
-            "color": "#FF79C6",
+            "color": "#ff79c6",
             "italic": true,
             "tag": "question"
         },
         {
             "bold": true,
-            "color": "#8BE9FD",
+            "color": "#8be9fd",
             "italic": true,
             "tag": "info"
         },
         {
-            "color": "#6272A4",
+            "color": "#6272a4",
             "italic": true,
             "strikethrough": true,
             "tag": "//"
         },
         {
             "bold": true,
-            "color": "#FFB86C",
+            "color": "#ffb86c",
             "italic": true,
             "tag": "fixme"
         },
         {
             "bold": true,
-            "color": "#F8F8F2",
+            "color": "#f8f8f2",
             "italic": true,
             "tag": "━"
         },
         {
             "bold": true,
-            "color": "#F8F8F2",
+            "color": "#f8f8f2",
             "italic": true,
             "tag": "─"
         },
         {
-            "color": "#F8F8F2",
+            "color": "#f8f8f2",
             "italic": true,
             "tag": "##",
             "underline": true
+        },
+        {
+            "bold": true,
+            "color": "#50fa7b",
+            "italic": true,
+            "tag": "%%"
+        },
+        {
+            "bold": true,
+            "color": "#50fa7b",
+            "italic": true,
+            "tag": ">>"
         }
     ],
     "cSpell.customDictionaries": {
@@ -280,27 +220,24 @@
     "errorLens.codeLensOnClick": "showProblemsView",
     "errorLens.decorations": {
         "errorMessage": {
-            "backgroundColor": "#FF555520",
-            "color": "#FF5555"
+            "backgroundColor": "#ff555520",
+            "color": "#ff5555"
         },
         "hintMessage": {
-            "backgroundColor": "#6272A420",
-            "color": "#6272A4"
+            "backgroundColor": "#6272a420",
+            "color": "#6272a4"
         },
         "infoMessage": {
-            "backgroundColor": "#F1FA8C20",
-            "color": "#F1FA8C"
+            "backgroundColor": "#f1fa8c20",
+            "color": "#f1fa8c"
         },
         "warningMessage": {
-            "backgroundColor": "#8BE9FD20",
-            "color": "#8BE9FD"
+            "backgroundColor": "#8be9fd20",
+            "color": "#8be9fd"
         }
     },
     "errorLens.enabledDiagnosticLevels": [
-        "error",
-        "warning",
-        "info",
-        "hint"
+        "error"
     ],
     "errorLens.followCursor": "allLines",
     "errorLens.fontFamily": "FiraCode Nerd Font",
@@ -392,6 +329,7 @@
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.opacity": 1,
     "nix.enableLanguageServer": true,
+    "nix.formatterPath": "nixfmt",
     "nix.serverPath": "nixd",
     "nix.serverSettings": {
         "nixd": {
@@ -402,10 +340,13 @@
             },
             "options": {
                 "home-manager": {
-                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").homeConfigurations.gatty.options"
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin\").darwinConfigurations.gatty.options"
                 },
                 "nix-darwin": {
-                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin/flake.nix\").darwinConfigurations.gatty.options"
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin\").darwinConfigurations.gatty.options"
+                },
+                "nixos": {
+                    "expr": "(builtins.getFlake \"/Users/gat/.config/nix-darwin\").darwinConfigurations.gatty.options"
                 }
             }
         }
@@ -447,6 +388,7 @@
         "Mantis",
         "FlipperZero"
     ],
+    "python.REPL.sendToNativeREPL": true,
     "python.testing.pytestEnabled": true,
     "remote.SSH.defaultExtensions": [
         "ms-python.vscode-pylance",
@@ -467,7 +409,7 @@
         "ctcuff.font-preview",
         "james-yu.latex-workshop",
         "shd101wyy.markdown-preview-enhanced",
-        "esbenp.prettier-vscode",
+        "prettier.prettier-vscode",
         "mrmlnc.vscode-attrs-sorter",
         "richie5um2.vscode-sort-json",
         "2gua.rainbow-brackets",
@@ -505,18 +447,6 @@
     "terminal.integrated.fontSize": 10,
     "terminal.integrated.hideOnStartup": "whenEmpty",
     "terminal.integrated.lineHeight": 1.05,
-    "terminal.integrated.persistentCustomizations": {
-        "splitTerminals": [
-            {
-                "command": "echo 'Terminal 1'; ${command:workbench.action.terminal.new}",
-                "name": "Terminal 1"
-            },
-            {
-                "command": "echo 'Terminal 2'; ${command:workbench.action.terminal.new}",
-                "name": "Terminal 2"
-            }
-        ]
-    },
     "terminal.integrated.profiles.osx": {
         "Gatlen": {
             "args": [

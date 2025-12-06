@@ -36,7 +36,7 @@ let
 
     devops = [
       act
-      awscli
+      # awscli
       devcontainer
       docker
       hadolint

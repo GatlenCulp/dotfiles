@@ -1,4 +1,5 @@
-{ pkgs }: {
+{ pkgs, secrets }:
+{
   # Shell & Navigation
   atuin = {
     enable = true;
@@ -27,6 +28,7 @@
     enable = true;
     config.theme = "dracula";
     themes.dracula = {
+      # TODO: learn about this more generally
       src = pkgs.fetchFromGitHub {
         owner = "dracula";
         repo = "sublime";
@@ -42,7 +44,11 @@
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
-    extraOptions = [ "--width=100" "--group-directories-first" "--all" ];
+    extraOptions = [
+      "--width=100"
+      "--group-directories-first"
+      "--all"
+    ];
     git = true;
     icons = "auto";
     theme = "dracula";
@@ -70,10 +76,6 @@
   zed-editor.enable = true;
 
   pandoc.enable = true;
-  ruff = {
-    enable = true;
-    settings = { };
-  };
 
   # System Monitoring & Utilities
   btop.enable = true;
@@ -105,7 +107,57 @@
   # Terminal Multiplexers & Session Management
   zellij = {
     enable = true;
-    enableZshIntegration = true;
+    # A bit annoying
+    # enableBashIntegration = true;
+    # enableZshIntegration = true;
+    # exitShellOnExit = true;
+    settings = {
+      theme = "dracula";
+      show_startup_tips = false;
+      default_shell = "zsh";
+      pane_frames = false;
+      # simplified_ui = true; # Doesn't actually reduce space. More for fonts.
+      default_layout = "dev"; # Puts top bar at the bottom.
+      ui.pane_frames.hide_session_name = true;
+    };
+    layouts = {
+      dev = {
+        layout = {
+          _children = [
+            {
+              default_tab_template = {
+                _children = [
+                  { "children" = { }; }
+                  {
+                    pane = {
+                      size = 1;
+                      borderless = true;
+                      plugin = {
+                        location = "zellij:compact-bar";
+                      };
+                    };
+                  }
+                ];
+              };
+            }
+            {
+              tab = {
+                _props = {
+                  name = "zsh";
+                };
+                _children = [
+                  {
+                    pane = {
+                      command = "zsh";
+                    };
+                  }
+                ];
+              };
+            }
+          ];
+        };
+      };
+    };
   };
   tmux.enable = true;
 
@@ -150,7 +202,11 @@
   };
 
   # Programming Environment
-  awscli.enable = true;
+  awscli = {
+    enable = true;
+    settings = secrets.awscli.settings;
+    credentials = secrets.awscli.credentials;
+  };
   bun = {
     enable = true;
     enableGitIntegration = true;
@@ -161,11 +217,10 @@
     enableNushellIntegration = true;
   };
   nh.enable = true;
-  nix-index = 
-    {
-      enable = true;
-      enableBashIntegration = true;
-    };
+  nix-index = {
+    enable = true;
+    enableBashIntegration = true;
+  };
   poetry.enable = true;
   uv.enable = true;
 
@@ -182,8 +237,18 @@
   ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."*" = { forwardAgent = false; addKeysToAgent = "no"; compression = false; serverAliveInterval = 0; serverAliveCountMax = 3; hashKnownHosts = false; userKnownHostsFile = "~/.ssh/known_hosts"; controlMaster = "no"; controlPath = "~/.ssh/master-%r@%n:%p"; controlPersist = "no"; };
-
+    matchBlocks."*" = {
+      forwardAgent = false;
+      addKeysToAgent = "no";
+      compression = false;
+      serverAliveInterval = 0;
+      serverAliveCountMax = 3;
+      hashKnownHosts = false;
+      userKnownHostsFile = "~/.ssh/known_hosts";
+      controlMaster = "no";
+      controlPath = "~/.ssh/master-%r@%n:%p";
+      controlPersist = "no";
+    };
 
     extraConfig = ''
       Include ~/.ssh/align.ssh

@@ -1,0 +1,10 @@
+default_layout "dev"
+default_shell "zsh"
+pane_frames false
+show_startup_tips false
+theme "dracula"
+ui {
+	pane_frames {
+		hide_session_name true
+	}
+}
