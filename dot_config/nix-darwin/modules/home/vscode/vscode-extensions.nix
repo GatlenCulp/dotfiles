@@ -12,6 +12,7 @@ let
         ibm.output-colorizer
         mohammadbaqer.better-folding
         usernamehw.errorlens
+        # Anthropic.claude-code # Doesn't work :/
       ];
 
       debugging = [
@@ -389,6 +390,5 @@ let
   ];
 in
 builtins.concatLists selected
-
 
 # Unable to import 54 extensions: abusaidm.html-snippets, adpyke.codesnap, alefragnani.bookmarks, atishay-jain.all-autocomplete, aws-scripting-guy.cform, batisteo.vscode-django, christian-kohler.npm-intellisense, christian-kohler.path-intellisense, ctcuff.font-preview, cweijan.vscode-office, dsznajder.es7-react-js-snippets, ecmel.vscode-html-css, exiasr.hadolint, exodiusstudios.comment-anchors, formulahendry.auto-rename-tag, github.remotehub, griimick.vhs, ipedrazas.kubernetes-snippets, jeff-hykin.better-dockerfile-syntax, jetmartin.bats, kdl-org.kdl, kisstkondoros.vscode-gutter-preview, liamhammett.inline-parameters, louiswt.regexp-preview, lov3.sagemath-enhanced, mkaufman.htmlhint, mrmlnc.vscode-duplicate, ms-python.gather, ms-toolsai.datawrangler, ms-toolsai.tensorboard, ms-toolsai.vscode-jupyter-powertoys, ms-vscode-remote.remote-containers, ms-vscode-remote.remote-ssh, ms-vscode-remote.remote-ssh-edit, ms-vscode.hexeditor, ms-vscode.remote-explorer, ms-vscode.vscode-typescript-next, philnash.ngrok-for-vscode, pmneo.tsimporter, randomfractalsinc.duckdb-sql-tools, redhat.ansible, salbert.copy-text, sharat.vscode-brewfile, stackbreak.comment-divider, stkb.rewrap, tht13.html-preview-vscode, ukaisi.inspect-ai, vincent-templier.vscode-netron, vintharas.learn-vim, vitaliymaz.vscode-svg-previewer, vscodevim.vim, xadillax.viml, xiaoluoboding.vscode-folder-size, zignd.html-css-class-completion.  Only extensions that are available in the Cursor Marketplace can be imported.

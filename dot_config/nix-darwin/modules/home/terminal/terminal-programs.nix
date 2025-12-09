@@ -26,17 +26,19 @@
 
   bat = {
     enable = true;
-    config.theme = "dracula";
-    themes.dracula = {
-      # TODO: learn about this more generally
-      src = pkgs.fetchFromGitHub {
-        owner = "dracula";
-        repo = "sublime";
-        rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
-        sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
-      };
-      file = "Dracula.tmTheme";
-    };
+    config.theme = "Dracula";
+    # Run with --impure bc not changing this yet lol
+    themes.Dracula.src = "/Users/gat/.config/nix-darwin/assets/Dracula.tmTheme";
+    # themes.dracula = {
+    #   # TODO: learn about this more generally. ALso just does not work oops.
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "dracula";
+    #     repo = "sublime";
+    #     rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
+    #     sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
+    #   };
+    #   file = "Dracula.tmTheme";
+    # };
   };
 
   eza = {
@@ -60,13 +62,17 @@
   fd.enable = true;
   starship = {
     enable = true;
+    enableBashIntegration = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
     settings = import ./starship-config.nix;
   };
   yazi.enable = true;
   zoxide = {
     enable = true;
     enableBashIntegration = true;
+    enableFishIntegration = true;
   };
   tex-fmt.enable = true;
   sqls.enable = true;
@@ -231,6 +237,9 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      dracula-nvim
+    ];
   };
 
   # Network & Security

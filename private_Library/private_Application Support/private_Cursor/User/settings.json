@@ -246,13 +246,16 @@
     "errorLens.messageEnabled": true,
     "errorLens.padding": "2px 1ch",
     "files.associations": {
+        "flake.lock": "json",
         "*.env*": "dotenv",
         "*.toml.tmpl": "toml",
         "*Brewfile*": "ruby",
         ".aliases": "shellscript",
         ".bashrc": "shellscript",
         ".envrc": "shellscript",
-        ".zshrc": "shellscript"
+        ".zshrc": "shellscript",
+        ".env*": "dotenv",
+        "*.cursorrules": "markdown"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
@@ -430,7 +433,7 @@
         "usernamehw.errorlens",
         "spmeesseman.vscode-taskexplorer"
     ],
-    "remote.SSH.localServerDownload": "always",
+    "remote.SSH.localServerDownload": "auto",
     "remote.SSH.logLevel": "trace",
     "remote.SSH.showLoginTerminal": true,
     "remote.SSH.useExecServer": false,
@@ -492,7 +495,14 @@
     "window.title": "🪿 ${separator} 🌳 ${activeRepositoryName} (${activeRepositoryBranchName}) ${separator} 📁 ${activeEditorMedium}",
     "workbench.accounts.experimental.showEntitlements": true,
     "workbench.colorCustomizations": {
-        "titleBar.activeBackground": "#692E33"
+        "titleBar.activeBackground": "#692E33",
+        "editor.lineHighlightBackground": "#1073cf2d",
+        "editor.lineHighlightBorder": "#9fced11f",
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
     },
     "workbench.colorTheme": "Dracula Theme",
     "workbench.editor.customLabels.enabled": true,
@@ -515,7 +525,6 @@
     },
     "workbench.editor.labelFormat": "default",
     "workbench.editor.limit.value": 4,
-    "workbench.editor.tabSizing": "shrink",
     "workbench.editorAssociations": {
         "{git,gitlens}:/**/*.{md,csv,svg}": "default"
     },
@@ -523,5 +532,21 @@
     "workbench.list.smoothScrolling": true,
     "workbench.panel.opensMaximized": "never",
     "workbench.panel.showLabels": false,
-    "workbench.productIconTheme": "material-product-icons"
+    "workbench.productIconTheme": "material-product-icons",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": []
+    },
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+    "remote.SSH.remotePlatform": {
+        "runpod-temporary": "linux",
+        "ssh root@38.80.152.249 -p 31106 -i ~/.ssh/id_ed25519": "linux",
+        "ssh root@38.80.152.77 -p 32074 -i ~/.ssh/id_ed25519": "linux",
+        "ssh kky050qqcppkqe-64411c6a@ssh.runpod.io -i ~/.ssh/id_ed25519": "linux"
+    },
+    "claudeCode.preferredLocation": "panel",
+    "cSpell.enabledNotifications": {
+        "Average Word Length too Long": false,
+        "Lines too Long": false,
+        "Maximum Word Length Exceeded": false
+    },
 }

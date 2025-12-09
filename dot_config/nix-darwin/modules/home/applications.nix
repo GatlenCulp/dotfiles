@@ -4,10 +4,12 @@ let
   mcpServers = {
     notionApi = {
       command = "npx";
-      args = [ "-y" "@notionhq/notion-mcp-server" ];
+      args = [
+        "-y"
+        "@notionhq/notion-mcp-server"
+      ];
       env = {
-        "OPENAPI_MCP_HEADERS" = ''
-          {"Authorization": "Bearer ntn_****", "Notion-Version": "2022-06-28" }'';
+        "OPENAPI_MCP_HEADERS" = ''{"Authorization": "Bearer ntn_****", "Notion-Version": "2022-06-28" }'';
       };
     };
     github = {
@@ -20,14 +22,19 @@ let
         "GITHUB_PERSONAL_ACCESS_TOKEN"
         "ghcr.io/github/github-mcp-server"
       ];
-      env = { "GITHUB_PERSONAL_ACCESS_TOKEN" = "<YOUR_TOKEN>"; };
+      env = {
+        "GITHUB_PERSONAL_ACCESS_TOKEN" = "<YOUR_TOKEN>";
+      };
     };
   };
-in {
+in
+{
   # Communication
   thunderbird = {
     enable = true;
-    profiles."GatlenCulp@gmail.com" = { isDefault = true; };
+    profiles."GatlenCulp@gmail.com" = {
+      isDefault = true;
+    };
   };
 
   # Copied here
@@ -35,7 +42,9 @@ in {
   msmtp.enable = true;
   notmuch = {
     enable = true;
-    hooks = { preNew = "mbsync --all"; };
+    hooks = {
+      preNew = "mbsync --all";
+    };
   };
 
   # Media
@@ -45,7 +54,9 @@ in {
   # chromium = { enable = true; }; # Not available on darwin?
   # firefox = import ../firefox.nix { inherit pkgs; }; # Takes a while
 
-  discord = { enable = true; };
+  discord = {
+    enable = true;
+  };
 
   rio = {
     enable = true;
@@ -117,36 +128,65 @@ in {
     mcpServers = mcpServers;
     settings = {
       hooks = {
-        PostToolUse = [{
-          hooks = [{
-            command =
-              "nix fmt $(jq -r '.tool_input.file_path' <<< '$CLAUDE_TOOL_INPUT')";
-            type = "command";
-          }];
-          matcher = "Edit|MultiEdit|Write";
-        }];
-        PreToolUse = [{
-          hooks = [{
-            command = "echo 'Running command: $CLAUDE_TOOL_INPUT'";
-            type = "command";
-          }];
-          matcher = "Bash";
-        }];
+        PostToolUse = [
+          {
+            hooks = [
+              {
+                command = "file=$(jq -r '.tool_input.file_path' <<<
+  '$CLAUDE_TOOL_INPUT'); [[ \"$file\" == *.nix ]] && nix fmt \"$file\" || true";
+                type = "command";
+              }
+              {
+                command = "file=$(jq -r '.tool_input.file_path' <<<
+  '$CLAUDE_TOOL_INPUT'); [[ \"$file\" == *.py ]] && ruff format \"$file\" && ruff check --fix || true";
+                type = "command";
+              }
+            ];
+            matcher = "Edit|MultiEdit|Write";
+          }
+        ];
+        PreToolUse = [
+          {
+            hooks = [
+              {
+                command = "echo 'Running command: $CLAUDE_TOOL_INPUT'";
+                type = "command";
+              }
+            ];
+            matcher = "Bash";
+          }
+        ];
       };
       includeCoAuthoredBy = false;
       # model = "claude-3-5-sonnet-20241022";
       permissions = {
-        additionalDirectories = [ "../docs/" ];
-        allow = [ "Bash(git diff:*)" "Edit" ];
-        ask = [ "Bash(git push:*)" ];
+        # additionalDirectories = [ "../docs/" ]; Add personal files?
+        allow = [
+          "Edit"
+          "Bash(cursor:*)"
+          "Bash(find:*)"
+          "Bash(git diff:*)"
+          "Bash(git mv:*)"
+          "Bash(ls:*)"
+          "Bash(grep:*)"
+          "Bash(md5:*)"
+          "Bash(mkdir:*)"
+        ];
+        ask = [
+          "Bash(git push:*)"
+          "Bash(uv run python:*)"
+          "Bash(python3:*)"
+        ];
         defaultMode = "acceptEdits";
-        deny =
-          [ "WebFetch" "Bash(curl:*)" "Read(./.env)" "Read(./secrets/**)" ];
+        deny = [
+          "Read(./.env)"
+          "Read(./secrets/**)"
+        ];
         disableBypassPermissionsMode = "disable";
       };
       statusLine = {
-        command = ''
-          input=$(cat); echo "[$(echo "$input" | jq -r '.model.display_name')] 📁 $(basename "$(echo "$input" | jq -r '.workspace.current_dir')")"'';
+        # TODO: check more cc theme stuff. Also actually install this more globally.
+        command = "bunx ccstatusline@latest";
         padding = 0;
         type = "command";
       };
@@ -159,4 +199,3 @@ in {
     servers = mcpServers;
   };
 }
-

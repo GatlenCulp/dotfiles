@@ -43,6 +43,11 @@ let
       };
       "cSpell.diagnosticLevel" = "Hint";
       "cSpell.dictionaries" = [ "vim" ];
+      "cSpell.enabledNotifications" = {
+        "Average Word Length too Long" = false;
+        "Lines too Long" = false;
+        "Maximum Word Length Exceeded" = false;
+      };
       "debug.console.fontFamily" = "FiraCode Nerd Font";
       "debug.console.fontSize" = 10;
       "debug.hideLauncherWhileDebugging" = true;
@@ -135,7 +140,6 @@ let
       };
       "workbench.editor.labelFormat" = "default";
       "workbench.editor.limit.value" = 4;
-      "workbench.editor.tabSizing" = "shrink";
       "workbench.editorAssociations" = {
         "{git,gitlens}:/**/*.{md,csv,svg}" = "default";
       };
@@ -461,8 +465,8 @@ let
     };
 
     devops = {
-      "remote.SSH.showLoginTerminal" = true;
-      "remote.SSH.localServerDownload" = "always";
+      # "remote.SSH.showLoginTerminal" = true; # true for debugging
+      # "remote.SSH.localServerDownload" = "always"; # issues in special cases
       "remote.SSH.defaultExtensions" = [
         "ms-python.vscode-pylance"
         "ms-python.debugpy"

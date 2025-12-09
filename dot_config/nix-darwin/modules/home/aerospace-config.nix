@@ -24,14 +24,14 @@
   };
 
   mode.main.binding = {
-    # Terminal
-    alt-enter = ''
-      exec-and-forget osascript -e '
-      tell application "Ghostty"
-          do script
-          activate
-      end tell'
-    '';
+    # Terminal (doesn't work, also wnat this.)
+    # alt-enter = ''
+    #   exec-and-forget osascript -e '
+    #   tell application "Ghostty"
+    #       do script
+    #       activate
+    #   end tell'
+    # '';
 
     # Layout
     alt-slash = "layout tiles horizontal vertical";

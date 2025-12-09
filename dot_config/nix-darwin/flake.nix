@@ -68,9 +68,11 @@
           inherit inputs pkgs;
         };
 
-      shellConfig = import "${self}/modules/home/terminal/shell-config.nix" {
-        inherit secrets;
-      };
+      shellConfig =
+        pkgs:
+        import "${self}/modules/home/terminal/shell-config.nix" {
+          inherit pkgs secrets;
+        };
 
       applicationPrograms = pkgs: import "${self}/modules/home/applications.nix" { inherit pkgs; };
 
@@ -85,7 +87,8 @@
           home.enableNixpkgsReleaseCheck = false; # So I can use old nixpkgs with new home-manager. Can't update nixpkgs bc then nix-darwin freaks.
           home.shellAliases = {
             config = "$EDITOR ~/.config/nix-darwin";
-            rebuild = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin --show-trace";
+            # TODO: Eventually make pure (using references to my assets dir)
+            rebuild = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin --show-trace --impure";
             upgrade = "topgrade";
           };
           home.shell = {
@@ -106,7 +109,7 @@
 
           programs =
             terminalPrograms pkgs
-            // shellConfig
+            // shellConfig pkgs
             // applicationPrograms pkgs
             // {
               ruff = {

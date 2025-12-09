@@ -23,6 +23,8 @@
     # ━━━━━━━━━━━━━━━━━━━━━━━━━ TeX & Docs ━━━━━━━━━━━━━━━━━━━━━━━━━
     "latexindent"
 
+    # --- Literally just claude-code
+    
   ];
 
   casks = [
