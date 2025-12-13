@@ -159,7 +159,6 @@ let
       ];
       "cursor.cpp.enablePartialAccepts" = true;
       "cursor.general.enableShadowWorkspace" = true;
-      "cursor.terminal.usePreviewBox" = true;
     };
 
     better-comments = {

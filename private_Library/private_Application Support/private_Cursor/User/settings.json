@@ -255,7 +255,8 @@
         ".envrc": "shellscript",
         ".zshrc": "shellscript",
         ".env*": "dotenv",
-        "*.cursorrules": "markdown"
+        "*.cursorrules": "markdown",
+        "*.ssh": "ssh_config"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {

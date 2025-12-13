@@ -28,7 +28,7 @@
     enable = true;
     config.theme = "Dracula";
     # Run with --impure bc not changing this yet lol
-    themes.Dracula.src = "/Users/gat/.config/nix-darwin/assets/Dracula.tmTheme";
+    # themes.Dracula.src = "/Users/gat/.config/nix-darwin/assets/Dracula.tmTheme";
     # themes.dracula = {
     #   # TODO: learn about this more generally. ALso just does not work oops.
     #   src = pkgs.fetchFromGitHub {
@@ -77,6 +77,8 @@
   tex-fmt.enable = true;
   sqls.enable = true;
   readline.enable = true;
+  ripgrep.enable = true;
+  ripgrep-all.enable = true;
 
   # Additional terminal programs
   zed-editor.enable = true;
@@ -232,14 +234,12 @@
 
   # Editors
   helix.enable = true;
-  neovim = {
-    # TODO: Configure this
+  # Maybe with learning: https://youtu.be/w7i4amO_zaE
+  # neovim = import ./vim.nix { inherit pkgs; };  # Replaced by nixvim
+  nixvim = import ./nixvim.nix { inherit pkgs; };
+
+  neovide = {
     enable = true;
-    viAlias = true;
-    vimAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      dracula-nvim
-    ];
   };
 
   # Network & Security

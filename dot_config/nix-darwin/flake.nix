@@ -36,6 +36,10 @@
     };
     # TODO: Global nix-colors, which is fine but they only have Base16 standard. Will define my own for now.
     # nix-colors= {url = "github:misterio77/nix-colors"};
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # Recommends not using following
+    };
   };
 
   outputs =
@@ -47,6 +51,7 @@
       nix-vscode-extensions,
       nur,
       tytanic,
+      nixvim,
       ...
     }:
     let
@@ -144,6 +149,7 @@
         {
           # Core Setup
           imports = [ home-manager.darwinModules.home-manager ];
+          # Not working atm. Fix later.
           nixpkgs.config.allowUnfree = true;
           nixpkgs.hostPlatform = "aarch64-darwin";
           nixpkgs.overlays = [
@@ -213,8 +219,9 @@
 
           # Nix Configuration
           nix = {
+            # Was false and pkgs.nix I believe
             enable = false; # Handled by Determinate Nix
-            package = pkgs.nix;
+            package = pkgs.lixPackageSets.stable.lix; # Not used, convert in the future
             settings."extra-experimental-features" = [
               "nix-command"
               "flakes"
@@ -226,6 +233,7 @@
 
           # Home Manager
           home-manager = {
+            sharedModules = [ nixvim.homeModules.nixvim ];
             backupFileExtension = "backup";
             useGlobalPkgs = true;
             useUserPackages = true;
