@@ -114,6 +114,7 @@ let
 
     nix = [
       nixd
+      statix
       nixdoc
       nixfmt-rfc-style # Alejandra is an alternative, but this is fine tbh https://github.com/kamadorueda/alejandra
     ];

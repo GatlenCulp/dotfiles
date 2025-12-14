@@ -1,4 +1,8 @@
-{ pkgs, secrets }:
+{
+  pkgs,
+  inputs,
+  secrets,
+}:
 {
   # Shell & Navigation
   atuin = {
@@ -84,6 +88,13 @@
   zed-editor.enable = true;
 
   pandoc.enable = true;
+  direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    # enableFishIntegration = true;
+    enableNushellIntegration = true;
+  };
 
   # System Monitoring & Utilities
   btop.enable = true;
@@ -236,7 +247,12 @@
   helix.enable = true;
   # Maybe with learning: https://youtu.be/w7i4amO_zaE
   # neovim = import ./vim.nix { inherit pkgs; };  # Replaced by nixvim
-  nixvim = import ./nixvim.nix { inherit pkgs; };
+  # nixvim = import ./nixvim.nix { inherit pkgs inputs; };
+  nixvim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   neovide = {
     enable = true;

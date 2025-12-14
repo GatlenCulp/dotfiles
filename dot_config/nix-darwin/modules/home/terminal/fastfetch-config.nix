@@ -1,14 +1,17 @@
 {
-  "$schema" =
-    "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
+  "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
   logo = {
     source = "~/.config/nix-darwin/assets/goose.txt";
     type = "file";
     height = 20;
-    padding = { top = 1; };
+    padding = {
+      top = 1;
+    };
   };
   # display = { separator = " ➜  "; };
-  display = { separator = " "; };
+  display = {
+    separator = " ";
+  };
   modules = [
     "break"
     "break"

@@ -3,7 +3,8 @@
 #
 # nix-darwin: https://nix-darwin.github.io/nix-darwin/manual/index.html
 # home-manager: https://nix-community.github.io/home-manager/options.xhtml
-# TODO: Add image2icon from app store
+# TODO: Modularize as flake-parts, as modules, etc.
+# TODO: Also put this into some kind of better template
 {
   description = "Gatlen's nix-darwin macOS nix configuration";
 
@@ -40,6 +41,11 @@
       url = "github:nix-community/nixvim";
       # Recommends not using following
     };
+    nvix = {
+      url = "github:GatlenCulp/nvix";
+      # url = "path:/Users/gat/personal/nvix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -52,6 +58,7 @@
       nur,
       tytanic,
       nixvim,
+      nvix,
       ...
     }:
     let
@@ -63,8 +70,7 @@
       terminalPrograms =
         pkgs:
         import "${self}/modules/home/terminal/terminal-programs.nix" {
-          inherit pkgs;
-          inherit secrets;
+          inherit pkgs inputs secrets;
         };
       accountsConfig = import "${self}/modules/home/accounts.nix";
       customSystemPackages =
@@ -206,8 +212,8 @@
             enable = true;
             settings = import "${self}/modules/home/aerospace-config.nix";
           };
-          # services.dropbox.enable = true; # Doesn't work? For dropbox cli it seems
           programs.gnupg.agent.enable = true;
+          # services.dropbox.enable = true; # Doesn't work? For dropbox cli it seems
           # services.syncthing.enable = true; # Doesn't work for some reason
           # services.ludusavi.enable = true; # Doesn't exist
           # services.flameshot.enable = false; # Doesn't exist
@@ -233,7 +239,28 @@
 
           # Home Manager
           home-manager = {
-            sharedModules = [ nixvim.homeModules.nixvim ];
+            sharedModules = [
+              nixvim.homeModules.nixvim
+              {
+                programs.nixvim.imports = with nvix.nvixPlugins; [
+                  ai
+                  common
+                  lang
+                  lsp
+                  lualine
+                  snacks
+                  autosession
+                  blink-cmp
+                  buffer
+                  firenvim
+                  git
+                  noice
+                  tex
+                  treesitter
+                  ux
+                ];
+              }
+            ];
             backupFileExtension = "backup";
             useGlobalPkgs = true;
             useUserPackages = true;
