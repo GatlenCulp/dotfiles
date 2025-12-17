@@ -4,6 +4,10 @@ let
     # TODO: Convert to use LastPass
     # TODO: Convert to use the envvars nix api
     export EDITOR=cursor
+    export PAGER='ov -F'
+    export PSQL_PAGER='ov -F -C -d "|" -H1 --column-rainbow --align'
+    export MANPAGER="ov --section-delimiter '^[^\s]' --section-header"
+
 
     ### API KEYS FROM secrets.nix
     # AI API KEYS

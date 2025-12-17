@@ -13,10 +13,10 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
-    nixpkgs.follows = "nixpkgs-stable-darwin";
+    nixpkgs.follows = "nixpkgs-unstable";
     nix-darwin = {
       url = "github:LnL7/nix-darwin/nix-darwin-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-stable-darwin";
     };
     home-manager = {
       # url = "github:nix-community/home-manager/release-25.05";
@@ -25,16 +25,17 @@
     };
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    tytanic = {
-      url = "github:typst-community/tytanic/v0.3.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # tytanic = {
+    # tytanic references apple_sdk.
+    #   url = "github:typst-community/tytanic/v0.3.1";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # TODO: Global nix-colors, which is fine but they only have Base16 standard. Will define my own for now.
     # nix-colors= {url = "github:misterio77/nix-colors"};
     nixvim = {
@@ -44,7 +45,7 @@
     nvix = {
       url = "github:GatlenCulp/nvix";
       # url = "path:/Users/gat/personal/nvix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -56,7 +57,7 @@
       home-manager,
       nix-vscode-extensions,
       nur,
-      tytanic,
+      # tytanic,
       nixvim,
       nvix,
       ...
@@ -101,6 +102,7 @@
             # TODO: Eventually make pure (using references to my assets dir)
             rebuild = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin --show-trace --impure";
             upgrade = "topgrade";
+            lsr = "eza -T --git-ignore"; # List repo with ezaf
           };
           home.shell = {
             enableShellIntegration = true;

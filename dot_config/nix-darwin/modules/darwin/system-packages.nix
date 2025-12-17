@@ -26,6 +26,7 @@ let
       sqlite
       sqlfluff
       taplo
+      qsv # Working with CSV files (miller (multiple files), xan (more analysis), csvkit are alternatives)
     ];
 
     dev-utils = [

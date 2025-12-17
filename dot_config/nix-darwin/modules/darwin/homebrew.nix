@@ -33,7 +33,6 @@
     "postman"
 
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Communication ━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    "messenger"
     "signal"
     "whatsapp"
 

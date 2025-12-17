@@ -102,7 +102,7 @@ let
       ];
 
       devops = [
-        hashicorp.terraform
+        # hashicorp.terraform # Results in an error after updating nixpkgs to unstable.
         philnash.ngrok-for-vscode
         redhat.ansible
         streetsidesoftware.code-spell-checker

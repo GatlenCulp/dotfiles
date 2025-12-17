@@ -518,7 +518,7 @@
 		"ssh root@38.80.152.77 -p 32074 -i ~/.ssh/id_ed25519": "linux",
 		"ssh kky050qqcppkqe-64411c6a@ssh.runpod.io -i ~/.ssh/id_ed25519": "linux"
 	},
-	"claudeCode.preferredLocation": "panel",
+	"claudeCode.preferredLocation": "sidebar",
 	"cSpell.enabledNotifications": {
 		"Average Word Length too Long": false,
 		"Lines too Long": false,

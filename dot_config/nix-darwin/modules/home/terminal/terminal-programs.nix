@@ -30,7 +30,10 @@
 
   bat = {
     enable = true;
-    config.theme = "Dracula";
+    config = {
+      theme = "Dracula";
+      pager = "ov -F H3";
+    };
     # Run with --impure bc not changing this yet lol
     # themes.Dracula.src = "/Users/gat/.config/nix-darwin/assets/Dracula.tmTheme";
     # themes.dracula = {
@@ -119,6 +122,10 @@
       ];
       commands = {
         "Upgrade Determinate Nix" = "sudo determinate-nixd upgrade";
+        # TODO: Make this pure, not reference local filesystem.
+        "Upgrade nix-darwin Flake " = "nix flake update --flake ~/.config/nix-darwin";
+        "Rebuild nix-darwin Flake" =
+          "sudo darwin-rebuild switch --flake ~/.config/nix-darwin --show-trace --impure";
       };
     };
   };
@@ -182,16 +189,49 @@
 
   # Development Tools
   git = {
+    # Helpful ref: https://gist.github.com/pksunkara/988716
     enable = true;
-    ignores = [ ".DS_Store" ];
+    ignores = [
+      "**/.DS_Store"
+      "**/__pycache__/"
+      "**/.ruff_cache/"
+      "**/.mypy_cache/"
+      "**/.env"
+      "**/.venv"
+      "*.com"
+      "*.class"
+      "*.dll"
+      "*.exe"
+      "*.o"
+      "*.so"
+      "*.swp"
+      "*.swo"
+      "*~"
+      "ehthumbs.db"
+      "Icon?"
+      "Thumbs.db"
+    ];
     lfs.enable = true;
     settings = {
-      user.email = "GatlenCulp@gmail.com";
-      user.name = "GatlenCulp";
-      init.defaultBranch = "main";
-      # https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories
-      # TODO: Write the ~/.git-template dir using nix
-      init.templateDir = "~/.git-template";
+      # https://noborus.github.io/ov/delta/index.html
+      # core = {
+      #   pager = "delta --pager='ov -F'"; # set by programs.delta
+      # };
+      init = {
+        defaultBranch = "main";
+        # https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories
+        # TODO: Write the ~/.git-template dir using nix
+        templateDir = "~/.git-template";
+      };
+      # pager = {
+      #   diff = "delta --features ov-diff";
+      #   log = "delta --features ov-log";
+      #   show = "delta --pager='ov -F --header 3'";
+      # };
+      user = {
+        email = "GatlenCulp@gmail.com";
+        name = "GatlenCulp";
+      };
     };
   };
 
@@ -199,6 +239,17 @@
     enable = true;
     enableGitIntegration = true;
     enableJujutsuIntegration = true;
+    options = {
+      navigate = true;
+      side-by-side = true;
+      file-style = "yellow";
+      ov-diff = {
+        pager = "ov -F --section-delimiter '^(commit|added:|removed:|renamed:|Δ)' --section-header --pattern '•'";
+      };
+      ov-log = {
+        pager = "ov -F --section-delimiter '^commit' --section-header-num 3";
+      };
+    };
   };
 
   gh = {
@@ -217,6 +268,13 @@
         email = "GatlenCulp@gmail.com";
         name = "Gatlen Culp";
       };
+      ui = {
+        default-command = "log";
+      };
+      snapshot = {
+        max-new-file-size = "5MiB";
+      };
+      # Perhaps may want to add pager?
     };
   };
 

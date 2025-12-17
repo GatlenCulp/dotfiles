@@ -18,6 +18,11 @@ upgrade
 
 Everything should happen or be imported into `flake.nix`
 
+## Collect Garbage
+
+```bash
+nix-collect-garbage
+```
 
 ## Notes
 NixOS inspired setup:
