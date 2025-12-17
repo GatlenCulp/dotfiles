@@ -1,0 +1,7 @@
+ls
+exit
+ls
+cd ~
+ls
+type(pwd)
+exit
